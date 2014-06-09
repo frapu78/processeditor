@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="2510296" name=""
+    type="net.frapu.code.visualization.bpmn.BPMNModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#nodes" value="26711310;3951667;4155459"/>
+            <property name="text" value="Pool"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="448"/>
+            <property name="#id" value="17774033"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="height" value="310"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="multi_instance" value="0"/>
+            <property name="blackbox_pool" value="0"/>
+            <property name="y" value="377"/>
+            <property name="x" value="279"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Lane"/>
+            <property name="#id" value="3951667"/>
+            <property name="#nodes" value="20702230"/>
+            <property name="text" value="Lane"/>
+            <property name="height" value="97"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="430"/>
+            <property name="y" value="483"/>
+            <property name="x" value="288"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Lane"/>
+            <property name="#id" value="4155459"/>
+            <property name="#nodes" value="3686138"/>
+            <property name="text" value="Lane"/>
+            <property name="height" value="108"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="430"/>
+            <property name="y" value="381"/>
+            <property name="x" value="288"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Lane"/>
+            <property name="#id" value="26711310"/>
+            <property name="#nodes" value="6948970"/>
+            <property name="text" value="Lane"/>
+            <property name="height" value="105"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="430"/>
+            <property name="y" value="274"/>
+            <property name="x" value="288"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="6948970"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="270"/>
+            <property name="x" value="150"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="3686138"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="375"/>
+            <property name="x" value="274"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="20702230"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="483"/>
+            <property name="x" value="412"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="18582123"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="6948970"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="3686138"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="12411662"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="3686138"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="20702230"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="9. November 2009 11:38:23 MEZ"/>
+        <property name="name" value=""/>
+        <property name="#uri" value="&lt;BPMN 2.0.model>"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

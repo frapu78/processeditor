@@ -1,0 +1,145 @@
+\section{Form Plug-Ins}
+	\subsection{Overview}
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{@{}lr@{}}
+			\toprule
+			\textbf{Required superclass} & \textit{FormServerPlugin}
+\\
+			\textbf{Configurable Sub-URLs} & \textit{no} \\
+			\textbf{Requires JavaScript} & \textit{no} \\
+			\textbf{Methods to implement} & \textit{void
+performFormAction( RequestFacade req , } \\
+			& \textit{ResponseFacade resp , } \\
+			& \textit{MultiPartObject mpo , }\\
+			& \textit{ModelInformation mi , }\\
+			& \textit{LoginableUser u )} \\
+			\addlinespace
+			& \textit{JSONObject getFormConfig( ModelInformation mi , }
+\\
+			& \textit{RequestFacade req , } \\
+			& \textit{LoginableUser u )} \\
+			\addlinespace
+			& \textit{\textbf{(optional)} String getItemText()} \\
+			\addlinespace
+			& \textit{\textbf{(optional)} String
+getItemIconPath()}\\
+			\addlinespace
+			\textbf{Graphical representation} & \textit{a single
+menu item or context button} \\
+			\textbf{Example(s)} & \textit{Behavioral Interface
+Generation,} \\
+& \textit{Deploy to SolutionCenter} \\
+			\bottomrule
+			\end{tabular}
+		\end{table}
+	
+	\subsection{Details}
+		\subsubsection{Basic Information}
+			As we can derive from the superclass name
+\textit{FormServerPlugin}, this type of plug-in displays a form. As an advantage over simple plug-ins the entered form
+data can be used while processing the users request. It is recommended to use this plug-in type, when the displayed form has to be generated dynamically. If the general shape of the form is indepent of a concrete model, or model state, please use \textit{DialogPlugin} as superclass (cf. Section \ref{dialog_plugins}).
+			
+			When the form is sent back to the server it is delivered
+in a special format called multipart. For details on multipart see Section
+\ref{multipart_format}. The implementer of the plug-in does not have to care
+about parsing this format since that is done before the respective methods are
+called.
+		
+		\subsubsection{Methods}
+			\paragraph{void performAction(RequestFacade req,
+ResponseFacade resp, MultiPartObject mpo, ModelInformation mi, LoginableUser u
+);}
+			After the form has been submitted, this method is responsible for processing the incoming
+request and sending a resulting response to the requester.
+			All available information is contained within the
+\textit{ModelInformation} and the \textit{MultiPartObject} objects. The latter
+contains the data the user entered into the form belonging to this plug-in. 
+			
+			See Section \ref{multipart_format} for information on
+the multipart format.			
+				
+			See Section \ref{response_section} for information on
+how responses must be structured.
+			
+			\paragraph{JSONObject getFormConfig(ModelInformation mi, RequestFacade req, LoginableUser lu)}
+			Return a \textit{JSONObject} that configures the required form.
+To facilitate this step there exist several classes within the package
+\verb!com.inubit.research.! \verb!server.extjs!. Detailed information on these classes is
+given in Section \ref{extjs}. Two buttons, "Submit" and "Cancel" are
+automatically added to the form.
+			
+			\paragraph{String getItemText();}
+			Return the text for the menu item. If the
+\verb!showInToolbar()!-method for this plug-in returns \verb!true! the item text
+will be used as tooltip text instead.
+
+			\paragraph{String getItemIconPath();}
+			Return the path to the icon of the menu item. This is
+especially important if the plug-in is represented as a simple button within the
+toolbar or as a context menu button.
+	
+		
+		\subsubsection{ExtJS-Form Creation}
+		\label{extjs}
+		The creation of ExtJS form configurations is facilitated by the
+\textit{ExtJSFormFactory} class. By calling 
+		\verb!createEmptyForm()! you will receive an empty form to which
+you can add all required items. As all objects returned by the factory extend the class \textit{JSONObject}, no further conversion is required.
+		
+		Supported ExtJS form elements are (further elements may be implemented):
+		\begin{itemize}
+			\item Container elements (can have multiple
+sub-elements):
+			\begin{itemize}
+				\item FieldSet
+				\item CheckboxGroup
+			\end{itemize}
+			\item Simple elements:
+			\begin{itemize}
+				\item Checkbox
+				\item TextField
+			\end{itemize}
+		\end{itemize}
+		
+		For configuring these elements (and also the form itself) use
+the respective \verb!setProperty! \verb!(key, value)! method. To view all
+configurable attributes take a look at
+\url{http://www.extjs.com/deploy/dev/docs/}.
+		
+		For accessing the entered data during request processing, you
+have to specify the \textbf{name}-attribute for each simple element. This name
+can then be used to get the corresponding value out of the created
+\textit{MultiPartObject} instance.
+			
+		\subsubsection{Multipart Format}
+		\label{multipart_format}
+		When the user submits the form, the server receives the data in
+multipart format. In a first step this format is transferred into a Java object
+of type \textit{MultiPartObject}. Accessing this object will deliver the entered
+data to the plug-in. 
+		
+		The following methods are considered to be helpful, where
+\verb!mpo! is an instance of class \textit{MultiPartObject}, \verb!mi! is a
+\textit{MultiPartItem}, and \verb!mp! is a \textit{SimpleMultipartParser}:
+		\begin{itemize}
+			\item \verb!mbo.getItems()!\\
+			This returns all items contained in the multipart
+object. That means, that all none empty (or unset) form elements are returned by
+this call.
+			\item \verb!mbo.getItemByName(String name)!\\
+			Return one specific item that is identified by its
+unique name. The name is taken from the \textbf{name}-attribute of the form
+element. The form element is only found if the name exists and the element has a
+none-\verb!null! value. For checkbox elements this means, that they are only
+part of the submitted form if they were checked when submitting the form.
+			\item \verb!mbi.getContent()!\\
+			Get the textual content of a form element. This is equal
+to the value the user entered into the specific field.
+		
+			\item
+\verb!sp.parseItemContentAsByteArray(BufferedInputStream bis, String itemName)!\\
+			Reads a specific item of the input stream as byte array.
+This can be used, e.g., to parse an image
+			
+		\end{itemize}

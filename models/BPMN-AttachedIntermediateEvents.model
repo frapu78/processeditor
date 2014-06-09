@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="235812787" name=""
+    type="net.frapu.code.visualization.bpmn.BPMNModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#nodes" value="24854782;29326115;5156931;1352077"/>
+            <property name="text" value="Sub Process"/>
+            <property name="triggered_by_event" value="0"/>
+            <property name="transaction" value="0"/>
+            <property name="width" value="240"/>
+            <property name="collapsed" value="0"/>
+            <property name="compensation" value="0"/>
+            <property name="#id" value="7314318"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SubProcess"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="height" value="250"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="153"/>
+            <property name="adhoc" value="0"/>
+            <property name="x" value="255"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.MessageStartEvent"/>
+            <property name="#id" value="1763596"/>
+            <property name="text" value="Request\nReceived"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="153"/>
+            <property name="x" value="61"/>
+        </node>
+        <node>
+            <property name="#nodes" value="27184512;29853275"/>
+            <property name="text" value="Event Sub Process"/>
+            <property name="triggered_by_event" value="1"/>
+            <property name="transaction" value="0"/>
+            <property name="width" value="158"/>
+            <property name="collapsed" value="0"/>
+            <property name="compensation" value="0"/>
+            <property name="#id" value="1352077"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SubProcess"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="height" value="88"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="209"/>
+            <property name="adhoc" value="0"/>
+            <property name="x" value="254"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SignalStartEvent"/>
+            <property name="#id" value="27184512"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="1"/>
+            <property name="y" value="212"/>
+            <property name="x" value="212"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.TimerIntermediateEvent"/>
+            <property name="#id" value="13372929"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="event_subtype" value="Catching"/>
+            <property name="shadow" value="0"/>
+            <property name="#source" value="7314318"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="280"/>
+            <property name="x" value="323"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.TerminateEndEvent"/>
+            <property name="#id" value="29853275"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="212"/>
+            <property name="x" value="288"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="17567590"/>
+            <property name="text" value="Handle\nTimeout"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="357"/>
+            <property name="x" value="378"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.StartEvent"/>
+            <property name="#id" value="5156931"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="85"/>
+            <property name="x" value="166"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="STANDARD"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="29326115"/>
+            <property name="text" value="Looped\nService Task\n"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="service"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="85"/>
+            <property name="x" value="254"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.EndEvent"/>
+            <property name="#id" value="24854782"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="85"/>
+            <property name="x" value="340"/>
+        </node>
+        <node>
+            <property name="#nodes" value="7158674;11777702;13842387"/>
+            <property name="text" value="Transaction"/>
+            <property name="triggered_by_event" value="0"/>
+            <property name="transaction" value="1"/>
+            <property name="width" value="200"/>
+            <property name="collapsed" value="0"/>
+            <property name="compensation" value="0"/>
+            <property name="#id" value="18082301"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SubProcess"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="height" value="260"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="153"/>
+            <property name="adhoc" value="0"/>
+            <property name="x" value="555"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="SEQUENCE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="7158674"/>
+            <property name="text" value="Sequential\nMI Task\n"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="88"/>
+            <property name="x" value="547"/>
+        </node>
+        <node>
+            <property name="compensation" value="1"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="13842387"/>
+            <property name="text" value="Compensation\nTask\n"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="206"/>
+            <property name="x" value="581"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.CompensationIntermediateEvent"/>
+            <property name="#id" value="11777702"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="event_subtype" value="Catching"/>
+            <property name="shadow" value="0"/>
+            <property name="#source" value="7158674"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="120"/>
+            <property name="x" value="575"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.CancelIntermediateEvent"/>
+            <property name="#id" value="5584739"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="event_subtype" value="Catching"/>
+            <property name="shadow" value="0"/>
+            <property name="#source" value="18082301"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="248"/>
+            <property name="x" value="652"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ErrorIntermediateEvent"/>
+            <property name="#id" value="32778033"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="event_subtype" value="Catching"/>
+            <property name="shadow" value="0"/>
+            <property name="#source" value="18082301"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="199"/>
+            <property name="x" value="653"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.MessageEndEvent"/>
+            <property name="#id" value="27646795"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="153"/>
+            <property name="x" value="738"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ErrorEndEvent"/>
+            <property name="#id" value="27198423"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="199"/>
+            <property name="x" value="738"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.TerminateEndEvent"/>
+            <property name="#id" value="3841429"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="248"/>
+            <property name="x" value="738"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Message"/>
+            <property name="#id" value="648928"/>
+            <property name="text" value=""/>
+            <property name="height" value="20"/>
+            <property name="stereotype" value=""/>
+            <property name="initiate" value="1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="83"/>
+            <property name="x" value="41"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="22949069"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1763596"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="7314318"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="25104891"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="27184512"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="29853275"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="18358845"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="13372929"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="17567590"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="13252483"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="5156931"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="29326115"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="17165167"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="29326115"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="24854782"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="16586768"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="7314318"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="18082301"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="11604935"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="11777702"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="13842387"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="2457371"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="18082301"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="27646795"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="11875256"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="32778033"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="27198423"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="1456470"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="5584739"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="3841429"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="26933028"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="648928"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="1763596"/>
+        </edge>
+    </edges>
+</model>

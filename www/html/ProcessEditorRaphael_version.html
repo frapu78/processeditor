@@ -1,0 +1,156 @@
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="../../../pics/icon_small.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title></title>
+
+        <link rel="stylesheet" type="text/css" href="../../../js/ext/resources/css/ext-all-gray.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/Processeditor.css">
+        <script language="JavaScript" src="../../../js/ext/bootstrap.js"></script>    
+        <script language="JavaScript" src="../../../js/util.js"></script>
+        <script language="JavaScript" src="../../../js/raphael.js"></script>
+
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessObject.js"></script>
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/editor/EditableProcessNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessEdge.js"></script>
+        <script language="JavaScript" src="../../../js/model/editor/EditableProcessEdge.js"></script>
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessModel.js"></script>
+        <script language="JavaScript" src="../../../js/model/editor/EditableProcessModel.js"></script>
+        <script language="JavaScript" src="../../../js/model/ProcessModelType.js"></script>
+        <script language="JavaScript" src="../../../js/model/TextNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/editor/MoveableTextNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/DummyNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/SelectionFrame.js"></script>
+        <script language="JavaScript" src="../../../js/model/ModelUpdater.js"></script>
+
+        <script language="JavaScript" src="../../../js/model/contextmenu/ContextMenu.js"></script>
+        <script language="JavaScript" src="../../../js/model/contextmenu/NodeContextMenu.js"></script>
+        <script language="JavaScript" src="../../../js/model/contextmenu/EdgeContextMenu.js"></script>
+
+        <script language="JavaScript" src="../../../js/pages/ColorField.js"></script>
+        <script language="JavaScript" src="../../../js/pages/LanguageField.js"></script>
+
+        <script language="JavaScript" src="../../../js/handler/SelectionHandler.js"></script>
+        <script language="JavaScript" src="../../../js/handler/ProcessEditorMouseListener.js"></script>
+        <script language="JavaScript" src="../../../js/handler/ClipboardHandler.js"></script>
+        <script language="JavaScript" src="../../../js/handler/LaneHandler.js"></script>
+        <script language="JavaScript" src="../../../js/handler/EdgeSegmentMoveHandler.js"></script>
+        <script language="JavaScript" src="../../../js/handler/AlignmentHandler.js"></script>
+        <script language="JavaScript" src="../../../js/handler/UndoHandler.js"></script>
+
+        <script language="JavaScript" src="../../../js/loader/Loader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelLoader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelMetaLoader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelNodesLoader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelEdgesLoader.js"></script>
+
+        <!--<script language="JavaScript" src="../../../js/ProcessEditor.js"></script>-->
+        <script language="JavaScript" src="../../../js/pages/editor/ProcessEditorExt.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/ProcessEditorMenu.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/ProcessEditorSaveDialog.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/Canvas.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/InvitationDialog.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/PropertyForm.js"></script>
+<!--        <script language="JavaScript" src="../../../js/pages/editor/UMLPropertyEditorWindow.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/UMLAttributeAdditionWindow.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/DomainPropertyEditorWindow.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/DomainAttributeAdditionWindow.js"></script>-->
+
+        <script language="JavaScript" src="../../../js/pages/root/DirectoryStructure.js"></script>
+        <script language="JavaScript" src="../../../js/pages/root/UserSelectionPanel.js"></script>
+        <script language="JavaScript" src="../../../js/pages/root/RootPageRightAdditionWindow.js"></script>
+
+        <script language="JavaScript" src="../../../js/pages/viewer/CommentPanel.js"></script>
+        <script language="JavaScript" src="../../../js/pages/viewer/CommentPanelItem.js"></script>
+        <script language="JavaScript" src="../../../js/pages/viewer/AnnotationBalloon.js"></script>
+
+        <script language="JavaScript" src="../../../js/plugins/PluginManager.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/Plugin.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/PluginHelper.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/SimplePlugin.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/FormPlugin.js"></script>
+<!--        <script language="JavaScript" src="../../../js/plugins/InfoFormPlugin.js"></script>-->
+        <script language="JavaScript" src="../../../js/plugins/DialogPlugin.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/InfoDialogPlugin.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/Dialog.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/InfoDialog.js"></script>
+        <script language="JavaScript" src="../../../js/plugins/PluginResponseProcessor.js"></script>
+
+        <script language="JavaScript" src="../../../js/util/PropertyConfig.js"></script>
+
+    </head>
+    <!-- <script language ="JavaScript" src="ProcessEditorMouseListener.js"/>-->
+
+    <body style="overflow:hidden;">
+        <script language="JavaScript">
+            document.onmouseup = function() {return false};
+            document.onmouseup = function() {return false};
+            document.onclick = function(event) {
+                var button;
+                if (event.which)
+                    button = event.which;
+                else
+                    button = event.button;
+
+                if (button == 2 || button == 3) {
+                    return false
+                }
+            };
+
+             Ext.onReady( function() { 
+                Ext.Loader.setConfig({
+                    enabled:true,
+                    paths: {
+                        'Inubit.WebModeler' : '../../../js'
+                    }
+                });
+                var editor = new ProcessEditor();
+
+                editor.createEditor(document.body);
+
+                var plainModelRegEx = /.+\/models\/(\d+)(\/versions\/(\d+))?/
+
+                if (window.location.search != "") {
+                    params = window.location.search;
+                    //very hardcoded
+                    var query = params.split("?")[1]
+
+                    var queryParams = Util.parseParameters(query);
+
+                    var m_id = queryParams["id"];
+
+                    if ( m_id == null )
+                        m_id = 'new';
+
+                    var m_version = queryParams["version"];
+                    var m_type = queryParams["type"];
+
+                    editor.init(m_id, m_version, m_type);
+                } else if (plainModelRegEx.test(window.location) ){
+                    //probably url is of form /models/<id>(/versions/<id>)?
+                    var regEx = /.+\/models\/(\d+)(\/versions\/(\d+))?/;
+                    var result = regEx.exec(window.location);
+
+                    m_id= result[1];
+                    m_version = result[3];
+
+                    editor.init(m_id, m_version);
+                } else {
+                    var regEx = /.+\/models\/tmp\/(\d+_\d+)/;
+
+                    var result = regEx.exec(window.location);
+
+
+                    m_id= result[1];
+                    m_version = 0;
+
+                    editor.init(m_id, m_version);
+                }
+            });
+
+
+        </script>
+    </body>
+</html>

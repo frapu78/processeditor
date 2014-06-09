@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="28064776" name=""
+    type="net.frapu.code.visualization.bpmn.BPMNModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="#id" value="23276589"/>
+            <property name="text" value="Pool"/>
+            <property name="height" value="192"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="522"/>
+            <property name="blackbox_pool" value="0"/>
+            <property name="y" value="156"/>
+            <property name="x" value="329"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="18464898"/>
+            <property name="text" value="A"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="100"/>
+            <property name="y" value="175"/>
+            <property name="x" value="246"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="26528364"/>
+            <property name="text" value="B"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="100"/>
+            <property name="y" value="175"/>
+            <property name="x" value="424"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.StartEvent"/>
+            <property name="#id" value="7804298"/>
+            <property name="text" value="New claim"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="175"/>
+            <property name="x" value="151"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.DataObject"/>
+            <property name="#id" value="13120210"/>
+            <property name="text" value="Claim"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="40"/>
+            <property name="y" value="116"/>
+            <property name="x" value="116"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="9047389"/>
+            <property name="#sourceNode" value="18464898"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="26528364"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="28420709"/>
+            <property name="#sourceNode" value="7804298"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="18464898"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="813251"/>
+            <property name="#sourceNode" value="13120210"/>
+            <property name="points" value="151,116"/>
+            <property name="#targetNode" value="7804298"/>
+        </edge>
+    </edges>
+</model>

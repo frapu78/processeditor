@@ -1,0 +1,23 @@
+\section{Code Examples}
+\label{code_examples}
+
+\begin{lstlisting}[language=Java, label=newtmp, caption=Add a new temporary model to the model manager]
+ProcessModel pm = <your code to get new model>;
+
+String newUri = ModelManager.getInstance().addTemporaryModel(pm);
+//newUri holds the complete URI relative to the server's root-URI
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java, label=mdt, caption=Track model changes and create model difference JSON]
+RequestFacade req;
+ProcessModel pm = <your code to get new model>;
+
+ModelDifferenceTracker mdt = new ModelDifferenceTracker( pm );
+pm.addListener(mdt);
+
+//apply your custom changes to the model
+
+pm.removeListener(mdt);
+JSONObject jo = mdt.toJSON(ModelRequestHandler
+		                          .getAbsoluteAddressPrefix(req));
+\end{lstlisting}

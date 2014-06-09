@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by michal (jakas) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sws-challenge.org/schemas/rnet/coreElements" xmlns:dict="http://www.sws-challenge.org/schemas/rnet/dictionary" targetNamespace="http://www.sws-challenge.org/schemas/rnet/coreElements" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>Authors: Michal Zaremba, Holger Lausen
+$Revision: 1.2 $
+$Date: 2006/03/22 17:05:21 $
+
+This XML Core Elements has been created on the basis of the RosettaNet specification (http://rosettanet.org/) 
+and is solely intended for the Semantic Web Challenge (http://www.sws-challenge.org/).</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+	<xs:import namespace="http://www.sws-challenge.org/schemas/rnet/dictionary" schemaLocation="3A4_PurchaseOrder_Dictionary.xsd"/>
+	<xs:element name="FreeFormText">
+		<xs:annotation>
+			<xs:documentation>Unformatted text.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+			<xs:attribute ref="xml:lang"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="businessName">
+		<xs:annotation>
+			<xs:documentation>The name of a business entity.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeFormText"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BusinessDescription">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe a business identity and location.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="businessName" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="addressLine1">
+		<xs:annotation>
+			<xs:documentation>The first line of a physical address.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeFormText"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="cityName">
+		<xs:annotation>
+			<xs:documentation>The name of a city.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeFormText"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NationalPostalCode">
+		<xs:annotation>
+			<xs:documentation>Code identifying geographic location as specified by a national postal code.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PhysicalAddress">
+		<xs:annotation>
+			<xs:documentation>The actual physical location of an entity as prescribed by local postal authorities, including country identification as it relates to the party or a product.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="addressLine1" minOccurs="0"/>
+				<xs:element ref="cityName" minOccurs="0"/>
+				<xs:element ref="dict:GlobalCountryCode" minOccurs="0"/>
+				<xs:element ref="NationalPostalCode" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PhysicalLocation">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that identify and describe the actual physical location of an entity as prescribed by local postal authorities, including country identification.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PhysicalAddress" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartnerDescription">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe a business partners' identity, their contact information, where they are physically located and their function in a supply chain.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BusinessDescription"/>
+				<xs:element ref="ContactInformation" minOccurs="0"/>
+				<xs:element ref="PhysicalLocation" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartnerRoleDescription">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe a business partners' role in a partner interface process.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContactInformation" minOccurs="0"/>
+				<xs:element ref="dict:GlobalPartnerRoleClassificationCode"/>
+				<xs:element ref="PartnerDescription"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MonetaryAmount">
+		<xs:annotation>
+			<xs:documentation>Magnitude of currency amount.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FinancialAmount">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe the monetary amount defined by a specified currency.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dict:GlobalCurrencyCode"/>
+				<xs:element ref="MonetaryAmount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="totalAmount">
+		<xs:annotation>
+			<xs:documentation>Total price for an entire business document.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FinancialAmount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="shipTo">
+		<xs:annotation>
+			<xs:documentation>The partner and/or location to which the product must be delivered.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartnerDescription"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DateStamp">
+		<xs:annotation>
+			<xs:documentation>Specifies a specific date. Date stamp based on the ISO 8601 specification. The "Z" following the day identifier (DD) is used to indicate Coordinated Universal Time. Informal format: YYYYMMDDZ</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransportationEvent">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe the occurrence of the public conveyance of goods as a commercial enterprise.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DateStamp"/>
+				<xs:element ref="dict:GlobalTransportEventCode"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="requestedEvent">
+		<xs:annotation>
+			<xs:documentation>The date a transportation event is requested to occur.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TransportationEvent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AffirmationIndicator">
+		<xs:annotation>
+			<xs:documentation>Used to indicate "Yes", "No" statements.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="isDropShip">
+		<xs:annotation>
+			<xs:documentation>Indicates whether the order is a drop shipment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AffirmationIndicator"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="toRole">
+		<xs:annotation>
+			<xs:documentation>The role receiving the document in a business document exchange.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartnerRoleDescription"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="requestingDocumentIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique tracking identification number that identifies a request.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProprietaryDocumentIdentifier"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProprietaryDocumentIdentifier">
+		<xs:annotation>
+			<xs:documentation>Unique identifier, i.e. a numeric value or alphanumeric value, for a business document.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LineNumber">
+		<xs:annotation>
+			<xs:documentation>Number of the line in the document.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="thisDocumentIdentifier">
+		<xs:annotation>
+			<xs:documentation>The information that identifies the business document being sent. This identifier is used to represent the specific business document associated with the defined business process.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProprietaryDocumentIdentifier"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DateTimeStamp">
+		<xs:annotation>
+			<xs:documentation>Specifies an instance in time. Based on the ISO 8601 specification where "YYYY" represents the year, "MM" the month and "DD" the day. The letter "T" is the date/time separator and "hh", "mm", "ss.sss" represent hour, minute and second respectively. This representation is immediately followed by a "Z" to indicate Coordinated Universal Time. Informal format: YYYYMMDDThhmmss</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="thisDocumentGenerationDateTime">
+		<xs:annotation>
+			<xs:documentation>The date-time stamp indicating when this business document was generated.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DateTimeStamp"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="contactName">
+		<xs:annotation>
+			<xs:documentation>Name of the contact person(s) within the organization.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeFormText"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EmailAddress">
+		<xs:annotation>
+			<xs:documentation>Electronic mail address.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CommunicationsNumber">
+		<xs:annotation>
+			<xs:documentation>The electro-technical communication number, e.g., telephone number, facsimile number, pager number.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="requestingDocumentDateTime">
+		<xs:annotation>
+			<xs:documentation>The date-time that the requesting business document was generated. This is the same as the date-time stamp of the original business document.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DateTimeStamp"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="totalLineItemAmount">
+		<xs:annotation>
+			<xs:documentation>The monetary total associated with a line item.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FinancialAmount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="requestedUnitPrice">
+		<xs:annotation>
+			<xs:documentation>The price requested for a unit of product.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FinancialAmount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GlobalProductIdentifier">
+		<xs:annotation>
+			<xs:documentation>Global unique product identifier. RosettaNet has adopted the Global Trade Identification Number (GTIN).</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProductIdentification">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe proprietary and global identifier information regarding a product.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GlobalProductIdentifier" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="buyerLineItem">
+		<xs:annotation>
+			<xs:documentation>Line number assigned to an item by the product buyer.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LineNumber"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProductQuantity">
+		<xs:annotation>
+			<xs:documentation>A quantity specifying the number of product units.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="shippedQuantity">
+		<xs:annotation>
+			<xs:documentation>Quantity of product shipped.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProductQuantity"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShippedQuantityInformation">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that describe information regarding the quantity of the product shipped.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DateTimeStamp"/>
+				<xs:element ref="shippedQuantity"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="requestedQuantity">
+		<xs:annotation>
+			<xs:documentation>The quantity of product requested.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProductQuantity"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="telephoneNumber">
+		<xs:annotation>
+			<xs:documentation>The numerical schema designed to achieve contact via telephone.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CommunicationsNumber"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="scheduledShipQuantity">
+		<xs:annotation>
+			<xs:documentation>Quantity of product shipped currently scheduled for shipment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProductQuantity"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactInformation">
+		<xs:annotation>
+			<xs:documentation>The collection of business properties that provide communication and address information for contacting a person, organization or business.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="contactName" minOccurs="0"/>
+				<xs:element ref="EmailAddress" minOccurs="0"/>
+				<xs:element ref="telephoneNumber" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="unitPrice">
+		<xs:annotation>
+			<xs:documentation>Agreed upon sale price for each unit ordered.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FinancialAmount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fromRole">
+		<xs:annotation>
+			<xs:documentation>The role initiating a business document exchange.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartnerRoleDescription"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

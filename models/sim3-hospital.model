@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="22070773" name="New process model"
+    type="net.frapu.code.visualization.petrinets.PetriNetModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Lane"/>
+            <property name="#id" value="21628568"/>
+            <property name="text" value="Doctor"/>
+            <property name="height" value="348"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="390"/>
+            <property name="floating" value="1"/>
+            <property name="y" value="371"/>
+            <property name="x" value="550"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Lane"/>
+            <property name="#id" value="2433307"/>
+            <property name="text" value="Nurse"/>
+            <property name="height" value="186"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="204"/>
+            <property name="floating" value="1"/>
+            <property name="y" value="360"/>
+            <property name="x" value="170"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Clock"/>
+            <property name="#id" value="13277814"/>
+            <property name="text" value=""/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="120"/>
+            <property name="y" value="50"/>
+            <property name="x" value="671"/>
+        </node>
+        <node>
+            <property name="font_style" value="3"/>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Comment"/>
+            <property name="#id" value="18068503"/>
+            <property name="text" value="Hospital Emergency Room (MBPF)"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1773810"/>
+            <property name="width" value="562"/>
+            <property name="font_size" value="32"/>
+            <property name="y" value="50"/>
+            <property name="x" value="308"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="29884515"/>
+            <property name="text" value="Start"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="y" value="132"/>
+            <property name="x" value="51"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.ResourcePlace"/>
+            <property name="#id" value="28261024"/>
+            <property name="text" value="Batch size"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="token_count" value="1"/>
+            <property name="y" value="132"/>
+            <property name="x" value="204"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="18607536"/>
+            <property name="duration" value="60"/>
+            <property name="text" value="Arrival Rate"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="cost" value=""/>
+            <property name="y" value="132"/>
+            <property name="x" value="130"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="27685468"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="303"/>
+            <property name="x" value="130"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="29795188"/>
+            <property name="duration" value="2"/>
+            <property name="text" value="Registration"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="cost" value=""/>
+            <property name="y" value="303"/>
+            <property name="x" value="225"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.LaborPlace"/>
+            <property name="#id" value="31114577"/>
+            <property name="max_token_count" value="1"/>
+            <property name="text" value="Nurse"/>
+            <property name="changeover_time" value="5"/>
+            <property name="height" value="50"/>
+            <property name="end_time" value="1600"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="start_time" value="0800"/>
+            <property name="y" value="387"/>
+            <property name="x" value="224"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="4650736"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="303"/>
+            <property name="x" value="313"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="31961965"/>
+            <property name="duration" value="0"/>
+            <property name="text" value="Greet the patient"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="cost" value=""/>
+            <property name="y" value="303"/>
+            <property name="x" value="407"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="14397555"/>
+            <property name="duration" value=""/>
+            <property name="text" value="Not serious"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="90"/>
+            <property name="cost" value=""/>
+            <property name="y" value="260"/>
+            <property name="x" value="545"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="268686"/>
+            <property name="duration" value=""/>
+            <property name="text" value="Serious"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="10"/>
+            <property name="cost" value=""/>
+            <property name="y" value="354"/>
+            <property name="x" value="545"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="25559255"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="303"/>
+            <property name="x" value="473"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="30191004"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="260"/>
+            <property name="x" value="621"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="24473694"/>
+            <property name="duration" value="5"/>
+            <property name="text" value="Order prescription"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="cost" value=""/>
+            <property name="y" value="260"/>
+            <property name="x" value="704"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="28365037"/>
+            <property name="text" value="Discharged"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="y" value="260"/>
+            <property name="x" value="807"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="#id" value="1786292"/>
+            <property name="duration" value="30"/>
+            <property name="text" value="Detailed examination"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="cost" value=""/>
+            <property name="y" value="355"/>
+            <property name="x" value="705"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="14529255"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="354"/>
+            <property name="x" value="619"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="23660623"/>
+            <property name="text" value="Admitted"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="y" value="354"/>
+            <property name="x" value="806"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.LaborPlace"/>
+            <property name="#id" value="13185652"/>
+            <property name="max_token_count" value="1"/>
+            <property name="text" value="Doctor"/>
+            <property name="changeover_time" value="5"/>
+            <property name="height" value="50"/>
+            <property name="end_time" value="1600"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="50"/>
+            <property name="start_time" value="0800"/>
+            <property name="y" value="462"/>
+            <property name="x" value="613"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="29597917"/>
+            <property name="sourceNode" value="28261024"/>
+            <property name="targetNode" value="18607536"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="7748668"/>
+            <property name="sourceNode" value="18607536"/>
+            <property name="targetNode" value="28261024"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="7113595"/>
+            <property name="sourceNode" value="29884515"/>
+            <property name="targetNode" value="18607536"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="3751317"/>
+            <property name="sourceNode" value="18607536"/>
+            <property name="targetNode" value="27685468"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="33173632"/>
+            <property name="sourceNode" value="27685468"/>
+            <property name="targetNode" value="29795188"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="8797474"/>
+            <property name="sourceNode" value="31114577"/>
+            <property name="targetNode" value="29795188"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="18322396"/>
+            <property name="sourceNode" value="29795188"/>
+            <property name="targetNode" value="31114577"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="15497230"/>
+            <property name="sourceNode" value="29795188"/>
+            <property name="targetNode" value="4650736"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="12452738"/>
+            <property name="sourceNode" value="4650736"/>
+            <property name="targetNode" value="31961965"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="14185521"/>
+            <property name="sourceNode" value="31961965"/>
+            <property name="targetNode" value="25559255"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="11815874"/>
+            <property name="sourceNode" value="25559255"/>
+            <property name="targetNode" value="14397555"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="14275025"/>
+            <property name="sourceNode" value="25559255"/>
+            <property name="targetNode" value="268686"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="6169879"/>
+            <property name="sourceNode" value="14397555"/>
+            <property name="targetNode" value="30191004"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="13974914"/>
+            <property name="sourceNode" value="30191004"/>
+            <property name="targetNode" value="24473694"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="28916179"/>
+            <property name="sourceNode" value="24473694"/>
+            <property name="targetNode" value="28365037"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="25388325"/>
+            <property name="sourceNode" value="268686"/>
+            <property name="targetNode" value="14529255"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="23436655"/>
+            <property name="sourceNode" value="14529255"/>
+            <property name="targetNode" value="1786292"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="4394287"/>
+            <property name="sourceNode" value="1786292"/>
+            <property name="targetNode" value="23660623"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="1483639"/>
+            <property name="sourceNode" value="13185652"/>
+            <property name="targetNode" value="31961965"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="4581647"/>
+            <property name="sourceNode" value="24473694"/>
+            <property name="targetNode" value="13185652"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="29886762"/>
+            <property name="sourceNode" value="1786292"/>
+            <property name="targetNode" value="13185652"/>
+        </edge>
+    </edges>
+</model>

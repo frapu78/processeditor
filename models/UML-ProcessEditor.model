@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="242441588" name="UML-ProcessEditor.model" type="net.frapu.code.visualization.uml.ClassModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="ProcessEditor"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="1066019379"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="54"/>
+            <property name="x" value="267"/>
+        </node>
+        <node>
+            <property name="abstract" value="1"/>
+            <property name="methods" value=""/>
+            <property name="text" value="ProcessModel"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="1304460402"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="159"/>
+            <property name="x" value="267"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="BPMN 2.0"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="778344049"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="283"/>
+            <property name="x" value="57"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="PetriNets"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="234574605"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="280"/>
+            <property name="x" value="162"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value="method1(),method2()"/>
+            <property name="text" value="ClassDiagram"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="112"/>
+            <property name="#id" value="296735574"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="104"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value="uses:int,person:String"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Person;http://frapu.net/owl/invoice-basic.owl#Item"/>
+            <property name="y" value="298"/>
+            <property name="x" value="400"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="Reports"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="430467735"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="282"/>
+            <property name="x" value="267"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="Ontology"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="246568795"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="278"/>
+            <property name="x" value="530"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="577937112"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="1066019379"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1304460402"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="#id" value="677742787"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="234574605"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1304460402"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="#id" value="295661661"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="296735574"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1304460402"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="#id" value="1544176245"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="430467735"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1304460402"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="#id" value="1238902512"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="778344049"/>
+            <property name="label" value=""/>
+            <property name="points" value="79,231"/>
+            <property name="#targetNode" value="1304460402"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="#id" value="557028114"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="246568795"/>
+            <property name="label" value=""/>
+            <property name="points" value="422,213"/>
+            <property name="#targetNode" value="1304460402"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#source" value=""/>
+        <property name="#creationDate" value="16. Februar 2010 11:55:54 MEZ"/>
+        <property name="name" value="UML-ProcessEditor.model"/>
+        <property name="#data" value=""/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\ff\Eigene Dateien\Eclipse-Workspace\code\Processeditor\models\UML-ProcessEditor.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

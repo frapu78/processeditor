@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="IBISWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Workflows"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflows">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="WorkflowGroup"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="WorkflowGroupName"/>
+        <xs:element maxOccurs="unbounded" ref="Workflow"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowGroupName" type="xs:string"/>
+  <xs:element name="Workflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="WorkflowName"/>
+        <xs:element ref="WorkflowUId"/>
+        <xs:element minOccurs="0" ref="Comment"/>
+        <xs:element ref="CheckinComment"/>
+        <xs:element ref="IsActive"/>
+        <xs:element minOccurs="0" ref="PortalProcessRoles"/>
+        <xs:choice minOccurs="0">
+          <xs:element ref="Metadata"/>
+          <xs:element ref="Properties"/>
+        </xs:choice>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="CorrelationSets"/>
+          <xs:element ref="PartnerLinks"/>
+          <xs:element ref="Schemas"/>
+          <xs:element ref="Variables"/>
+          <xs:element ref="WSDLs"/>
+          <xs:element ref="WorkflowModule"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:NCName"/>
+      <xs:attribute name="workflowType" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowUId" type="xs:NMTOKEN"/>
+  <xs:element name="CheckinComment" type="xs:string"/>
+  <xs:element name="IsActive" type="xs:boolean"/>
+  <xs:element name="PortalProcessRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="RoleName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleName" type="xs:string"/>
+  <xs:element name="CorrelationSets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CorrelationSet"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CorrelationSet">
+    <xs:complexType>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="properties" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartnerLinks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="PartnerLink"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartnerLink">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="InvokedEndpoint"/>
+        <xs:element ref="ProvidedEndpoint"/>
+      </xs:choice>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvokedEndpoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Properties"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvidedEndpoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Properties"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Schemas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Schema"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Schema">
+    <xs:complexType mixed="true">
+      <xs:attribute name="location" type="xs:NCName"/>
+      <xs:attribute name="name" type="xs:NCName"/>
+      <xs:attribute name="namespace" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Variables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Variable"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Variable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Part"/>
+      </xs:sequence>
+      <xs:attribute name="element" type="xs:NMTOKEN"/>
+      <xs:attribute name="messageType" type="xs:NMTOKEN"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="type" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Part">
+    <xs:complexType>
+      <xs:attribute name="element" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSDLs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="WSDL"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSDL">
+    <xs:complexType mixed="true">
+      <xs:attribute name="location" use="required" type="xs:NCName"/>
+      <xs:attribute name="namespace" use="required" type="xs:anyURI"/>
+      <xs:attribute name="originalLocation" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ModuleId"/>
+        <xs:element minOccurs="0" ref="ModuleName"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="Comment"/>
+          <xs:element ref="Metadata"/>
+          <xs:element ref="Properties"/>
+          <xs:element ref="StyleSheet"/>
+          <xs:element ref="Assignments"/>
+          <xs:element ref="Connection"/>
+          <xs:element ref="EndLoopId"/>
+          <xs:element ref="ParentModule"/>
+          <xs:element ref="WorkflowLink"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="moduleType" use="required" type="xs:NCName"/>
+      <xs:attribute name="version" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModuleId" type="xs:integer"/>
+  <xs:element name="ModuleName" type="xs:string"/>
+  <xs:element name="Assignments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="copy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="copy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="from"/>
+        <xs:element ref="to"/>
+      </xs:sequence>
+      <xs:attribute name="ignoreMissingFromData" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="from">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="query"/>
+        <xs:element ref="literal"/>
+        <xs:element ref="xsl"/>
+      </xs:choice>
+      <xs:attribute name="contentEncoding" type="xs:NCName"/>
+      <xs:attribute name="contentType"/>
+      <xs:attribute name="deleteAfterwards" type="xs:boolean"/>
+      <xs:attribute name="expressionLanguage" type="xs:anyURI"/>
+      <xs:attribute name="transformationSource"/>
+      <xs:attribute name="useEmbeddedXsl" type="xs:boolean"/>
+      <xs:attribute name="useInputDataStream" type="xs:boolean"/>
+      <xs:attribute name="variable" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="literal">
+    <xs:complexType mixed="true">
+      <xs:attribute name="containsEscapedXml" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="xsl">
+    <xs:complexType mixed="true">
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="to">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="query"/>
+      </xs:sequence>
+      <xs:attribute name="moduleProperty" type="xs:NCName"/>
+      <xs:attribute name="useInputDataStream" type="xs:boolean"/>
+      <xs:attribute name="variable" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Connection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="ConnectionName"/>
+        <xs:element minOccurs="0" ref="Comment"/>
+        <xs:element minOccurs="0" ref="ConnectionId"/>
+        <xs:element minOccurs="0" ref="Properties"/>
+        <xs:element minOccurs="0" ref="StyleSheet"/>
+      </xs:sequence>
+      <xs:attribute name="moduleOutId" use="required" type="xs:integer"/>
+      <xs:attribute name="scopeChildId" type="xs:integer"/>
+      <xs:attribute name="type" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectionName" type="xs:string"/>
+  <xs:element name="ConnectionId" type="xs:integer"/>
+  <xs:element name="EndLoopId" type="xs:integer"/>
+  <xs:element name="ParentModule">
+    <xs:complexType>
+      <xs:attribute name="moduleId" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="WorkflowLinkId"/>
+        <xs:element ref="WorkflowName"/>
+        <xs:element ref="WorkflowType"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="WorkflowWatchPoint"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowLinkId" type="xs:integer"/>
+  <xs:element name="WorkflowType" type="xs:NCName"/>
+  <xs:element name="WorkflowWatchPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="WorkflowWatchPointId"/>
+        <xs:element ref="From"/>
+        <xs:element ref="To"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowWatchPointId" type="xs:integer"/>
+  <xs:element name="From" type="xs:integer"/>
+  <xs:element name="To" type="xs:integer"/>
+  <xs:element name="WorkflowName" type="xs:string"/>
+  <xs:element name="Comment" type="xs:string"/>
+  <xs:element name="Metadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Property"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Properties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Property"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StyleSheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Junctures"/>
+      </xs:sequence>
+      <xs:attribute name="bgColor" type="xs:NMTOKEN"/>
+      <xs:attribute name="fontSize" type="xs:integer"/>
+      <xs:attribute name="fontStyle" type="xs:integer"/>
+      <xs:attribute name="height" type="xs:integer"/>
+      <xs:attribute name="labelDeltaX" type="xs:integer"/>
+      <xs:attribute name="labelDeltaY" type="xs:integer"/>
+      <xs:attribute name="labelHorizontalAlignment" type="xs:integer"/>
+      <xs:attribute name="labelPosition" type="xs:integer"/>
+      <xs:attribute name="labelVerticalAlignment" type="xs:integer"/>
+      <xs:attribute name="lineThickness" type="xs:decimal"/>
+      <xs:attribute name="lineType" type="xs:integer"/>
+      <xs:attribute name="percentOnTarget" type="xs:integer"/>
+      <xs:attribute name="sourceArrowType" type="xs:integer"/>
+      <xs:attribute name="targetArrowType" type="xs:integer"/>
+      <xs:attribute name="width" type="xs:integer"/>
+      <xs:attribute name="xPos" type="xs:integer"/>
+      <xs:attribute name="yPos" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Junctures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Point"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Point">
+    <xs:complexType>
+      <xs:attribute name="xPos" use="required" type="xs:integer"/>
+      <xs:attribute name="yPos" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="query" type="xs:string"/>
+  <xs:element name="Property">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Property"/>
+      </xs:sequence>
+      <xs:attribute name="applicationProfile"/>
+      <xs:attribute name="displayDescription"/>
+      <xs:attribute name="encrypted" type="xs:boolean"/>
+      <xs:attribute name="id"/>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="type" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

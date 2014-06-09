@@ -1,0 +1,46 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="../pics/icon_small.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Test page</title>
+
+        <link rel="stylesheet" type="text/css" href="../js/ext/resources/css/ext-all.css">
+        <link rel="stylesheet" type="text/css" href="../css/Processeditor.css">
+        <script language="JavaScript" src="../js/ext/bootstrap.js"></script>    
+        <script language="JavaScript" src="../js/util.js"></script>
+        <script language="JavaScript" src="../js/raphael.js"></script>
+        <script language="JavaScript" src="../js/pages/ColorField.js"></script>
+        
+        
+        <script language="JavaScript">
+            Ext.onReady(
+                function() {
+                    var f = new Ext.form.Panel({
+                        renderTo: document.body,
+                        width: 400,
+                        height : 200,
+                        items: [],
+                        title: "TestForm"
+                    });
+                    
+                    f.add( new Ext.form.field.Color({
+                        fieldLabel: "one",
+                        listeners: {
+                            select: function( field, value ) {
+//                                alert("getValue: " + field.getValue())
+//                                alert("getRaw " + field.getRawValue())
+                            }
+                        }
+                    }));
+                }
+            )
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

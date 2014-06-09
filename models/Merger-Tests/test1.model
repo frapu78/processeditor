@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="31564808" name="" type="net.frapu.code.visualization.bpmn.BPMNModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="7579563"/>
+            <property name="text" value="Test"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="600"/>
+            <property name="x" value="100"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="7295144"/>
+            <property name="text" value="Test"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="200"/>
+            <property name="x" value="100"/>
+        </node>
+    </nodes>
+    <edges/>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="22. Juni 2010 17:35:56 MESZ"/>
+        <property name="name" value=""/>
+        <property name="#uri" value=""/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

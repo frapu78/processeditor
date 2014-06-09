@@ -1,0 +1,101 @@
+\section{Plug-In Responses}
+\label{response_section}
+
+The body of the HTTP response of a plug-in consists of a flag indicating the success of the operation, an action, and a data block that is required for processing the action. Responses are delivered in JSON format. The possible actions are listed in the enumeration \textit{PluginResponseType} which is contained in \verb!ServerPlugin.java!. The following sections describe each action in detail.
+
+\subsection{OPEN - Action}
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\textbf{Description} & Opens a new window or browser tab (depending on browser). \\
+			& This can usually be used to open new models. \\
+			\addlinespace
+			\textbf{Required data} & The URI that should be opened. \\
+			\bottomrule						
+		\end{tabular}
+	\end{table}
+	
+	\paragraph{Remark} To add new temporary models to the model manager and return the corresponding URL, the code of Listing \ref{newtmp} in Section \ref{code_examples} might help.
+	
+	\subsubsection{Response Format}
+	\begin{lstlisting}
+{
+	success: true,
+	action: 'OPEN',
+	uri: '/your/valid/uri/starting/with/slash'
+}
+	\end{lstlisting}
+	
+\subsection{UPDATE - Action}
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\textbf{Description} & Update the current model. This includes changes of node and edge\\
+			&representations, their positions, as
+			well as their creation, or removal.\\
+			&Changes of element positions are animated. \\
+			\addlinespace
+			\textbf{Required data} & Model difference information. For details see the description in Section \ref{layout_data}\\
+			\bottomrule						
+		\end{tabular}
+	\end{table}
+	
+	\subsubsection{Model Difference Data}
+	\label{layout_data}
+	Model difference data is used to communicate server side changes of a model to the editor. It states which nodes and edges have been changed, removed, or created and provides the necessary data. For details on the data format see class \textit{ModelDifferenceTracker}.
+	
+	Listing \ref{mdt} shows an example of how a \textit{ModelDifferenceTracker} can be used to collect the necessary information. 	
+	\subsubsection{Response Format}
+		\begin{lstlisting}
+{
+	success: true,
+	action: 'UPDATE',
+	data: <model difference data>
+}
+		\end{lstlisting}	
+	
+\subsection{INFO - Action}	
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\textbf{Description} & Display an informative message to the user. \\
+			& The generated dialog will show an INFO icon.\\
+			\addlinespace
+			\textbf{Required data} & The message that should be displayed.\\
+			\bottomrule						
+		\end{tabular}
+	\end{table}
+	
+	\subsubsection{Response Format}
+		\begin{lstlisting}
+{
+	success: true,
+	action: 'INFO',
+	infomsg: 'Your message to display'
+}
+		\end{lstlisting}
+	
+\subsection{ERROR - Action}
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\textbf{Description} & Display an error message to the user. \\
+			& The generated dialog will show an ERROR icon.\\
+			\addlinespace
+			\textbf{Required data} & The message that should be displayed.\\
+			\bottomrule						
+		\end{tabular}
+	\end{table}
+	
+	\subsubsection{JSON Response Format}
+		\begin{lstlisting}
+{
+	success: false
+	action: 'ERROR',
+	errormsg: 'Your message to display'
+}
+		\end{lstlisting}	

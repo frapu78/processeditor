@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1186110621" name="ArchiMate Example" type="net.frapu.code.visualization.archimate.ArchimateModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Group"/>
+            <property name="#id" value="1669610660"/>
+            <property name="#nodes" value="1635190287;263947924"/>
+            <property name="text" value="External business services"/>
+            <property name="height" value="118"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1445391"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="564"/>
+            <property name="y" value="225"/>
+            <property name="collapsed" value="0"/>
+            <property name="x" value="310"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Claims payment service"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="996318870"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessService"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="230"/>
+            <property name="x" value="494"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Customer information service"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="263947924"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessService"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="230"/>
+            <property name="x" value="247"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Claim registration service"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="1635190287"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessService"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="230"/>
+            <property name="x" value="102"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Group"/>
+            <property name="#id" value="191764354"/>
+            <property name="#nodes" value="60365179;271186235;2012664547;1838117532"/>
+            <property name="text" value="Roles and actors"/>
+            <property name="height" value="118"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1445391"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="564"/>
+            <property name="y" value="76"/>
+            <property name="collapsed" value="0"/>
+            <property name="x" value="311"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Insurer"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="1838117532"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessRole"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="90"/>
+            <property name="x" value="527"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="ArchiInsurance"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="2012664547"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessActor"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="90"/>
+            <property name="x" value="382"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Insurant"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="271186235"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessRole"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="90"/>
+            <property name="x" value="247"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Client"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="60365179"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessActor"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="90"/>
+            <property name="x" value="102"/>
+        </node>
+        <node>
+            <property name="#nodes" value="1932654873;292981514;1869198958;70275790"/>
+            <property name="text" value="Damage claiming process"/>
+            <property name="color_background" value="-1445391"/>
+            <property name="width" value="564"/>
+            <property name="collapsed" value="0"/>
+            <property name="#id" value="1055571247"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessProcess"/>
+            <property name="height" value="108"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="362"/>
+            <property name="x" value="312"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Payment"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="70275790"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessProcess"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="366"/>
+            <property name="x" value="527"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Valuation"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="1869198958"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessProcess"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="366"/>
+            <property name="x" value="382"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Acceptance"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="292981514"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessProcess"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="366"/>
+            <property name="x" value="247"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Registration"/>
+            <property name="color_background" value="-2171137"/>
+            <property name="width" value="80"/>
+            <property name="collapsed" value="1"/>
+            <property name="#id" value="1932654873"/>
+            <property name="#type" value="net.frapu.code.visualization.archimate.BusinessProcess"/>
+            <property name="height" value="50"/>
+            <property name="symbol_only" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="366"/>
+            <property name="x" value="102"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Assignment"/>
+            <property name="#id" value="420824846"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="60365179"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="271186235"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Assignment"/>
+            <property name="#id" value="1689098229"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="2012664547"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1838117532"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Assignment"/>
+            <property name="#id" value="1018679012"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1838117532"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1055571247"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="32,24"/>
+            <property name="#target_dockpoint" value="247,-54"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Association"/>
+            <property name="#id" value="1701376584"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1932654873"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="292981514"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Association"/>
+            <property name="#id" value="286689290"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="292981514"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1869198958"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Association"/>
+            <property name="#id" value="196620025"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1869198958"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="70275790"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Realization"/>
+            <property name="#id" value="915227122"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1932654873"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1635190287"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Realization"/>
+            <property name="#id" value="468837990"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="292981514"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="263947924"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.Realization"/>
+            <property name="#id" value="926501147"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="70275790"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="996318870"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="-20,-25"/>
+            <property name="#target_dockpoint" value="13,24"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.UsedBy"/>
+            <property name="#id" value="206365735"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="996318870"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="271186235"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value="39,24"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.UsedBy"/>
+            <property name="#id" value="1294922950"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="263947924"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="271186235"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.archimate.UsedBy"/>
+            <property name="#id" value="1160953360"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1635190287"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="271186235"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value="-40,24"/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="16. August 2010 11:49:35 MESZ"/>
+        <property name="name" value="ArchiMate Example"/>
+        <property name="#folder" value="/home/ic"/>
+        <property name="#uri" value="http://127.0.0.1:1205/models/1186110621/versions/5"/>
+        <property name="comment" value=""/>
+        <property name="#editor" value="ic"/>
+    </properties>
+</model>

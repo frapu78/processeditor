@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="2195047" name="New process model" type="net.frapu.code.visualization.bpmn.BPMNModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Shipper"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="100"/>
+            <property name="#id" value="9232714"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="multi_instance" value="0"/>
+            <property name="blackbox_pool" value="1"/>
+            <property name="y" value="210"/>
+            <property name="x" value="260"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Customer"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="100"/>
+            <property name="#id" value="12085572"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="multi_instance" value="0"/>
+            <property name="blackbox_pool" value="1"/>
+            <property name="y" value="46"/>
+            <property name="x" value="103"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Dealer"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="100"/>
+            <property name="#id" value="2870450"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="multi_instance" value="0"/>
+            <property name="blackbox_pool" value="1"/>
+            <property name="y" value="46"/>
+            <property name="x" value="395"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Conversation"/>
+            <property name="#id" value="3753263"/>
+            <property name="call" value="0"/>
+            <property name="text" value="Shipment"/>
+            <property name="compound" value="0"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="118"/>
+            <property name="x" value="260"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Conversation"/>
+            <property name="#id" value="5002799"/>
+            <property name="call" value="0"/>
+            <property name="text" value="Payment"/>
+            <property name="compound" value="0"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="46"/>
+            <property name="x" value="260"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ConversationLink"/>
+            <property name="#id" value="9124787"/>
+            <property name="fork" value="0"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="9232714"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="3753263"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ConversationLink"/>
+            <property name="#id" value="16555646"/>
+            <property name="fork" value="0"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="3753263"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="12085572"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ConversationLink"/>
+            <property name="#id" value="624020"/>
+            <property name="fork" value="0"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="12085572"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="5002799"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ConversationLink"/>
+            <property name="#id" value="2149003"/>
+            <property name="fork" value="0"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="5002799"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="2870450"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ConversationLink"/>
+            <property name="#id" value="13727231"/>
+            <property name="fork" value="0"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="3753263"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="2870450"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="28. Juni 2010 16:31:54 MESZ"/>
+        <property name="name" value="New process model"/>
+        <property name="#uri" value="C:\Users\fpu.INUBIT\Documents\NetBeansProjects\Processeditor\models\BPMN-conversation.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

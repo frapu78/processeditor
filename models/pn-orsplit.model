@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="399201387" name=""
+    type="net.frapu.code.visualization.petrinets.PetriNetModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="818639088"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="103"/>
+            <property name="x" value="151"/>
+        </node>
+        <node>
+            <property name="text" value="Upper"/>
+            <property name="width" value="30"/>
+            <property name="cost" value=""/>
+            <property name="#id" value="1360685958"/>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="duration" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="y" value="48"/>
+            <property name="x" value="231"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="1738984940"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="48"/>
+            <property name="x" value="300"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="1079688734"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="155"/>
+            <property name="x" value="300"/>
+        </node>
+        <node>
+            <property name="text" value="Lower"/>
+            <property name="width" value="30"/>
+            <property name="cost" value=""/>
+            <property name="#id" value="386882616"/>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="duration" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="y" value="155"/>
+            <property name="x" value="231"/>
+        </node>
+        <node>
+            <property name="text" value="Upper&amp;Lower"/>
+            <property name="width" value="30"/>
+            <property name="cost" value=""/>
+            <property name="#id" value="2090165444"/>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="duration" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="y" value="103"/>
+            <property name="x" value="231"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="847141562"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="103"/>
+            <property name="x" value="38"/>
+        </node>
+        <node>
+            <property name="text" value=""/>
+            <property name="width" value="30"/>
+            <property name="cost" value=""/>
+            <property name="#id" value="544191361"/>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="duration" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="y" value="103"/>
+            <property name="x" value="94"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="1005173589"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="818639088"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1360685958"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="595093382"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="818639088"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="386882616"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="1991279916"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="386882616"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1079688734"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="852267618"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1360685958"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1738984940"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="1963633841"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="818639088"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="2090165444"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="756918633"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="847141562"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="544191361"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="968317577"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="544191361"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="818639088"/>
+            <property name="curved" value="0"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="1879341237"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="2090165444"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="1738984940"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="282411136"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="2090165444"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="1079688734"/>
+        </edge>
+    </edges>
+</model>

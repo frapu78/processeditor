@@ -1,0 +1,684 @@
+<?xml version="1.0"?>
+<ValidationMessages>
+    <message name="unsupportedModel" type="error">
+        <fullText>Validation is currently not supported for this type of diagram.</fullText>
+        <shortText>Unsupported Model</shortText>
+    </message>
+    <message name="forbiddenNode" type="error">
+        <fullText>This node is not allowed in this type of diagram.</fullText>
+        <shortText>Forbidden Node</shortText>
+    </message>
+    <message name="forbiddenEdge" type="error">
+        <fullText>This edge is not allowed in this type of diagram.</fullText>
+        <shortText>Forbidden Edge</shortText>
+    </message>
+    <message name="edgeWithoutTarget" type="error">
+        <fullText>This edge has no target in this model, but every edge must have a target</fullText>
+        <shortText>Edge without a target</shortText>
+    </message>
+    <message name="edgeWithoutSource" type="error">
+        <fullText>This edge has no source in this model, but every edge must have a source</fullText>
+        <shortText>Edge without a source</shortText>
+    </message>
+    <message name="sequenceFlowCrossingSubProcess" type="error" fatal="true">
+        <fullText>A SequenceFlow-edge must not cross the border of a SubProcess or SubChoreography.</fullText>
+        <shortText>SequenceFlow crossing SubProcess-border</shortText>
+    </message>
+    <message name="sequenceFlowCrossingPool" type="error" fatal="true">
+        <fullText>A SequenceFlow-edge must not cross the border of a Pool. Use MessageFlow instead.</fullText>
+        <shortText>SequenceFlow crossing Pool-border</shortText>
+    </message>
+    <message name="messageFlowInPool" type="error">
+        <fullText>MessageFlow must cross a Pool-border. Use SequenceFlow instead.</fullText>
+        <shortText>MessageFlow inside one Process</shortText>
+    </message>
+    <message name="illegalSequenceFlowSource" type="error" fatal="true">
+        <fullText>The origin of this SequenceFlow-edge must not be the origin of any SequenceFlow.</fullText>
+        <shortText>Illegal source of SequenceFlow</shortText>
+    </message>
+    <message name="illegalSequenceFlowTarget" type="error" fatal="true">
+        <fullText>The target of this SequenceFlow-edge must not be the target of any SequenceFlow.</fullText>
+        <shortText>Illegal target of SequenceFlow</shortText>
+    </message>
+    <message name="sequenceFlowToAttachedEvent" type="error" fatal="true">
+        <fullText>An attached IntermediateEvent may not have any incomming SequenceFlow.</fullText>
+        <shortText>Attached node with incomming SequenceFlow</shortText>
+    </message>
+    <message name="flowBetweenCompensationAndNormalProcess" type="error">
+        <fullText>SequenceFlow must not connect nodes belonging to the usual flow of the process with nodes, that are used for compensation.</fullText>
+        <shortText>SequenceFlow between normal Process and Compensation</shortText>
+    </message>
+    <message name="illegalMessageFlowSource" type="error">
+        <fullText>The origin of this MessageFlow-edge must not be the origin of any MessageFlow-edge.</fullText>
+        <shortText>Illegal source of MessageFlow</shortText>
+    </message>
+    <message name="illegalMessageFlowTarget" type="error">
+        <fullText>The target of this MessageFlow-edge must not be the target of any MessageFlow-edge.</fullText>
+        <shortText>Illegal target of MessageFlow</shortText>
+    </message>
+    <message name="illegalAssociationSourceTargetCombination" type="error">
+        <fullText>An association must have an artifact as its source  or target and must not connect two DataObjects/DataStores or two Annotations. In Exception, an association may connect from an attached IntermediateCompensationEvent to the compensation-handler (activity).</fullText>
+        <shortText>Illegal Association</shortText>
+    </message>
+    <message name="associationCrossingPool" type="error">
+        <fullText>An association is not allowed to cross the border of a pool, unless it connects to an Annotation.</fullText>
+        <shortText>Association crossing a Pool-border</shortText>
+    </message>
+    <message name="associationShouldBeDirected" type="warning">
+        <fullText>An association between an Activity and a DataObject or DataStore should be unidirectional in order to indicate, whether data is read or written.</fullText>
+        <shortText>Association should be directed</shortText>
+    </message>
+    <message name="poolInCluster" type="error">
+        <fullText>A Pool must not be contained in any other Cluster</fullText>
+        <shortText>Pool in Cluster</shortText>
+    </message>
+    <message name="sequenceFlowToStartEvent" type="error">
+        <fullText>A StartEvent must not hav incomming SequenceFlow.</fullText>
+        <shortText>StartEvent with incomming SequenceFlow</shortText>
+    </message>
+    <message name="unlabeledActivity" type="info">
+        <fullText>Every Activity should have a label, that indicates, what is done.</fullText>
+        <shortText>Unlabeled Activity</shortText>
+    </message>
+    <message name="unlabeledEvent" type="info">
+        <fullText>An event should have a text, that states, for which condition this Event stands</fullText>
+        <shortText>Unlabeled Event</shortText>
+    </message>
+    <message name="unlabeledConditionalFlow" type="info">
+        <fullText>Conditional Flow should have a text, that states the condition for its execution</fullText>
+        <shortText>Unlabeled Conditional Flow</shortText>
+    </message>
+    <message name="unlabeledFlowFromDecisionGateway" type="info">
+        <fullText>Outgoing SequenceFlow from a databased decision-gateway should have a label stating the condition for its execution.</fullText>
+        <shortText>Unlabeled flow from decision-gateway</shortText>
+    </message>
+    <message name="unlabeledPool" type="info">
+        <fullText>A Pool should have a label, that specifies the participant or type of participant, which the pool represents.</fullText>
+        <shortText>Unlabeled Pool</shortText>
+    </message>
+    <message name="unlabeledLane" type="info">
+        <fullText>A lane should have a label, that specifies the organizational unit, which the lane stands for.</fullText>
+        <shortText>Unlabeled Lane</shortText>
+    </message>
+    <message name="unlabeledComplexGateway" type="info">
+        <fullText>A ComplexGateway should have a label describing the behavior of this gateway.</fullText>
+        <shortText>Unlabeled ComplexGateway</shortText>
+    </message>
+    <message name="unlabeledDataObject" type="info">
+        <fullText>A DataObject should have a label describing the represented data</fullText>
+        <shortText>Unlabeled DataObject</shortText>
+    </message>
+    <message name="unlabeledDataStore" type="info">
+        <fullText>A DataStore should have a label describing the type of data inside the DataStore</fullText>
+        <shortText>Unlabeled DataStore</shortText>
+    </message>
+    <message name="unlabeledMessageEvent" type="info">
+        <fullText>At least the MessageEvent or the MessageFlow should be labeled to indicate the type of message sent.</fullText>
+        <shortText>Unlabeled Message Event and Flow</shortText>
+    </message>
+    <message name="unlabeledChoreographyActivity" type="info">
+        <fullText>A ChoreographyActivity should have a label describing the communication done in this activity</fullText>
+        <shortText>Unlabeled ChoreographyActivity</shortText>
+    </message>
+    <message name="onlyConditionalOutgoingSequenceFlow" type="error">
+        <fullText>If there is outgoing SequenceFlow from a Node, that is not a Gateway, at least one of the SequenceFlow-edges must not be conditional.</fullText>
+        <shortText>Only conditional outgoing SequenceFlow</shortText>
+    </message>
+    <message name="illegalNodeAfterEventBasedGateway" type="error" fatal="true">
+        <fullText>Only catching Message-, Timer-, Conditional-, Signal- and Multiple-IntermediateEvents and ReceiveTasks may follow an EventBasedGateway.</fullText>
+        <shortText>Illegal Node following an EventBasedGateway</shortText>
+    </message>
+    <message name="receiveTaskAndMessageEventAfterEBGW" type="warning">
+        <fullText>If an EventBasedGateway is followed by a MessageIntermediateEvent, it must not be followed by a Receive Task and vice versa.</fullText>
+        <shortText>Illegal EventBasedGateway-configuration</shortText>
+    </message>
+    <message name="nodeAfterEBGWWithOtherIncommingSequenceFlow" type="error">
+        <fullText>A Node following an EventBasedGateway must not have any other incomming SequenceFlow than the one from the EventBasedGateway.</fullText>
+        <shortText>Illegal incomming SequenceFlow after an EventBasedGateway</shortText>
+    </message>
+    <message name="taskFollowingEBGWHasAttachedEvent" type="error">
+        <fullText>A Task following an EventBasedGateway must not have an attached Event.</fullText>
+        <shortText>Illegal attached Event</shortText>
+    </message>
+    <message name="conditionalFlowFromEBGW" type="error">
+        <fullText>An EventBasedGateway must not have outgoing conditional SequenceFlow.</fullText>
+        <shortText>EventBasedGateway with outgoing conditional Flow</shortText>
+    </message>
+    <message name="onlyOneSequenceFlowFromEBGW" type="error">
+        <fullText>An EventBasedGateway must have at least two outgoing SequenceFlow-edges.</fullText>
+        <shortText>EventBasedGateway with only one outgoing SequenceFlow</shortText>
+    </message>
+    <message name="poolContainingLanesAndOtherNodes" type="error">
+        <fullText>This pool contains at least one lane and at least one other node. Either all nodes should be directly contained in the pool and the pool should not contain lanes or every node should be contained in a lane. You could try moving the nodes out of the pool and in again in order to achieve this.</fullText>
+        <shortText>Pool contains lanes and other nodes</shortText>
+    </message>
+    <message name="abstractTaskWithIncommingMessageFlow" type="warning">
+        <fullText>A Task, that has incomming MessageFlow should be marked as a Receive-Task.</fullText>
+        <shortText>Unmarked Receive-Task</shortText>
+    </message>
+    <message name="receiveTaskWithoutMessageFlow" type="warning">
+        <fullText>A Receive-Task should have incomming MessageFlow. You could, for example, use a plain Task, if it has no incomming MessageFlow.</fullText>
+        <shortText>Receive-Task without MessageFlow</shortText>
+    </message>
+    <message name="receiveTaskWithOutgoingMessageFlow" type="warning">
+        <fullText>A Receive-Task must not have outgoing MessageFlow, but should have incomming MessageFlow. You should use a ReceiveTask at this point.</fullText>
+        <shortText>Receive-Task with outgoing MessageFlow</shortText>
+    </message>
+    <message name="receiveTaskWithOutgoingMessageFlowAndConversationLink" type="warning">
+        <fullText>A Receive-Task must not have outgoing MessageFlow. A Send-Task or a Service-Task might be appropriate here, depending on the task´s participation in the conversation.</fullText>
+        <shortText>Receive-Task with outgoing MessageFlow</shortText>
+    </message>
+    <message name="receiveTaskWithIncommingAndOutgoingMessageFlow" type="warning">
+        <fullText>A Receive-Task must not have outgoing MessageFlow. Maybe a Service-Task could be appropriate at this point.</fullText>
+        <shortText>Receive-Task with outgoing MessageFlow</shortText>
+    </message>
+    <message name="abstractTaskWithOutgoingMessageFlow" type="warning">
+        <fullText>A Task, that has outgoing MessageFlow should be marked as a Send-Task.</fullText>
+        <shortText>Unmarked Send-Task</shortText>
+    </message>
+    <message name="sendTaskWithoutMessageFlow" type="warning">
+        <fullText>A Send-Task should have outgoing MessageFlow. You could, for example, use a plain Task, if it has no incomming MessageFlow.</fullText>
+        <shortText>Send-Task without MessageFlow</shortText>
+    </message>
+    <message name="sendTaskWithIncommingMessageFlow" type="warning">
+        <fullText>A Send-Task must not have incomming MessageFlow, but should have outgoing MessageFlow. You should use a Receive-Task here.</fullText>
+        <shortText>Send-Task with incomming MessageFlow</shortText>
+    </message>
+    <message name="sendTaskWithIncommingAndOutgoingMessageFlow" type="warning">
+        <fullText>A Send-Task must not have incomming MessageFlow.  Maybe a Service-Task could be appropriate at this point.</fullText>
+        <shortText>Send-Task with incomming MessageFlow</shortText>
+    </message>
+    <message name="sendTaskWithIncommingMessageFlowAndConversationLink" type="warning">
+        <fullText>A Send-Task must not have incomming MessageFlow.  This task could be a Receive-Task or Service-Task, depending on this task´s participation in the conversation.</fullText>
+        <shortText>Send-Task with incomming MessageFlow</shortText>
+    </message>
+    <message name="abstractTaskWithIncommingAndOutgoingMessageFlow" type="warning">
+        <fullText>A plain Task should not have incomming or outgoing MessageFlow. A Service-Task might be appropriate here.</fullText>
+        <shortText>Plain Task with incomming and outgoing Messages</shortText>
+    </message>
+    <message name="abstractTaskWithConversationLink" type="warning">
+        <fullText>A plain Task should not be part of a conversation. Depending on the type of participation in this conversation, this task should be marked as a Send-, Receive- or Service-Task.</fullText>
+        <shortText>Plain Task in a Conversation</shortText>
+    </message>
+    <message name="serviceTaskWithOnlyIncommingMessageFlow" type="warning">
+        <fullText>A Service-Task typically has incomming and outgoing MessageFlow. A Receive-Task might be more appropriate here.</fullText>
+        <shortText>ServiceTask without outgoing Message</shortText>
+    </message>
+    <message name="serviceTaskWithOnlyOutgoingMessageFlow" type="warning">
+        <fullText>A Service-Task typically has incomming and outgoing MessageFlow. A Send-Task might be more appropriate here.</fullText>
+        <shortText>Service-Task without incomming Message</shortText>
+    </message>
+    <message name="serviceTaskWithoutMessageFlow" type="warning">
+        <fullText>A Service-Task should have incomming and outgoing MessageFlow in order to indicate, what service is used and which messages are sent to do this.</fullText>
+        <shortText>Service-Task without MessageFlow</shortText>
+    </message>
+    <message name="taskWithInAndOutMessageFlowWithMultiplePartners" type="warning">
+        <fullText>A task should not have incomming and outgoing MessageFlow with multiple communication-partners. You should try to split this Task into multiple tasks, each being only a Send- or Receive-Task or communicating with only one partner.</fullText>
+        <shortText>Bidirectional communication with multiple partners</shortText>
+    </message>
+    <message name="multipleIncomingMessageFlowsToIntermediateEvent" type="warning">
+        <fullText>A MessageIntermediateEvent must not have multiple incomming MessageFlows or be part of multiple conversations. You should use a Multiple or ParallelMultiple Event.</fullText>
+        <shortText>Too many incomming MessageFlow-edges</shortText>
+    </message>
+    <message name="multipleIncomingMessageFlowsToMessageStartEvent" type="warning">
+        <fullText>A MessageStartEvent must not have multiple incomming MessageFlows or be part of multiple conversations. You should use a Multiple or ParallelMultiple StartEvent.</fullText>
+        <shortText>Too many incomming MessageFlow-edges</shortText>
+    </message>
+    <message name="multipleOutgoingMessageFlowsFromIntermediateEvent" type="warning">
+        <fullText>A MessageIntermediateEvent must not have multiple outoing MessageFlows or be part of multiple conversations. You should use a Multiple or ParallelMultiple Event.</fullText>
+        <shortText>Too many outgoing MessageFlow-edges</shortText>
+    </message>
+    <message name="multipleOutgoingMessageFlowsFromMessageEndEvent" type="warning">
+        <fullText>A MessageEndEvent must not have multiple outgoing MessageFlow-edges or be part of multiple conversations. Use a MultipleEndEvent instead.</fullText>
+        <shortText>Too many outgoing MessageFlow-edges</shortText>
+    </message>
+    <message name="messageIntermediateCatchEventWithoutMessageFlow" type="warning">
+        <fullText>A catching MessageIntermediateEvent should have exactly one incomming MessageFlow or one ConversationLink.</fullText>
+        <shortText>Catching MessageIntermediateEvent without MessageFlow</shortText>
+    </message>
+    <message name="messageIntermediateThrowEventWithoutMessageFlow" type="warning">
+        <fullText>A throwing MessageIntermediateEvent should have exactly one outgoing MessageFlow or one ConversationLink.</fullText>
+        <shortText>Throwing MessageIntermediateEvent without MessageFlow</shortText>
+    </message>
+    <message name="messageStartEventWithoutMessageFlow" type="warning">
+        <fullText>A MessageStartEvent should have exactly one incomming MessageFlow-edge or one ConversationLink.</fullText>
+        <shortText>MessageStartEvent without MessageFlow</shortText>
+    </message>
+    <message name="messageEndEventWithoutMessageFlow" type="warning">
+        <fullText>A MessageEndEvent should have exactly one outgoing MessageFlow-edge or one ConversationLink.</fullText>
+        <shortText>MessageEndEvent without MessageFlow</shortText>
+    </message>
+    <message name="uselessGateway" type="info">
+        <fullText>This gateway has only one incomming and one outgoing SequenceFlow-edge and can therefore be omitted without changing the diagram´s semantics.</fullText>
+        <shortText>Unnecessary Gateway</shortText>
+    </message>
+    <message name="adHocTransaction" type="error">
+        <fullText>A Transaction-SubProcess may not be an Ad-Hoc-SubProcess.</fullText>
+        <shortText>Ad-Hoc-Transaction-SubProcess</shortText>
+    </message>
+    <message name="adHocEventSubProcess" type="error">
+        <fullText>An Ad-Hoc-Sub-Process may not be triggered by an Event.</fullText>
+        <shortText>Ad-Hoc-Event-SubProcess</shortText>
+    </message>
+    <message name="subProcessWithTriggeredStartEvent" type="error">
+        <fullText>A SubProcess must not contain a StartEvent, that has a trigger (i.e.a StartEvent, that is not a None-StartEvent), unless it is an Event-SubProcess.</fullText>
+        <shortText>Illegal StartEvent</shortText>
+    </message>
+    <message name="subProcessWithMultipleStartEvents" type="warning">
+        <fullText>A SubProcess should not have multiple StartEvents.</fullText>
+        <shortText>SubProcess with multiple Start-Events</shortText>
+    </message>
+    <message name="eventSubProcessWithoutStartEvent" type="error">
+        <fullText>An Event-SubProcess must have exactly one StartEvent.</fullText>
+        <shortText>Event-SubProcess without StartEvent</shortText>
+    </message>
+    <message name="eventSubProcessWithMultipleStartEvents" type="error">
+        <fullText>An Event-SubProcess must hav one and only one StartEvent.</fullText>
+        <shortText>Event-SubProcess with multiple StartEvents</shortText>
+    </message>
+    <message name="eventSubProcessWithNoneStartEvent" type="error">
+        <fullText>An Event-SubProcess must not have a None-StartEvent (a StartEvent, that has no trigger).</fullText>
+        <shortText>Event-SubProcess with None-StartEvent</shortText>
+    </message>
+    <message name="adHocSubProcessWithStartEvent" type="error">
+        <fullText>An Ad-Hoc-SubProcess must not have a StartEvent.</fullText>
+        <shortText>StartEvent in Ad-Hoc-SubProcess</shortText>
+    </message>
+    <message name="adHocSubProcessWithEndEvent" type="error">
+        <fullText>An Ad-Hoc-SubProcess must not have an EndEvent.</fullText>
+        <shortText>EndEvent in Ad-Hoc-SubProcess</shortText>
+    </message>
+    <message name="cancelEndEventOutsideTransaction" type="error">
+        <fullText>A CancelEndEvent must must not be used outside of any Transaction, as it cancels a Transaction.</fullText>
+        <shortText>CancelEndEvent outside Transaction</shortText>
+    </message>
+    <message name="cancelIntermediateEventNotAttachedToTransaction" type="error">
+        <fullText>A CancelIntermediateEvent must be attached to the boundary of a Transaction, as it catches the Cancellation of this Transaction. It is not allowed to be attached to other Activitie´s boundaries to be used in normal flow.</fullText>
+        <shortText>CancelIntermediateEvent not at Transaction-boundary</shortText>
+    </message>
+    <message name="startEventWithoutOutgoingSequenceFlow" type="error" fatal="true">
+        <fullText>A StartEvent must have at least one outgoing SequenceFlow-edge.</fullText>
+        <shortText>StartEvent without SequenceFlow</shortText>
+    </message>
+    <message name="multipleNoneStartEventsInOnePool" type="warning">
+        <fullText>Using multiple None-StartEvents (plain StartEvents) for one participant results in uncertainty about the instantiation of the Process: It is not clear, which StartEvent should be chosen. Try using one StartEvent or using an instantiating gateway and appropriate Event-triggers.</fullText>
+        <shortText>Multiple None-StartEvents for one Participant</shortText>
+    </message>
+    <message name="noneStartEventsInMultiplePools" type="info">
+        <fullText>Using None-StartEvents (plain StartEvents) for multiple Participants results in unclarity about who actually starts the Colaboration. Usually one of the participants starts the Colaboration and the others will start their local Processes on receiving a Message. In this case, MessageStartEvents should be used.</fullText>
+        <shortText>None-StartEvents for multiple Participants</shortText>
+    </message>
+    <message name="multipleTriggeredStartEventsInOnePool" type="info">
+        <fullText>It is recommendable to use an Instantiating Gateway instead of using multiple StartEvents with triggers, because this leads to a more obvious starting-condition. The Instantiating Gateway (an EventBasedGateway, that has its "instantiate"-attribute set to "Exclusive") should be followed by IntermediateEvents, which have the same triggers, as the currently used StartEvents.</fullText>
+        <shortText>Multiple StartEvents for one Participant</shortText>
+    </message>
+    <message name="multipleExclusiveInstantiatingGatewaysInOnePool" type="info">
+        <fullText>Using one instantiating Gateway with all the Events connected, which are currently connected to all the exclusive instantiating gateways would have the same semantics and lead to are more obvious starting-condition.</fullText>
+        <shortText>Multiple exclusive instantiating Gateways</shortText>
+    </message>
+    <message name="instantiatingGatewaysAndTriggeredStartEvents" type="info">
+        <fullText>In order to achieve a more obvious starting-condition, you should replace the StartEvents with IntermediateEvents, that have the same trigger as the currently used StartEvents and add them to the Instantiating Gateway.</fullText>
+        <shortText>Usage of both, instantiating Gateways and StartEvents</shortText>
+    </message>
+    <message name="inconsistentUsageOfStartAndEndEventsAtTopLevel" type="warning">
+        <fullText>The global Process uses StartEvents, but no EndEvents or vice versa. You should use them consitently. In order to get an easily readable model, it is highly recommendable to always use Start- and EndEvents.</fullText>
+        <shortText>Inconsistent usage of Start- and EndEvents</shortText>
+    </message>
+    <message name="inconsistentUsageOfStartAndEndEvents" type="warning">
+        <fullText>The highlighted Process uses StartEvents, but no EndEvents or vice versa. You should use them consitently. In order to get an easily readable model, it is highly recommendable to always use Start- and EndEvents.</fullText>
+        <shortText>Inconsistent usage of Start- and EndEvents</shortText>
+    </message>
+    <message name="noStartEventUsage" type="info">
+        <fullText>It is recommendable to use StartEvents. All Nodes, which are not StartEvents, will be instantiated when the Process starts. This makes the model harder to understand.</fullText>
+        <shortText>No StartEvents used</shortText>
+    </message>
+    <message name="sometimesNoStartEventsUsed" type="warning">
+        <fullText>If StartEvents are used, it is highly recommendable not to have any other nodes without incomming SequenceFlow, as every node, which has no incomming SequenceFlow and is not a StartEvent, will be instantiated at the start of a process-instance.</fullText>
+        <shortText>Nodes without incomming SequenceFlow</shortText>
+    </message>
+    <message name="noEndEventUsage" type="info">
+        <fullText>It is recommendable to use EndEvents in order to show, where the Process stops.</fullText>
+        <shortText>No EndEvents used</shortText>
+    </message>
+    <message name="sometimesNoEndEventsUsed" type="warning">
+        <fullText>If EndEvents are used, it is highly recommendable to have no other nodes without outgoing SequenceFlow in order to show more clearly, where a process stops.</fullText>
+        <shortText>Nodes without outgoing SequenceFlow</shortText>
+    </message>
+    <message name="selfContainingCluster" type="error" fatal="true">
+        <fullText>The highlighted clusters contain themselves. Further validation cannot be performed as long as this error exists.</fullText>
+        <shortText>self-containing cluster</shortText>
+    </message>
+    <message name="nodeInMultipleClusters" type="error">
+        <fullText>This node is contained in multiple clusters. Try dopping it outside any cluster and dragging it into the desired cluster again.</fullText>
+        <shortText>Node in multiple clusters</shortText>
+    </message>
+    <message name="attachedIntermediateEventNotInSurroundingCluster" type="error">
+        <fullText>This attached Event is not contained in the same cluster as the node, which it is attached to, but it should be. Try moving the attached Event out of any cluster and then reattaching it inside the cluster.</fullText>
+        <shortText>Attached Event not contained in its parent´s cluster</shortText>
+    </message>
+    <message name="endEventWithoutSequenceFlow" type="error">
+        <fullText>An EndEvent must have at least one incomming Sequence-Flow-edge.</fullText>
+        <shortText>EndEvent without SequenceFlow</shortText>
+    </message>
+    <message name="nonInterruptingInNormalFlow" type="error">
+        <fullText>An IntermediateEvent in normal flow (i.e. one that is not attached to any boundary) must not be non-interrupting.</fullText>
+        <shortText>Non-Interrupting IntermediateEvent in normal flow</shortText>
+    </message>
+    <message name="attachedThrowingEvent" type="error">
+        <fullText>An attached IntermediateEvent must not be Throwing.</fullText>
+        <shortText>Throwing attached Event</shortText>
+    </message>
+    <message name="unallowedAttachedEvent" type="error">
+        <fullText>This type of Event may not be used as an attached Event.</fullText>
+        <shortText>Unallowed attached event</shortText>
+    </message>
+    <message name="catchingEscalationIntermediateInNormalFlow" type="error">
+        <fullText>A catching EscalationIntermediateEvent is not allowed in normal flow, i.e. it must be attached to an Activity-border.</fullText>
+        <shortText>Catching EscalationIntermediateEvent in normal flow</shortText>
+    </message>
+    <message name="wrongErrorIntermediateEvent" type="error">
+        <fullText>An ErrorIntermediateEvent must be attached and must be interrupting.</fullText>
+        <shortText>Wrong ErrorIntermediateEvent</shortText>
+    </message>
+    <message name="onlyCatchingAllowed" type="error">
+        <fullText>This type of IntermediateEvent must not be used as a throwing IntermediateEvent.</fullText>
+        <shortText>Not allowed as thrwoing Event</shortText>
+    </message>
+    <message name="illegalCatchingCompensationIntermediateEvent" type="error" fatal="true">
+        <fullText>A catching CompensationIntermediateEvent must be attached and must be interrupting.</fullText>
+        <shortText>Wrong catching CompensationIntermediateEvent</shortText>
+    </message>
+    <message name="startEventTypeOnlyInEventSubProcess" type="error">
+        <fullText>This type of StartEvent is only allowed in Event-SubProcesses.</fullText>
+        <shortText>Illegal StartEvent</shortText>
+    </message>
+    <message name="startEventTypeOnlyInterrupting" type="error">
+        <fullText>This type of StartEvent must not be non-interrupting.</fullText>
+        <shortText>StartEvent must be interrupting</shortText>
+    </message>
+    <message name="nonInterruptingStartEventOutsideEventSubProcess" type="error">
+        <fullText>Non-Interrupting StartEvents are only allowed in Event-SubProcesses.</fullText>
+        <shortText>Illegal Non-Interrupting StartEvent</shortText>
+    </message>
+    <message name="noCatchingLink" type="error" fatal="true">
+        <fullText>No corresponding catching LinkIntermediateEvent was found for this throwing LinkIntermediateEvent. A throwing LinkIntermediateEvent and a catching LinkIntermediateEvent correspond, if they have the same label and are located in the same pool.</fullText>
+        <shortText>No catching LinkIntermediateEvent found</shortText>
+    </message>
+    <message name="multipleCatchingLinksForOneLabel" type="error" fatal="true">
+        <fullText>There must not be multiple catching LinkIntermediateEvents with the same label in the same pool.</fullText>
+        <shortText>Multiple catching LinkIntermediateEvents with same label</shortText>
+    </message>
+    <message name="noThrowingLink" type="error" fatal="true">
+        <fullText>There is no throwing LinkIntermediateEvent for this catching LinkIntermediateEvent. A throwing LinkIntermediateEvent and a catching LinkIntermediateEvent correspond, if they have the same label and are located in the same pool.</fullText>
+        <shortText>No corresponding throwing LinkIntermediateEvent found</shortText>
+    </message>
+    <message name="graphicalContainedInAnotherClusterThanReallyContainedIn" type="warning">
+        <fullText>This node is not contained in the cluster it seems to be contained in. Try repositioning the node in order to fix containments.</fullText>
+        <shortText>Graphical containment differs from containment according to the model</shortText>
+    </message>
+    <message name="containedButNotGraphicallyContained" type="warning">
+        <fullText>This node is contained in a cluster, allthough it does not seem to be contained in one. Try repositioning the node in order to fix containments.</fullText>
+        <shortText>Graphical containment differs from containment according to the model</shortText>
+    </message>
+    <message name="attachedNodeNotLocatedAtParentBorder" type="warning">
+        <fullText>This node is attached to a boundary, but is not located at this boundary. Drag the node to its desired position again in order to fix this.</fullText>
+        <shortText>Attached node located at confusing location</shortText>
+    </message>
+    <message name="nodeSeemsAttachedButIsNot" type="warning">
+        <fullText>This node is located at another node´s boundary, but it is not attached to it. Move it away from the other nodes boundary or attach it by dragging it directly onto the other node´s edge.</fullText>
+        <shortText>Node seems to be attached, but is not</shortText>
+    </message>
+    <message name="conversationWithTooFewLinks" type="error">
+        <fullText>A conversation must have at least two ConversationLinks connected to at least two different participants.</fullText>
+        <shortText>Conversation with too few links</shortText>
+    </message>
+    <message name="conversationInPool" type="error">
+        <fullText>A conversation must not be located in a Pool.</fullText>
+        <shortText>Conversation in a Pool</shortText>
+    </message>
+    <message name="illegalConversationLinkTarget" type="error">
+        <fullText>This node must not be connected via a ConversationLink.</fullText>
+        <shortText>Illegal source or target of ConversationLink</shortText>
+    </message>
+    <message name="conversationLinkWithoutConversation" type="error">
+        <fullText>Either the source or the target of a ConversationLink must be a Conversation.</fullText>
+        <shortText>ConversationLink not connected to a Conversation</shortText>
+    </message>
+    <message name="conversationLinkWithTwoConversations" type="error">
+        <fullText>A ConversationLink must connect a Conversation with a Pool (a participant) or with a node inside the Pool, but it must not connect two Conversations.</fullText>
+        <shortText>ConversationLink between two Conversations</shortText>
+    </message>
+    <message name="mixedUpGlobalPoolAndConversation" type="error">
+        <fullText>A Model must not have a global Process and use Conversation-nodes at the same time, because a  Conversation-node is not part of any process.</fullText>
+        <shortText>Conversation-Nodes and a global Pool</shortText>
+    </message>
+    <message name="mixedUpChoreographyAndConversation" type="error">
+        <fullText>A Model must not use Choreography and Conversation a the same time.</fullText>
+        <shortText>Choreography and Conversation mixed</shortText>
+    </message>
+    <message name="mixedUpGlobalPoolAndChoreography" type="error">
+        <fullText>A Model must not use Choreography and Conversation a the same time.</fullText>
+        <shortText>Choreography-Nodes and a global Pool</shortText>
+    </message>
+    <message name="conversationOnlyConnectedToSenders" type="warning">
+        <fullText>This Conversation is only linked to nodes, which send messages, but not to nodes, which receive messages.</fullText>
+        <shortText>Conversation without receivers</shortText>
+    </message>
+    <message name="conversationOnlyConnectedToReceivers" type="warning">
+        <fullText>This Conversation is only linked to nodes, which receive messages, but not to nodes, which send messages.</fullText>
+        <shortText>Conversation without senders</shortText>
+    </message>
+    <message name="choreographyActivityInPool" type="error">
+        <fullText>A ChoreographyActivity must not be located in any Pool.</fullText>
+        <shortText>ChoreographyActivity in Pool</shortText>
+    </message>
+    <message name="multipleInitiatingMessages" type="error">
+        <fullText>A ChoreographyActivity must not be associated with more than one initiating message.</fullText>
+        <shortText>ChoreographyActivity with multiple initiating messages</shortText>
+    </message>
+    <message name="multipleReplyingMessages" type="error">
+        <fullText>A ChoreographyActivity must not be associated with more than one non-initiating message.</fullText>
+        <shortText>ChoreographyActivity with multiple replying messages</shortText>
+    </message>
+    <message name="differentSendersAndReceiversFollowingEBGW" type="error">
+        <fullText>All the receivers or all the senders activities directly following an EventBasedGateway have to be the same</fullText>
+        <shortText>Illegal configuration of EventBasedGateway</shortText>
+    </message>
+    <message name="illegalNodeFollowingEBGWInChoreography" type="error">
+        <fullText>Only the following Nodes may directly succeed an event-based gateway in a Choreography: Choreography Task, Timer Intermediate Event, Signal Intermediate Event.</fullText>
+        <shortText>Illegal nodel following an EventBasedGateway</shortText>
+    </message>
+    <message name="joinAfterEBGWMakesChoreographyUnenforceable" type="warning">
+        <fullText>This join preceds the first message to some participant after an EventBasedGateway. Therefore, the choreography is not enforceable.</fullText>
+        <shortText>Choreography not enforceable</shortText>
+    </message>
+    <message name="timeoutOnEBGW" type="warning">
+        <fullText>Not all participants can detect, when they will not receive any more messages following this gateway.</fullText>
+        <shortText>Participants of choreography wait indefinitely long</shortText>
+    </message>
+    <message name="initiatorOfChoreographyActivityNotParticipantInPriorActivity" type="error">
+        <fullText>The initiator of any ChoreograpyhActivity must be a Participant of every preceding ChoreographyActivity.</fullText>
+        <shortText>Initiator not participating in prior activity</shortText>
+    </message>
+    <message name="forbiddenNodeInChoreography" type="error">
+        <fullText>The choreography must not contain this type of node.</fullText>
+        <shortText>Illegal node in Choreography</shortText>
+    </message>
+    <message name="mustBeAttachedInChoreography" type="error">
+        <fullText>This type of node must, if used in a choreography, be attached.</fullText>
+        <shortText>Node must be attached</shortText>
+    </message>
+    <message name="mustNotBeAttachedInChoreography" type="error">
+        <fullText>This type of node must not be attached when used in a choreography.</fullText>
+        <shortText>Node must not be attached</shortText>
+    </message>
+    <message name="mustNotBeAttachedToTaskInChoreography" type="error">
+        <fullText>This type of node must not be attached to another node than a ChoreographyTask.</fullText>
+        <shortText>Node must be attached to ChoreographyTask</shortText>
+    </message>
+    <message name="inclusiveGatewayDecisionNotClearForAllParticipants" type="warning">
+        <fullText>The decision of this InclusiveGateway cannot be visible to all participants of the choreography, because some participants did not participate in the choreography before the gateway.</fullText>
+        <shortText>InclusiveGateway-decision unclear for some participants</shortText>
+    </message>
+    <message name="miInitiator" type="warning">
+        <fullText>The initiator of any choreography activity must not be a multiple-instance-participant.</fullText>
+        <shortText>Multiple-Instance initiator</shortText>
+    </message>
+    <message name="onlyNoneStartEventsInSubChoreography" type="warning">
+        <fullText>The only type of StartEvent allowed in a SubChoreography is None-StartEvents (plain/empty StartEvents).</fullText>
+        <shortText>Illegal type of StartEvent</shortText>
+    </message>
+    <message name="illegalSubChoreographyParticipants" type="warning">
+        <fullText>All participants of parts of a SubChoreography must be indicated to be participants of the SubChoreography.</fullText>
+        <shortText>Illegal participants in SubChoreography</shortText>
+    </message>
+    <message name="illegalSubChoreographyInitiator" type="warning">
+        <fullText>The initiator of any ChoreographyTask, that may be the first task of a SubChoreography must be the initiator of the SubChoreography.</fullText>
+        <shortText>Illegal initiator of first task in SubChoreography</shortText>
+    </message>
+    <message name="implicitSplit" type="info">
+        <fullText>There is an implicit split at this node (i.e. it is not a gateway, but has multiple outgoing SequenceFlow-edges). It is recommended to use a parallel Gateway insted as the behavior is more obious, if Gateways are used.</fullText>
+        <shortText>Implicit Split</shortText>
+    </message>
+    <message name="implicitJoin" type="info">
+        <fullText>There is an implicit join at this node (i.e. it is not a gateway, but has multiple incoming SequenceFlow-edges). It is recommended to use an exclusive Gateway insted as the behavior is more obious, if Gateways are used.</fullText>
+        <shortText>Implicit Join</shortText>
+    </message>
+    <message name="lackOfSynchronization" type="warning">
+        <fullText>This block starts with a parallel split and ends with an exclusive join.</fullText>
+        <shortText>Lack of Synchronization</shortText>
+    </message>
+    <message name="blockStartsExclusiveEndsParallel" type="error">
+        <fullText>This block starts with an exclusive split and ends with a parallel join.</fullText>
+        <shortText>Deadlock</shortText>
+    </message>
+    <message name="blockStartsInclusiveEndsParallel" type="error">
+        <fullText>This block starts with an inclusive split and ends with a parallel join.</fullText>
+        <shortText>Deadlock</shortText>
+    </message>
+    <message name="blockStartsInclusiveEndsExclusive" type="warning">
+        <fullText>This block starts with an inclusive split and ends with an exclusive join.</fullText>
+        <shortText>Lack of Synchronization</shortText>
+    </message>
+    <message name="infiniteLoop" type="warning">
+        <fullText>This loop starts with an Exclusive or Inclusive Gateway, but ends with a ParallelGateway. This leads to an infinite loop.</fullText>
+        <shortText>Infinite loop</shortText>
+    </message>
+    <message name="parallelLoopStart" type="warning">
+        <fullText>This loop starts with a ParallelGateway. This creates a deadlock, because the SequenceFlow-edge comming from the end of the loop will not have a token before the loop is executed the first time.</fullText>
+        <shortText>Deadlock</shortText>
+    </message>
+    <message name="loopWithParallelGateway" type="warning">
+        <fullText>This loop has a ParallelGateway. This may lead to either a deadlock or to an infinite loop.</fullText>
+        <shortText>Deadlock or infinite loop</shortText>
+    </message>
+    <message name="undirectedPolygon" type="warning">
+        <fullText>This sequence has no consistant flow-direction.</fullText>
+        <shortText>Inconsistent direction</shortText>
+    </message>
+    <message name="fatalErrorsNoSoundnessCheck" type="warning">
+        <fullText>There were fatal errors and therefore no soundness-check has been performed.</fullText>
+        <shortText>No soundness-check possible</shortText>
+    </message>
+    <message name="deadlockInRigid" type="error">
+        <fullText>At least one of the highlighted nodes causes a deadlock.</fullText>
+        <shortText>Deadlock</shortText>
+    </message>
+    <message name="lifelockInRigid" type="warning">
+        <fullText>There is a lifelock in this part of the diagram.</fullText>
+        <shortText>Lifelock</shortText>
+    </message>
+    <message name="improperCompletion" type="warning">
+        <fullText>After the final node of this part of the diagram was executed, tokens remain in this part of the process.</fullText>
+        <shortText>No proper completion</shortText>
+    </message>
+    <message name="deadNodes" type="warning">
+        <fullText>These nodes will never be executed.</fullText>
+        <shortText>Dead nodes</shortText>
+    </message>
+    <message name="tooManyStates" type="warning">
+        <fullText>The soundness-check could not fully be carried out for this part of the model, because too many states were generated. This may be due to a lack of synchronization.</fullText>
+        <shortText>Too many states</shortText>
+    </message>
+    <message name="conditionalFlowFromParallelGateway" type="error">
+        <fullText>Outgoing SequenceFlow of a ParallelGateway must not be conditional.</fullText>
+        <shortText>Conditional flow from ParallelGateway</shortText>
+    </message>
+    <message name="conditionalFlowFromDecisionGateway" type="warning">
+        <fullText>Outgoing SequenceFlow of an Inclusive or Exclusive Gateway must not have the conditional-marker.</fullText>
+        <shortText>Conditional flow from Gateway</shortText>
+    </message>
+    <message name="multipleDefaultFlows" type="error">
+        <fullText>No node may have multiple default SequenceFlow-edges.</fullText>
+        <shortText>Multiple default flows</shortText>
+    </message>
+    <message name="defaultFlowButNoConditionalFlow" type="error">
+        <fullText>A node, that is not a gateway, must not have outgoing default SequenceFlow unless it has outgoing conditional SequenceFlow.</fullText>
+        <shortText>Default Flow, but no conditional Flow</shortText>
+    </message>
+    <message name="defaultFlowFromGatewayWithNoDecision" type="error">
+        <fullText>A Parallel- or EventBased-Gateway must not have any outgoing default flow.</fullText>
+        <shortText>Default Flow from Parallel- or EventBased-Gateway</shortText>
+    </message>
+
+    <message name="rootInstanceRequired" type="error" fatal="true">
+        <fullText>A root instance is required if no imports with root instances are contained.</fullText>
+        <shortText>Root Instance required</shortText>
+    </message>
+    <message name="rootInstanceRecommended" type="info">
+        <fullText>It is recommended to have a root instance in your domain model.</fullText>
+        <shortText>Root Instance recommended</shortText>
+    </message>
+    <message name="serverOrModelNotFound" type="error">
+        <fullText>The server that holds the original model could not be reached or the model could not be found.</fullText>
+        <shortText>Change validation not possible</shortText>
+    </message>
+    <message name="modelNotFound" type="error">
+        <fullText>The model could not be found on the server it originates from.</fullText>
+        <shortText>Change validation not possible</shortText>
+    </message>
+    <message name="classNotFound" type="error" fatal="true">
+        <fullText>A class can not be deleted from the domain model.</fullText>
+        <shortText>The class $1 has been deleted</shortText>
+    </message>
+    <message name="classRenamed" type="error" fatal="true">
+        <fullText>A class can not be renamed.</fullText>
+        <shortText>The class $1 has been renamed from $2</shortText>
+    </message>
+    <message name="attributeNotFound" type="error" fatal="true">
+        <fullText>An attribute can not be deleted from a class.</fullText>
+        <shortText>The attribute $1 has been deleted</shortText>
+    </message>
+    <message name="attributeDeletedRenamed" type="error" fatal="true">
+        <fullText>An attribute can not be renamed or deleted.</fullText>
+        <shortText>Attribute $1 renamed or deleted</shortText>
+    </message>
+    <message name="attributeTypeChanged" type="error" fatal="true">
+        <fullText>The type of an attribute can not be changed.</fullText>
+        <shortText>Type of attribute $1 changed from $2</shortText>
+    </message>
+    <message name="edgeDeleted" type="error" fatal="true">
+        <fullText>An edge can not be removed from the model.</fullText>
+        <shortText>An edge between $1 and $2 has been deleted.</shortText>
+    </message>
+    <message name="edgeSourceChanged" type="error" fatal="true">
+        <fullText>The source of an edge can not be changed.</fullText>
+        <shortText>An edge has a different source.</shortText>
+    </message>
+    <message name="edgeTargetChanged" type="error" fatal="true">
+        <fullText>The target of an edge can not be changed.</fullText>
+        <shortText>An edge has a different target</shortText>
+    </message>
+    <message name="edgeTypeChanged" type="error" fatal="true">
+        <fullText>The type of an edge can not be changed.</fullText>
+        <shortText>An edge has a different type</shortText>
+    </message>
+    <message name="aggregationCircle" type="warning">
+        <fullText>Aggregation dependencies of class $1 result in a cyclic dependency.</fullText>
+        <shortText>Cyclic aggregation dependency</shortText>
+    </message>
+    <message name="multiAggregation" type="warning">
+        <fullText>Class $1 is aggregated multiple times within the same aggregation dependency tree.</fullText>
+        <shortText>Multiple aggregation dependency</shortText>
+    </message>
+</ValidationMessages>

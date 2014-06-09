@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="19690856" name="test.model"
+    type="net.frapu.code.visualization.petrinets.PetriNetModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="15758165"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="125"/>
+            <property name="x" value="52"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="3157607"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="37"/>
+            <property name="x" value="143"/>
+        </node>
+        <node>
+            <property name="text" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="30"/>
+            <property name="cost" value=""/>
+            <property name="#id" value="28073747"/>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Transition"/>
+            <property name="duration" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="reset_waiting" value="0"/>
+            <property name="probability" value="100"/>
+            <property name="y" value="122"/>
+            <property name="x" value="146"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="9690924"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="125"/>
+            <property name="x" value="252"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="22310332"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="212"/>
+            <property name="x" value="151"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="22292701"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="15758165"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="28073747"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="8120514"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="28073747"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="9690924"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.InhibitorEdge"/>
+            <property name="#id" value="19321823"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="3157607"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="28073747"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.ResetEdge"/>
+            <property name="#id" value="27198423"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="22310332"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="28073747"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="30. Oktober 2009 14:32:24 MEZ"/>
+        <property name="name" value="test.model"/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\fpu\Desktop\test.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

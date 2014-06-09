@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="15675004" name="edgeDocker.model" type="net.frapu.code.visualization.bpmn.BPMNModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="12899346"/>
+            <property name="text" value="1"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="72"/>
+            <property name="x" value="126"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="18894914"/>
+            <property name="text" value="2"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="273"/>
+            <property name="x" value="126"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="22143285"/>
+            <property name="text" value="3"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="150"/>
+            <property name="x" value="415"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="18917846"/>
+            <property name="text" value="4"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="273"/>
+            <property name="x" value="423"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.EdgeDocker"/>
+            <property name="#id" value="1"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="#docked_edge" value="17434173"/>
+            <property name="y" value="0"/>
+            <property name="x" value="0"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.EdgeDocker"/>
+            <property name="#id" value="2"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="#docked_edge" value="11"/>
+            <property name="y" value="0"/>
+            <property name="x" value="0"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.EdgeDocker"/>
+            <property name="#id" value="3"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="#docked_edge" value="31518612"/>
+            <property name="y" value="0"/>
+            <property name="x" value="0"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.EdgeDocker"/>
+            <property name="#id" value="4"/>
+            <property name="text" value=""/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="#docked_edge" value="12"/>
+            <property name="y" value="0"/>
+            <property name="x" value="0"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="31518612"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="18894914"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="18917846"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="17434173"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="12899346"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="18894914"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="11"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="NONE"/>
+            <property name="#sourceNode" value="1"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="22143285"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="13"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="NONE"/>
+            <property name="#sourceNode" value="1"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="4"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="12"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="NONE"/>
+            <property name="#sourceNode" value="2"/>
+            <property name="label_offset" value="0.5"/>
+            <property name="sequence_type" value="TYPE_STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="3"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="15. September 2010 11:04:49 MESZ"/>
+        <property name="name" value="edgeDocker.model"/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\ff\Desktop\edgeDocker.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

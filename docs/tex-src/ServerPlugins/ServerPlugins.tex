@@ -1,0 +1,103 @@
+\documentclass[11pt, halfparskip]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{url}
+
+\begin{document}
+
+\lstset{numbers=none, tabsize=2, frame=tb, captionpos=t, basicstyle=\small}
+\titlehead{
+\includegraphics[scale=0.25]{graphics/iwb_logo}
+}
+\title{How to Implement a Server Plug-In}
+\author{Felix Elliger\\ \url{fel@inubit.com}}
+\date{}
+
+
+\maketitle
+
+\setcounter{tocdepth}{2} 
+\tableofcontents
+
+\cleardoublepage
+
+\input{01_general}
+
+\cleardoublepage
+
+\input{02_simple_plugins}
+
+\cleardoublepage
+
+\input{03_form_plugins}
+		
+\cleardoublepage
+
+\input{04_dialog_plugins}
+
+\cleardoublepage
+
+\input{05_infodialog_plugins}
+
+\cleardoublepage
+
+\input{06_responses}
+	
+\cleardoublepage	
+
+\input{07_examples}
+
+%\cleardoublepage
+%\begin{lstlisting}[language=XML, label=layoutxml, caption=Example layout data]
+%<data>
+%	<bounds>
+%		<property name='width' value='450'/>
+%		<property name='height' value='700'/>
+%	</bounds>
+%	<objectupdates>
+%		<nodes>
+%			<node id='1237'>
+%				<removed/>
+%			</node>
+%			<node id='373'>
+%				<added/>
+%			</node>
+%			<node id='987'>
+%				<property name='width' value='100'/>
+%				<property name='height' value='70'/>
+%				<property name='x' value='200'/>
+%				<property name='y' value='260'/>
+%			</node>
+%			<node id='654'>
+%				<imageuri value='/new/uri'/>
+%				<property name='width' value='50'/>
+%				<property name='height' value='50'/>
+%				<property name='x' value='100'/>
+%				<property name='y' value='160'/>
+%			</node>
+%		</nodes>
+%		<edges>
+%			<edge id='1'>
+%				<removed/>
+%			</edge>
+%			<edge id='2'>
+%				<added/>
+%			</edge>
+%			<edge id='3'>
+%				<points>
+%					<point x='1' y='1'/>
+%					<point x='70' y='120'>
+%				</points>
+%			</edge>
+%		</edges>
+%	</objectupdates>
+%</data>
+%\end{lstlisting}	
+\end{document}

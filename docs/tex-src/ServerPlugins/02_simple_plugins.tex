@@ -1,0 +1,64 @@
+\section{Simple Plug-Ins}
+	\subsection{Overview}
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{@{}lr@{}}
+			\toprule
+			\textbf{Required superclass} &
+\textit{SimpleServerPlugin} \\
+			\textbf{Configurable Sub-URLs} & \textit{no} \\
+			\textbf{Requires JavaScript} & \textit{no} \\
+			\textbf{Methods to implement} & \textit{void
+performAction( ModelInformation mi , }\\
+			& \textit{RequestFacade req , } \\
+			& \textit{ResponseFacade resp , } \\
+			& \textit{LoginableUser u )} \\
+			\addlinespace
+			& \textit{String getItemText()} \\
+			\addlinespace
+			& \textit{\textbf{(optional)} String
+getItemIconPath()}\\
+			\addlinespace
+			\textbf{Graphical representation} & \textit{a single
+menu item or context button} \\
+			\textbf{Example(s)} & \textit{Layout} \\
+			\bottomrule
+			\end{tabular}
+		\end{table}
+	
+	\subsection{Details}
+		\subsubsection{Basic Information}
+		Simple plug-ins are, as their name is already telling, the
+simplest way of implementing a plug-in. Their graphical representation within
+the editor's interface is limited to a single menu item within the
+"Plugins"-menu, or directly within the editor's toolbar. The latter can be
+achieved by overriding the \textit{showInToolbar()} method.
+		
+		If the user selects the menu item, a POST-request is generated
+and sent to the plug-in's unique URL. The POST data consists of the current
+model's ID along with the IDs of selected nodes and edges. In a first step this
+JSON data is transformed into a \textit{ModelInformation} object which is then
+passed to the \verb!performAction! method of your simple plug-in.
+		
+		\subsubsection{Methods}
+			\paragraph{void performAction( ModelInformation mi,
+RequestFacade req, ResponseFacade resp, LoginableUser u );}
+			This method is responsible for processing the incoming
+request and sending a resulting response to the requester.
+			All required information has to be taken from the
+\textit{ModelInformation} object. 
+			
+			See Section \ref{response_section} for information on
+how responses must be structured.
+			
+			\paragraph{String getItemText();}
+			Return the text for the menu item. If the
+\textit{showInToolbar()}-method for this plug-in returns \verb!true! the item
+text will be used as tool-tip text instead.
+
+			\paragraph{String getItemIconPath();}
+			Return the path to the icon of the menu item. This is
+especially important if the plug-in is represented as a simple button within the
+toolbar or as a context menu button.
+			
+			

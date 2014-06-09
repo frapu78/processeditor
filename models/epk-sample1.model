@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="15462504" name="EPK-Sample-Model" type="net.frapu.code.visualization.epk.EPKModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Event"/>
+            <property name="#id" value="25942001"/>
+            <property name="text" value="Sales Orders created"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13057"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Activity"/>
+            <property name="y" value="65"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Function"/>
+            <property name="#id" value="25515818"/>
+            <property name="text" value="Upload detailed sales order data"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3342388"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="160"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Event"/>
+            <property name="#id" value="33355664"/>
+            <property name="text" value="Detailed sales order data uploaded"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13057"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="255"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Function"/>
+            <property name="#id" value="24522695"/>
+            <property name="text" value="Check procedures"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3342388"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Check"/>
+            <property name="y" value="350"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.XORConnector"/>
+            <property name="#id" value="12565475"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="430"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Event"/>
+            <property name="#id" value="4086417"/>
+            <property name="text" value="Standard procedure"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13057"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="510"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Event"/>
+            <property name="#id" value="23149395"/>
+            <property name="text" value="Premium customer"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13057"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="510"/>
+            <property name="x" value="410"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Function"/>
+            <property name="#id" value="33116517"/>
+            <property name="text" value="Handle order"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3342388"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#ItemList"/>
+            <property name="y" value="765"/>
+            <property name="x" value="230"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.ANDConnector"/>
+            <property name="#id" value="21364283"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="590"/>
+            <property name="x" value="410"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Function"/>
+            <property name="#id" value="19897293"/>
+            <property name="text" value="Inform customer"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3342388"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="670"/>
+            <property name="x" value="320"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Function"/>
+            <property name="#id" value="12170776"/>
+            <property name="text" value="Handle order with priority"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3342388"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="670"/>
+            <property name="x" value="583"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.ANDConnector"/>
+            <property name="#id" value="31628185"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="765"/>
+            <property name="x" value="500"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.XORConnector"/>
+            <property name="#id" value="11872808"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="845"/>
+            <property name="x" value="410"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.Event"/>
+            <property name="#id" value="18471838"/>
+            <property name="text" value="Order fulfilled"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13057"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="80"/>
+            <property name="y" value="925"/>
+            <property name="x" value="410"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.OrgUnit"/>
+            <property name="#id" value="16109616"/>
+            <property name="text" value="Account Manager"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-52"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="90"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Person"/>
+            <property name="y" value="160"/>
+            <property name="x" value="358"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.OrgUnit"/>
+            <property name="#id" value="27737392"/>
+            <property name="text" value="Account Manager"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-52"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="90"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Person"/>
+            <property name="y" value="670"/>
+            <property name="x" value="445"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.OrgUnit"/>
+            <property name="#id" value="7629520"/>
+            <property name="text" value="Store Worker"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-52"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="90"/>
+            <property name="y" value="670"/>
+            <property name="x" value="707"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.OrgUnit"/>
+            <property name="#id" value="22669966"/>
+            <property name="text" value="Store Worker"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-52"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="90"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Person"/>
+            <property name="y" value="765"/>
+            <property name="x" value="105"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.System"/>
+            <property name="#id" value="15545028"/>
+            <property name="text" value="SAP"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13108"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="90"/>
+            <property name="y" value="160"/>
+            <property name="x" value="84"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.epk.System"/>
+            <property name="#id" value="26798260"/>
+            <property name="text" value="inubit iS"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13108"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="90"/>
+            <property name="y" value="350"/>
+            <property name="x" value="84"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="22958990"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="25942001"/>
+            <property name="label" value=""/>
+            <property name="points" value="230,105+230,120"/>
+            <property name="#targetNode" value="25515818"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="20666938"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="25515818"/>
+            <property name="label" value=""/>
+            <property name="points" value="230,200+230,215"/>
+            <property name="#targetNode" value="33355664"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="24145591"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="33355664"/>
+            <property name="label" value=""/>
+            <property name="points" value="230,295+230,310"/>
+            <property name="#targetNode" value="24522695"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="28161976"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="24522695"/>
+            <property name="label" value=""/>
+            <property name="points" value="230,390+230,405"/>
+            <property name="#targetNode" value="12565475"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="15087110"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="12565475"/>
+            <property name="label" value=""/>
+            <property name="points" value="230,455+410,455"/>
+            <property name="#targetNode" value="23149395"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="3737099"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="23149395"/>
+            <property name="label" value=""/>
+            <property name="points" value="410,550+410,565"/>
+            <property name="#targetNode" value="21364283"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="25798515"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="21364283"/>
+            <property name="label" value=""/>
+            <property name="points" value="410,615+320,615"/>
+            <property name="#targetNode" value="19897293"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="20144134"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="21364283"/>
+            <property name="label" value=""/>
+            <property name="points" value="410,615+583,615"/>
+            <property name="#targetNode" value="12170776"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="24263807"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="19897293"/>
+            <property name="label" value=""/>
+            <property name="points" value="320,710+500,725"/>
+            <property name="#targetNode" value="31628185"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="8901746"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="33116517"/>
+            <property name="label" value=""/>
+            <property name="points" value="230,805+410,820"/>
+            <property name="#targetNode" value="11872808"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="8592017"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="31628185"/>
+            <property name="label" value=""/>
+            <property name="points" value="500,805+410,820"/>
+            <property name="#targetNode" value="11872808"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="13137441"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="11872808"/>
+            <property name="label" value=""/>
+            <property name="points" value="410,870+410,885"/>
+            <property name="#targetNode" value="18471838"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="18690598"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="16109616"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="25515818"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="13043068"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="27737392"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="19897293"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="7363880"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="7629520"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="12170776"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="15606014"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="22669966"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="33116517"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="12388840"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="15545028"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="25515818"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="18107298"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="26798260"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="24522695"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="4628635"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="12170776"/>
+            <property name="label" value=""/>
+            <property name="points" value="583,717+501,725"/>
+            <property name="#targetNode" value="31628185"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="27365090"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="12565475"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="4086417"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.epk.Connection"/>
+            <property name="#id" value="32630374"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="4086417"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="33116517"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value="Frank Puhlmann"/>
+        <property name="#creationDate" value="22. September 2009 12:34:15 MESZ"/>
+        <property name="name" value="EPK-Sample-Model"/>
+        <property name="#folder" value="/EPK"/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\ff\Eigene Dateien\Eclipse-Workspace\code\Processeditor\models\epk-sample1.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

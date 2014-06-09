@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purchaseOrder orderDate="2009-11-09"><shipTo country="GERMANY"><name>Frank Puhlmann</name><street>Schöneberger Ufer 89</street><city>Berlin</city><state>Berlin</state><zip>10785</zip></shipTo><billTo country=""><name/><street/><city/><state/><zip/></billTo><comment>Deliver as soon as possible!!!</comment><items><item partNum="123"><productName>Pencils</productName><quantity>100</quantity><USPrice>0.50</USPrice><comment>Red ones.</comment><shipDate>Today.</shipDate></item></items></purchaseOrder>

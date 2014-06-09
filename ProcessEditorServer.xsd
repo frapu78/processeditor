@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="com.inubit.research.server"
+    targetNamespace="com.inubit.research.server">
+    
+<xs:element name="configuration" type="CT_Configuration"/>
+    
+<xs:complexType name="CT_Configuration">
+    <xs:sequence>
+        <xs:element name="groups" type="CT_Groups"/>
+        <xs:element name="users" type="CT_Users"/>
+        <xs:element name="directory" type="CT_Directory"/>
+    </xs:sequence>
+    <xs:attribute name="version" type="ST_Text"/>
+</xs:complexType>
+    
+<xs:complexType name="CT_Directory">    
+    <xs:sequence>                
+        <xs:element name="entries">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="entry" type="CT_DirectoryEntry" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:sequence>   
+    <xs:attribute name="alias" type="ST_Text"/>
+</xs:complexType>    
+    
+<xs:complexType name="CT_DirectoryEntry">
+    <xs:choice>
+        <xs:element name="directory" type="CT_Directory"/>
+        <xs:element name="file" type="CT_File"/>
+    </xs:choice>    
+</xs:complexType>    
+    
+<xs:complexType name="CT_File">    
+    <xs:attribute name="alias" type="ST_Text" use="required"/>
+    <xs:attribute name="fileId" type="ST_ID" use="required"/>
+</xs:complexType>    
+        
+<xs:complexType name="CT_Groups">
+    <xs:sequence>
+        <xs:element name="group" type="CT_Group" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>    
+</xs:complexType>    
+
+<xs:complexType name="CT_Group">    
+    <xs:attribute name="alias" type="ST_Text"/>
+    <xs:attribute name="id" type="ST_ID"/>
+</xs:complexType>       
+    
+<xs:complexType name="CT_Users">
+    <xs:sequence>
+        <xs:element name="user" type="CT_User" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CT_User">
+    <xs:sequence>
+        <xs:element name="groupRef" type="ST_ID" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="ST_Text"/>
+    <xs:attribute name="password" type="ST_MD5"/>
+</xs:complexType>
+
+<xs:simpleType name="ST_Text">
+    <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<xs:simpleType name="ST_MD5">
+    <!-- More restrictions to Hex-Codes required -->
+    <xs:restriction base="xs:string"/>
+</xs:simpleType>
+    
+<xs:simpleType name="ST_ID">    
+    <xs:restriction base="xs:long"/>
+</xs:simpleType>    
+
+</xs:schema>

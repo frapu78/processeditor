@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="23288493" name=""
+    type="net.frapu.code.visualization.uml.ClassModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="16164994"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="190"/>
+            <property name="x" value="15"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="28032708"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="190"/>
+            <property name="x" value="290"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="8694274"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="305"/>
+            <property name="x" value="15"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="29873515"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="305"/>
+            <property name="x" value="125"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="30227927"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="305"/>
+            <property name="x" value="290"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="17621911"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="305"/>
+            <property name="x" value="400"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="32422425"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="305"/>
+            <property name="x" value="510"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="7198945"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="75"/>
+            <property name="x" value="290"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="3880791"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="75"/>
+            <property name="x" value="15"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="17901302"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="420"/>
+            <property name="x" value="400"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="UML Class"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="80"/>
+            <property name="#id" value="13079028"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="420"/>
+            <property name="x" value="125"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="21046486"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="28032708"/>
+            <property name="label" value=""/>
+            <property name="points" value="290,240+125,255"/>
+            <property name="#targetNode" value="29873515"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="1386051"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="28032708"/>
+            <property name="label" value=""/>
+            <property name="points" value="290,240+290,255"/>
+            <property name="#targetNode" value="30227927"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="2419333"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="16164994"/>
+            <property name="label" value=""/>
+            <property name="points" value="15,240+125,255"/>
+            <property name="#targetNode" value="29873515"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="11558859"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="16164994"/>
+            <property name="label" value=""/>
+            <property name="points" value="15,240+15,255"/>
+            <property name="#targetNode" value="8694274"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="8796481"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="28032708"/>
+            <property name="label" value=""/>
+            <property name="points" value="290,240+400,255"/>
+            <property name="#targetNode" value="17621911"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="11112467"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="28032708"/>
+            <property name="label" value=""/>
+            <property name="points" value="290,240+510,255"/>
+            <property name="#targetNode" value="32422425"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="2317981"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="7198945"/>
+            <property name="label" value=""/>
+            <property name="points" value="290,125+290,140"/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="28032708"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="13603674"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="3880791"/>
+            <property name="label" value=""/>
+            <property name="points" value="15,125+15,140"/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="16164994"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="19715894"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="30227927"/>
+            <property name="label" value=""/>
+            <property name="points" value="290,355+400,370"/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="17901302"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="23680225"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="17621911"/>
+            <property name="label" value=""/>
+            <property name="points" value="400,355+400,370"/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="17901302"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="17361481"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="8694274"/>
+            <property name="label" value=""/>
+            <property name="points" value="15,355+125,370"/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="13079028"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="24816142"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="29873515"/>
+            <property name="label" value=""/>
+            <property name="points" value="125,355+125,370"/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="13079028"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+</model>

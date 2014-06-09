@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     BINT SOA Design Guide Template
+   
+     Author: Andre Geissler, inubit AG
+     Author: Frank Puhlmann, inubit AG
+  
+     Version: 1
+-->
+<schema targetNamespace    = "http://bint.ch/base/xsd/BaseTypes"
+        xmlns:baseType     = "http://bint.ch/base/xsd/BaseTypes" 
+        xmlns              = "http://www.w3.org/2001/XMLSchema"
+        elementFormDefault = "qualified">
+
+  <!-- Basistyp für eine Id basierend auf xsd:long -->
+  <simpleType name="ST_LongId">
+    <restriction base="long"/>
+  </simpleType>    
+  <!-- Basistyp für eine Id basierend auf xsd:string -->
+  <simpleType name="ST_Id">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Basistyp für eine Version -->
+  <simpleType name="ST_Version">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Basistyp für die Sprache, z.B. "de-de" -->
+  <simpleType name="ST_Language">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Basistyp für Text -->
+  <simpleType name="ST_Text">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Basistyp für Fehlerkodes -->
+  <simpleType name="ST_ErrorCode">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Basistyp für Fehlerquellen -->
+  <simpleType name="ST_ErrorSource">
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Basistyp für mehrsprachige Texte -->
+  <complexType name="CT_MessageDescription">
+    <sequence>
+      <element name="language" type="baseType:ST_Language"/>
+      <element name="text"     type="baseType:ST_Text"/>
+    </sequence>
+  </complexType>
+  <!-- Basistyp für die Statusrückgabe eines Dienstes -->
+  <simpleType name="ST_Status">
+    <restriction base="string">
+      <enumeration value="OK"/>
+      <enumeration value="ACK"/>
+      <enumeration value="ERR"/>
+    </restriction>
+  </simpleType>
+  <!-- Basistyp für den Monitorstatuskode -->
+  <simpleType name="ST_MonitorStatusCode">
+    <restriction base="string">
+      <enumeration value="OK"/>
+      <enumeration value="ERR"/>
+    </restriction>
+  </simpleType>
+  <!-- Basistyp für einen Zeitstempel -->
+  <simpleType name="ST_TimeStamp">
+    <!-- Aus Kompatibilitätsgründen als xsd:string -->
+    <restriction base="string"/>
+  </simpleType>
+  <!-- Typ für mehrsprachige Texte -->
+  <complexType name="CT_MessageDescriptions">
+    <sequence>
+      <element name="errorDescription"  type="baseType:CT_MessageDescription" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>        
+  </complexType>       
+  
+</schema>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : properties.xml
+    Created on : 8. September 2010, 14:44
+    Author     : fel
+    Description:
+        Purpose of the document follows.
+-->
+
+<property-labels>
+    <!--EDGE classes-->
+    <class name="net.frapu.code.visualization.ProcessEdge">
+        <property name="points" type="extended">
+            <label language="de">Punkte</label>
+            <label language="en">Points</label>
+        </property>
+        <property name="color_arc" type="base">
+            <label language="de">Farbe</label>
+            <label language="en">Color</label>
+        </property>
+        <property name="label" type="base">
+            <label language="de">Beschriftung</label>
+            <label language="en">Label</label>
+        </property>
+        <property name="label_offset" type="extended">
+            <label language="de">Label-Offset</label>
+            <label language="en">Label Offset</label>
+        </property>
+    </class>
+
+    <!-- UML edges -->
+
+    <class name="net.frapu.code.visualization.uml.Aggregation">
+        <property name="composition" type="extended">
+            <label language="de">Komposition</label>
+            <label language="en">Composition</label>
+        </property>
+        <property name="sourceName" type="extended">
+            <label language="de">Quellenname</label>
+            <label language="en">Source name</label>
+        </property>
+        <property name="sourceMultiplicity" type="extended">
+            <label language="de">Quellenmultiplizität</label>
+            <label language="en">Source multiplicity</label>
+        </property>
+        <property name="sourceVisibility" type="extended">
+            <label language="de">Quellensichtbarkeit</label>
+            <label language="en">Source visibility</label>
+        </property>
+        <property name="targetName" type="extended">
+            <label language="de">Zielname</label>
+            <label language="en">Target name</label>
+        </property>
+        <property name="targetMultiplicity" type="extended">
+            <label language="de">Tielmultiplizität</label>
+            <label language="en">Target multiplicity</label>
+        </property>
+        <property name="targetVisibility" type="extended">
+            <label language="de">Zielsichtbarkeit</label>
+            <label language="en">Target visibility</label>
+        </property>
+        <property name="direction" type="extended">
+            <label language="de">Richtung</label>
+            <label language="en">Direction</label>
+        </property>
+    </class>
+    
+    <class name="net.frapu.code.visualization.uml.Association">
+        <property name="direction" type="extended">
+            <label language="de">Richtung</label>
+            <label language="en">Direction</label>
+        </property>
+        <property name="sourceName" type="extended">
+            <label language="de">Quellenname</label>
+            <label language="en">Source name</label>
+        </property>
+        <property name="sourceMultiplicity" type="extended">
+            <label language="de">Quellenmultiplizität</label>
+            <label language="en">Source multiplicity</label>
+        </property>
+        <property name="sourceVisibility" type="extended">
+            <label language="de">Quellensichtbarkeit</label>
+            <label language="en">Source visibility</label>
+        </property>
+        <property name="targetName" type="extended">
+            <label language="de">Zielname</label>
+            <label language="en">Target name</label>
+        </property>
+        <property name="targetMultiplicity" type="extended">
+            <label language="de">Tielmultiplizität</label>
+            <label language="en">Target multiplicity</label>
+        </property>
+        <property name="targetVisibility" type="extended">
+            <label language="de">Zielsichtbarkeit</label>
+            <label language="en">Target visibility</label>
+        </property>
+    </class>
+
+
+    <!-- DOMAIN edges-->
+    <class name="net.frapu.code.visualization.domainModel.Aggregation">
+        <property name="composition" type="extended">
+            <label language="de">Komposition</label>
+            <label language="en">Composition</label>
+        </property>
+        <property name="sourceName" type="extended">
+            <label language="de">Quellenname</label>
+            <label language="en">Source name</label>
+        </property>
+        <property name="sourceMultiplicity" type="extended">
+            <label language="de">Quellenmultiplizität</label>
+            <label language="en">Source multiplicity</label>
+        </property>
+        <property name="sourceVisibility" type="extended">
+            <label language="de">Quellensichtbarkeit</label>
+            <label language="en">Source visibility</label>
+        </property>
+        <property name="targetName" type="extended">
+            <label language="de">Zielname</label>
+            <label language="en">Target name</label>
+        </property>
+        <property name="targetMultiplicity" type="extended">
+            <label language="de">Tielmultiplizität</label>
+            <label language="en">Target multiplicity</label>
+        </property>
+        <property name="targetVisibility" type="extended">
+            <label language="de">Zielsichtbarkeit</label>
+            <label language="en">Target visibility</label>
+        </property>
+        <property name="direction" type="extended">
+            <label language="de">Richtung</label>
+            <label language="en">Direction</label>
+        </property>
+    </class>
+
+    <class name="net.frapu.code.visualization.domainModel.Association">
+        <property name="direction" type="extended">
+            <label language="de">Richtung</label>
+            <label language="en">Direction</label>
+        </property>
+        <property name="sourceName" type="extended">
+            <label language="de">Quellenname</label>
+            <label language="en">Source name</label>
+        </property>
+        <property name="sourceMultiplicity" type="extended">
+            <label language="de">Quellenmultiplizität</label>
+            <label language="en">Source multiplicity</label>
+        </property>
+        <property name="sourceVisibility" type="extended">
+            <label language="de">Quellensichtbarkeit</label>
+            <label language="en">Source visibility</label>
+        </property>
+        <property name="targetName" type="extended">
+            <label language="de">Zielname</label>
+            <label language="en">Target name</label>
+        </property>
+        <property name="targetMultiplicity" type="extended">
+            <label language="de">Tielmultiplizität</label>
+            <label language="en">Target multiplicity</label>
+        </property>
+        <property name="targetVisibility" type="extended">
+            <label language="de">Zielsichtbarkeit</label>
+            <label language="en">Target visibility</label>
+        </property>
+    </class>
+
+    <!--NODE classes-->
+
+    <class name="net.frapu.code.visualization.ProcessNode">
+        <property name="text" type="base">
+            <label language="de">Text</label>
+            <label language="en">Text</label>
+        </property>
+        <property name="stereotype" type="base">
+            <label language="de">Stereotyp</label>
+            <label language="en">Stereotype</label>
+        </property>
+        <property name="x" type="extended">
+            <label language="de">X (Zentrum)</label>
+            <label language="en">X (Center)</label>
+        </property>
+        <property name="y" type="extended">
+            <label language="de">Y (Zentrum)</label>
+            <label language="en">Y (Center)</label>
+        </property>
+        <property name="width" type="extended">
+            <label language="de">Breite</label>
+            <label language="en">Width</label>
+        </property>
+        <property name="height" type="extended">
+            <label language="de">Höhe</label>
+            <label language="en">Height</label>
+        </property>
+        <property name="shadow" type="extended">
+            <label language="de">Schatten</label>
+            <label language="en">Shadow</label>
+        </property>
+        <property name="ref" type="extended">
+            <label language="de">Verknüpfung</label>
+            <label language="en">Link</label>
+        </property>
+        <property name="color_background" type="base">
+            <label language="de">Hintergrund</label>
+            <label language="en">Background</label>
+        </property>
+        <property name="ModuleID" type="extended">
+            <label language="de">Modul ID(iS)</label>
+            <label language="en">Module ID(iS)</label>
+        </property>
+        <property name="SemanticAnnotations" type="extended">
+            <label language="de">Semantische Tags</label>
+            <label language="en">Semantic Tags</label>
+        </property>
+    </class>
+
+    <!--UML nodes-->
+
+    <class name="net.frapu.code.visualization.uml.UMLClass">
+        <property name="abstract" type="extended">
+            <label language="de">Abstrakt</label>
+            <label language="en">Abstract</label>
+        </property>
+        <property name="attributes" type="base">
+            <label language="de">Attribute</label>
+            <label language="en">Attributes</label>
+        </property>
+        <property name="contraints" type="extended">
+            <label language="de">Beschränkungen</label>
+            <label language="en">Constraints</label>
+        </property>
+        <property name="methods" type="base">
+            <label language="de">Methoden</label>
+            <label language="en">Methods</label>
+        </property>
+    </class>
+
+    <class name="net.frapu.code.visualization.uml.UMLClassReference">
+        <property name="abstract" type="extended">
+            <label language="de">Abstrakt</label>
+            <label language="en">Abstract</label>
+        </property>
+        <property name="attributes" type="base">
+            <label language="de">Attribute</label>
+            <label language="en">Attributes</label>
+        </property>
+        <property name="contraints" type="extended">
+            <label language="de">Beschränkungen</label>
+            <label language="en">Constraints</label>
+        </property>
+        <property name="methods" type="base">
+            <label language="de">Methoden</label>
+            <label language="en">Methods</label>
+        </property>
+    </class>
+    
+    <default>
+        <property name="xpath" type="extended">
+            <label language="de">XPath</label>
+            <label language="en">XPath</label>
+        </property>
+    </default>
+</property-labels>

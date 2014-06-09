@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="cID1" type="Petri net">
+        <place id="sp"/>
+        <place id="182p"/>
+        <place id="16p"/>
+        <place id="164p"/>
+        <place id="7p1"/>
+        <place id="7p2"/>
+        <place id="6p"/>
+        <place id="9p"/>
+        <place id="8p"/>
+        <place id="187p1"/>
+        <place id="187p2"/>
+        <place id="13826188p"/>
+        <place id="15p"/>
+        <place id="13p"/>
+        <place id="14p"/>
+        <place id="pe0"/>
+        <place id="11p"/>
+        <place id="171p"/>
+        <place id="10p1"/>
+        <place id="10p2"/>
+        <transition id="182t">
+            <name>
+                <text>Prepare(2€, 150s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="3" name="QA"/>
+                <metadata>
+                    <property name="Dauer" value="150" type="Duration"/>
+                    <property name="Kosten" value="2" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="16t1">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="16t2">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="164t">
+            <name>
+                <text>Check books(5€, 120s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata>
+                    <property name="Dauer" value="120" type="Duration"/>
+                    <property name="Kosten" value="5" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="7t">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="6t">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="9t">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="8t">
+            <name>
+                <text>Check account(10€, 60s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="2" name="Employee"/>
+                <metadata>
+                    <property name="Dauer" value="60" type="Duration"/>
+                    <property name="Kosten" value="10" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="187t1">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="187t2">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="13826188t1">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="13826188t2">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="15t">
+            <name>
+                <text>Re-examine(5€, 10s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata>
+                    <property name="Dauer" value="10" type="Duration"/>
+                    <property name="Kosten" value="5" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="13t">
+            <name>
+                <text>Store(2€, 5s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata>
+                    <property name="Dauer" value="5" type="Duration"/>
+                    <property name="Kosten" value="2" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="14t">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="te0">
+            <name>
+                <text>PN Transition End</text>
+            </name>
+            <toolspecific tool="IS">
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="11t">
+            <name>
+                <text>Accept(3€, 30s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata>
+                    <property name="Dauer" value="30" type="Duration"/>
+                    <property name="Kosten" value="3" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="171t">
+            <name>
+                <text>Reject(2€, 100s)</text>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata>
+                    <property name="Dauer" value="100" type="Duration"/>
+                    <property name="Kosten" value="2" type="Cost"/>
+                    <property name="Z" value="0" type="Duration"/>
+                    <property name="K" value="0" type="Cost"/>
+                    <property name="Zeit" value="0" type="Duration"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="10t1">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="10t2">
+            <name>
+                <text/>
+            </name>
+            <toolspecific tool="IS">
+                <poollane id="4" name="Manager"/>
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <arc id="182t" source="15p" target="182t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="182p" source="182t" target="182p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="16t1" source="182p" target="16t1">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="16p1" source="16t1" target="16p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="16p2" source="16t2" target="16p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="16t2" source="6p" target="16t2">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="7t" source="16p" target="7t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="164t" source="7p1" target="164t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="164p" source="164t" target="164p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="9t" source="164p" target="9t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="7p1" source="7t" target="7p1">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="7p2" source="7t" target="7p2">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="8t" source="7p2" target="8t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="6t" source="sp" target="6t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="6p" source="6t" target="6p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="9p" source="9t" target="9p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="9t" source="8p" target="9t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="8p" source="8t" target="8p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="187t1" source="13826188p" target="187t1">
+            <inscription>
+                <value>15</value>
+            </inscription>
+        </arc>
+        <arc id="187p1" source="187t1" target="187p1">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="15t" source="187p1" target="15t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="187t2" source="13826188p" target="187t2">
+            <inscription>
+                <value>85</value>
+            </inscription>
+        </arc>
+        <arc id="187p2" source="187t2" target="187p2">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="13t" source="187p2" target="13t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="13826188p1" source="13826188t1" target="13826188p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="13826188t1" source="11p" target="13826188t1">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="13826188p2" source="13826188t2" target="13826188p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="13826188t2" source="171p" target="13826188t2">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="15p" source="15t" target="15p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="13p" source="13t" target="13p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="14t" source="13p" target="14t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="14p" source="14t" target="14p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="te0" source="14p" target="te0">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="pe0" source="te0" target="pe0">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="11t" source="10p1" target="11t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="11p" source="11t" target="11p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="171t" source="10p2" target="171t">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="171p" source="171t" target="171p">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="10t1" source="9p" target="10t1">
+            <inscription>
+                <value>70</value>
+            </inscription>
+        </arc>
+        <arc id="10p1" source="10t1" target="10p1">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+        <arc id="10t2" source="9p" target="10t2">
+            <inscription>
+                <value>30</value>
+            </inscription>
+        </arc>
+        <arc id="10p2" source="10t2" target="10p2">
+            <inscription>
+                <value>100</value>
+            </inscription>
+        </arc>
+    </net>
+</pnml>

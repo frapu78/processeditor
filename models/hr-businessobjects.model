@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="5358047" name="HR Business Objects" type="net.frapu.code.visualization.uml.ClassModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="candidates"/>
+            <property name="color_background" value="-3355393"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/element[@name='candidates']"/>
+            <property name="#id" value="23632254"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="Element"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="110"/>
+            <property name="x" value="155"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="candidate"/>
+            <property name="color_background" value="-3355393"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/element[@name='candidate']"/>
+            <property name="#id" value="3497072"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="Element"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="257"/>
+            <property name="x" value="385"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="protocol"/>
+            <property name="color_background" value="-3355393"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/element[@name='protocol']"/>
+            <property name="#id" value="21493930"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="Element"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="110"/>
+            <property name="x" value="695"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="CT_Protocol"/>
+            <property name="color_background" value="-52"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/complexType[@name='CT_Protocol']"/>
+            <property name="#id" value="1478583"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="90"/>
+            <property name="stereotype" value="ComplexType"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value="interviewer : xs:string,notes : xs:string"/>
+            <property name="y" value="265"/>
+            <property name="x" value="695"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="CT_Candidates"/>
+            <property name="color_background" value="-52"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/complexType[@name='CT_Candidates']"/>
+            <property name="#id" value="20275579"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="75"/>
+            <property name="stereotype" value="ComplexType"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value="@recruiter : xs:string"/>
+            <property name="y" value="257"/>
+            <property name="x" value="155"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="CT_Candidate"/>
+            <property name="color_background" value="-52"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/complexType[@name='CT_Candidate']"/>
+            <property name="#id" value="26408643"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="164"/>
+            <property name="stereotype" value="ComplexType"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value="firstName : xs:string,lastName : xs:string,city : xs:string,position : xs:string,requestedSalary : xs:double,comment [0..1]  : xs:string,internalCandidate : xs:boolean"/>
+            <property name="y" value="457"/>
+            <property name="x" value="270"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="CT_SearchResults"/>
+            <property name="color_background" value="-52"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/complexType[@name='CT_SearchResults']"/>
+            <property name="#id" value="25591043"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="ComplexType"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value=""/>
+            <property name="y" value="649"/>
+            <property name="x" value="270"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="CT_SearchResult"/>
+            <property name="color_background" value="-52"/>
+            <property name="width" value="150"/>
+            <property name="xpath" value="schema/complexType[@name='CT_SearchResult']"/>
+            <property name="#id" value="7961817"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="120"/>
+            <property name="stereotype" value="ComplexType"/>
+            <property name="shadow" value="0"/>
+            <property name="attributes" value="title : xs:string,abstract : xs:string,uri : xs:string,date : xs:date"/>
+            <property name="y" value="819"/>
+            <property name="x" value="270"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="32746138"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="23632254"/>
+            <property name="label" value="&lt;&lt;type&gt;&gt;"/>
+            <property name="points" value="155,140+155,220"/>
+            <property name="#targetNode" value="20275579"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="0,30"/>
+            <property name="#target_dockpoint" value="0,-37"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="4551109"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="3497072"/>
+            <property name="label" value="&lt;&lt;type&gt;&gt;"/>
+            <property name="points" value="385,287+385,326+307,326+307,375"/>
+            <property name="#targetNode" value="26408643"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="0,30"/>
+            <property name="#target_dockpoint" value="37,-82"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Association"/>
+            <property name="#id" value="19948449"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="21493930"/>
+            <property name="label" value="&lt;&lt;type&gt;&gt;"/>
+            <property name="points" value="695,140+695,220"/>
+            <property name="#targetNode" value="1478583"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="0,30"/>
+            <property name="#target_dockpoint" value="0,-45"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Aggregation"/>
+            <property name="#id" value="12735384"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="20275579"/>
+            <property name="composition" value="1"/>
+            <property name="label" value="candidate [0..n] "/>
+            <property name="points" value="155,294+155,326+232,326+232,375"/>
+            <property name="#targetNode" value="26408643"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="0,37"/>
+            <property name="#target_dockpoint" value="-38,-82"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Aggregation"/>
+            <property name="#id" value="33439569"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="26408643"/>
+            <property name="composition" value="1"/>
+            <property name="label" value="searchResults [0..1] "/>
+            <property name="points" value="270,539+270,619"/>
+            <property name="#targetNode" value="25591043"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="0,82"/>
+            <property name="#target_dockpoint" value="0,-30"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.uml.Aggregation"/>
+            <property name="#id" value="15670633"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="25591043"/>
+            <property name="composition" value="1"/>
+            <property name="label" value="searchResult [0..n] "/>
+            <property name="points" value="270,679+270,759"/>
+            <property name="#targetNode" value="7961817"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value="0,30"/>
+            <property name="#target_dockpoint" value="0,-60"/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value="Frank Puhlmann"/>
+        <property name="#source" value="file:/C:/Users/fpu/.ProcessEditorServer/upload/model24"/>
+        <property name="#creationDate" value="12. Januar 2010 12:09:33 MEZ"/>
+        <property name="name" value="HR Business Objects"/>
+        <property name="#folder" value="/"/>
+        <property name="#data" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:hr=&quot;http://research.inubit.com/hr&quot; targetNamespace=&quot;http://research.inubit.com/hr&quot;&gt; &#13;&#10;&#13;&#10;&lt;xs:element name=&quot;candidates&quot; type=&quot;hr:CT_Candidates&quot;/&gt;&#13;&#10;    &#13;&#10;&lt;xs:element name=&quot;candidate&quot; type=&quot;hr:CT_Candidate&quot;/&gt;&#13;&#10;    &#13;&#10;&lt;xs:element name=&quot;protocol&quot; type=&quot;hr:CT_Protocol&quot;/&gt;&#13;&#10;    &#13;&#10;&lt;xs:complexType name=&quot;CT_Protocol&quot;&gt;&#13;&#10;    &lt;xs:sequence&gt;&#13;&#10;        &lt;xs:element name=&quot;interviewer&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;notes&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;    &lt;/xs:sequence&gt;&#13;&#10;&lt;/xs:complexType&gt;&#13;&#10;&#13;&#10;&lt;xs:complexType name=&quot;CT_Candidates&quot;&gt;&#13;&#10;    &lt;xs:sequence&gt;&#13;&#10;        &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;candidate&quot; type=&quot;hr:CT_Candidate&quot;/&gt;&#13;&#10;    &lt;/xs:sequence&gt;&#13;&#10;    &lt;xs:attribute name=&quot;recruiter&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;&lt;/xs:complexType&gt;&#13;&#10;&#13;&#10;&lt;xs:complexType name=&quot;CT_Candidate&quot;&gt;&#13;&#10;    &lt;xs:sequence&gt;&#13;&#10;        &lt;xs:element name=&quot;firstName&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;lastName&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;position&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;requestedSalary&quot; type=&quot;xs:double&quot;/&gt;    &#13;&#10;        &lt;xs:element minOccurs=&quot;0&quot; name=&quot;comment&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element minOccurs=&quot;0&quot; name=&quot;searchResults&quot; type=&quot;hr:CT_SearchResults&quot;/&gt;&#13;&#10;    &lt;/xs:sequence&gt;&#13;&#10;&lt;/xs:complexType&gt;&#13;&#10;    &#13;&#10;&lt;xs:complexType name=&quot;CT_SearchResults&quot;&gt;&#13;&#10;    &lt;xs:sequence&gt;&#13;&#10;        &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;searchResult&quot; type=&quot;hr:CT_SearchResult&quot;/&gt;&#13;&#10;    &lt;/xs:sequence&gt;&#13;&#10;&lt;/xs:complexType&gt;&#13;&#10;    &#13;&#10;&lt;xs:complexType name=&quot;CT_SearchResult&quot;&gt;&#13;&#10;    &lt;xs:sequence&gt;&#13;&#10;        &lt;xs:element name=&quot;title&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;abstract&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;uri&quot; type=&quot;xs:string&quot;/&gt;&#13;&#10;        &lt;xs:element name=&quot;date&quot; type=&quot;xs:date&quot;/&gt;&#13;&#10;    &lt;/xs:sequence&gt;&#13;&#10;&lt;/xs:complexType&gt;&#13;&#10;&#13;&#10;&lt;/xs:schema&gt;&#13;&#10;"/>
+        <property name="#uri" value="http://127.0.0.1:1205/models/12387417/versions/1"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

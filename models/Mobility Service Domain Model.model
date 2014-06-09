@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="406549040" name="" type="net.frapu.code.visualization.domainModel.DomainModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+<nodes>
+<node>
+<property name="abstract" value="0"/>
+<property name="#type" value="net.frapu.code.visualization.domainModel.DomainClass"/>
+<property name="#id" value="1054653563"/>
+<property name="text" value="MobilityService"/>
+<property name="height" value="89"/>
+<property name="#attributes" value=""/>
+<property name="stereotype" value="root_instance"/>
+<property name="shadow" value="0"/>
+<property name="color_background" value="-817661"/>
+<property name="width" value="125"/>
+<property name="y" value="75"/>
+<property name="x" value="122"/>
+</node>
+<node>
+<property name="abstract" value="0"/>
+<property name="#type" value="net.frapu.code.visualization.domainModel.DomainClass"/>
+<property name="#id" value="1110166457"/>
+<property name="text" value="Customer"/>
+<property name="height" value="92"/>
+<property name="#attributes" value="+AccountNumber:Integer;+FirstName:String;+LastName:String;+Address:String"/>
+<property name="stereotype" value=""/>
+<property name="shadow" value="0"/>
+<property name="color_background" value="-5321155"/>
+<property name="width" value="145"/>
+<property name="y" value="217"/>
+<property name="x" value="122"/>
+</node>
+<node>
+<property name="abstract" value="0"/>
+<property name="#type" value="net.frapu.code.visualization.domainModel.DomainClass"/>
+<property name="#id" value="1997002414"/>
+<property name="text" value="Insurance"/>
+<property name="height" value="85"/>
+<property name="#attributes" value="+State:String;+Level:String;+Rate:Float"/>
+<property name="stereotype" value=""/>
+<property name="shadow" value="0"/>
+<property name="color_background" value="-5321155"/>
+<property name="width" value="131"/>
+<property name="y" value="217"/>
+<property name="x" value="318"/>
+</node>
+<node>
+<property name="abstract" value="0"/>
+<property name="#type" value="net.frapu.code.visualization.domainModel.DomainClass"/>
+<property name="#id" value="1185401853"/>
+<property name="text" value="Car"/>
+<property name="height" value="89"/>
+<property name="#attributes" value="+State:String;+Type:String;+Motor:String;+Color:String"/>
+<property name="stereotype" value=""/>
+<property name="shadow" value="0"/>
+<property name="color_background" value="-5321155"/>
+<property name="width" value="107"/>
+<property name="y" value="217"/>
+<property name="x" value="497"/>
+</node>
+<node>
+<property name="abstract" value="0"/>
+<property name="#type" value="net.frapu.code.visualization.domainModel.DomainClass"/>
+<property name="#id" value="1391609498"/>
+<property name="text" value="LeasingContract"/>
+<property name="height" value="98"/>
+<property name="#attributes" value="+Duration:Date;+Rate:Float"/>
+<property name="stereotype" value=""/>
+<property name="shadow" value="0"/>
+<property name="color_background" value="-5321155"/>
+<property name="width" value="130"/>
+<property name="y" value="355"/>
+<property name="x" value="122"/>
+</node>
+</nodes>
+<edges>
+<edge>
+<property name="#type" value="net.frapu.code.visualization.domainModel.Aggregation"/>
+<property name="#id" value="1612676926"/>
+<property name="color_arc" value="-8882056"/>
+<property name="#sourceNode" value="1054653563"/>
+<property name="composition" value="0"/>
+<property name="label" value=""/>
+<property name="points" value=""/>
+<property name="#targetNode" value="1110166457"/>
+<property name="#source_dockpoint" value=""/>
+<property name="#label_offset" value="0.5"/>
+<property name="#target_dockpoint" value=""/>
+</edge>
+<edge>
+<property name="#type" value="net.frapu.code.visualization.domainModel.Aggregation"/>
+<property name="#id" value="528688824"/>
+<property name="color_arc" value="-8882056"/>
+<property name="#sourceNode" value="1054653563"/>
+<property name="composition" value="0"/>
+<property name="label" value=""/>
+<property name="points" value="497,79"/>
+<property name="#targetNode" value="1185401853"/>
+<property name="#source_dockpoint" value="62,4"/>
+<property name="#label_offset" value="0.5"/>
+<property name="#target_dockpoint" value="0,-44"/>
+</edge>
+<edge>
+<property name="#type" value="net.frapu.code.visualization.domainModel.Aggregation"/>
+<property name="#id" value="686104144"/>
+<property name="color_arc" value="-8882056"/>
+<property name="#sourceNode" value="1110166457"/>
+<property name="composition" value="0"/>
+<property name="label" value=""/>
+<property name="points" value=""/>
+<property name="#targetNode" value="1391609498"/>
+<property name="#source_dockpoint" value=""/>
+<property name="#label_offset" value="0.5"/>
+<property name="#target_dockpoint" value=""/>
+</edge>
+<edge>
+<property name="#type" value="net.frapu.code.visualization.domainModel.Association"/>
+<property name="#id" value="304001087"/>
+<property name="color_arc" value="-8882056"/>
+<property name="direction" value="TARGET"/>
+<property name="#sourceNode" value="1391609498"/>
+<property name="composition" value="0"/>
+<property name="label" value=""/>
+<property name="points" value="497,361"/>
+<property name="#targetNode" value="1185401853"/>
+<property name="#source_dockpoint" value="65,6"/>
+<property name="#label_offset" value="0.5"/>
+<property name="#target_dockpoint" value="0,43"/>
+</edge>
+<edge>
+<property name="#type" value="net.frapu.code.visualization.domainModel.Aggregation"/>
+<property name="#id" value="2120852352"/>
+<property name="color_arc" value="-8882056"/>
+<property name="#sourceNode" value="1110166457"/>
+<property name="composition" value="0"/>
+<property name="label" value=""/>
+<property name="points" value=""/>
+<property name="#targetNode" value="1997002414"/>
+<property name="#source_dockpoint" value=""/>
+<property name="#label_offset" value="0.5"/>
+<property name="#target_dockpoint" value=""/>
+</edge>
+<edge>
+<property name="#type" value="net.frapu.code.visualization.domainModel.Association"/>
+<property name="#id" value="1439263490"/>
+<property name="color_arc" value="-8882056"/>
+<property name="direction" value="TARGET"/>
+<property name="#sourceNode" value="1997002414"/>
+<property name="composition" value="0"/>
+<property name="label" value=""/>
+<property name="points" value=""/>
+<property name="#targetNode" value="1185401853"/>
+<property name="#source_dockpoint" value=""/>
+<property name="#label_offset" value="0.5"/>
+<property name="#target_dockpoint" value=""/>
+</edge>
+</edges>
+<properties>
+<property name="author" value=""/>
+<property name="#source" value=""/>
+<property name="#creationDate" value="12. November 2010 15:03:22 MEZ"/>
+<property name="name" value=""/>
+<property name="#data" value=""/>
+<property name="#uri" value="/models/tmp/406549040_3453992090883953801"/>
+<property name="comment" value=""/>
+</properties>
+</model>

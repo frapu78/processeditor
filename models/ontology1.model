@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="1760888786" name=""
+    type="net.frapu.code.visualization.ontology.OntologyModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="1421298085"/>
+            <property name="text" value="Person"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="42"/>
+            <property name="x" value="336"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Individual"/>
+            <property name="#id" value="263990790"/>
+            <property name="text" value="Frank"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="41"/>
+            <property name="x" value="468"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="564389510"/>
+            <property name="text" value="Thing"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="167"/>
+            <property name="x" value="390"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="1061794148"/>
+            <property name="text" value="Account"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="146"/>
+            <property name="x" value="270"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="1105169052"/>
+            <property name="text" value="ItemList"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="245"/>
+            <property name="x" value="267"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="773763779"/>
+            <property name="text" value="Invoice"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="331"/>
+            <property name="x" value="266"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="1151356699"/>
+            <property name="text" value="PaidInvoice"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="345"/>
+            <property name="x" value="143"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="151143676"/>
+            <property name="text" value="OpenInvoice"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="116"/>
+            <property name="y" value="366"/>
+            <property name="x" value="414"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="521595859"/>
+            <property name="text" value="Item"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="266"/>
+            <property name="x" value="390"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="1335003671"/>
+            <property name="text" value="Price"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="207"/>
+            <property name="x" value="523"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="1477744845"/>
+            <property name="text" value="NetPrice"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="118"/>
+            <property name="x" value="521"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.ontology.Concept"/>
+            <property name="#id" value="868879746"/>
+            <property name="text" value="GrossPrice"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="80"/>
+            <property name="y" value="97"/>
+            <property name="x" value="638"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.ContainmentEdge"/>
+            <property name="#id" value="1339801924"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="263990790"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1421298085"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="1106835247"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1421298085"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="564389510"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.ContainmentEdge"/>
+            <property name="#id" value="1297548602"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1421298085"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1061794148"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="1692538903"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1061794148"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="564389510"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="1512418737"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1105169052"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="564389510"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="1222041824"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="773763779"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1105169052"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="568182382"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1151356699"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="773763779"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="77415586"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="151143676"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="773763779"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.ContainmentEdge"/>
+            <property name="#id" value="1153943546"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1105169052"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="521595859"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="1676986191"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="521595859"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="564389510"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.ContainmentEdge"/>
+            <property name="#id" value="221690582"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="521595859"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1335003671"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="2146074520"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1335003671"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="564389510"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="1076604374"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1477744845"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="564389510"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.EquivalentClassEdge"/>
+            <property name="#id" value="819968033"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1477744845"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1335003671"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.ontology.SubClassEdge"/>
+            <property name="#id" value="67022539"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="868879746"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1477744845"/>
+        </edge>
+    </edges>
+</model>

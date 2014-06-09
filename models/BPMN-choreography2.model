@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1853935513" name="BPMN-choreography2.model" type="net.frapu.code.visualization.bpmn.BPMNModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Seller"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="650"/>
+            <property name="pool_lanes" value=""/>
+            <property name="#id" value="18019860"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="height" value="54"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="multi_instance" value="0"/>
+            <property name="blackbox_pool" value="1"/>
+            <property name="y" value="43"/>
+            <property name="x" value="358"/>
+        </node>
+        <node>
+            <property name="lower_mi" value="1;0"/>
+            <property name="#nodes" value="29494967;817146374;2917593;12406332;914691;18327741;5676128;23699909;7068128;8940240"/>
+            <property name="text" value="Bidding phase"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="518"/>
+            <property name="upper_participants" value="Seller"/>
+            <property name="upper_mi" value="0"/>
+            <property name="collapsed" value="0"/>
+            <property name="active_participants" value="Bidder"/>
+            <property name="loop_type" value="Standard"/>
+            <property name="#id" value="18327741"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ChoreographySubProcess"/>
+            <property name="height" value="328"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="lower_participants" value="Bidder;Buyer"/>
+            <property name="y" value="303"/>
+            <property name="x" value="348"/>
+        </node>
+        <node>
+            <property name="lower_mi" value="1"/>
+            <property name="lower_participant" value="Bidder"/>
+            <property name="text" value="Send bids\n"/>
+            <property name="active_participant" value="Bidder"/>
+            <property name="color_background" value="-1"/>
+            <property name="upper_participant" value="Seller"/>
+            <property name="width" value="100"/>
+            <property name="upper_mi" value="0"/>
+            <property name="loop_type" value="Standard"/>
+            <property name="#id" value="2917593"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ChoreographyTask"/>
+            <property name="height" value="100"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="287"/>
+            <property name="x" value="255"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.StartEvent"/>
+            <property name="#id" value="914691"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="non_interupting" value="0"/>
+            <property name="y" value="287"/>
+            <property name="x" value="132"/>
+        </node>
+        <node>
+            <property name="lower_mi" value="0"/>
+            <property name="lower_participant" value="Buyer"/>
+            <property name="text" value="Send payment\ninformation"/>
+            <property name="active_participant" value="Seller"/>
+            <property name="color_background" value="-1"/>
+            <property name="upper_participant" value="Seller"/>
+            <property name="width" value="100"/>
+            <property name="upper_mi" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#id" value="5676128"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ChoreographyTask"/>
+            <property name="height" value="100"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="229"/>
+            <property name="x" value="460"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.EndEvent"/>
+            <property name="#id" value="29494967"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="229"/>
+            <property name="x" value="557"/>
+        </node>
+        <node>
+            <property name="#nodes" value=""/>
+            <property name="text" value="Bidder"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="660"/>
+            <property name="pool_lanes" value=""/>
+            <property name="#id" value="14433154"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Pool"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="multi_instance" value="1"/>
+            <property name="blackbox_pool" value="1"/>
+            <property name="y" value="545"/>
+            <property name="x" value="362"/>
+        </node>
+        <node>
+            <property name="lower_mi" value="1"/>
+            <property name="lower_participant" value="Bidder"/>
+            <property name="text" value="Send alternative\nofferings\n\n"/>
+            <property name="active_participant" value="Seller"/>
+            <property name="color_background" value="-1"/>
+            <property name="upper_participant" value="Seller"/>
+            <property name="width" value="100"/>
+            <property name="upper_mi" value="0"/>
+            <property name="loop_type" value="MultiInstance"/>
+            <property name="#id" value="7068128"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ChoreographyTask"/>
+            <property name="height" value="100"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="351"/>
+            <property name="x" value="461"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.EndEvent"/>
+            <property name="#id" value="12406332"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="351"/>
+            <property name="x" value="558"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.ParallelGateway"/>
+            <property name="#id" value="8940240"/>
+            <property name="text" value=""/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="40"/>
+            <property name="y" value="295"/>
+            <property name="x" value="362"/>
+        </node>
+        <node>
+            <property name="font_style" value="1"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.TextAnnotation"/>
+            <property name="#id" value="33371659"/>
+            <property name="text" value="Choreography SubProcess with multiple bidders"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-52"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="120"/>
+            <property name="font_size" value="10"/>
+            <property name="y" value="237"/>
+            <property name="x" value="715"/>
+        </node>
+        <node>
+            <property name="font_style" value="1"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.TextAnnotation"/>
+            <property name="#id" value="23699909"/>
+            <property name="text" value="Choreography Task, where multiple bidders send their bids to a seller (in sequence)"/>
+            <property name="height" value="70"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-52"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="120"/>
+            <property name="font_size" value="10"/>
+            <property name="y" value="370"/>
+            <property name="x" value="108"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Message"/>
+            <property name="#id" value="817146374"/>
+            <property name="text" value="Bid"/>
+            <property name="height" value="20"/>
+            <property name="stereotype" value=""/>
+            <property name="initiate" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="378"/>
+            <property name="x" value="193"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="29167060"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="914691"/>
+            <property name="sequence_type" value="STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="2917593"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="22162914"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="2917593"/>
+            <property name="sequence_type" value="STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="8940240"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="25232872"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="8940240"/>
+            <property name="sequence_type" value="STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="5676128"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="17240206"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="5676128"/>
+            <property name="sequence_type" value="STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="29494967"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="30624226"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="8940240"/>
+            <property name="sequence_type" value="STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="7068128"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SequenceFlow"/>
+            <property name="#id" value="3559661"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="7068128"/>
+            <property name="sequence_type" value="STANDARD"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="12406332"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.MessageFlow"/>
+            <property name="#id" value="7856"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="18019860"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="18327741"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.MessageFlow"/>
+            <property name="#id" value="11743647"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="18327741"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="14433154"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="24130692"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="NONE"/>
+            <property name="#sourceNode" value="33371659"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="18327741"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="2169655"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="NONE"/>
+            <property name="#sourceNode" value="23699909"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="2917593"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="838096459"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="NONE"/>
+            <property name="#sourceNode" value="817146374"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="2917593"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="22. Juni 2010 14:58:00 MESZ"/>
+        <property name="name" value="BPMN-choreography2.model"/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\ff\Eigene Dateien\Eclipse-Workspace\code\Processeditor\models\BPMN-choreography2.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

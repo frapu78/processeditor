@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="20870479" name="Reporting model" type="net.frapu.code.visualization.reporting.ReportingModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="text" value="Waiting Times per Instance"/>
+            <property name="color_background" value="-1"/>
+            <property name="labels" value=""/>
+            <property name="width" value="682"/>
+            <property name="y_label" value="Waiting Time (min)"/>
+            <property name="#id" value="31510384"/>
+            <property name="#type" value="net.frapu.code.visualization.reporting.BarChart"/>
+            <property name="height" value="200"/>
+            <property name="values" value="382,475,447,138,380,293,394,123,396,111,395,317,141,103,313,246,420,102,408,232,378,392,289,464,212,391,409,300,340,85,398,188,101,54,293,50,462,316,386,217,7,156,290,467,433,425,52,320,75,357,161,489,17,301,345,324,98,92,383,428,160,298,257,202,173,28,483,383,245,64,36,363,321,149,58,254,461,224,245,63,419,274,239,441,371,493,435,305,231,273,91,78,40,201,500,255,407,473,78,332"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="x_label" value="Instances"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Date"/>
+            <property name="color_bars" value="-1677696100"/>
+            <property name="y" value="128"/>
+            <property name="x" value="389"/>
+        </node>
+        <node>
+            <property name="text" value="Age population"/>
+            <property name="color_background" value="-1"/>
+            <property name="labels" value="Ralph, Jessica, Tomy, Fred, Angie"/>
+            <property name="width" value="402"/>
+            <property name="y_label" value="Age"/>
+            <property name="#id" value="27547574"/>
+            <property name="#type" value="net.frapu.code.visualization.reporting.BarChart"/>
+            <property name="height" value="296"/>
+            <property name="values" value="18,15,54,23,42"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="x_label" value="Persons"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Person"/>
+            <property name="color_bars" value="-6553600"/>
+            <property name="y" value="386"/>
+            <property name="x" value="248"/>
+        </node>
+        <node>
+            <property name="text" value="Costs"/>
+            <property name="color_background" value="-1"/>
+            <property name="labels" value="Min, Max, Avg"/>
+            <property name="width" value="268"/>
+            <property name="y_label" value="Euro"/>
+            <property name="#id" value="330120"/>
+            <property name="#type" value="net.frapu.code.visualization.reporting.BarChart"/>
+            <property name="height" value="296"/>
+            <property name="values" value="10,80,45"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="x_label" value="Values"/>
+            <property name="SemanticAnnotations" value="http://frapu.net/owl/invoice-basic.owl#Price"/>
+            <property name="color_bars" value="1600000"/>
+            <property name="y" value="386"/>
+            <property name="x" value="595"/>
+        </node>
+    </nodes>
+    <edges/>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="15. Februar 2010 15:45:44 MEZ"/>
+        <property name="name" value="Reporting model"/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\ff\Eigene Dateien\Eclipse-Workspace\code\Processeditor\models\reporting.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

@@ -1,0 +1,97 @@
+\section{Dialog Plugins}
+\label{dialog_plugins}
+	\subsection{Overview}
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{@{}lr@{}}
+			\toprule
+			\textbf{Required superclass} & \textit{DialogServerPlugin}
+\\
+			\textbf{Configurable Sub-URLs} & \textit{no} \\
+			\textbf{Requires JavaScript} & \textit{yes} \\
+			\textbf{Methods to implement} & \textit{JSONObject
+getData( ModelInformation mi , }\\
+& \textit{RequestFacade req )} \\
+			\addlinespace
+			& \textit{JSONObject saveData( JSONArray data, }
+\\
+			& \textit{ModelInformation mi ) } \\
+			\addlinespace
+			& \textit{\textbf{(optional)} String getItemText()} \\
+			\addlinespace
+			& \textit{\textbf{(optional)} String
+getItemIconPath()}\\
+			\addlinespace
+			\textbf{Graphical representation} & \textit{a single
+menu item or context button} \\
+			\textbf{Example(s)} & \textit{Domain Class Attribute Dialog} \\
+			\bottomrule
+			\end{tabular}
+		\end{table}
+	
+	\subsection{Details}
+		\subsubsection{Basic Information}
+		This type of plug-in is similar to form plug-ins discussed within the last section. The main difference is that the basic structure of the dialog is specified within a JavaScript file (cf. Section \ref{dialog_script_info}). When the plug-in is loaded into the editor the required JavaScript file(s) is(are) loaded into the client and the dialog. If the respective menu item or button gets clicked, the dialog is instantiated and presented to the user within an Ext.Window.
+
+		To ensure the described functionality, the implementer must take care of the following aspects:
+		\begin{itemize}
+		 \item The JavaScript dialog class must conform to the requirements specified in Section \ref{dialog_script_info}
+		 \item The plug-in's constructor must set the field \verb!jsFiles!, to specify the JavaScript files that are specific for this plug-in.
+		 \item The plug-in's constructor must set the field \verb!mainClassName!, specifying the name of the main JavaScript dialog class
+		\end{itemize}
+
+		In contrast to form plug-ins, the dynamic aspects of dialog plug-ins are reduced to loading and saving data using the respective methods.
+
+		\subsubsection{Methods}
+			\paragraph{JSONObject getData( ModelInformation mi, RequestFacade req );}
+			 This method is responsible for collecting the data that should be loaded into the dialog. The concrete format of the data depends on the JavaScript implementations for this plug-in (cf. Section \ref{dialog_script_info}). The returned JSONObject must specify a field \verb!data! to which the data is associated.
+
+			\paragraph{JSONObject saveData( JSONArray data,  ModelInformation mi );}
+			This method is responsible for saving the data as it is returned from the client. The concrete format and number of the array entries depends on the JavaScript implementations for this plug-in (cf. Section \ref{dialog_script_info}). The returned JSONObject must be a valig plug-in response.
+	
+			See Section \ref{response_section} for information on how responses must be structured.
+  
+			\paragraph{String getItemText();}
+			Return the text for the menu item. If the
+\verb!showInToolbar()!-method for this plug-in returns \verb!true! the item text
+will be used as tooltip text instead.
+
+			\paragraph{String getItemIconPath();}
+			Return the path to the icon of the menu item. This is
+especially important if the plug-in is represented as a simple button within the
+toolbar or as a context menu button.
+
+		\subsubsection{JavaScript}
+		\label{dialog_script_info}
+		 The main JavaScript class, i.e. the class representing the dialog, must inherit from \verb!Ext.ux.Dialog!. This class, specifying 3 additional methods, is a sub-class of \verb!Ext.Panel! and, thereby, also provides all standard panel methods. Listing \ref{dialog_js} depicts the specification of \verb!Ext.ux.Dialog!.
+
+		Please note, \verb!setData! must be coordinated with the implementation of the server-side method \verb!getData! since the therein specified data format must be processed by the JavaScript method. Accordingly, \verb!getJSONData! must be coordinated with the server-side method \verb!saveData! since the latter has to process the data created by the former.
+
+		The method \verb!getTitle()! is a convenience function form determining the dialog's title.
+
+		In case you are not familiar with ExtJS inheritance mechanism, take a look at \url{http://dev.sencha.com/deploy/dev/docs/?class=Ext}. The documentation of the method \verb!extend! presents the most important practical information.
+		\clearpage
+		\begin{lstlisting}[language=Java, caption=Ext.ux.Dialog, label=dialog_js]
+Ext.namespace("Ext.ux");
+
+Ext.ux.Dialog = Ext.extend( Ext.Panel, {
+    constructor : function( config ) {
+        Ext.ux.Dialog.superclass.constructor.call(this, config);
+    },
+
+    setData : function( data ) {
+        //process the data returned by the server
+    },
+
+    getJSONData : function() {
+	    / * 
+	      * collect the data that should be sent to the server in 
+	      * JSON format
+	      * /
+    },
+
+    getTitle : function() {
+        //return the title of this dialog
+    }
+});
+		\end{lstlisting}

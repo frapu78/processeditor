@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    BINT SOA Design Guide Template
+    
+    Author: Andre Geissler, inubit AG
+    Author: Frank Puhlmann, inubit AG
+    
+    Version: 1
+-->
+<schema targetNamespace    = "http://bint.ch/base/xsd/BaseObjects"
+        xmlns:baseObject   = "http://bint.ch/base/xsd/BaseObjects"
+        xmlns:baseType     = "http://bint.ch/base/xsd/BaseTypes"
+        xmlns              = "http://www.w3.org/2001/XMLSchema"
+        elementFormDefault = "qualified">
+    
+    <!-- Importiert die Basistypen -->
+    <import schemaLocation="BaseTypes.xsd" namespace="http://bint.ch/base/xsd/BaseTypes"/>
+
+    <!-- Definiert das Basisobjekt -->
+    <complexType name="CT_BaseObject">
+        <sequence>
+            <element name="id"      type="baseType:ST_Id"/>
+            <element name="version" type="baseType:ST_Version"/>           
+        </sequence>
+    </complexType>
+
+    <!-- Definiert den Basistyp für eine WSDL-Input-Message -->
+    <complexType name="CT_BaseRequestMessage">
+        <complexContent>
+            <extension base="baseObject:CT_BaseObject">
+                <sequence>
+                    <element name="Requestor"  type="baseType:ST_Text"/>
+                </sequence>
+            </extension>
+        </complexContent>               
+    </complexType>
+    
+    <!-- Definiert den Basistyp für eine WSDL-Output-Message -->
+    <complexType name="CT_BaseResponseMessage">
+        <complexContent>
+            <extension base="baseObject:CT_BaseObject">
+                <sequence>
+                    <element name="status"  type="baseType:ST_Status"/>
+                </sequence>
+            </extension>
+        </complexContent>               
+    </complexType>   
+
+    <!-- Definiert den Basistyp für einen Fehler -->
+    <complexType name="CT_GenericFault">
+        <complexContent>
+            <extension base="baseObject:CT_BaseObject">
+                <sequence>
+                    <element name="errorCode"         type="baseType:ST_ErrorCode"/>
+                    <element name="errorDescriptions" type="baseType:CT_MessageDescriptions"/>
+                    <element name="errorSource"       type="baseType:ST_ErrorSource"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <!-- Definiert den Basistyp für eine WSDL-Fault-Message -->
+    <complexType name="CT_OperationalFault">
+        <complexContent>
+            <extension base="baseObject:CT_GenericFault">
+                <sequence>
+                    <element name="wsdlURI"         type="baseType:ST_Text" minOccurs="0" />
+                    <element name="wsdlOperation"   type="baseType:ST_Text" minOccurs="0" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>    
+    
+    <!-- Definiert den Basistyp für einen fachlichen Fehler -->
+    <complexType name="CT_BusinessFault">
+        <complexContent>
+            <extension base="baseObject:CT_GenericFault">
+                <sequence>
+                    <element name="businessProcess"     type="baseType:ST_Text" minOccurs="0" />
+                    <element name="businessActivity"    type="baseType:ST_Text" minOccurs="0" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>     
+    
+    <!-- Definiert den Basistyp für eine Monitor-Notification-Input-Message -->
+    <complexType name="CT_MonitorNotification">
+        <complexContent>
+            <extension base="baseObject:CT_BaseRequestMessage">
+                <sequence>
+                    <element name="monitorStatusCode" type="baseType:ST_MonitorStatusCode"/>
+                    <element name="monitorStatusDescriptions" minOccurs="1"  type="baseType:CT_MessageDescriptions"/>
+                    <element name="timeStamp" type="baseType:ST_TimeStamp"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType> 
+    
+    
+</schema>

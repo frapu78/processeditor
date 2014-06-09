@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.bipro.net/namespace/allgemein" xmlns:allgemein="http://www.bipro.net/namespace/allgemein" xmlns:bipro="http://www.bipro.net/namespace" xmlns:daten="http://www.bipro.net/namespace/datentypen" xmlns:mime="http://www.w3.org/2004/11/xmlmime" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.bipro.net/namespace/allgemein" bipro:Name="bipro-allgemein-2.1.0.xsd" bipro:Version="2.1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xsd:import namespace="http://www.w3.org/2004/11/xmlmime" schemaLocation="xmlmime-2004-11.xsd"/>
+	<xsd:import namespace="http://www.bipro.net/namespace/datentypen" schemaLocation="bipro-datentypen-2.1.0.xsd"/>
+	<xsd:complexType abstract="true" name="CT_Objekt">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Master-Objekt. Von diesem Datentypen werden alle anderen komplexen Datentypen der BiPRO direkt oder indirekt abgeleitet.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="Erweiterung" minOccurs="0" maxOccurs="1" type="CT_Erweiterung"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType abstract="true" name="CT_ProzessAnfrage">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Prozess-Objekt. Alle Anfrage-Nachrichten innerhalb der von der BiPRO definierten Prozesse werden von diesem Datentypen abgeleitet.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="BiPROVersion" minOccurs="1" maxOccurs="1" type="daten:ST_Version"/>
+					<xsd:element name="ConsumerID" minOccurs="0" maxOccurs="1" type="daten:ST_Text050">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige (providerspezifische) Identifizierung des anfragenden Systems (bzw. des Service Consumers).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="true" name="CT_ProzessAntwort">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Prozess-Objekt. Alle Antwort-Nachrichten innerhalb der von der BiPRO definierten Prozesse werden von diesem Datentypen abgeleitet.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="BiPROVersion" minOccurs="1" maxOccurs="1" type="daten:ST_Version"/>
+					<xsd:element name="Status" minOccurs="1" maxOccurs="1" type="CT_Status"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_ProzessFehler">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Prozess-Objekt. Dient der Uebermittlung von Prozessfehlern.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="BiPROVersion" minOccurs="1" maxOccurs="1" type="daten:ST_Version"/>
+					<xsd:element name="Status" minOccurs="1" maxOccurs="1" type="CT_Status"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_StatusRequest">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Nachrichten-Objekt zur Abfrage des Status eines laufenden Prozesses.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_ProzessAnfrage">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="Status" minOccurs="1" maxOccurs="1" type="CT_Status"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_StatusResponse">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Nachrichten-Objekt zur Beantwortung von Abfragen des Status laufender Prozesse.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_ProzessAntwort">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="Geschaeftsvorgang" minOccurs="0" maxOccurs="1" type="CT_Geschaeftsvorgang"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Status">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Dient der Abfrage oder Uebermittlung des Status eines laufenden oder abgeschlossenen Prozesses.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="ProzessID" minOccurs="1" maxOccurs="1" type="daten:ST_ProzessID">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige Identifizierung des fachlichen Prozesses beim Versicherer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Historienindex" minOccurs="0" maxOccurs="1" type="daten:ST_Ganzzahl">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Aktueller Index der Statusmeldung.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Historienzaehler" minOccurs="0" maxOccurs="1" type="daten:ST_Ganzzahl">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Gesamtzahl der Statusmeldungen.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Zeitstempel" minOccurs="1" maxOccurs="1" type="daten:ST_Zeitstempel">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Aktuelles Datum und Uhrzeit zum Bearbeitungszeitpunkt.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="StatusID" minOccurs="1" maxOccurs="1" type="daten:ST_Status">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige Identifizierung der Statusmeldung.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Text" minOccurs="0" maxOccurs="1" type="daten:ST_Text">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Optionale Statusmeldung als Klartext.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Asynchron" minOccurs="1" maxOccurs="1" type="daten:ST_JaNein">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Kennung, ob es sich um einen fachlich synchronen oder asynchronen Prozess handelt (mit Schwebeverarbeitung).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="NaechsteStatusanfrage" minOccurs="0" maxOccurs="1" type="daten:ST_Zeitstempel">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Fruehestlohnender Zeitpunkt fuer naechste Anfrage, ob sich der Status eines asynchronen Prozesses veraendert hat.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Gueltigkeitsende" minOccurs="0" maxOccurs="1" type="daten:ST_Zeitstempel">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Zeitpunkt bis zu dem die zum Vorgang gehoerigen Daten beim Anbieter vorgehalten werden.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Meldung" minOccurs="0" maxOccurs="unbounded" type="CT_Meldung"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="true" name="CT_Geschaeftsvorgang">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Basis-Objekt aller von der BiPRO definierten Geschaeftsvorgaenge.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="VorgangsnummerVU" minOccurs="0" maxOccurs="1" type="daten:ST_Text017">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige Identifizierung des Geschaeftsvorgangs beim Versicherer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="VorgangsnummerVM" minOccurs="0" maxOccurs="1" type="daten:ST_Text017">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige Identifizierung des Geschaeftsvorgangs beim Vermittler.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Erstelldatum" minOccurs="0" maxOccurs="1" type="daten:ST_Zeitstempel">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Datum der Aufgabe des Geschaeftsvorgangs.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Freitext" minOccurs="0" maxOccurs="1" type="daten:ST_Text1000">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Möglichkeit zur Eingabe von Hinweisen zum Geschaeftsvorgang.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Vermittler" minOccurs="0" maxOccurs="unbounded" type="CT_Vermittler"/>
+					<xsd:element name="Dokumentanforderung" minOccurs="0" maxOccurs="unbounded" type="CT_Dokumentanforderung"/>
+					<xsd:element name="Datei" minOccurs="0" maxOccurs="unbounded" type="CT_Datei"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Meldung">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Ermoeglicht die Erweiterung einer Statusmeldung um zusaetzliche Informationen (z.B. Fehlermeldungen oder Hinweise).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="ArtID" minOccurs="1" maxOccurs="1" type="daten:ST_Meldungsart">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Ermoeglicht die Erweiterung einer Statusmeldung um zusaetzliche Informationen (z.B. Fehlermeldungen oder Hinweise), insbesondere 
+dann, wenn eine synchrone Verarbeitung nicht mit einem Ergebnis 
+abgeschlossen werden konnte. In Anhängigkeit zu 
+Status.statusid MUSS oder KANN das Objekt übermittelt werden.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="MeldungID" minOccurs="1" maxOccurs="1" type="daten:ST_Meldung">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige Identifizierung der Meldung.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Text" minOccurs="0" maxOccurs="1" type="daten:ST_Text">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Meldung als Klartext.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Quelle" minOccurs="0" maxOccurs="1" type="daten:ST_Text">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Eindeutige Referenz auf das fehlerhafte Objekt und die Objekt-Eigenschaft mittels XPath.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Identifikationsnummer" minOccurs="1" maxOccurs="1" type="daten:ST_Text030">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Alphanummerische eindeutige Kennzeichnung der Meldung bzw. des Fehlers oder Hinweises. Anhand der Nummer wird insbesondere die nichttechnische Kommunikation zwischen Nutzer und Anbieter erleichtert.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Vermittler">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Daten des fuer den Geschaeftsvorgang verantwortlichen Vermittlers.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="VermittlernummerVU" minOccurs="1" maxOccurs="1" type="daten:ST_Vermittlernummer">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Vermittlernummer beim VU: Eindeutige Identifzierung des Vermittlers beim Versicherer.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="VermittlernummerVM" minOccurs="0" maxOccurs="1" type="daten:ST_Vermittlernummer">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Vermittlernummer beim Vermittler: Eindeutige Identifzierung des Vermittlers beim Vermittler selbst.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Vermittlerrolle" minOccurs="0" maxOccurs="unbounded" type="CT_Vermittlerrolle"/>
+					<xsd:element name="Vermittler" minOccurs="0" maxOccurs="unbounded" type="CT_Vermittler"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Vermittlerrolle">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Rolle(n) des Vermittlers innerhalb des Geschaeftsvorgangs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="ArtID" minOccurs="1" maxOccurs="1" type="daten:ST_Vermittlerrolle"/>
+					<xsd:element name="Wert" minOccurs="0" maxOccurs="1" type="daten:ST_Dezimalzahl">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="de">Angaben zur möglichen Anteilsverteilung von Untervermittlern.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Wertschluessel" minOccurs="0" maxOccurs="1" type="daten:STE_VermittlerrolleSchluessel"/>
+					<xsd:element name="Werteinheit" minOccurs="0" maxOccurs="1" type="daten:ST_Berechnungseinheit"/>
+					<xsd:element name="Vermittlertyp" minOccurs="0" maxOccurs="1" type="daten:ST_Vermittlertyp"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Vertragsnummer">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Kapselt eine Vertragsnummer wahlweise in Form einer Versicherungsscheinnummer gemaess ST_Versicherungsscheinnummer, in Form einer zum Drucken aufbereiteten Zeichenkette oder beides.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="Versicherungsscheinnummer" minOccurs="0" maxOccurs="1" type="daten:ST_Versicherungsscheinnummer"/>
+					<xsd:element name="DruckaufbereiteteVersicherungsscheinnummer" minOccurs="0" maxOccurs="1" type="daten:ST_Text030"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Dokumentanforderung">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Dient der Anforderung von Druckstuecken und anderen Dokumenten.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="ArtID" minOccurs="1" maxOccurs="unbounded" type="daten:ST_DokumentartID"/>
+					<xsd:element name="DateiID" minOccurs="0" maxOccurs="1" type="daten:ST_Text255"/>
+					<xsd:element name="Versandart" minOccurs="0" maxOccurs="1" type="daten:ST_Versandart"/>
+					<xsd:element name="Empfaenger" minOccurs="0" maxOccurs="1" type="daten:ST_Partnerrolle"/>
+					<xsd:element name="ReferenzEmpfaenger" minOccurs="0" maxOccurs="1" type="daten:ST_Text080"/>
+					<xsd:element name="VermittleranschriftAufDokument" minOccurs="0" maxOccurs="1" type="daten:ST_JaNein"/>
+					<xsd:element name="VermittlerSpezifischeDokumentenergaenzung" minOccurs="0" maxOccurs="unbounded" type="CT_Datei"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Datei">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Container-Objekt fuer zu uebertragende Dateien.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="DateiID" minOccurs="0" maxOccurs="1" type="daten:ST_Text255"/>
+					<xsd:element name="Dateiname" minOccurs="0" maxOccurs="1" type="daten:ST_Text255"/>
+					<xsd:element name="Dateityp" minOccurs="0" maxOccurs="1" type="daten:ST_Dateityp"/>
+					<xsd:element name="Daten" minOccurs="0" maxOccurs="1" type="mime:base64Binary"/>
+					<xsd:element name="Datenlink" minOccurs="0" maxOccurs="1" type="daten:ST_URL"/>
+					<xsd:element name="Komprimierungstyp" minOccurs="1" maxOccurs="1" type="daten:ST_Komprimierungstyp"/>
+					<xsd:element name="Pruefsumme" minOccurs="0" maxOccurs="1" type="CT_Pruefsumme"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Pruefsumme">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Dient der Uebertragung von Pruefsummen zur automatischen Verifikation, dass die angeforderte Datei fehlerfrei uebertragen wurde.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="Typ" minOccurs="1" maxOccurs="1" type="daten:ST_Pruefsummetyp"/>
+					<xsd:element name="Wert" minOccurs="1" maxOccurs="1" type="daten:ST_Pruefsumme"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="false" name="CT_Versicherungsunternehmen">
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="Nummer" minOccurs="0" maxOccurs="1" type="daten:ST_VUNummer"/>
+					<xsd:element name="Name" minOccurs="0" maxOccurs="1" type="daten:ST_Text060"/>
+					<xsd:element name="Ort" minOccurs="0" maxOccurs="1" type="daten:ST_Text030"/>
+					<xsd:element name="Geschaeftsstelle" minOccurs="0" maxOccurs="1" type="daten:ST_Geschaeftsstellennummer"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType abstract="true" name="CT_Adresse">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="de">Basisklasse von der alle Anschriften abgeleitet werden.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CT_Objekt">
+				<xsd:sequence maxOccurs="1" minOccurs="1">
+					<xsd:element name="Strasse" minOccurs="0" maxOccurs="1" type="daten:ST_Text030"/>
+					<xsd:element name="Hausnummer" minOccurs="0" maxOccurs="1" type="daten:ST_Text017"/>
+					<xsd:element name="Postleitzahl" minOccurs="0" maxOccurs="1" type="daten:ST_Postleitzahl"/>
+					<xsd:element name="Ort" minOccurs="0" maxOccurs="1" type="daten:ST_Text030"/>
+					<xsd:element name="Land" minOccurs="0" maxOccurs="1" type="daten:ST_Laenderkennzeichen"/>
+					<xsd:element name="Landname" minOccurs="0" maxOccurs="1" type="daten:ST_Text030"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="getStatus" nillable="false" abstract="false">
+		<xsd:complexType mixed="false">
+			<xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element name="Request" minOccurs="1" maxOccurs="1" type="CT_StatusRequest"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getStatusResponse" nillable="false" abstract="false">
+		<xsd:complexType mixed="false">
+			<xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element name="Response" minOccurs="1" maxOccurs="1" type="CT_StatusResponse"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BiproException" nillable="false" abstract="false">
+		<xsd:complexType mixed="false">
+			<xsd:complexContent>
+				<xsd:extension base="CT_ProzessFehler">
+					<xsd:sequence maxOccurs="1" minOccurs="1"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType abstract="true" name="CT_Erweiterung">
+		<xsd:sequence maxOccurs="1" minOccurs="1"/>
+	</xsd:complexType>
+</xsd:schema>

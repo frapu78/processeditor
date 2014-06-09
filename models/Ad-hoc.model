@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="10410279" name=""
+    type="net.frapu.code.visualization.bpmn.BPMNModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#nodes" value="12759798;25699763;15668093;9492714;32233307"/>
+            <property name="text" value=""/>
+            <property name="triggered_by_event" value="0"/>
+            <property name="transaction" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="340"/>
+            <property name="collapsed" value="0"/>
+            <property name="compensation" value="0"/>
+            <property name="#id" value="17934197"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.SubProcess"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="height" value="310"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="184"/>
+            <property name="adhoc" value="1"/>
+            <property name="x" value="202"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="32233307"/>
+            <property name="text" value="Rechnung prüfen"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="136"/>
+            <property name="x" value="196"/>
+        </node>
+        <node>
+            <property name="text" value="Rechnung"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="40"/>
+            <property name="data" value="INPUT"/>
+            <property name="state" value="?"/>
+            <property name="collection" value="0"/>
+            <property name="#id" value="15668093"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.DataObject"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="115"/>
+            <property name="x" value="76"/>
+        </node>
+        <node>
+            <property name="text" value="Rechnung"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="40"/>
+            <property name="data" value="OUTPUT"/>
+            <property name="state" value="geprüft"/>
+            <property name="collection" value="0"/>
+            <property name="#id" value="25699763"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.DataObject"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="132"/>
+            <property name="x" value="308"/>
+        </node>
+        <node>
+            <property name="compensation" value="0"/>
+            <property name="loop_type" value="NONE"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Task"/>
+            <property name="#id" value="12759798"/>
+            <property name="text" value="Rechnung\nversenden"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="y" value="238"/>
+            <property name="x" value="196"/>
+        </node>
+        <node>
+            <property name="text" value="Rechnung"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="40"/>
+            <property name="data" value="INPUT"/>
+            <property name="state" value="geprüft"/>
+            <property name="collection" value="0"/>
+            <property name="#id" value="9492714"/>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.DataObject"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="243"/>
+            <property name="x" value="82"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="4890830"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="15668093"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="32233307"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="25919971"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="32233307"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="25699763"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.bpmn.Association"/>
+            <property name="#id" value="6510044"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="direction" value="TARGET"/>
+            <property name="#sourceNode" value="9492714"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="12759798"/>
+        </edge>
+    </edges>
+</model>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="6961504" name="My Project" type="net.frapu.code.visualization.gantt.GanttModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.GanttChart"/>
+            <property name="#id" value="274614"/>
+            <property name="#nodes" value="1882017;24049413;23623672;23082274;20457766"/>
+            <property name="duration" value="100"/>
+            <property name="text" value="My Project"/>
+            <property name="height" value="300"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="556"/>
+            <property name="y" value="177"/>
+            <property name="x" value="327"/>
+        </node>
+        <node>
+            <property name="position" value="3"/>
+            <property name="#nodes" value="19935173"/>
+            <property name="text" value="Rollout"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="554"/>
+            <property name="#id" value="23623672"/>
+            <property name="#type" value="net.frapu.code.visualization.gantt.Activity"/>
+            <property name="height" value="20"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="performer" value="Hanks"/>
+            <property name="y" value="183"/>
+            <property name="x" value="588"/>
+        </node>
+        <node>
+            <property name="position" value="1"/>
+            <property name="#nodes" value="23582715"/>
+            <property name="text" value="Implement project"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="200"/>
+            <property name="#id" value="24049413"/>
+            <property name="#type" value="net.frapu.code.visualization.gantt.Activity"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="performer" value="Tim"/>
+            <property name="y" value="102"/>
+            <property name="x" value="327"/>
+        </node>
+        <node>
+            <property name="position" value="0"/>
+            <property name="#nodes" value="21048949"/>
+            <property name="text" value="Create project plan"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="200"/>
+            <property name="#id" value="1882017"/>
+            <property name="#type" value="net.frapu.code.visualization.gantt.Activity"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="performer" value="Jane"/>
+            <property name="y" value="82"/>
+            <property name="x" value="327"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.TimeBar"/>
+            <property name="#id" value="23582715"/>
+            <property name="duration" value="30"/>
+            <property name="text" value=""/>
+            <property name="height" value="18"/>
+            <property name="start" value="7"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3618561"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="50"/>
+            <property name="y" value="102"/>
+            <property name="x" value="322"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.TimeBar"/>
+            <property name="#id" value="21048949"/>
+            <property name="duration" value="10"/>
+            <property name="text" value=""/>
+            <property name="height" value="18"/>
+            <property name="start" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3618561"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="50"/>
+            <property name="y" value="82"/>
+            <property name="x" value="272"/>
+        </node>
+        <node>
+            <property name="position" value="2"/>
+            <property name="#nodes" value="24594643;18505680"/>
+            <property name="text" value="Provide feedback"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="200"/>
+            <property name="#id" value="20457766"/>
+            <property name="#type" value="net.frapu.code.visualization.gantt.Activity"/>
+            <property name="height" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="performer" value="Jane"/>
+            <property name="y" value="138"/>
+            <property name="x" value="176"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.TimeBar"/>
+            <property name="#id" value="24594643"/>
+            <property name="duration" value="30"/>
+            <property name="text" value=""/>
+            <property name="height" value="18"/>
+            <property name="start" value="20"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3618561"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="50"/>
+            <property name="y" value="127"/>
+            <property name="x" value="281"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.TimeBar"/>
+            <property name="#id" value="19935173"/>
+            <property name="duration" value="30"/>
+            <property name="text" value=""/>
+            <property name="height" value="16"/>
+            <property name="start" value="42"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3618561"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="103"/>
+            <property name="y" value="143"/>
+            <property name="x" value="352"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.TimeBar"/>
+            <property name="#id" value="18505680"/>
+            <property name="duration" value="10"/>
+            <property name="text" value=""/>
+            <property name="height" value="18"/>
+            <property name="start" value="50"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-13108"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="68"/>
+            <property name="y" value="122"/>
+            <property name="x" value="462"/>
+        </node>
+        <node>
+            <property name="position" value="4"/>
+            <property name="#nodes" value="2829043"/>
+            <property name="text" value="QA"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="554"/>
+            <property name="#id" value="23082274"/>
+            <property name="#type" value="net.frapu.code.visualization.gantt.Activity"/>
+            <property name="height" value="20"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="performer" value="Jonny"/>
+            <property name="y" value="162"/>
+            <property name="x" value="327"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.gantt.TimeBar"/>
+            <property name="#id" value="2829043"/>
+            <property name="duration" value="100"/>
+            <property name="text" value=""/>
+            <property name="height" value="18"/>
+            <property name="start" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-3618561"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="68"/>
+            <property name="y" value="162"/>
+            <property name="x" value="289"/>
+        </node>
+    </nodes>
+    <edges/>
+    <properties>
+        <property name="author" value="Dr Frank Puhlmann"/>
+        <property name="#creationDate" value="16. März 2010 16:00:14 MEZ"/>
+        <property name="name" value="My Project"/>
+        <property name="#uri" value="C:\Users\fpu\Documents\NetBeansProjects\Processeditor\models\GanttChart.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

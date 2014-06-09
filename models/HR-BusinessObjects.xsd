@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://research.inubit.com/hr" xmlns:hr="http://research.inubit.com/hr"> 
+
+<xs:element name="candidates" type="hr:CT_Candidates"/>
+    
+<xs:element name="candidate" type="hr:CT_Candidate"/>
+    
+<xs:element name="protocol" type="hr:CT_Protocol"/>
+    
+<xs:complexType name="CT_Protocol">
+    <xs:sequence>
+        <xs:element name="interviewer" type="xs:string"/>
+        <xs:element name="notes" type="xs:string"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CT_Candidates">
+    <xs:sequence>
+        <xs:element name="candidate" type="hr:CT_Candidate" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="recruiter" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="CT_Candidate">
+    <xs:sequence>
+        <xs:element name="firstName" type="xs:string"/>
+        <xs:element name="lastName" type="xs:string"/>
+        <xs:element name="city" type="xs:string"/>
+        <xs:element name="position" type="xs:string"/>
+        <xs:element name="requestedSalary" type="xs:double"/>    
+        <xs:element name="comment" type="xs:string" minOccurs="0"/>
+        <xs:element name="searchResults" type="hr:CT_SearchResults" minOccurs="0"/>
+    </xs:sequence>
+</xs:complexType>
+    
+<xs:complexType name="CT_SearchResults">
+    <xs:sequence>
+        <xs:element name="searchResult" type="hr:CT_SearchResult" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+    
+<xs:complexType name="CT_SearchResult">
+    <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="abstract" type="xs:string"/>
+        <xs:element name="uri" type="xs:string"/>
+        <xs:element name="date" type="xs:date"/>
+    </xs:sequence>
+</xs:complexType>
+
+</xs:schema>

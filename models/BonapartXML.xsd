@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:tns="http://bonapart.btc-ag.com/BonapartXML/"
+targetNamespace="http://bonapart.btc-ag.com/BonapartXML/">
+
+	<simpleType name="Locale">
+		<restriction base="string">
+			<enumeration value="PRIMARY"/>	<!-- primary language -->
+			<enumeration value="DE"/>	<!-- german -->
+			<enumeration value="EN"/>	<!-- english -->
+			<enumeration value="DK"/>	<!-- danish -->
+			<enumeration value="NL"/>	<!-- dutch -->
+			<enumeration value="FR"/>	<!-- french -->
+			<enumeration value="GR"/>	<!-- greek -->
+			<enumeration value="IT"/>	<!-- italian -->
+			<enumeration value="PT"/>	<!-- portuguese -->
+			<enumeration value="ES"/>	<!-- spanish -->
+			<enumeration value="TH"/>	<!-- thai -->	
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="ClassType">
+		<restriction base="string">
+			<enumeration value="SYST_PROCESSTYPE"/>
+			<enumeration value="SYST_ACTIVITYTYPE"/>
+			<enumeration value="SYST_ACTORTYPE"/>
+			<enumeration value="SYST_BUFFERTYPE"/>
+			<enumeration value="SYST_COMMENTTYPE"/>
+			<enumeration value="SYST_ENTRYEXITPOINTTYPE"/>
+			<enumeration value="SYST_ENTRYPOINTTYPE"/>
+			<enumeration value="SYST_EXITPOINTTYPE"/>
+			<enumeration value="SYST_INFORMATIONTYPE"/>
+			<enumeration value="SYST_MANAGERTYPE"/>
+			<enumeration value="SYST_MEDIATYPE"/>
+			<enumeration value="SYST_ORGUNITTYPE"/>
+			<enumeration value="SYST_PERSONTYPE"/>
+			<enumeration value="SYST_PHYSICALRESOURCETYPE"/>
+			<enumeration value="SYST_POSITIONTYPE"/>
+			<enumeration value="SYST_PROCESSCOMPONENTTYPE"/>
+			<enumeration value="SYST_RESOURCETYPE"/>
+			<enumeration value="SYST_UNITTYPE"/>
+			<!-- handle relation types the same way -->
+			<enumeration value="SYST_ASSOCIATIONTYPE"/>
+			<enumeration value="SYST_COMPOSEDOFTYPE"/>
+			<enumeration value="SYST_CONTROLLERRELATIONTYPE"/>
+			<enumeration value="SYST_DELEGATESTOTYPE"/>
+			<enumeration value="SYST_FILLSTYPE"/>
+			<enumeration value="SYST_INVCONTROLLERRELATIONTYPE"/>
+			<enumeration value="SYST_ISATYPE"/>
+			<enumeration value="SYST_ISPARTOFTYPE"/>
+			<enumeration value="SYST_ISREFINEDBYTYPE"/>
+			<enumeration value="SYST_ISSUBSTITUTEOFTYPE"/>
+			<enumeration value="SYST_ISSUPERIOROFTYPE"/>
+			<enumeration value="SYST_MEMBERSTYPE"/>
+			<enumeration value="SYST_READSFROMTYPE"/>
+			<enumeration value="SYST_REPORTSFORTASKTOTYPE"/>
+			<enumeration value="SYST_REPORTSTOTYPE"/>
+			<enumeration value="SYST_SENDSINFOTYPE"/>
+			<enumeration value="SYST_STORESTOTYPE"/>
+			<enumeration value="SYST_SUBSTITUTETYPE"/>
+			<enumeration value="SYST_SUBSUMESTYPE"/>
+			<enumeration value="SYST_USESHUMANRESOURCETYPE"/>
+			<enumeration value="SYST_USESPHYSRESOURCETYPE"/>
+			<enumeration value="SYST_USESTYPE"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ObjectType">
+		<union memberTypes="tns:DiagramType"> <!-- diagram types are represented in the same way -->
+			<simpleType>
+			<restriction base="string">
+				<enumeration value="SYST_ACTIVITY"/>
+				<enumeration value="SYST_ACTOR"/>
+				<enumeration value="SYST_BUFFER"/>
+				<enumeration value="SYST_COMMENT"/>
+				<enumeration value="SYST_DISTRIBUTION"/>
+				<enumeration value="SYST_ENTRYEXITPOINT"/>
+				<enumeration value="SYST_ENTRYPOINT"/>
+				<enumeration value="SYST_EXITPOINT"/>
+				<enumeration value="SYST_EXTERNALENTRYPOINT"/>
+				<enumeration value="SYST_EXTERNALEXITPOINT"/>
+				<enumeration value="SYST_IDLETIME"/>
+				<enumeration value="SYST_INPUTCONDITION"/>
+				<enumeration value="SYST_INTERNALENTRYPOINT"/>
+				<enumeration value="SYST_INTERNALEXITPOINT"/>
+				<enumeration value="SYST_MANAGER"/>
+				<enumeration value="SYST_MODEL"/>
+				<enumeration value="SYST_OBJECT"/>
+				<enumeration value="SYST_ORGUNIT"/>
+				<enumeration value="SYST_OUTPUTCONDITION"/>
+				<enumeration value="SYST_PERSON"/>
+				<enumeration value="SYST_PHYSICALRESOURCE"/>
+				<enumeration value="SYST_POSITION"/>
+				<enumeration value="SYST_PROCESSCOMPONENT"/>
+				<enumeration value="SYST_RESOURCE"/>
+				<enumeration value="SYST_UNIT"/>
+				<!-- Non-diagram objects are represented in the same way -->
+				<enumeration value="OBJ_ATTACHMENT"/>
+				<enumeration value="OBJ_DISTRIBUTIONUSAGE"/>
+				<enumeration value="OBJ_IDLETIME"/>
+				<enumeration value="OBJ_OUTPUTCONDITION"/>
+			</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+
+	<simpleType name="DiagramType">
+		<restriction base="string">
+			<enumeration value="SYST_SCENARIO"/>
+			<enumeration value="SYST_BUFFERSCENARIO"/>
+			<enumeration value="SYST_INFORMATIONSCENARIO"/>
+			<enumeration value="SYST_MANAGERSCENARIO"/>
+			<enumeration value="SYST_MEDIASCENARIO"/>
+			<enumeration value="SYST_OPERANTSCENARIO"/>
+			<enumeration value="SYST_ORGCHART"/>
+			<enumeration value="SYST_ORGUNITSCENARIO"/>
+			<enumeration value="SYST_PERSONSCENARIO"/>
+			<enumeration value="SYST_PHYSRESOURCESCENARIO"/>
+			<enumeration value="SYST_PROCESS"/>
+			<enumeration value="SYST_TASKSCENARIO"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="RelationType">
+		<restriction base="string">
+			<enumeration value="SYST_REFINEDBYINFOCLASS"/>
+			<enumeration value="SYST_ASSOCIATION"/>
+			<enumeration value="SYST_COMPOSEDOF"/>
+			<enumeration value="SYST_CONTROLLERRELATION"/>
+			<enumeration value="SYST_DELEGATESTO"/>
+			<enumeration value="SYST_FILLS"/>
+			<enumeration value="SYST_INVCONTROLLERRELATION"/>
+			<enumeration value="SYST_ISA"/>
+			<enumeration value="SYST_ISPARTOF"/>
+			<enumeration value="SYST_ISREFINEDBY"/>
+			<enumeration value="SYST_ISSUBSTITUTEOF"/>
+			<enumeration value="SYST_ISSUPERIOROF"/>
+			<enumeration value="SYST_MEMBERS"/>
+			<enumeration value="SYST_READSFROM"/>
+			<enumeration value="SYST_REPORTSFORTASKTO"/>
+			<enumeration value="SYST_REPORTSTO"/>
+			<enumeration value="SYST_SENDSINFO"/>
+			<enumeration value="SYST_STORESTO"/>
+			<enumeration value="SYST_SUBSTITUTE"/>
+			<enumeration value="SYST_SUBSUMES"/>
+			<enumeration value="SYST_USES"/>
+			<enumeration value="SYST_USESHUMANRESOURCE"/>
+			<enumeration value="SYST_USESPHYSRESOURCE"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PropertyType">
+		<restriction base="string">
+			<enumeration value="String"/>
+			<enumeration value="Enumeration"/>
+			<enumeration value="Number"/>
+			<enumeration value="Object"/>   <!-- refers to another BONAPART object (instance or class) -->
+			<enumeration value="Class"/>    <!-- refers to a BONAPART class -->
+			<enumeration value="Instance"/> <!-- refers to a BONAPART instance -->
+			<enumeration value="Date"/>
+			<enumeration value="Time"/>
+			<enumeration value="Boolean"/>
+			<enumeration value="Double"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="SwimlaneReference">
+		<restriction base="string">
+			<enumeration value="REMAINING_OBJECTS"/>	<!-- Swimlane collects remaining objects -->
+			<enumeration value="NOT_ASSIGNED"/>		<!-- Swimlane collects all objects not assigned to any other Swimlane -->
+			<enumeration value="OBJECT"/>			<!-- refers to another BONAPART object (instance or class) -->
+		</restriction>
+	</simpleType>
+	
+	<!--  copied from WSDL definition -->
+	<simpleType name="UUID">
+		<restriction base="string">
+		    <pattern value="[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}"/>
+		</restriction>
+	</simpleType>
+
+	<element name="Model">
+    	<complexType>
+    		<sequence>
+    			<element ref="tns:Properties"/>
+    			<element ref="tns:Data"/>
+    			<element ref="tns:Presentation"/>
+    		</sequence>
+    		<attribute name="uuid" type="tns:UUID" use="required"/>
+    	</complexType>
+	</element>
+
+	<element name="ExternalContent">
+
+	</element>
+
+	<element name="Data">
+    	<complexType>
+    		<sequence>
+    			<element ref="tns:PropertyDefinitions"/>
+    			<element ref="tns:Classes"/>
+    			<element ref="tns:Objects"/>
+				<element ref="tns:ObjectVersions"/>
+    			<element ref="tns:Relations"/>
+    		</sequence>    		
+    	</complexType>
+	</element>
+
+    <element name="Classes">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:Class"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+    
+    <element name="Objects">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:Object"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+	
+    <element name="ObjectVersions">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:VersionedObject"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+
+    <element name="VersionedObject">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:Version"/>
+    		</sequence>  		
+    	</complexType>
+    </element>   	
+    
+    <element name="Version">
+		<complexType>
+			<attribute name="uuid" type="tns:UUID" use="required"/>
+			<attribute name="active" type="boolean" use="required"/>
+		</complexType>
+    </element>
+	
+      <element name="Relations">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:Relation"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+    
+    <element name="Class">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="uuid" type="tns:UUID" use="required"/>
+			<attribute name="type" type="tns:ClassType" use="required"/>
+		</complexType>
+    </element>
+    
+    <element name="Object">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="uuid" type="tns:UUID" use="required"/>
+			<attribute name="class-uuid" type="tns:UUID" use="optional"/>
+			<attribute name="type" type="tns:ObjectType" use="required"/>
+		</complexType>
+    </element>
+
+    <element name="Relation">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="uuid" type="tns:UUID" use="required"/>
+			<attribute name="class-uuid" type="tns:UUID" use="optional"/>
+			<attribute name="source-uuid" type="tns:UUID" use="required"/>
+			<attribute name="target-uuid" type="tns:UUID" use="required"/>
+			<attribute name="type" type="tns:RelationType" use="required"/>	
+		</complexType>
+    </element>
+    
+    <element name="PropertyDefinitions">
+    	<complexType>
+	   		<sequence>
+	   			<element ref="tns:PropertyDefinition" minOccurs="0" maxOccurs="unbounded"/>
+	   		</sequence>
+    	</complexType>
+    </element>
+    
+    <element name="PropertyDefinition">
+    	<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+	   		<attribute name="uuid" type="tns:UUID" use="required"/>
+	   		<attribute name="class-uuid" type="tns:UUID" use="required"/>
+    	</complexType>
+    </element>    
+    
+    <element name="Properties">
+    	<complexType>
+	   		<sequence>
+	   			<element ref="tns:SimpleProperties" minOccurs="0"/>
+	   			<element ref="tns:ListProperties" minOccurs="0"/>
+	   		</sequence>
+    	</complexType>
+    </element>   
+    
+    <element name="SimpleProperties">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:SimpleProperty"/>
+    		</sequence>
+  		
+    	</complexType>
+    </element>
+  
+    <element name="ListProperties">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:ListProperty"/>
+    		</sequence>    		
+    	</complexType>
+    </element>
+    
+    <element name="SimpleProperty">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:Value"/>
+    		</sequence>
+    			<attribute name="property-definition-uuid" type="tns:UUID" use="optional"/>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="type" type="tns:PropertyType" use="required"/>
+    	</complexType>
+    </element>
+    
+    <element name="ListProperty">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:Value"/>
+    		</sequence>
+			<attribute name="property-definition-uuid" type="tns:UUID" use="optional"/>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="type" type="tns:PropertyType" use="required"/>
+    	</complexType>
+    </element>    
+    
+    <element name="Value">
+    	<complexType mixed="true">
+			<attribute name="locale" type="tns:Locale" use="optional" default="PRIMARY"/>
+    	</complexType>
+    </element>
+    
+    
+    <!-- ============================================== -->
+	<element name="Presentation">
+    	<complexType>
+    		<sequence>
+    			<!-- TODO to be implemented later -->
+    			<!--
+    			<element ref="tns:NodeStyles"/>
+    			<element ref="tns:RelationStyles"/>
+    			<element ref="tns:GfxStyles"/>
+    			-->
+    			<element ref="tns:Diagrams"/>
+    		</sequence>    		
+    	</complexType>
+	</element>
+	
+    <element name="NodeStyles">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:NodeStyle"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+    
+    <element name="RelationStyles">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:RelationStyle"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+
+    <element name="GfxStyles">
+    	<complexType>
+    		<sequence minOccurs="0" maxOccurs="unbounded">
+    			<element ref="tns:GfxStyle"/>
+    		</sequence>  		
+    	</complexType>
+    </element>
+    
+    <element name="NodeStyle">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="name" type="string" use="required"/>	
+		</complexType>
+    </element>
+    
+    <element name="RelationStyle">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="name" type="string" use="required"/>	
+		</complexType>
+    </element>
+    
+    <element name="GfxStyle">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="name" type="string" use="required"/>	
+		</complexType>
+    </element>
+
+    <element name="Diagrams">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:Diagram"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+    
+    <element name="Diagram">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:GfxObjects" minOccurs="0"/>
+	   			<element ref="tns:Swimlanes" minOccurs="0"/>
+	   			<element ref="tns:DiagramItems"/>
+	   		</sequence>
+			<attribute name="uuid" type="tns:UUID"/>	
+			<attribute name="type" type="tns:DiagramType" use="required"/>
+		</complexType>
+    </element>
+
+    <element name="Swimlanes">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:Swimlane"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+
+    <element name="Swimlane">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+			<attribute name="order" type="int"/>
+			<attribute name="refers-to" type="tns:SwimlaneReference"/>
+			<attribute name="object-uuid" type="tns:UUID"/>
+		</complexType>
+    </element>
+    
+    <element name="DiagramItems">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:DiagramNodes"/>
+	   			<!-- TODO to be implemented later -->
+	   			<!--
+	   			<element ref="tns:DiagramRelations"/>
+	   			-->
+	   		</sequence>	
+		</complexType>
+    </element>
+    
+    <element name="DiagramNodes">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:DiagramNode"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+    
+    <element name="DiagramNode">
+		<complexType>
+			<attribute name="object-uuid" type="tns:UUID"/>
+			<!--attribute name="nodestyle" type="string"/-->
+			<attribute name="x" type="int"/>
+			<attribute name="y" type="int"/>
+			<attribute name="width" type="int"/>
+			<attribute name="height" type="int"/>
+		</complexType>
+    </element>
+    
+    <element name="DiagramRelations">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:ObjectRelations"/>
+	   			<element ref="tns:NonObjectRelations"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+
+    <element name="ObjectRelations">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:ObjectRelation"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+    
+    <element name="ObjectRelation">
+		<complexType>
+			<sequence>
+				<element ref="tns:AnchorPoints"/>
+			</sequence>
+			<attribute name="relation-uuid" type="tns:UUID"/>
+			<attribute name="relationstyle" type="string"/>
+		</complexType>
+    </element>
+
+    <element name="AnchorPoints">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:AnchorPoint"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+
+    <element name="AnchorPoint">
+		<complexType>
+			<attribute name="index" type="int"/>
+			<attribute name="x" type="int"/>
+			<attribute name="y" type="int"/>
+		</complexType>
+    </element>
+    
+    <element name="NonObjectRelations">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:NonObjectRelation"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+
+    <element name="NonObjectRelation">
+		<complexType>
+			<sequence>
+				<element ref="tns:AnchorPoints"/>
+			</sequence>
+			<attribute name="source-uuid" type="tns:UUID"/>
+			<attribute name="target-uuid" type="tns:UUID"/>
+			<attribute name="relationstyle" type="string"/>
+		</complexType>
+    </element>
+    
+    <element name="GfxObjects">
+		<complexType>
+	   		<sequence minOccurs="0" maxOccurs="unbounded">
+	   			<element ref="tns:GfxObject"/>
+	   		</sequence>	
+		</complexType>
+    </element>
+    
+    <element name="GfxObject">
+		<complexType>
+	   		<sequence>
+	   			<element ref="tns:Properties"/>
+	   		</sequence>
+		</complexType>
+    </element>
+</schema>

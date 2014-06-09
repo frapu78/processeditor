@@ -1,0 +1,42 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="pics/icon_small.png">
+
+    <title>ProcessEditorServer - Administration Platform</title>
+    <link rel="stylesheet" type="text/css" href="js/ext/resources/css/ext-all-gray.css">
+    <link rel="stylesheet" type="text/css" href="css/Processeditor.css">
+    <script language="JavaScript" src="js/ext/bootstrap.js"></script>
+    <script language="JavaScript" src="js/util.js"></script>
+
+     <script language="JavaScript" src="js/pages/admin/AdminPage.js"></script>
+     <script language="JavaScript" src="js/pages/admin/AdminPageMenu.js"></script>
+     <script language="JavaScript" src="js/pages/admin/AdminPageComponent.js"></script>
+
+     <script language="JavaScript" src="js/pages/admin/UserManagerComponent.js"></script>
+     <script language="JavaScript" src="js/pages/admin/UserManagerMenu.js"></script>
+     <script language="JavaScript" src="js/pages/admin/RegisterUserPanel.js"></script>
+     <script language="JavaScript" src="js/pages/admin/UserDetailsPanel.js"></script>
+     <script language="JavaScript" src="js/pages/admin/GroupDetailsPanel.js"></script>
+
+     <script language="JavaScript" src="js/pages/admin/MonitoringComponent.js"></script>
+     <script language="JavaScript" src="js/pages/admin/MailConfigurationComponent.js"></script>
+  </head>
+
+  <body>
+      <script language="JavaScript">
+          Ext.onReady(function() {
+            new AdminPage([
+                new UserManagerComponent(),
+                new MonitoringComponent(),
+                new MailConfigurationComponent(),
+            ]).render(document.body);
+          });
+      </script>
+  </body>
+
+</html>

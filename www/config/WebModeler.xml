@@ -1,0 +1,37 @@
+<config>
+	<startup>
+		<option name='ServerPortletMode'>true</option>
+	</startup>
+	<components><!--<component type='user'>com.inubit.research.server.manager.IntegratedUserManager</component> -->
+		<component type='user'>com.inubit.research.server.manager.LiferayUserManager</component>
+                
+                <!--
+                   IF USERS ARE STORED IN A DATABASE, specify:
+                   <component type='usersconfig'>com.inubit.research.server.config.DatabaseUsersConfig</component>
+                -->
+
+                <!--
+                    FOR DATABASE USAGE use:
+                    <component type='persistence'>com.inubit.research.server.persistence.PostgreSQLDatabaseConnector</component>
+                    OR
+                    <component type='persistence'>com.inubit.research.server.persistence.MySQLDatabaseConnector</component>
+                -->
+                <component type='persistence'>com.inubit.research.server.persistence.FileSystemConnector</component>
+
+                <!--
+                    FOR DATABASE USAGE use:
+                    <component type='defaultlocation'>com.inubit.research.server.manager.DatabaseLocation</component>
+                -->
+                <component type='defaultlocation'>com.inubit.research.server.manager.FileSystemLocation</component>
+
+                <!--
+                    This is only required if DatabaseLocation or DatabaseUsersConfig are used.
+                    Alternatively, you can specify
+                    <component type='persistence'>com.inubit.research.server.persistence.MySQLDatabaseConnector</component>
+                    for using MySQL
+                -->
+                <component type='database'>com.inubit.research.server.persistence.PostgreSQLDatabaseConnector</component>
+	</components>
+	<node-images><!--<node class='net.frapu.code.visualization.bpmn.Task'>/pic/task.png</node> -->
+	</node-images>
+</config>

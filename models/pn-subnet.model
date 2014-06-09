@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model id="3307594" name="New process model"
+    type="net.frapu.code.visualization.petrinets.PetriNetModel"
+    xmlns="http://frapu.net/xsd/ProcessEditor"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="1696092"/>
+            <property name="text" value="i"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="82"/>
+            <property name="x" value="105"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Place"/>
+            <property name="#id" value="19267322"/>
+            <property name="text" value="o"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="y" value="83"/>
+            <property name="x" value="282"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.SubNet"/>
+            <property name="#id" value="16939420"/>
+            <property name="duration" value=""/>
+            <property name="text" value="Default Model"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="30"/>
+            <property name="subNet" value="models/pn-default.model"/>
+            <property name="probability" value="100"/>
+            <property name="cost" value=""/>
+            <property name="y" value="85"/>
+            <property name="x" value="192"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Lane"/>
+            <property name="#id" value="14301726"/>
+            <property name="text" value="Lane"/>
+            <property name="height" value="150"/>
+            <property name="stereotype" value=""/>
+            <property name="width" value="20"/>
+            <property name="y" value="82"/>
+            <property name="x" value="116"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="3808966"/>
+            <property name="sourceNode" value="1696092"/>
+            <property name="targetNode" value="16939420"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.petrinets.Edge"/>
+            <property name="#id" value="28991606"/>
+            <property name="sourceNode" value="16939420"/>
+            <property name="targetNode" value="19267322"/>
+        </edge>
+    </edges>
+</model>

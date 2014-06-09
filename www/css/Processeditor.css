@@ -1,0 +1,98 @@
+/* 
+    Document   : Processeditor
+    Created on : 27.04.2011, 14:53:19
+    Author     : fel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+
+   Icons - free for commercial use
+   http://www.iconfinder.com/search/?q=iconset%3Aledicons
+   http://www.famfamfam.com/lab/icons/silk/
+*/
+
+/* Root page - Toolbar Icons */
+
+.root-preview-tb .x-tool img,
+.rights-add-remove .x-panel-header .x-tool img {
+    height: 16px;
+    width: 16px;
+}
+
+.root-preview-tb .x-tool img.x-tool-png {
+    background-image: url('../pics/menu/image.png');
+}
+
+.root-preview-tb .x-tool img.x-tool-pdf {
+    background-image: url('../pics/menu/pdf.png');
+}
+
+.root-preview-tb .x-tool img.x-tool-delete {
+    background-image: url('../pics/menu/bin_closed.png');
+}
+
+.rights-add-remove .x-panel-header .x-tool img.x-tool-add{
+    background-image: url('../pics/menu/add.png');
+}
+
+.rights-add-remove .x-panel-header .x-tool img.x-tool-remove{
+    background-image: url('../pics/menu/delete.png');
+}
+
+/* 
+ * alternativ grid for the ProcessEditor 
+ */
+#editor {
+    background: #fff url('../pics/ext/grid_background.png') left top repeat;
+}
+
+#editor > .x-panel-body:first-child {
+    background: none;
+}
+
+/*
+ * ICON settings
+ */
+.trash-folder {
+    background-image: url(../pics/menu/bin_closed.png);
+}
+
+.home-folder {
+    background-image: url(../pics/menu/home.png) !important;
+}
+
+.is-folder {
+    background-image: url(../pics/is_16.gif) !important;
+}
+
+.shared-folder {
+    background-image: url(../pics/menu/icon_shared.gif) !important;
+}
+
+.model {
+    background-image: url(../pics/icon_small.png) !important;
+}
+
+.user-single {
+    background-image: url(../pics/menu/user_small.gif) !important;
+}
+
+.user-group {
+    background-image: url(../pics/menu/group_small.gif) !important;
+}
+
+.my-tools-check {
+    background-image: url(../pics/menu/checkmark_small.gif) !important;
+}
+
+.my-tools-plus {
+	background-image: url(../pics/menu/plus_small.gif) !important;
+}
+
+.gray-field {
+    background-color: #F3F3EE;
+}

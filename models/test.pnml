@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="cID1" type="Petri net">
+        <place id="sp"/>
+        <place id="22p"/>
+        <place id="17p"/>
+        <place id="18p"/>
+        <place id="16p"/>
+        <place id="pe0"/>
+        <transition id="22t">
+            <name>
+                <text>Buche Flug-/Hotel</text>
+            </name>
+            <toolspecific tool="IS">
+                <lane id="56" name="Mitarbeiter"/>
+                <metadata>
+                    <property name="Z" value="0"/>
+                    <property name="K" value="0"/>
+                    <property name="Kosten" value="0"/>
+                    <property name="Zeit" value="0"/>
+                </metadata>
+                <links>
+                    <link id="1" name="Aufgabe 2 - SOA Dienstreiseportal - TW" type="technical">
+                        <watchpoint id="2" from="13826527" to="13826742"/>
+                        <watchpoint id="3" from="13826727" to="13826806"/>
+                        <watchpoint id="4" from="13826742" to="13826727"/>
+                    </link>
+                </links>
+            </toolspecific>
+        </transition>
+        <transition id="17t">
+            <name>
+                <text></text>
+            </name>
+            <toolspecific tool="IS">
+                <metadata>
+                    <property name="Z" value="0"/>
+                    <property name="K" value="0"/>
+                </metadata>
+            </toolspecific>
+        </transition>
+        <transition id="18t">
+            <name>
+                <text>Stelle Dienstreiseantrag</text>
+            </name>
+            <toolspecific tool="IS">
+                <lane id="56" name="Mitarbeiter"/>
+                <metadata>
+                    <property name="Z" value="0"/>
+                    <property name="K" value="0"/>
+                    <property name="Kosten" value="0"/>
+                    <property name="Zeit" value="0"/>
+                </metadata>
+                <links>
+                    <link id="5" name="Aufgabe 2 - SOA Dienstreiseportal - TW" type="technical">
+                        <watchpoint id="6" from="13826463" to="13826527"/>
+                        <watchpoint id="7" from="13826527" to="13826742"/>
+                    </link>
+                </links>
+            </toolspecific>
+        </transition>
+        <transition id="16t">
+            <name>
+                <text></text>
+            </name>
+            <toolspecific tool="IS">
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <transition id="te0">
+            <name>
+                <text>PN Transition End</text>
+            </name>
+            <toolspecific tool="IS">
+                <metadata/>
+            </toolspecific>
+        </transition>
+        <arc id="22t" source="18p" target="22t">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="22p" source="22t" target="22p">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="17t" source="sp" target="17t">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="17p" source="17t" target="17p">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="18t" source="17p" target="18t">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="18p" source="18t" target="18p">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="16t" source="22p" target="16t">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="16p" source="16t" target="16p">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="te0" source="16p" target="te0">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+        <arc id="pe0" source="te0" target="pe0">
+            <inscription>
+                <value>1</value>
+            </inscription>
+        </arc>
+    </net>
+</pnml>

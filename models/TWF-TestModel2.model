@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="20285311" name="TWF-test.model" type="net.frapu.code.visualization.twf.TWFModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connector"/>
+            <property name="#id" value="15186833"/>
+            <property name="text" value="Connector"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="45"/>
+            <property name="y" value="101"/>
+            <property name="x" value="69"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Converter"/>
+            <property name="#id" value="324332"/>
+            <property name="text" value="Converter"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="45"/>
+            <property name="y" value="101"/>
+            <property name="x" value="223"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Control"/>
+            <property name="#id" value="4257704"/>
+            <property name="text" value="Control"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="45"/>
+            <property name="y" value="101"/>
+            <property name="x" value="150"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Adapter"/>
+            <property name="#id" value="9505547"/>
+            <property name="text" value="Adapter"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="45"/>
+            <property name="y" value="249"/>
+            <property name="x" value="223"/>
+        </node>
+        <node>
+            <property name="#nodes" value="22274240;4798195;24138518"/>
+            <property name="text" value="Tool"/>
+            <property name="error_connections" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="200"/>
+            <property name="error_connection2" value="0"/>
+            <property name="error_connection1" value="1"/>
+            <property name="right_docker" value="1"/>
+            <property name="#id" value="15666395"/>
+            <property name="#type" value="net.frapu.code.visualization.twf.Tool"/>
+            <property name="height" value="170"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="left_docker" value="1"/>
+            <property name="y" value="138"/>
+            <property name="x" value="517"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.ToolDocker"/>
+            <property name="#id" value="26522442"/>
+            <property name="text" value=""/>
+            <property name="height" value="16"/>
+            <property name="#DockerIsLeft" value="1"/>
+            <property name="stereotype" value=""/>
+            <property name="#ParentToolID" value="15666395"/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="16"/>
+            <property name="y" value="138"/>
+            <property name="x" value="417"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.ToolDocker"/>
+            <property name="#id" value="25622919"/>
+            <property name="text" value=""/>
+            <property name="height" value="16"/>
+            <property name="#DockerIsLeft" value="0"/>
+            <property name="stereotype" value=""/>
+            <property name="#ParentToolID" value="15666395"/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="16"/>
+            <property name="y" value="138"/>
+            <property name="x" value="617"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Control"/>
+            <property name="#id" value="4798195"/>
+            <property name="text" value="Control"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="45"/>
+            <property name="y" value="96"/>
+            <property name="x" value="476"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Control"/>
+            <property name="#id" value="24138518"/>
+            <property name="text" value="Control"/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="45"/>
+            <property name="y" value="162"/>
+            <property name="x" value="476"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Control"/>
+            <property name="#id" value="14709836"/>
+            <property name="text" value="Control"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="60"/>
+            <property name="y" value="114"/>
+            <property name="x" value="318"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.ColoredFrame"/>
+            <property name="#id" value="3095693"/>
+            <property name="#nodes" value="8953825;6977222;19939296"/>
+            <property name="text" value=""/>
+            <property name="height" value="150"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-4929281"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="250"/>
+            <property name="y" value="135"/>
+            <property name="x" value="786"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Converter"/>
+            <property name="#id" value="19939296"/>
+            <property name="text" value="Converter"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="60"/>
+            <property name="y" value="134"/>
+            <property name="x" value="727"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connector"/>
+            <property name="#id" value="6977222"/>
+            <property name="text" value="Connector"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="60"/>
+            <property name="y" value="130"/>
+            <property name="x" value="810"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Converter"/>
+            <property name="#id" value="8953825"/>
+            <property name="text" value="Converter"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="60"/>
+            <property name="y" value="132"/>
+            <property name="x" value="877"/>
+        </node>
+        <node>
+            <property name="#nodes" value="15087600;6708865"/>
+            <property name="text" value="Tool"/>
+            <property name="error_connections" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="width" value="200"/>
+            <property name="error_connection2" value="0"/>
+            <property name="error_connection1" value="0"/>
+            <property name="right_docker" value="0"/>
+            <property name="#id" value="18465097"/>
+            <property name="#type" value="net.frapu.code.visualization.twf.Tool"/>
+            <property name="height" value="150"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="left_docker" value="1"/>
+            <property name="y" value="177"/>
+            <property name="x" value="1073"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.ToolDocker"/>
+            <property name="#id" value="5198827"/>
+            <property name="text" value=""/>
+            <property name="height" value="16"/>
+            <property name="#DockerIsLeft" value="1"/>
+            <property name="stereotype" value=""/>
+            <property name="#ParentToolID" value="18465097"/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="16"/>
+            <property name="y" value="177"/>
+            <property name="x" value="973"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connector"/>
+            <property name="#id" value="6708865"/>
+            <property name="text" value="Connector"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="60"/>
+            <property name="y" value="170"/>
+            <property name="x" value="1068"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connector"/>
+            <property name="#id" value="5023912"/>
+            <property name="text" value="Connector"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="60"/>
+            <property name="y" value="353"/>
+            <property name="x" value="481"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.twf.ToolErrorConnector"/>
+            <property name="#id" value="27459325"/>
+            <property name="text" value=""/>
+            <property name="height" value="14"/>
+            <property name="stereotype" value=""/>
+            <property name="#ParentToolID" value="15666395"/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="25"/>
+            <property name="#ConnectorNumber" value="0"/>
+            <property name="y" value="213"/>
+            <property name="x" value="433"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="22563196"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="15186833"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="4257704"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="33284646"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="4257704"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="324332"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="2019307"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="4257704"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="9505547"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="9668486"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="324332"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="14709836"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="24797718"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="9505547"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="14709836"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="29619293"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="19939296"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="6977222"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="15580799"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="6977222"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="8953825"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.ErrorConnection"/>
+            <property name="#id" value="28226669"/>
+            <property name="color_arc" value="-65536"/>
+            <property name="#sourceNode" value="27459325"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="5023912"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="19776029"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="8953825"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="5198827"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="4491675"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="25622919"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="19939296"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.twf.Connection"/>
+            <property name="#id" value="26064747"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="14709836"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="curved" value="0"/>
+            <property name="#targetNode" value="26522442"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="8. Juni 2010 15:36:14 MESZ"/>
+        <property name="name" value="TWF-test.model"/>
+        <property name="#uri" value="C:\Dokumente und Einstellungen\ff\Eigene Dateien\Eclipse-Workspace\code\Processeditor\models\TWF-TestModel2.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

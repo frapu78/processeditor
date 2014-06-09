@@ -1,0 +1,96 @@
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="../../../pics/icon_small.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title></title>
+
+        <link rel="stylesheet" type="text/css" href="../../../js/ext/resources/css/ext-all-gray.css">
+<!--        <link rel="stylesheet" type="text/css" href="../js/ext/resources/css/ext-all-gray.css">-->
+        <link rel="stylesheet" type="text/css" href="../css/Processeditor.css">
+        <script language="JavaScript" src="../../../js/ext/bootstrap.js"></script>    
+        <script language="JavaScript" src="../../../js/util.js"></script>
+        <script language="JavaScript" src="../../../js/raphael.js"></script>
+
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessObject.js"></script>
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessEdge.js"></script>
+        <script language="JavaScript" src="../../../js/model/abstract/ProcessModel.js"></script>
+        <script language="JavaScript" src="../../../js/model/viewer/AnnotatedProcessModel.js"></script>
+        <script language="JavaScript" src="../../../js/model/viewer/AnnotatedProcessNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/viewer/AnnotatedProcessEdge.js"></script>
+
+        <script language="JavaScript" src="../../../js/model/ProcessModelType.js"></script>
+        <script language="JavaScript" src="../../../js/model/TextNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/DummyNode.js"></script>
+        <script language="JavaScript" src="../../../js/model/SelectionFrame.js"></script>
+
+        <script language="JavaScript" src="../../../js/model/contextmenu/ContextMenu.js"></script>
+        <script language="JavaScript" src="../../../js/model/contextmenu/NodeContextMenu.js"></script>
+        <script language="JavaScript" src="../../../js/model/contextmenu/ViewNodeContextMenu.js"></script>
+        <script language="JavaScript" src="../../../js/pages/ColorField.js"></script>
+
+        <script language="JavaScript" src="../../../js/loader/Loader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelLoader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelMetaLoader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelNodesLoader.js"></script>
+        <script language="JavaScript" src="../../../js/loader/ModelEdgesLoader.js"></script>
+
+        <script language="JavaScript" src="../../../js/pages/viewer/ProcessViewer.js"></script>
+        <script language="JavaScript" src="../../../js/pages/viewer/ProcessViewerMenu.js"></script>
+        <script language="JavaScript" src="../../../js/pages/viewer/AnnotationBalloon.js"></script>
+        <script language="JavaScript" src="../../../js/pages/viewer/CommentPanel.js"></script>
+        <script language="JavaScript" src="../../../js/pages/viewer/CommentPanelItem.js"></script>
+        <script language="JavaScript" src="../../../js/pages/editor/Canvas.js"></script>
+
+        <script language="JavaScript" src="../../../js/handler/ProcessViewerMouseListener.js"></script>
+        <script language="JavaScript" src="../../../js/handler/ProcessViewerLaneHandler.js"></script>
+    </head>
+    <!-- <script language ="JavaScript" src="ProcessEditorMouseListener.js"/>-->
+
+    <body style="overflow:hidden;">
+        <script language="JavaScript">
+            document.onmouseup = function() {return false};
+            document.onmouseup = function() {return false};
+            document.onclick = function(event) {
+                var button;
+                if (event.which)
+                    button = event.which;
+                else
+                    button = event.button;
+
+                if (button == 2 || button == 3) {
+                    return false
+                }
+            };
+
+            Ext.onReady(function() {
+                        var viewer = new ProcessViewer();
+
+                        viewer.createViewer(document.body);
+                        var onetimeRegEx = /.+\/models\/(\d+)\/versions\/(\d+)\?key=(.+)/;
+                        var persistentRegEx = /.+\/models\/(\d+)(\/versions\/(\d+))?/;
+
+                        if (onetimeRegEx.test(window.location)) {
+                            var result = onetimeRegEx.exec(window.location);
+
+                            var m_id = result[1];
+                            var m_version = result[2];
+                            var m_type = null;
+
+                            //document.cookie = "PES_SESSION_ID=" + result[3] + ";expires="+(new Date(2099,12,31)).toGMTString();
+
+                            viewer.init(m_id, m_version, m_type);
+                        } else if (persistentRegEx.test(window.location)){
+                            var result = persistentRegEx.exec(window.location);
+
+                            m_id= result[1];
+                            m_version = result[3];
+
+                            viewer.init(m_id, m_version);
+                        }
+                    });
+
+        </script>
+    </body>
+</html>

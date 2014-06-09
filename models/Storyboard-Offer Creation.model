@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="17387626" name="Offer Creation Storyboard" type="net.frapu.code.visualization.storyboard.StoryboardModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="sequence_number" value="1"/>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Scene"/>
+            <property name="#id" value="21203252"/>
+            <property name="#nodes" value="21740880"/>
+            <property name="text" value="Prepare offer"/>
+            <property name="height" value="182"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="208"/>
+            <property name="y" value="222"/>
+            <property name="x" value="169"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Action"/>
+            <property name="#id" value="21740880"/>
+            <property name="text" value="Prepare offer"/>
+            <property name="height" value="72"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="multiple" value="0"/>
+            <property name="y" value="237"/>
+            <property name="x" value="176"/>
+        </node>
+        <node>
+            <property name="sequence_number" value="2"/>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Scene"/>
+            <property name="#id" value="12473995"/>
+            <property name="#nodes" value="32217869;13720620"/>
+            <property name="text" value="Approve offer"/>
+            <property name="height" value="158"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="300"/>
+            <property name="y" value="140"/>
+            <property name="x" value="484"/>
+        </node>
+        <node>
+            <property name="sequence_number" value="3"/>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Scene"/>
+            <property name="#id" value="31322983"/>
+            <property name="#nodes" value="23481525;28184705"/>
+            <property name="text" value="Approve offer by Management"/>
+            <property name="height" value="158"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="300"/>
+            <property name="y" value="347"/>
+            <property name="x" value="573"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Action"/>
+            <property name="#id" value="13720620"/>
+            <property name="text" value="Sign offer"/>
+            <property name="height" value="72"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="multiple" value="0"/>
+            <property name="y" value="148"/>
+            <property name="x" value="454"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Action"/>
+            <property name="#id" value="28184705"/>
+            <property name="text" value="Sign offer"/>
+            <property name="height" value="72"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="multiple" value="0"/>
+            <property name="y" value="355"/>
+            <property name="x" value="540"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Actor"/>
+            <property name="#id" value="16402180"/>
+            <property name="text" value="Project Manager"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="73"/>
+            <property name="x" value="733"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Actor"/>
+            <property name="#id" value="29336693"/>
+            <property name="text" value="COO"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="504"/>
+            <property name="x" value="541"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Stop"/>
+            <property name="#id" value="32217869"/>
+            <property name="text" value=""/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="40"/>
+            <property name="y" value="129"/>
+            <property name="x" value="591"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Stop"/>
+            <property name="#id" value="23481525"/>
+            <property name="text" value=""/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="40"/>
+            <property name="y" value="390"/>
+            <property name="x" value="676"/>
+        </node>
+        <node>
+            <property name="sequence_number" value="4"/>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Scene"/>
+            <property name="#id" value="1122818"/>
+            <property name="#nodes" value="16156579;33505117;9096718"/>
+            <property name="text" value="Send offer"/>
+            <property name="height" value="172"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="382"/>
+            <property name="y" value="260"/>
+            <property name="x" value="942"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Action"/>
+            <property name="#id" value="9096718"/>
+            <property name="text" value="Prepare text"/>
+            <property name="height" value="72"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="multiple" value="0"/>
+            <property name="y" value="274"/>
+            <property name="x" value="834"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Action"/>
+            <property name="#id" value="33505117"/>
+            <property name="text" value="Select template"/>
+            <property name="height" value="72"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="100"/>
+            <property name="multiple" value="0"/>
+            <property name="y" value="276"/>
+            <property name="x" value="976"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Stop"/>
+            <property name="#id" value="16156579"/>
+            <property name="text" value=""/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="40"/>
+            <property name="y" value="276"/>
+            <property name="x" value="1100"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Actor"/>
+            <property name="#id" value="15324060"/>
+            <property name="text" value="Employee"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="391"/>
+            <property name="x" value="104"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Actor"/>
+            <property name="#id" value="5624799"/>
+            <property name="text" value="Assistence"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="75"/>
+            <property name="x" value="993"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Actor"/>
+            <property name="#id" value="7382182"/>
+            <property name="text" value="CEO"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="528"/>
+            <property name="x" value="615"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Actor"/>
+            <property name="#id" value="299371"/>
+            <property name="text" value="Partner"/>
+            <property name="height" value="80"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="416"/>
+            <property name="x" value="214"/>
+        </node>
+        <node>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Rule"/>
+            <property name="#id" value="9992755"/>
+            <property name="text" value=""/>
+            <property name="height" value="30"/>
+            <property name="stereotype" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="shadow" value="0"/>
+            <property name="width" value="30"/>
+            <property name="y" value="292"/>
+            <property name="x" value="332"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Association"/>
+            <property name="#id" value="3767630"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="16402180"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="12473995"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Association"/>
+            <property name="#id" value="4018402"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="31322983"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="29336693"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="27469994"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="13720620"/>
+            <property name="label" value="Reject"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="32217869"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="17441473"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="28184705"/>
+            <property name="label" value="Reject"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="23481525"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="15458568"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="9096718"/>
+            <property name="label" value="Ok"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="33505117"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="20348362"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="13720620"/>
+            <property name="label" value="Ok"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1122818"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="23338819"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="28184705"/>
+            <property name="label" value="Ok"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1122818"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="21090945"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="33505117"/>
+            <property name="label" value="Ok"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="16156579"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Association"/>
+            <property name="#id" value="21367370"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="21203252"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="15324060"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Association"/>
+            <property name="#id" value="23632881"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="5624799"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="1122818"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="11099528"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="13720620"/>
+            <property name="label" value="Rework"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="21203252"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Association"/>
+            <property name="#id" value="27238286"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="29336693"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="7382182"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Association"/>
+            <property name="#id" value="33317"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="299371"/>
+            <property name="label" value=""/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="21203252"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="14434757"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="21740880"/>
+            <property name="label" value="Ok"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="9992755"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="29071960"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="9992755"/>
+            <property name="label" value="Always"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="12473995"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value="-98,78"/>
+        </edge>
+        <edge>
+            <property name="#type" value="net.frapu.code.visualization.storyboard.Sequence"/>
+            <property name="#id" value="33136362"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="9992755"/>
+            <property name="label" value="Sum&gt;10.000"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="31322983"/>
+            <property name="curved" value="0"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#creationDate" value="11. November 2009 23:19:49 MEZ"/>
+        <property name="name" value="Offer Creation Storyboard"/>
+        <property name="#folder" value="/HR"/>
+        <property name="#uri" value="/models/tmp/21121915_2254598215854435028"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>

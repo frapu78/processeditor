@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="208688853" name="pluginclasses.model" type="net.frapu.code.visualization.uml.ClassModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="abstract" value="1"/>
+            <property name="methods" value=""/>
+            <property name="text" value="ServerPlugin"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="160"/>
+            <property name="#id" value="935521285"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="46"/>
+            <property name="x" value="312"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="ModelScope"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="134"/>
+            <property name="#id" value="935543594"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="interface"/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="46"/>
+            <property name="x" value="84"/>
+        </node>
+        <node>
+            <property name="abstract" value="0"/>
+            <property name="methods" value=""/>
+            <property name="text" value="ObjectScope"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="134"/>
+            <property name="#id" value="436230241"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="60"/>
+            <property name="stereotype" value="interface"/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="46"/>
+            <property name="x" value="537"/>
+        </node>
+        <node>
+            <property name="abstract" value="1"/>
+            <property name="methods" value=""/>
+            <property name="text" value="SimpleServerPlugin"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="160"/>
+            <property name="#id" value="1638926182"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="166"/>
+            <property name="x" value="128"/>
+        </node>
+        <node>
+            <property name="abstract" value="1"/>
+            <property name="methods" value=""/>
+            <property name="text" value="FormServerPlugin"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="160"/>
+            <property name="#id" value="682081658"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="166"/>
+            <property name="x" value="312"/>
+        </node>
+        <node>
+            <property name="abstract" value="1"/>
+            <property name="methods" value=""/>
+            <property name="text" value="DialogServerPlugin"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="160"/>
+            <property name="#id" value="242597432"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="166"/>
+            <property name="x" value="494"/>
+        </node>
+        <node>
+            <property name="abstract" value="1"/>
+            <property name="methods" value=""/>
+            <property name="text" value="InfoDialogServerPlugin"/>
+            <property name="#attributes" value=""/>
+            <property name="color_background" value="-657931"/>
+            <property name="width" value="160"/>
+            <property name="#id" value="922745441"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.UMLClass"/>
+            <property name="height" value="40"/>
+            <property name="stereotype" value=""/>
+            <property name="shadow" value="0"/>
+            <property name="y" value="269"/>
+            <property name="x" value="494"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="sourceMultiplicity" value="1..*"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="targetMultiplicity" value="1..*"/>
+            <property name="direction" value="NONE"/>
+            <property name="label" value=""/>
+            <property name="sourceVisibility" value=""/>
+            <property name="targetName" value=""/>
+            <property name="#id" value="685047701"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="targetVisibility" value=""/>
+            <property name="sourceName" value=""/>
+            <property name="#sourceNode" value="922745441"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="242597432"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="#target_dockpoint" value=""/>
+        </edge>
+        <edge>
+            <property name="sourceMultiplicity" value="1..*"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="targetMultiplicity" value="1..*"/>
+            <property name="direction" value="NONE"/>
+            <property name="label" value=""/>
+            <property name="sourceVisibility" value=""/>
+            <property name="targetName" value=""/>
+            <property name="#id" value="314160763"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="targetVisibility" value=""/>
+            <property name="sourceName" value=""/>
+            <property name="#sourceNode" value="1638926182"/>
+            <property name="points" value="128,107+312,107"/>
+            <property name="#targetNode" value="935521285"/>
+            <property name="#source_dockpoint" value="0,-20"/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="#target_dockpoint" value="0,19"/>
+        </edge>
+        <edge>
+            <property name="sourceMultiplicity" value="1..*"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="targetMultiplicity" value="1..*"/>
+            <property name="direction" value="NONE"/>
+            <property name="label" value=""/>
+            <property name="sourceVisibility" value=""/>
+            <property name="targetName" value=""/>
+            <property name="#id" value="1995120947"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="targetVisibility" value=""/>
+            <property name="sourceName" value=""/>
+            <property name="#sourceNode" value="682081658"/>
+            <property name="points" value=""/>
+            <property name="#targetNode" value="935521285"/>
+            <property name="#source_dockpoint" value="0,-20"/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="#target_dockpoint" value="0,19"/>
+        </edge>
+        <edge>
+            <property name="sourceMultiplicity" value="1..*"/>
+            <property name="color_arc" value="-16777216"/>
+            <property name="targetMultiplicity" value="1..*"/>
+            <property name="direction" value="NONE"/>
+            <property name="label" value=""/>
+            <property name="sourceVisibility" value=""/>
+            <property name="targetName" value=""/>
+            <property name="#id" value="1512326615"/>
+            <property name="#type" value="net.frapu.code.visualization.uml.Inheritance"/>
+            <property name="targetVisibility" value=""/>
+            <property name="sourceName" value=""/>
+            <property name="#sourceNode" value="242597432"/>
+            <property name="points" value="494,107+312,107"/>
+            <property name="#targetNode" value="935521285"/>
+            <property name="#source_dockpoint" value="0,-20"/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="#target_dockpoint" value="0,19"/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#source" value=""/>
+        <property name="#creationDate" value="30. März 2011 09:44:14 MESZ"/>
+        <property name="name" value="pluginclasses.model"/>
+        <property name="#data" value=""/>
+        <property name="#uri" value="/home/fel/NetBeansProjects/Processeditor/docs/tex-src/ServerPlugins/graphics/pluginclasses.model"/>
+        <property name="comment" value=""/>
+    </properties>
+</model>
