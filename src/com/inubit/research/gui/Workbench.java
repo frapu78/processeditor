@@ -1331,14 +1331,12 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        System.out.println("The library version cannot be started stand-alone.");
-        /*
+
         JFrame f = new Workbench();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SwingUtils.center(f);
         f.setVisible(true);
-        */
+
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
