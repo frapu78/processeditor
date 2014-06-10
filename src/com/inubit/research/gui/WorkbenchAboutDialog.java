@@ -73,7 +73,7 @@ public class WorkbenchAboutDialog extends javax.swing.JDialog {
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("(C) 2009-2014 Contributors\n\nContributors: \nCarsten Braune, Felix Elliger, Fabian Friedrich, Uwe Hartmann, Thomas Milde, Jan Oehlert, Frank Puhlmann, Johannes Schmidt\n\nThis software contains the following external components:\n\n1. ProcessEditor (C) 2008, 2009 Frank Puhlmann (http://frapu.de)\n2. JSONObject (C) 2002 JSON.org\n");
+        jTextArea1.setText("(C) 2009-2014 Contributors\n\nContributors: \nCarsten Braune, Felix Elliger, Fabian Friedrich, Uwe Hartmann, Thomas Milde, Jan Oehlert, Frank Puhlmann, Johannes Schmidt\n\nThis software contains the following external components:\n\n1. ProcessEditor (C) 2008, 2009 Frank Puhlmann (http://frapu.de)\n2. JSONObject (C) 2002 JSON.org\n\nSources: https://github.com/frapu78/processeditor");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -109,7 +109,7 @@ public class WorkbenchAboutDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(okButton)
                 .addContainerGap())
