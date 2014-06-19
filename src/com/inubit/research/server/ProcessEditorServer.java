@@ -268,76 +268,74 @@ public class ProcessEditorServer {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        
-          System.out.println("The library version cannot be started stand-alone.");
-        
-//        ProcessEditorServer server = getInstanceForWorkbench();
-//
-//        if (args.length > 0) {
-//
-//            if (args[0].equals("-h")) {
-//                System.out.println("All params: \n"
-//                        + "\t-s Start server with HTTPS protocol\n"
-//                        + "\t-h<if> Use <if> as specific host interface instead of all\n"
-//                        + "\t-p<port> Use <port> instead of default (1205)\n"
-//                        + "\t-d Start server in developer/debug mode\n"
-//                        + "\t-l <filename> Name of the log file");
-//
-//                System.exit(0);
-//            }
-//
-//            for (int i = 0; i < args.length; i++) {
-//
-//                if (args[i].equals("-l")) {
-//                    Properties props = new Properties();
-//                    props.load(new FileInputStream(LOG_CONFIG));
-//
-//                    props.setProperty("java.util.logging.FileHandler.pattern", args[i + 1]);
-//                    i++;
-//
-//                    File tmpConfig = new File(LOG_CONFIG + "_tmp");
-//
-//                    props.store(new FileOutputStream(tmpConfig), null);
-//
-//                    logManager.readConfiguration(new FileInputStream(tmpConfig));
-//
-//                    tmpConfig.deleteOnExit();
-//                }
-//
-//                if (args[i].equals("-s")) {
-//                    ProcessEditorServerHelper.setSecure(true);
-//                    System.out.println("SECURE MODE ACTIVATED");
-//                }
-//
-//                if (args[i].equals("-d")) {
-//                    ProcessEditorServerHelper.setDebugMode(true);
-//                    System.out.println("DEBUG MODE ACTIVATED");
-//                }
-//
-//                if (args[i].startsWith("-h")) {
-//                    String host = args[i].replace("-h", "");
-//                    ProcessEditorServerHelper.setHost(host);
-//                    System.out.println("HOST INTERFACE SET TO " + host);
-//                }
-//
-//                if (args[i].startsWith("-p")) {
-//                    // Try to parse port
-//                    try {
-//                        int port = Integer.parseInt(args[i].replace("-p", ""));
-//                        ProcessEditorServerHelper.setPort(port);
-//                        System.out.println("PORT SET TO " + port);
-//                    } catch (Exception ex) {
-//                        // ignore, use default
-//                        System.out.println("PORT NOT RECOGNIZED, USING DEFAULT");
-//                    }
-//                }
-//
-//            }
-//        }
-//
-//        server.init();
-//
-//        server.start();
+ 
+        ProcessEditorServer server = getInstanceForWorkbench();
+
+        if (args.length > 0) {
+
+            if (args[0].equals("-h")) {
+                System.out.println("All params: \n"
+                        + "\t-s Start server with HTTPS protocol\n"
+                        + "\t-h<if> Use <if> as specific host interface instead of all\n"
+                        + "\t-p<port> Use <port> instead of default (1205)\n"
+                        + "\t-d Start server in developer/debug mode\n"
+                        + "\t-l <filename> Name of the log file");
+
+                System.exit(0);
+            }
+
+            for (int i = 0; i < args.length; i++) {
+
+                if (args[i].equals("-l")) {
+                    Properties props = new Properties();
+                    props.load(new FileInputStream(LOG_CONFIG));
+
+                    props.setProperty("java.util.logging.FileHandler.pattern", args[i + 1]);
+                    i++;
+
+                    File tmpConfig = new File(LOG_CONFIG + "_tmp");
+
+                    props.store(new FileOutputStream(tmpConfig), null);
+
+                    logManager.readConfiguration(new FileInputStream(tmpConfig));
+
+                    tmpConfig.deleteOnExit();
+                }
+
+                if (args[i].equals("-s")) {
+                    ProcessEditorServerHelper.setSecure(true);
+                    System.out.println("SECURE MODE ACTIVATED");
+                }
+
+                if (args[i].equals("-d")) {
+                    ProcessEditorServerHelper.setDebugMode(true);
+                    System.out.println("DEBUG MODE ACTIVATED");
+                }
+
+                if (args[i].startsWith("-h")) {
+                    String host = args[i].replace("-h", "");
+                    ProcessEditorServerHelper.setHost(host);
+                    System.out.println("HOST INTERFACE SET TO " + host);
+                }
+
+                if (args[i].startsWith("-p")) {
+                    // Try to parse port
+                    try {
+                        int port = Integer.parseInt(args[i].replace("-p", ""));
+                        ProcessEditorServerHelper.setPort(port);
+                        System.out.println("PORT SET TO " + port);
+                    } catch (Exception ex) {
+                        // ignore, use default
+                        System.out.println("PORT NOT RECOGNIZED, USING DEFAULT");
+                    }
+                }
+
+            }
+        }
+
+        server.init();
+
+        server.start();
     }
 
     public static boolean isPortInUse(int port) {

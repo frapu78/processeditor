@@ -157,11 +157,11 @@ public class ServerConfig {
             FileWriter fw = new FileWriter(file);
             fw.write("<config>");
             fw.write(   "<startup>");
-            fw.write(       "<option name='ServerPortletMode'>true</option>");
+            fw.write(       "<option name='ServerPortletMode'>false</option>");
             fw.write(   "</startup>");
             fw.write(   "<components>");
-            fw.write(           "<!--<component type='user'>com.inubit.research.server.manager.IntegratedUserManager</component>-->");
-            fw.write(           "<component type='user'>com.inubit.research.server.manager.LiferayUserManager</component>");
+            fw.write(           "<component type='user'>com.inubit.research.server.manager.IntegratedUserManager</component>");
+            fw.write(           "<!--<component type='user'>com.inubit.research.server.manager.LiferayUserManager</component>-->");
             fw.write(   "</components>");
             fw.write(   "<node-images>");
             fw.write(       "<!--");
