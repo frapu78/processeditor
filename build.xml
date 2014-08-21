@@ -1,0 +1,103 @@
+<!--
+ Build XML file for ProcessEditor Workbench and Server.
+ (c) 2014 Frank Puhlmann.
+-->
+<project name="ProcessEditor" basedir="." default="clean-build-run-workbench">
+
+    <property name="src.dir" value="src"/>
+    <property name="pics.dir" value="pics"/>
+    <property name="www.dir" value="www"/>
+    <property name="resources.dir" value="resources"/>
+
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir" value="${build.dir}/jar"/>
+
+    <property name="main-class-workbench" value="com.inubit.research.gui.Workbench"/>
+    <property name="main-class-server" value="com.inubit.research.server.ProcessEditorServer"/>
+
+    <property name="lib.dir" value="lib"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <fileset id="pics" dir="${pics.dir}">
+        <include name="**/*.gif"/>
+        <include name="**/*.jpg"/>
+        <include name="**/*.png"/>
+    </fileset>
+
+    <fileset id="www" dir="${www.dir}">
+        <include name="**/*.js"/>
+        <include name="**/*.css"/>
+        <include name="**/*.html"/>
+    </fileset>
+
+    <fileset id="resources" dir="${resources.dir}">
+        <include name="**/*.xml"/>
+    </fileset>
+
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
+    </target>
+
+    <target name="jar-workbench" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <fileset refid="pics"/>
+            <fileset refid="resources"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main-class-workbench}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="jar-server" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <fileset refid="pics"/>
+            <fileset refid="www"/>
+            <fileset refid="resources"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main-class-server}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run-workbench.jar" depends="jar-workbench">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <path location="${jar.dir}/${ant.project.name}.jar"/>
+            </classpath>
+        </java>
+    </target>
+
+    <!--
+    Runs the server from the compiled jar.
+    -->
+    <target name="run-server.jar" depends="jar-server">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <path location="${jar.dir}/${ant.project.name}.jar"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="clean-build-workbench" depends="clean,jar-workbench"/>
+
+    <target name="clean-build-run-workbench" depends="clean,run-workbench.jar"/>
+
+    <target name="clean-build-server" depends="clean,jar-server"/>
+
+    <target name="clean-build-run-server" depends="clean,run-server.jar"/>
+
+</project>

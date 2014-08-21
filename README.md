@@ -12,6 +12,9 @@ com.frapu.net: Simple Java Canvas for creating ProcessModels incl. BPMN and Petr
 
 Java Libaries:
 ==============
+
+log4j
+
 javax.mail
 
 org.apache.commons.collections
