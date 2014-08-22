@@ -9,6 +9,8 @@
  */
 package net.frapu.code.visualization;
 
+import com.inubit.research.layouter.LayoutHelper;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -113,6 +115,7 @@ public class Configuration {
             // Write new default properties
             props.setProperty(PROP_DOT_LOCATION, "/usr/local/bin/dot");
             props.setProperty(PROP_USE_SYSTEM_LOOK_AND_FEEL, "0");
+            props.setProperty(LayoutHelper.CONF_RECTIFY, "1");
             storeConfig();
         }
     }
