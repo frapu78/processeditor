@@ -100,7 +100,7 @@ public class ProcessEditorServer {
         try {
             logManager.readConfiguration(ProcessEditorServer.class.getResourceAsStream(LOG_CONFIG));
         } catch (Exception e) {
-            System.out.println("Could not read loggin configuration. File " + LOG_CONFIG + " not found.");
+            System.out.println("Could not read logging configuration. File " + LOG_CONFIG + " not found.");
         }
 
         logManager.addLogger(logger);
@@ -288,6 +288,7 @@ public class ProcessEditorServer {
 
                 if (args[i].equals("-l")) {
                     Properties props = new Properties();
+
                     props.load(new FileInputStream(LOG_CONFIG));
 
                     props.setProperty("java.util.logging.FileHandler.pattern", args[i + 1]);

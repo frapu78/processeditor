@@ -932,8 +932,12 @@ public abstract class ProcessUtils {
     }
 
     public static void drawImage(String resourceName, Graphics2D g2, int x, int y) {
-        ImageIcon img = new ImageIcon(ProcessUtils.class.getResource(resourceName));
-        g2.drawImage(img.getImage(), x, y, null);
+        try {
+            ImageIcon img = new ImageIcon(ProcessUtils.class.getResource(resourceName));
+            g2.drawImage(img.getImage(), x, y, null);
+        } catch (Exception ex) {
+            // sorry, cannot be drawn...
+        }
     }
 
     public static Image createPreviewImage(Class<?> c, int size) {

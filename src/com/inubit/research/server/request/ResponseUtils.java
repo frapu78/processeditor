@@ -58,27 +58,29 @@ public class ResponseUtils {
 
     public static void respondWithServerResource(String contentType, String path, ResponseFacade resp, Boolean compress) throws IOException {
         if (path != null) {
-            if (ProcessEditorServerHelper.isDebugMode()) {
-                File f = new File("www" + path);
 
-                if (!f.exists()) {
-                    f = new File("pics" + path);
+            // Search in local file system first
+            File f = new File("www" + path);
+
+            if (!f.exists()) {
+                f = new File("pics" + path);
+            }
+            if (f.exists()) {
+                if (compress) {
+                    f = getCompressedFile(f);
+                    resp.setHeader(HttpConstants.HEADER_KEY_CONTENT_ENCODING, HttpConstants.CONTENT_CODING_GZIP);
                 }
 
-                if (f.exists()) {
-                    if (compress) {
-                        f = getCompressedFile(f);
-                        resp.setHeader(HttpConstants.HEADER_KEY_CONTENT_ENCODING, HttpConstants.CONTENT_CODING_GZIP);
-                    }
-
-                    respondWithStream(new FileInputStream(f), 200, contentType, resp);
-                    return;
-                } else {
+                respondWithStream(new FileInputStream(f), 200, contentType, resp);
+                return;
+            } else {
+                if (ProcessEditorServerHelper.isDebugMode()) {
                     respondWithString("The requested resource was not found on this server!", 404, HttpConstants.CONTENT_TYPE_TEXT_PLAIN, resp);
                     return;
                 }
             }
 
+            // Try to fetch from JAR
             URL url = resp.getResource(path);
             if (url != null) {
                 InputStream is = url.openStream();
@@ -87,7 +89,7 @@ public class ResponseUtils {
             } else {
                 Set<File> additionalDirs = ProcessEditorServerHelper.getAdditionalResourceDirectories();
                 for (File dir : additionalDirs) {
-                    File f = new File(dir, path);
+                    f = new File(dir, path);
                     if (f.exists()) {
                         respondWithStream(new FileInputStream(f), 200, contentType, resp);
                         return;

@@ -26,7 +26,6 @@ import net.frapu.code.visualization.Configuration;
  * @author fel
  */
 public class ProcessEditorServerHelper {
-    //public static final String SERVER_HOME_DIR = System.getProperty("user.home") + "/.wm_root";
     public static final String SERVER_HOME_DIR = System.getProperty("user.home") + "/.ProcessEditorServer";
     public static final String TMP_DIR = System.getProperty("java.io.tmpdir");
 
