@@ -5,23 +5,30 @@ The homepage of the Process Editor Project is hosted here: http://frapu.de/code/
 
 processeditor
 =============
-
-com.inubit.research: Complex Process Workbench (Swing and Webmodeler)
-
-com.frapu.net: Simple Java Canvas for creating ProcessModels incl. BPMN and Petri nets.
+* com.inubit.research: Complex Process Workbench (Swing and Webmodeler)
+* com.frapu.net: Simple Java Canvas for creating ProcessModels incl. BPMN and Petri nets.
 
 Java Libaries:
 ==============
+Please download separately and copy to lib folder
 
-log4j
+* log4j
+* javax.mail
+* org.apache.commons.collections
 
-javax.mail
+WebModeler requires ExtJS: Please download separately and copy ExtJs to www/js/ext (unzipped)
 
-org.apache.commons.collections
+* ExtJS 4 (for Web Modeler)
 
-Please download separately and add to project. 
+Manuel Building (Idea, Netbeans, etc.)
+======================================
+* Create a new project Java 1.7 source project and add the "src" folder as source
+* Add the "resources", "pics", "www" folder as resources (Idea) or source (Netbeans)
+* Select "com.inubit.research.gui.Workbench" as main class for Workbench
+* Select "com.inubit.research.server.ProcessEditorServer" as main class for Server
 
-ExtJS 4 (for Web Modeler)
-
-Please download separately and copy ExtJs under www/js/ext (unzipped)
-
+Ant Building
+============
+Use the build.xml with the following targets
+* "clean-build-workbench": Builds a jar with a manifest file for the Workbench
+* "clean-build-server": Builds a jar with a manifest file for the Server (incl. the "www" resources)
