@@ -17,7 +17,7 @@ Please download separately and copy to lib folder
 WebModeler requires ExtJS: Please download separately and copy ExtJs to www/js/ext (unzipped)
 * ExtJS 4 (for Web Modeler, http://www.sencha.com/products/extjs/download/ext-js-4.2.1/2281)
 
-Manuel Building (Idea, Netbeans, etc.)
+Manual Building (Idea, Netbeans, etc.)
 ======================================
 * Create a new Java 1.7 source project and add the "src" folder as source
 * Add the "resources", "pics", "www" folder as resources (Idea) or source (Netbeans)
