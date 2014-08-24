@@ -19,7 +19,8 @@ WebModeler requires ExtJS: Please download separately and copy ExtJs to www/js/e
 
 Manual Building (Idea, Netbeans, etc.)
 ======================================
-* Create a new Java 1.7 source project and add the "src" folder as source
+* Create a new Java 1.7 source project with the required libs as dependencies
+* Add the "src" folder as source
 * Add the "resources", "pics", "www" folder as resources (Idea) or source (Netbeans)
 * Select "com.inubit.research.gui.Workbench" as main class for Workbench
 * Select "com.inubit.research.server.ProcessEditorServer" as main class for Server
