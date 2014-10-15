@@ -21,6 +21,7 @@ import net.frapu.code.visualization.ProcessModel;
 import net.frapu.code.visualization.archimate.ArchimateModel;
 import net.frapu.code.visualization.bpmn.BPMNEditor;
 import net.frapu.code.visualization.bpmn.BPMNModel;
+import net.frapu.code.visualization.cmmn.CMMNModel;
 import net.frapu.code.visualization.domainModel.DomainModel;
 import net.frapu.code.visualization.epk.EPKModel;
 import net.frapu.code.visualization.gantt.GanttModel;
@@ -54,6 +55,7 @@ public class WorkbenchHelper {
     static {
         modelList.add(ArchimateModel.class);
         modelList.add(BPMNModel.class);
+        modelList.add(CMMNModel.class);
         modelList.add(ClassModel.class);
         modelList.add(DomainModel.class);
         modelList.add(EPKModel.class);
