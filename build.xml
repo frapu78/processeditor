@@ -2,7 +2,7 @@
  Build XML file for ProcessEditor Workbench and Server.
  (c) 2014 Frank Puhlmann.
 -->
-<project name="ProcessEditor" basedir="." default="clean-build-run-workbench">
+<project name="processeditor" basedir="." default="clean-build-run-workbench">
 
     <property name="src.dir" value="src"/>
     <property name="pics.dir" value="pics"/>
@@ -38,14 +38,13 @@
         <include name="**/*.xml"/>
     </fileset>
 
-
     <target name="clean">
         <delete dir="${build.dir}"/>
     </target>
 
     <target name="compile">
         <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
+        <javac source="1.7" target="1.7" srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
     </target>
 
     <target name="jar-workbench" depends="compile">
