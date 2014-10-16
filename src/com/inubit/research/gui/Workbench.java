@@ -1728,7 +1728,8 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             }
             //call dialog
             boolean canceled = false;
-            if (!repository.commitIfPossible(publishModelDialog.getAnswer())) {
+            boolean publishResult = repository.commitIfPossible(publishModelDialog.getAnswer());
+            if (!publishResult) {
                 VersionExplorer versionExplorer = new VersionExplorer(repository);
                 versionExplorer.setVisible(true);
                 canceled = versionExplorer.canceled;
@@ -1744,7 +1745,6 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
     @Override

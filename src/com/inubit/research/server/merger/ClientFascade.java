@@ -121,7 +121,7 @@ public class ClientFascade {
     public boolean commitIfPossible(AnswerFromPublishModelDialog answer) throws Exception {
         this.answer = answer;
         if (answer.publish) {
-            if (answer.ForceCommit || modelToCommitIsBasedOnLatestVersion()) {
+            if (answer.PublishAsNewModel || answer.ForceCommit || modelToCommitIsBasedOnLatestVersion()) {
                 forceCommit(modelToPublish);
                 return true;
             } else {
@@ -175,6 +175,7 @@ public class ClientFascade {
                     server.findModel(modelToPublish.getProcessModelURI());
             return modelDescription;
         } catch (Exception ex) {
+            ex.printStackTrace();
             Logger.getLogger(ClientFascade.class.getName()).log(Level.SEVERE, null, ex);
         }
         throw new Error("Server Error");
