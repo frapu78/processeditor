@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<model xmlns="http://frapu.net/xsd/ProcessEditor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="933757991" name="CMMN Example" type="net.frapu.code.visualization.cmmn.CMMNModel" xsi:schemaLocation="http://frapu.net/xsd/ProcessEditor http://frapu.net/xsd/ProcessEditor.xsd">
+    <nodes>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="#nodes" value="2042762339;81971468;2143634410;800301379;39750134;1267109252;1004250695"/>
+            <property name="collapsed" value="0"/>
+            <property name="x" value="388"/>
+            <property name="width" value="706"/>
+            <property name="y" value="259"/>
+            <property name="text" value="Claims File"/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="1143115329"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.CasePlanModel"/>
+            <property name="height" value="472"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="autocomplete" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="collapsed" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="#nodes" value="855734045;1173308794"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="222"/>
+            <property name="width" value="310"/>
+            <property name="y" value="377"/>
+            <property name="planning table" value="1"/>
+            <property name="text" value="Attach Base Information"/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="386400891"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Stage"/>
+            <property name="height" value="174"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="autocomplete" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="collapsed" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="#nodes" value="491764178"/>
+            <property name="visualized shapes" value="1"/>
+            <property name="x" value="185"/>
+            <property name="width" value="240"/>
+            <property name="y" value="131"/>
+            <property name="planning table" value="1"/>
+            <property name="text" value="Identify Responsibilities"/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="2143634410"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Stage"/>
+            <property name="height" value="124"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="autocomplete" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="collapsed" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="#nodes" value="276447591"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="491"/>
+            <property name="width" value="156"/>
+            <property name="y" value="376"/>
+            <property name="planning table" value="1"/>
+            <property name="text" value="Process Claims"/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="163339132"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Stage"/>
+            <property name="height" value="174"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="662"/>
+            <property name="width" value="100"/>
+            <property name="y" value="418"/>
+            <property name="planning table" value="0"/>
+            <property name="text" value="Create Letter"/>
+            <property name="stereotype" value="PROCESS"/>
+            <property name="#id" value="1004250695"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="662"/>
+            <property name="width" value="100"/>
+            <property name="y" value="336"/>
+            <property name="planning table" value="0"/>
+            <property name="text" value="Review Documents"/>
+            <property name="stereotype" value="USER"/>
+            <property name="#id" value="1267109252"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="493"/>
+            <property name="width" value="100"/>
+            <property name="y" value="376"/>
+            <property name="planning table" value="0"/>
+            <property name="text" value="Create Claim"/>
+            <property name="stereotype" value="CASE"/>
+            <property name="#id" value="276447591"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="476"/>
+            <property name="width" value="50"/>
+            <property name="y" value="246"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="39750134"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.UserEventListener"/>
+            <property name="height" value="50"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="601"/>
+            <property name="width" value="100"/>
+            <property name="y" value="246"/>
+            <property name="text" value="Claims Processed"/>
+            <property name="stereotype" value=""/>
+            <property name="repetition" value="0"/>
+            <property name="#id" value="800301379"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Milestone"/>
+            <property name="required" value="0"/>
+            <property name="height" value="42"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="380"/>
+            <property name="width" value="100"/>
+            <property name="y" value="258"/>
+            <property name="text" value="Base Information Attached"/>
+            <property name="stereotype" value=""/>
+            <property name="repetition" value="0"/>
+            <property name="#id" value="1785433984"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Milestone"/>
+            <property name="required" value="0"/>
+            <property name="height" value="44"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="1"/>
+            <property name="required" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="313"/>
+            <property name="width" value="100"/>
+            <property name="y" value="391"/>
+            <property name="planning table" value="0"/>
+            <property name="text" value="Request Missing Documents"/>
+            <property name="stereotype" value="PROCESS"/>
+            <property name="#id" value="1173308794"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="155"/>
+            <property name="width" value="100"/>
+            <property name="y" value="356"/>
+            <property name="planning table" value="1"/>
+            <property name="text" value="Create Claims Notification"/>
+            <property name="stereotype" value="BLOCKING_USER"/>
+            <property name="#id" value="855734045"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="discretionary" value="0"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="1"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="188"/>
+            <property name="width" value="100"/>
+            <property name="y" value="129"/>
+            <property name="planning table" value="0"/>
+            <property name="text" value="Identify Responsibilities"/>
+            <property name="stereotype" value="PROCESS"/>
+            <property name="#id" value="491764178"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="385"/>
+            <property name="width" value="100"/>
+            <property name="y" value="129"/>
+            <property name="text" value="Responsibilities Identified"/>
+            <property name="stereotype" value=""/>
+            <property name="repetition" value="0"/>
+            <property name="#id" value="81971468"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Milestone"/>
+            <property name="required" value="0"/>
+            <property name="height" value="46"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="649"/>
+            <property name="width" value="50"/>
+            <property name="y" value="182"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="1042963119"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.UserEventListener"/>
+            <property name="height" value="40"/>
+        </node>
+        <node>
+            <property name="discretionary" value="1"/>
+            <property name="shadow" value="0"/>
+            <property name="manual activation" value="0"/>
+            <property name="repetition" value="0"/>
+            <property name="required" value="0"/>
+            <property name="color_background" value="-1"/>
+            <property name="visualized shapes" value="0"/>
+            <property name="x" value="545"/>
+            <property name="width" value="130"/>
+            <property name="y" value="129"/>
+            <property name="planning table" value="0"/>
+            <property name="text" value="Change Responsibilities"/>
+            <property name="stereotype" value="BLOCKING_USER"/>
+            <property name="#id" value="2042762339"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Task"/>
+            <property name="height" value="60"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="479"/>
+            <property name="width" value="10"/>
+            <property name="y" value="129"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="141843000"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="x" value="740"/>
+            <property name="width" value="10"/>
+            <property name="y" value="182"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="90730563"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.ExitCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="104"/>
+            <property name="width" value="10"/>
+            <property name="y" value="359"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="312651844"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="335"/>
+            <property name="width" value="10"/>
+            <property name="y" value="129"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="932734464"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="262"/>
+            <property name="width" value="10"/>
+            <property name="y" value="391"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="465672842"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="330"/>
+            <property name="width" value="10"/>
+            <property name="y" value="258"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="1100903424"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="553"/>
+            <property name="width" value="10"/>
+            <property name="y" value="246"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="1435722517"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-16777216"/>
+            <property name="x" value="740"/>
+            <property name="width" value="10"/>
+            <property name="y" value="246"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="462144580"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.ExitCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="444"/>
+            <property name="width" value="10"/>
+            <property name="y" value="378"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="882066554"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+        <node>
+            <property name="shadow" value="0"/>
+            <property name="#source" value=""/>
+            <property name="color_background" value="-1"/>
+            <property name="x" value="612"/>
+            <property name="width" value="10"/>
+            <property name="y" value="336"/>
+            <property name="text" value=""/>
+            <property name="stereotype" value=""/>
+            <property name="#id" value="490046055"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.EntryCriterion"/>
+            <property name="height" value="20"/>
+        </node>
+    </nodes>
+    <edges>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="81971468"/>
+            <property name="#targetNode" value="141843000"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="953187664"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="points" value=""/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1042963119"/>
+            <property name="#targetNode" value="90730563"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="2081816490"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="points" value=""/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="81971468"/>
+            <property name="#targetNode" value="312651844"/>
+            <property name="#target_dockpoint" value="-5,0"/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="378796863"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value="0,22"/>
+            <property name="points" value="385,219+51,219+51,359"/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="491764178"/>
+            <property name="#targetNode" value="932734464"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="597466096"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="points" value=""/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="855734045"/>
+            <property name="#targetNode" value="465672842"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="405276028"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="points" value="233,356+233,391"/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="855734045"/>
+            <property name="#targetNode" value="1100903424"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="1812653701"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value="49,-15"/>
+            <property name="points" value="267,341+267,258"/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="39750134"/>
+            <property name="#targetNode" value="1435722517"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="1797275600"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="points" value=""/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="800301379"/>
+            <property name="#targetNode" value="462144580"/>
+            <property name="#target_dockpoint" value=""/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="94577525"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value=""/>
+            <property name="points" value=""/>
+        </edge>
+        <edge>
+            <property name="color_arc" value="-16777216"/>
+            <property name="#sourceNode" value="1785433984"/>
+            <property name="#targetNode" value="882066554"/>
+            <property name="#target_dockpoint" value="-5,1"/>
+            <property name="#label_offset" value="0.5"/>
+            <property name="label" value=""/>
+            <property name="#id" value="155875297"/>
+            <property name="#type" value="net.frapu.code.visualization.cmmn.Association"/>
+            <property name="#source_dockpoint" value="12,21"/>
+            <property name="points" value="392,379"/>
+        </edge>
+    </edges>
+    <properties>
+        <property name="author" value=""/>
+        <property name="#folder" value="/home"/>
+        <property name="#editor" value="root"/>
+        <property name="#LAST_CHECKIN_TIME" value="17. Oktober 2014 20:25:18 MESZ"/>
+        <property name="name" value="CMMN Example"/>
+        <property name="#uri" value="http://localhost:1205/models/933757991/versions/4"/>
+        <property name="comment" value=""/>
+        <property name="#creationDate" value="17. Oktober 2014 19:56:29 MESZ"/>
+    </properties>
+</model>
