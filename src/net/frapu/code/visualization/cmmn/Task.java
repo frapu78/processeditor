@@ -80,12 +80,12 @@ public class Task extends ProcessNode {
         g2.setStroke(CMMNUtils.defaultStroke);
         Polygon p = new Polygon();
 
-        p.addPoint(x - STEREOTYPE_ICON_SIZE / 2, y);
-        p.addPoint(x - (STEREOTYPE_ICON_SIZE / 6), y - STEREOTYPE_ICON_SIZE / 4);
-        p.addPoint(x + (STEREOTYPE_ICON_SIZE / 2), y - STEREOTYPE_ICON_SIZE / 4);
-        p.addPoint(x + (STEREOTYPE_ICON_SIZE / 6), y);
-        p.addPoint(x + (STEREOTYPE_ICON_SIZE / 2), y + STEREOTYPE_ICON_SIZE / 4);
-        p.addPoint(x - (STEREOTYPE_ICON_SIZE / 6), y + STEREOTYPE_ICON_SIZE / 4);
+        p.addPoint(x + STEREOTYPE_ICON_SIZE / 2, y);
+        p.addPoint(x + (STEREOTYPE_ICON_SIZE / 6), y - STEREOTYPE_ICON_SIZE / 4);
+        p.addPoint(x - (STEREOTYPE_ICON_SIZE / 2), y - STEREOTYPE_ICON_SIZE / 4);
+        p.addPoint(x - (STEREOTYPE_ICON_SIZE / 6), y);
+        p.addPoint(x - (STEREOTYPE_ICON_SIZE / 2), y + STEREOTYPE_ICON_SIZE / 4);
+        p.addPoint(x + (STEREOTYPE_ICON_SIZE / 6), y + STEREOTYPE_ICON_SIZE / 4);
 
         g2.setPaint(Color.BLACK);
         g2.draw(p);

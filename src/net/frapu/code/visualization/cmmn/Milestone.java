@@ -59,7 +59,7 @@ public class Milestone extends ProcessNode {
 
         g2.setFont(CMMNUtils.defaultFont);
         g2.setPaint(Color.BLACK);
-        CMMNUtils.drawText(g2, getPos().x, getPos().y - 10, getSize().width - 8, getText(), CMMNUtils.Orientation.CENTER);
+        CMMNUtils.drawText(g2, getPos().x, getPos().y, getSize().width - 8, getText(), CMMNUtils.Orientation.CENTER);
 
         if (getProperty(PROP_REPETITION).equalsIgnoreCase(TRUE)) {
             CMMNUtils.drawRepetitionMarker(

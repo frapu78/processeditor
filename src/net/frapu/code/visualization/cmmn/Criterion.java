@@ -59,6 +59,8 @@ public class Criterion extends ProcessNode implements AttachedNode {
 
         g2.setPaint(getBackground());
         g2.fill(shape);
+
+        g2.setStroke(CMMNUtils.defaultStroke);
         g2.setPaint(Color.BLACK);
         g2.draw(shape);
     }
