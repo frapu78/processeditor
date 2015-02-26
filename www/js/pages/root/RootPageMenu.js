@@ -60,13 +60,15 @@ function RootPageMenu(user, portletMode) {
         		var plugs = Ext.decode(resp.responseText).plugins
         		while ( plugs.length > 0 ) 
         			this.toolbar.add( {xtype: 'tbseparator'}, plugs.pop() );
-        		
-        		this.toolbar.add( 
+
+                /* don't add inubit logo
+        		this.toolbar.add(
         				{xtype: 'tbseparator'},
                         this.createLogoutButton(),
                         '->',
                         new Ext.toolbar.Item({autoEl: {tag: 'img', src: Util.getContext() + Util.IMG_INUBIT, height: 15}}) 
 				);
+				*/
         	},
         	scope: this
         })
