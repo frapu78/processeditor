@@ -185,7 +185,7 @@ public class PersistentModelRequestHandler extends ModelRequestHandler {
         } else if (requestUri.matches("/models/\\d+(/versions/(\\d+))?/nodes")) {
             //Show list of all nodes contained in the current model
             responseDoc = createNodeList(currentModel, getAbsoluteAddressPrefix( req ));
-        } else if (requestUri.matches("/models/\\d+(/versions/(\\d+))?/nodes/\\d+\\.png")) {
+        } else if (requestUri.matches("/models/\\d+(/versions/(\\d+))?/nodes/\\d+\\.png.*")) {
             // Return node as PNG graphics
             createNodePNGGraphics(currentNode.getId(), currentModel, resp);
             return;
