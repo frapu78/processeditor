@@ -1,9 +1,0 @@
-www/js/ext/**
-/lib/**
-!/lib/README.txt
-/out/**
-!/out/README.txt
-.idea
-.iml
-.log
-.lck
