@@ -33,7 +33,7 @@ RootPage = function( portletMode ) {
             fieldLabel: 'Size',
             queryMode: 'local',
             triggerAction: 'all',
-            grow: true,
+            labelAlign: 'right',
             editable: false
             });
     sizeBox.on('select', function() {
@@ -45,9 +45,10 @@ RootPage = function( portletMode ) {
     
     sizeBox.on('afterrender', function() {
     	imageSize = parseInt(Util.readCookie('previewSize'));
-    	if ( Ext.isDefined(imageSize) ) {
+    	if ( Ext.isDefined(imageSize) && !isNaN(imageSize)) {
     		this.setValue( imageSize );
     	} else {
+            imageSize = Util.PREVIEW_MEDIUM;
     		this.setValue( Util.PREVIEW_MEDIUM );
     	}
     }, sizeBox)
@@ -64,7 +65,7 @@ RootPage = function( portletMode ) {
                 statusLabel,
                 '->',
                 sizeBox
-            ]
+            ],
         })
 
     /**

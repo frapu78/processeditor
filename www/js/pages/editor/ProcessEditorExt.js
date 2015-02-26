@@ -72,6 +72,7 @@ function ProcessEditor( portletMode ) {
         page.setSize(newWidth, newHeight);
         var wWidth = calculateWestWidth(west);
         var eWidth = east.getWidth();
+
         page.getLayout().getLayoutItems()[1].setSize(wWidth, newHeight);
         page.getLayout().getLayoutItems()[2].setSize(eWidth, newHeight);
         page.getLayout().getLayoutItems()[0].setSize(newWidth - eWidth - wWidth, newHeight);
@@ -308,40 +309,40 @@ function ProcessEditor( portletMode ) {
                      height: height,
                      items: [
                           {
-                             region: 'center',
-                             id: 'center_region',
-                             collapsible: false,
-                             border: false,
-                             margins: '0 0 0 0',
-                             style: 'background-color:"white"',
-                             split: true
+                              region: 'center',
+                              id: 'center_region',
+                              collapsible: false,
+                              border: false,
+                              margins: '0 0 0 0',
+                              style: 'background-color:"white"',
+                              split: true,
+                              autoScroll: false
                          },
                          {
-                            autoRender: true,
-                            autoScroll: false,
-                            collapsed: true,
-                            collapsible: true,
-                            collapseMode: 'mini',
-                            frame: false,
-                            frameHeader: false,
-                            height: 250,
-                            hideCollapseTool: true,
-                            id: 'south_region',
-                            margins: '0 0 0 0',
-                            region: 'south',
-                            split: true,
-                            width: centerWidth,
-                            xtype: 'tabpanel',
-                            tools:[{
-                                    type:'minimize',
-                                    tooltip: 'Collapse',
-                                    scope: this,
-                                    handler: function(event, toolEl, panel){
-                                    	Ext.getCmp("south_region").collapse()
-                                    }
-                                }
-                            ]
-
+                             autoRender: true,
+                             autoScroll: false,
+                             collapsed: true,
+                             collapsible: true,
+                             collapseMode: 'mini',
+                             frame: false,
+                             frameHeader: false,
+                             height: 250,
+                             hideCollapseTool: true,
+                             id: 'south_region',
+                             margins: '0 0 0 0',
+                             region: 'south',
+                             split: true,
+                             width: centerWidth,
+                             xtype: 'tabpanel',
+                             tools:[{
+                                     type:'minimize',
+                                     tooltip: 'Collapse',
+                                     scope: this,
+                                     handler: function(event, toolEl, panel){
+                                     	Ext.getCmp("south_region").collapse()
+                                     }
+                                 }
+                             ]
                          }
                      ],
                      collapsible: false,
@@ -354,9 +355,9 @@ function ProcessEditor( portletMode ) {
                     id: 'west_region',
                     height: height,
                     width: widthWest,
-                    collapsible: true,
+                    collapsible: false,
                     collapseMode: 'header',
-                    autoScroll: true,
+                    autoScroll: false,
                     margins: '5 0 5 0',
                     layout: 'fit',
                     title: 'New'
@@ -369,8 +370,9 @@ function ProcessEditor( portletMode ) {
                     width: widthEast,
                     collapseMode: 'header',
                     title: 'Details',
-                    collapsible:  true,
-                    split: true,
+                    collapsible:  false,
+                    split: false,
+                    autoScroll: false,
                     layout: 'accordion',
                     layoutConfig: {
                         animate: true
@@ -382,7 +384,6 @@ function ProcessEditor( portletMode ) {
                     margins: '5 0 5 0'
                 }
             ],
-
             tbar: this.menu.getToolbar()
         });
     }
@@ -443,6 +444,7 @@ function ProcessEditor( portletMode ) {
         this.selectionHandler.singleObject = this.model;
         
         var eastWidth = page.getLayout().getLayoutItems()[2].getWidth();
+
         page.getLayout().getLayoutItems()[2].items.each( function() {
             this.setWidth(eastWidth);
         });

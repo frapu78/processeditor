@@ -173,19 +173,22 @@ function ProcessEditorMenu( portletMode ) {
 
         this.languageField = new LanguageField();
         var langExtCmp = this.languageField.getComboBox();
+
+        /*
         this.toolbar.add (
             '->',
-            /* tg removed for sc version
-            langExtCmp,*/
+            // tg removed for sc version
+            //langExtCmp,
             {xtype:'tbspacer', width: 5},
             {
 				html:'<img height="15px" src="'+ Util.getContext() + Util.IMG_INUBIT + '" />',
 				src: Util.getContext() + Util.IMG_INUBIT,
 				handler: function() {
-				   	Util.displayVersionInfo()
+				   	// Util.displayVersionInfo()
 				}
 			}
         )
+        */
 
         langExtCmp.setValue('en');
 
