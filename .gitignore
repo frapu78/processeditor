@@ -7,3 +7,5 @@ www/js/ext/**
 .iml
 .log
 .lck
+.gitignore
+processeditor.iml

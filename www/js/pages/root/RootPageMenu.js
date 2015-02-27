@@ -88,7 +88,7 @@ function RootPageMenu(user, portletMode) {
               items: this.createImportForm()
             });
 
-            this.setImportEvents();
+            //this.setImportEvents();
 
             win.show();
             win.doLayout();
@@ -138,7 +138,8 @@ function RootPageMenu(user, portletMode) {
             text: 'Import'
         });
 
-        var formPanel = new Ext.FormPanel({
+        /* Old import form
+        var formPanel = new Ext.form.Panel({
                       id: formID,
                       labelWidth: 100,
                       width:400,
@@ -175,8 +176,8 @@ function RootPageMenu(user, portletMode) {
         closeButton.on("click", function() {win.close()});
         //on submit open page with new model or display error message
         submitButton.on("click", function() {
-            if (formPanel.getForm())
-                formPanel.getForm().submit({
+            if (formPanel)
+                formPanel.submit({
                     waitMsg: 'Uploading model...',
                     success: function(form, action) {
                         var obj = Ext.JSON.decode(action.response.responseText);
@@ -199,6 +200,58 @@ function RootPageMenu(user, portletMode) {
                     }
                 }, this);
         }, this);
+    }
+    */
+
+    var formPanel = new Ext.form.Panel({
+        id: formID,
+        //headers: {'Content-type':'application/xml'},
+        labelWidth: 100,
+        width:400,
+        items: [{
+            xtype: 'filefield',
+            name: 'uploadfile',
+            fieldLabel: 'File',
+            labelWidth: 50,
+            msgTarget: 'side',
+            allowBlank: false,
+            anchor: '100%',
+            buttonText: 'Select Model...'
+        }],
+        buttons: [{
+            text: 'Upload',
+            handler: function() {
+                var form = this.up('form').getForm();
+                if(form.isValid()){
+                    form.submit({
+                        url: Util.getContext() + '/models',
+                        waitMsg: 'Uploading model...',
+                        success: function(form, action) {
+                            var obj = Ext.JSON.decode(action.response.responseText);
+
+                            Ext.getCmp(windowID).close();
+                            if ( this.portletMode )
+                                window.location( Util.getPath( obj.url ) );
+                            else {
+                                window.open(Util.getPath(obj.url));
+                                window.location.reload();
+                            }
+                        },
+                        failure: function() {
+                            Ext.Msg.show({
+                                title: 'Error occured on upload!',
+                                msg: 'This is no valid model file.',
+                                icon: Ext.Msg.ERROR,
+                                buttons: Ext.Msg.OK
+                            })
+                        }
+                    });
+                }
+            }
+        }]
+        });
+
+        return formPanel;
     }
 
     this.getToolbar = function() {
