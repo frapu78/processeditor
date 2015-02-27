@@ -22,7 +22,7 @@ import net.frapu.code.visualization.editors.ListSelectionPropertyEditor;
 import net.frapu.code.visualization.editors.PropertyEditor;
 import net.frapu.code.visualization.editors.PropertyEditorType;
 
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Arrays;
@@ -71,26 +71,36 @@ public class UtilsRequestHandler extends AbstractRequestHandler{
 
             b.append("</modelclasses>");
             response = b.toString();
-        } else if (requestUri.matches("/utils/dummy\\?name=.+(&preview=.+)?")) {
-            //return dummy image
-            Map<String, String> qParams = RequestUtils.getQueryParameters(req);
+        } else if (requestUri.matches("/utils/dummy\\?name=.+(&preview=.+)?(&icon=.+)?")) {
+        //return dummy image
+        Map<String, String> qParams = RequestUtils.getQueryParameters(req);
 
-            String name = qParams.get("name");
+        String name = qParams.get("name");
 
-            if (name != null) {
-                try {
-                    boolean preview = false;
-                    if (qParams.get("preview") != null && qParams.get("preview").equals("true"))
-                        preview = true;
+        if (name != null) {
+            try {
+                boolean preview = false;
+                boolean icon = false;
 
-                    BufferedImage img = UtilsRequestHandler.edgeShapes.getDummyNodeImage(name, preview);
-                    ResponseUtils.respondWithImage(resp, img);
+                if (qParams.get("preview") != null && qParams.get("preview").equals("true"))
+                    preview = true;
 
-                    return;
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (qParams.get("icon") != null && qParams.get("icon").equals("true")){
+                    preview = true;
+                    icon = true;
                 }
+
+                BufferedImage img = UtilsRequestHandler.edgeShapes.getDummyNodeImage(name, preview);
+
+                if(icon) img = ProcessUtils.toBufferedImage(img.getScaledInstance(16, 16, Image.SCALE_SMOOTH));
+
+                ResponseUtils.respondWithImage(resp, img);
+
+                return;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+        }
         } else if (requestUri.matches("/utils/nodetypes\\?modeltype=.+")) {
             //list detailed node information on a certain type of process model
             String query = req.getQuery();
