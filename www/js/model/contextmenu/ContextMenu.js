@@ -3,8 +3,8 @@ Ext.namespace('Inubit.WebModeler');
 Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
     constructor : function(config) {
         this.object = config.object;
-    	this.contextButtons = new Array();
-    	this.pluginButtons = new Array();
+        this.contextButtons = new Array();
+        this.pluginButtons = new Array();
     },
     show : function() {
         if (this.contextButtons.length == 0) {
@@ -14,11 +14,13 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
             this.addPluginContextButtons(x, y);
         } else {
             this.updatePosition();
+
             for (var i = 0; i < this.contextButtons.length; i++) {
-                if (!this.contextButtons[i].isVisible()) 
+                if (!this.contextButtons[i].isVisible())
                     this.contextButtons[i].setVisible(true);
                 this.contextButtons[i].resumeEvents();
                 this.contextButtons[i].enable();
+
                 this.contextButtons[i].el.fadeIn({duration: Util.ANIMATION_FADE_IN_TIME, concurrent: true});
             }
         }
@@ -27,14 +29,14 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
         if (destroy == null)
             destroy = false;
 
-         for (var i = 0; i < this.contextButtons.length; i++) {
+        for (var i = 0; i < this.contextButtons.length; i++) {
             var b = this.contextButtons[i];
             if (b.hasVisibleMenu && b.hasVisibleMenu())
-                b.menu.el.fadeOut({duration: Util.ANIMATION_FADE_OUT_TIME-0.1, remove: destroy, concurrent: true});
-            b.suspendEvents(false);
+                // b.menu.el.fadeOut({duration: Util.ANIMATION_FADE_OUT_TIME-0.1, remove: destroy, concurrent: true});
+                b.suspendEvents(false);
             b.disable();
             if (b.isVisible()) {
-            	b.el.fadeOut({duration: Util.ANIMATION_FADE_OUT_TIME, remove: destroy, concurrent: true, scope: b, callback: function() { this.hide() }});
+                b.el.fadeOut({duration: Util.ANIMATION_FADE_OUT_TIME, remove: destroy, concurrent: true, scope: b, callback: function() { this.hide() }});
             }
         }
     },
@@ -53,14 +55,14 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
 
         //add button to editor
         this.addContextMenuButton(delButton)
-         //bind deletion event
+        //bind deletion event
         var menu = this;
         delButton.el.dom.onmousedown = function() {
             menu.hide();
             menu.object.remove();
             //ProcessEditor.instance.getModel().deleteNode(processNode);
         };
-	    delButton.el.unselectable();
+        delButton.el.unselectable();
         this.contextButtons.push(delButton);
     },
     createRefactorButton : function(x, y) {
@@ -70,34 +72,32 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
         var nodeVariants = this.object.model.getType().variants[this.object.getType()];
 
         //create refactoring button if this node has variants
-        if (nodeVariants) {
-            if (nodeVariants.length > 0) {
-                 var refMenu = this.createRefactoringMenu(nodeVariants);
+        if (nodeVariants && nodeVariants.length > 0) {
+            var refMenu = this.createRefactoringMenu(nodeVariants);
 
-                 var refButton = new Ext.Button({
-                     itemId: itemId,
-                     icon: Util.getContext() + Util.ICON_REFACTORING,
-                     menu: refMenu,
-                     x: x + this.getXOffset(itemId),
-                     y: y + this.getYOffset(itemId)
+            var refButton = new Ext.Button({
+                itemId: itemId,
+                icon: Util.getContext() + Util.ICON_REFACTORING,
+                menu: refMenu,
+                x: x + this.getXOffset(itemId),
+                y: y + this.getYOffset(itemId)
 
-                 });
-				 this.addContextMenuButton(refButton);
+            });
+            this.addContextMenuButton(refButton);
 
-                 //Bind events
-                 refButton.el.dom.onmousedown = function(event) {
-                    if (refButton.hasVisibleMenu())
-                        refButton.hideMenu();
-                    else
-                        refButton.showMenu();
+            //Bind events
+            refButton.el.dom.onmousedown = function(event) {
+                if (refButton.hasVisibleMenu())
+                    refButton.hideMenu();
+                else
+                    refButton.showMenu();
 
-                    Util.stopEvent(event);
-                 };
+                Util.stopEvent(event);
+            };
 
-                 refButton.el.dom.onmouseup = Util.stopEvent;
-				 refButton.el.unselectable();
-                 this.contextButtons.push(refButton);
-            }
+            refButton.el.dom.onmouseup = Util.stopEvent;
+            //refButton.el.unselectable();
+            this.contextButtons.push(refButton);
         }
     },
     createRefactoringMenu : function( nodeVariants ) {
@@ -114,7 +114,7 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
 
             var icon = null;
             if (this.object.isProcessNode())
-                icon = Util.getContext() + '/utils/dummy?name='+type;
+                icon = Util.getContext() + '/utils/dummy?name='+type+'&icon=true';
 
             var item = new Ext.menu.Item({text: text, itemId: type, icon: icon});
             refMenu.add(item);
@@ -134,19 +134,19 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
             }
     },
     applyRefactoring : function() {
-    	this.updateRefactoringButton();
-    	while ( this.pluginButtons.length > 0 ) {
-    		var newContext = new Array();
-    		var plugButton = this.pluginButtons.pop();
-    		for ( var i = 0; i < this.contextButtons.length; i++ )
-    			if ( this.contextButtons[i] != plugButton )
-    				newContext.push( this.contextButtons[i] );
-    		plugButton.destroy();
-    		this.contextButtons = newContext;
-    	}
-    	var x = this.object.getFrameBounds().x;
+        this.updateRefactoringButton();
+        while ( this.pluginButtons.length > 0 ) {
+            var newContext = new Array();
+            var plugButton = this.pluginButtons.pop();
+            for ( var i = 0; i < this.contextButtons.length; i++ )
+                if ( this.contextButtons[i] != plugButton )
+                    newContext.push( this.contextButtons[i] );
+            plugButton.destroy();
+            this.contextButtons = newContext;
+        }
+        var x = this.object.getFrameBounds().x;
         var y = this.object.getFrameBounds().y;
-    	this.addPluginContextButtons(x, y);
+        this.addPluginContextButtons(x, y);
     },
     addPluginContextButtons : function( x, y ) {
         var plugins = Inubit.Plugins.PluginManager.instance.getObjectPlugins( this.object.getType() );
@@ -162,13 +162,13 @@ Inubit.WebModeler.ContextMenu = Ext.extend(Object, {
             plugins[i].bindActionToDomNode( button.el.dom );
 
             this.contextButtons.push( button );
-            this.pluginButtons.push( button );            
+            this.pluginButtons.push( button );
         }
     },
     addContextMenuButton : function(button) {
-    	Inubit.WebModeler.ContextMenu.getExtCmp().add(button);
+        Inubit.WebModeler.ContextMenu.getExtCmp().add(button);
         Inubit.WebModeler.ContextMenu.getExtCmp().doLayout();
-		button.el.unselectable();
+        button.el.unselectable();
     },
     getXOffset : function(itemId, offsetInfo) {
         if ( offsetInfo == null )
@@ -216,12 +216,12 @@ Inubit.WebModeler.ContextMenu.getExtCmp = function() {
 
 //All button offsets
 Inubit.WebModeler.ContextMenu.CONTEXT_BUTTON_OFFSETS = {
-                                       'edge':{x:12, w:'r', y:-4,h:'t'},
-                                       'ref':{x:-4, w:'l', y:12,h:'b'},
-                                       'del':{x:-11, w:'r', y:-27,h:'t'},
-                                       'lane':{x:-4, w:'l', y:-27,h:'t'},
-                                       'res':{x:5, w:'r', y:5, h:'b'},
-                                       'lresh':{x:-15, w:'c', y:10, h:'b'},
-                                       'lresv':{x:10, w:'r', y:-10, h:'c'},
-                                       'anno': {x:-27, w:'l', y:-4,h:'t'}
-                                     };
+    'edge':{x:12, w:'r', y:-4,h:'t'},
+    'ref':{x:-4, w:'l', y:12,h:'b'},
+    'del':{x:-11, w:'r', y:-27,h:'t'},
+    'lane':{x:-4, w:'l', y:-27,h:'t'},
+    'res':{x:5, w:'r', y:5, h:'b'},
+    'lresh':{x:-15, w:'c', y:10, h:'b'},
+    'lresv':{x:10, w:'r', y:-10, h:'c'},
+    'anno': {x:-27, w:'l', y:-4,h:'t'}
+};

@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static java.lang.Math.round;
-import static java.lang.Math.toIntExact;
 
 /**
  * @author Stephan
