@@ -42,7 +42,7 @@ Ext.define('Ext.form.field.Color', {
     
     alignPicker: function() {
         Ext.form.field.Color.superclass.alignPicker.call(this);
-        this.picker.setHeight(100);
+        this.picker.setHeight(130);
     },
     
     onSelect: function() {
