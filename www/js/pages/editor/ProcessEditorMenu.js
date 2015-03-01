@@ -8,7 +8,6 @@ function ProcessEditorMenu( portletMode ) {
     var pasteID = 'paste_button';
     var exportItemNames = [
         {format:'PNG', id:'png', icon: Util.getContext() + Util.ICON_PNG, disabled: false},
-        {format:'PDF', id:'pdf', icon: Util.getContext() + Util.ICON_PDF, disabled: false},
         {format:'XPDL', id:'xpdl', icon: Util.getContext() + Util.ICON_EXPORT, disabled: false},
         {format:'IS Diagram', id:'zip', icon: Util.getContext() + Util.ICON_CONNECT, disabled: false},
         {format:'ProcessModel', id:'pm', icon: Util.getContext() + Util.ICON_EXPORT, disabled: false}
