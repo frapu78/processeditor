@@ -164,7 +164,7 @@ public class ReferenceChooserDialogPlugin extends DialogServerPlugin implements 
 
     @Override
     protected String getItemIconPath() {
-        return "/pics/icon_16x16_links.gif";
+        return "/pics/menu/icon_16x16_links.gif";
     }
 
     public IconOffsetInfo getIconOffsetInfo() {
