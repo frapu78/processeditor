@@ -21,7 +21,7 @@ function RegisterUserPanel(buttons) {
 
 
     this.init = function() {
-        this.panel = Ext.create('Ext.form.Panel', {
+        this.panel = new Ext.form.Panel({
             labelWidth: 200,
             fileUpload: true,
             method: 'POST',
