@@ -8,10 +8,20 @@ function RegisterUserPanel(buttons) {
 
     this.mailField = new Ext.form.TextField({fieldLabel: '*E-mail', name: 'mail'});
     this.realField = new Ext.form.TextField({fieldLabel: 'Real name', name: 'realname'});
-    this.picLoad = new Ext.form.TextField({fieldLabel: 'Picture', inputType: 'file', name: 'pic'})
+    this.picLoad = {
+        xtype: 'filefield',
+        name: 'pic',
+        fieldLabel: 'Picture',
+        labelWidth: 50,
+        msgTarget: 'side',
+        allowBlank: true,
+        anchor: '100%',
+        buttonText: 'Select Picture...'
+    };
+
 
     this.init = function() {
-        this.panel = new Ext.form.Panel( {
+        this.panel = Ext.create('Ext.form.Panel', {
             labelWidth: 200,
             fileUpload: true,
             method: 'POST',

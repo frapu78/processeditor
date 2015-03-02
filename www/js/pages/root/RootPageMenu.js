@@ -33,7 +33,7 @@ function RootPageMenu(user, portletMode) {
                 else
                     window.open("models/new?type=" + this.getItemId());
             })
-            
+
             items.push(item);
         }
 
@@ -52,13 +52,13 @@ function RootPageMenu(user, portletMode) {
                      this.createAdminButton()
                   ]
         })
-        
+
         Ext.Ajax.request({
         	method: 'GET',
         	url: 'plugins/rootpage',
         	success: function(resp) {
         		var plugs = Ext.decode(resp.responseText).plugins
-        		while ( plugs.length > 0 ) 
+        		while ( plugs.length > 0 )
         			this.toolbar.add( {xtype: 'tbseparator'}, plugs.pop() );
 
                 /* don't add inubit logo
@@ -66,13 +66,13 @@ function RootPageMenu(user, portletMode) {
         				{xtype: 'tbseparator'},
                         this.createLogoutButton(),
                         '->',
-                        new Ext.toolbar.Item({autoEl: {tag: 'img', src: Util.getContext() + Util.IMG_INUBIT, height: 15}}) 
+                        new Ext.toolbar.Item({autoEl: {tag: 'img', src: Util.getContext() + Util.IMG_INUBIT, height: 15}})
 				);
 				*/
         	},
         	scope: this
         })
-        
+
     }
 
     this.createImportButton = function() {

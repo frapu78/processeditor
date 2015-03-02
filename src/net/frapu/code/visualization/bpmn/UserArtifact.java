@@ -84,7 +84,7 @@ public class UserArtifact extends Artifact {
     }
 
 	public void setDefaultImage() {
-		img = new ImageIcon(getClass().getResource("/_logo/logo_32.png"));
+		img = new ImageIcon(getClass().getResource("/_logo/logo32.png"));
 	}
 
     @Override

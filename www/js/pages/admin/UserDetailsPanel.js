@@ -161,13 +161,18 @@ function UserDetailsPanel(user) {
                       reader: null,
                       method: 'POST',
                       items:
-                       new Ext.form.TextField({
-                            id: 'image',
-                            inputType: 'file',
-                            name: 'pic',
-                            fieldLabel: 'New image',
-                       })                       
-              } )
+                      {
+                          xtype: 'filefield',
+                          name: 'pic',
+                          id: 'image',
+                          fieldLabel: 'Picture',
+                          labelWidth: 50,
+                          msgTarget: 'side',
+                          allowBlank: true,
+                          anchor: '100%',
+                          buttonText: 'Select Picture...'
+                      }
+        });
 
         var me = this;
         

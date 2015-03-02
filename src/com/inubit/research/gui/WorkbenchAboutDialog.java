@@ -49,7 +49,7 @@ public class WorkbenchAboutDialog extends javax.swing.JDialog {
         setTitle("About inubit Research Workbench");
         setResizable(false);
 
-        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/_logo/logo_128.png"))); // NOI18N
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/_logo/logo128.png"))); // NOI18N
 
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titleLabel.setText("Workbench");

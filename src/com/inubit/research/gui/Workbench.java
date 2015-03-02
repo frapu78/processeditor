@@ -255,7 +255,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
         // Set icon
         Toolkit tk = getToolkit();
-        Image image = tk.getImage(getClass().getResource("/_logo/logo_1024.png"));
+        Image image = tk.getImage(getClass().getResource("/_logo/logo1024.png"));
         while (!tk.prepareImage(image, -1, -1, this)) {
             try {
                 Thread.sleep(100);

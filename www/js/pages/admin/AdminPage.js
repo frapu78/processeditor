@@ -27,7 +27,7 @@ function AdminPage(components) {
                      style: 'background-color:"white"',
                      layout: 'fit',
                      items: new Ext.panel.Panel({
-                        html: "<div align='center' style='padding-top:50px'><img src='pics/icon_256x256_inubit-Workbench.gif'/></div>"
+                        html: "<div align='center' style='padding-top:50px'><img src='pics/_logo/logo256.png'/></div>"
                      })
                 }
             ],

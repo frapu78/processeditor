@@ -23,23 +23,23 @@ function UserManagerMenu(manager) {
         });
 
         button.on("click", function() {
-           var cancelButton = new Ext.Button({text: 'Cancel'});
-           var submitButton = new Ext.Button({text: 'Register'});
-           var registerPanel = new RegisterUserPanel([cancelButton, submitButton]);
-           var win = new Ext.Window({
-              id: 'regwin',
-              title: "Register new User",
-              autoHeight: true,
-              width: 350,
-              header: true,
-              closable: true,
-              closeAction: 'close',
-              items: [registerPanel.getPanel()]
-           });
+            var cancelButton = new Ext.Button({text: 'Cancel'});
+            var submitButton = new Ext.Button({text: 'Register'});
+            var registerPanel = new RegisterUserPanel([cancelButton, submitButton]);
+            var win = new Ext.Window({
+                id: 'regwin',
+                title: "Register new User",
+                autoHeight: true,
+                width: 350,
+                header: true,
+                closable: true,
+                closeAction: 'close',
+                items: [registerPanel.getPanel()]
+            });
 
-           cancelButton.on("click", function() {win.close()} );
-           submitButton.on("click", function() {
-           registerPanel.register( this.processUserCreationResponse, this);
+            cancelButton.on("click", function() {win.close()} );
+            submitButton.on("click", function() {
+                registerPanel.register( this.processUserCreationResponse, this);
 //               var code = result.code;
 //               var msg = "";
 //               if (code == RegisterUserPanel.OK) {
@@ -64,43 +64,43 @@ function UserManagerMenu(manager) {
 //                    buttons: Ext.Msg.OK,
 //                    icon: Ext.Msg.ERROR
 //               })
-               
-           }, this);
 
-           win.doLayout();
-           win.show(button);
+            }, this);
+
+            win.doLayout();
+            win.show(button);
         }, this);
 
         return button
     }
 
     this.processUserCreationResponse = function( response ) {
-       var code = response.code;
-       var msg = "";
-       if (code == RegisterUserPanel.OK) {
-           this.manager.addUser(response.user);
-           Ext.getCmp("regwin").close();
-           return;
-       }
-       else if (code == RegisterUserPanel.EMPTY_USER)
-           msg = 'Please enter a user name!';
-       else if (code == RegisterUserPanel.CHECK_PWD)
-           msg = 'The entered passwords are not equal. Please type again!';
-       else if ( code == RegisterUserPanel.EMPTY_PWD)
-           msg = 'Please enter a password!';
-       else if ( code == RegisterUserPanel.USER_EXISTS)
-           msg = 'A user with the given name already exists!';
-       else if ( code == RegisterUserPanel.NAME_WITH_BLANKS)
-           msg = 'Name must not contain blanks!';
-       else if ( code == RegisterUserPanel.INVALID_MAIL)
-           msg = 'Please enter a valid e-mail address!';
+        var code = response.code;
+        var msg = "";
+        if (code == RegisterUserPanel.OK) {
+            this.manager.addUser(response.user);
+            Ext.getCmp("regwin").close();
+            return;
+        }
+        else if (code == RegisterUserPanel.EMPTY_USER)
+            msg = 'Please enter a user name!';
+        else if (code == RegisterUserPanel.CHECK_PWD)
+            msg = 'The entered passwords are not equal. Please type again!';
+        else if ( code == RegisterUserPanel.EMPTY_PWD)
+            msg = 'Please enter a password!';
+        else if ( code == RegisterUserPanel.USER_EXISTS)
+            msg = 'A user with the given name already exists!';
+        else if ( code == RegisterUserPanel.NAME_WITH_BLANKS)
+            msg = 'Name must not contain blanks!';
+        else if ( code == RegisterUserPanel.INVALID_MAIL)
+            msg = 'Please enter a valid e-mail address!';
 
-       Ext.Msg.show({
+        Ext.Msg.show({
             title: 'Could not create user',
             msg: msg,
             buttons: Ext.Msg.OK,
             icon: Ext.Msg.ERROR
-       })
+        })
     }
 
     this.createNewGroupButton = function() {
@@ -140,7 +140,7 @@ function UserManagerMenu(manager) {
                                 buttons: Ext.Msg.OK,
                                 icon: Ext.Msg.ERROR
                             });
-                    } 
+                    }
                 }, this)
         }, this)
 
