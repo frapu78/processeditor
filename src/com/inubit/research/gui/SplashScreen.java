@@ -46,7 +46,7 @@ public class SplashScreen extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/_logo/logo_256.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/_logo/logo256.png"))); // NOI18N
 
         progressBar.setString("Loading...");
         progressBar.setStringPainted(true);

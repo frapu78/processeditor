@@ -33,7 +33,7 @@ function RootPageMenu(user, portletMode) {
                 else
                     window.open("models/new?type=" + this.getItemId());
             })
-            
+
             items.push(item);
         }
 
@@ -52,27 +52,25 @@ function RootPageMenu(user, portletMode) {
                      this.createAdminButton()
                   ]
         })
-        
+
         Ext.Ajax.request({
         	method: 'GET',
         	url: 'plugins/rootpage',
         	success: function(resp) {
         		var plugs = Ext.decode(resp.responseText).plugins
-        		while ( plugs.length > 0 ) 
+        		while ( plugs.length > 0 )
         			this.toolbar.add( {xtype: 'tbseparator'}, plugs.pop() );
 
-                /* don't add inubit logo
+
         		this.toolbar.add(
         				{xtype: 'tbseparator'},
-                        this.createLogoutButton(),
-                        '->',
-                        new Ext.toolbar.Item({autoEl: {tag: 'img', src: Util.getContext() + Util.IMG_INUBIT, height: 15}}) 
+                        this.createLogoutButton()
 				);
-				*/
+
         	},
         	scope: this
         })
-        
+
     }
 
     this.createImportButton = function() {
