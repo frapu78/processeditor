@@ -129,6 +129,8 @@ function RootPageMenu(user, portletMode) {
     }
 
     this.createImportForm = function() {
+
+        /* Old import form
         var closeButton = new Ext.button.Button({id: closeID, text:'Cancel'});
         var submitButton = new Ext.button.Button({
             id: submitID,
@@ -136,7 +138,7 @@ function RootPageMenu(user, portletMode) {
             text: 'Import'
         });
 
-        /* Old import form
+
         var formPanel = new Ext.form.Panel({
                       id: formID,
                       labelWidth: 100,
@@ -216,7 +218,15 @@ function RootPageMenu(user, portletMode) {
             anchor: '100%',
             buttonText: 'Select Model...'
         }],
-        buttons: [{
+        buttons: [
+            {
+                id: closeID,
+                text:'Cancel',
+                handler: function() {
+                    Ext.getCmp(windowID).close();
+                }
+            },
+            {
             text: 'Upload',
             handler: function() {
                 var form = this.up('form').getForm();
