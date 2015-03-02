@@ -269,10 +269,10 @@ function UserManagerComponent() {
         }, this)
 
         this.groupPanel.on("itemclick", function(view, node) {
-            var gdp = new GroupDetailsPanel(node.get('text'))
-            var panel = gdp.getPanel()
             this.component.getLayout().getLayoutItems()[0].removeAll();
-            this.component.getLayout().getLayoutItems()[0].add(panel);
+            var gdp = new GroupDetailsPanel(node.get('text'));
+            var groupPanel = gdp.getPanel();
+            this.component.getLayout().getLayoutItems()[0].add(groupPanel);
             this.component.getLayout().getLayoutItems()[0].doLayout();
 
             gdp.setKeyMaps();
