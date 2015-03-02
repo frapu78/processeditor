@@ -101,7 +101,7 @@ function UserManagerComponent() {
                 iconCls: 'user-single',
                 draggable: true,
                 leaf: true
-            } );
+            });
         }
 
         var tree = new Ext.tree.TreePanel({

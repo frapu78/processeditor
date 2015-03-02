@@ -59,40 +59,56 @@
  */
 .trash-folder {
     background-image: url(../pics/menu/bin_closed.png);
+    width: 15px;
+    height: 15px;
 }
 
 .home-folder {
     background-image: url(../pics/menu/home.png) !important;
+    width: 15px;
+    height: 15px;
 }
 
 .is-folder {
     background-image: url(../pics/is_16.gif) !important;
+    width: 15px;
+    height: 15px;
 }
 
 .shared-folder {
     background-image: url(../pics/menu/icon_shared.gif) !important;
+    width: 15px;
+    height: 15px;
 }
 
 .model {
     background-image: url(../pics/icon_small.png) !important;
+    width: 15px;
+    height: 15px;
 }
 
 .user-single {
     background-image: url(../pics/menu/user_small.gif) !important;
+    width: 15px;
+    height: 15px;
 }
 
 .user-group {
     background-image: url(../pics/menu/group_small.gif) !important;
+    width: 15px;
+    height: 15px;
 }
-
 .my-tools-check {
     background-image: url(../pics/menu/checkmark_small.gif) !important;
+    width: 15px;
+    height: 15px;
 }
 
 .my-tools-plus {
 	background-image: url(../pics/menu/plus_small.gif) !important;
+    width: 15px;
+    height: 15px;
 }
-
 .gray-field {
     background-color: #F3F3EE;
 }
