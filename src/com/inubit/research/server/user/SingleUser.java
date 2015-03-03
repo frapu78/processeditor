@@ -40,6 +40,10 @@ public class SingleUser extends LoginableUser {
         return this.pwd;
     }
 
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
     @Override
     public boolean isAdmin() {
         return this.admin;

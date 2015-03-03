@@ -10,7 +10,6 @@ package com.inubit.research.server.manager;
 
 import com.inubit.research.server.ProcessEditorServerHelper;
 import com.inubit.research.server.ProcessEditorServerUtils;
-import com.inubit.research.server.config.FileSystemUsersConfig;
 import com.inubit.research.server.config.UsersConfig;
 import com.inubit.research.server.request.RequestFacade;
 import com.inubit.research.server.request.RequestUtils;
@@ -21,7 +20,6 @@ import com.inubit.research.server.user.SingleUser;
 import com.inubit.research.server.user.TemporaryUser;
 import com.inubit.research.server.user.User;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -216,6 +214,11 @@ public class IntegratedUserManager implements UserManager {
     @Override
     public void setRealName(String userName, String name, boolean deferWrite) {
         this.usersConfig.setRealName(userName, name, deferWrite);
+    }
+
+    @Override
+    public void setPwd(String userName, String password, boolean deferWrite) {
+        this.usersConfig.setPwd(userName, password, deferWrite);
     }
 
     @Override
