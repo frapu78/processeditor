@@ -48,12 +48,6 @@ Ext.define("Inubit.WebModeler.ModelPreviewPanel",{
                    }, scope: this
                 }),
                 new Ext.panel.Tool({
-                   type: 'pdf',
-                   handler: function() {
-                       window.open(this.modelInfo.model + ".pdf");
-                   }, scope: this
-                }),
-                new Ext.panel.Tool({
                    type: 'delete',
                    handler: function(event, tEl, panel, tool){
                        this.fireEvent("delete", this.modelInfo.model);

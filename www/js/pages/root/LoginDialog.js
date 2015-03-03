@@ -37,8 +37,8 @@ Ext.define("Inubit.WebModeler.LoginDialog", {
           this.nameField,
           this.pwdField,
           this.rememberCheck
-        ]
-		
+        ];
+
 		this.bbar = {items: [ '->',
             { 
             	text: 'Login',

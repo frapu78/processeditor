@@ -404,7 +404,7 @@ Util.ICON_LOGIN = '/pics/menu/key_small.gif';
 Util.ICON_KEY = '/pics/menu/key_small.gif';
 Util.ICON_CHART = '/pics/menu/icon_16x16_barchart.gif';
 Util.ICON_MAIL = '/pics/menu/mail_small.gif';
-Util.ICON_LINK = '/pics/icon_16x16_links.gif';
+Util.ICON_LINK = '/pics/menu/icon_16x16_links.gif';
 
 Util.ICON_FOLDER = '/pics/ext/folder.gif';
 Util.ICON_NEWFOLDER = '/pics/menu/new_folder_small.gif';
