@@ -80,7 +80,8 @@ function SelectionHandler() {
             this.singleObject.setSelected(false);
 
             if ( this.singleObject.isBMPNLane && this.singleObject.isBPMNLane() ) {
-                this.removeNodeFromSelection(this.singleObject);
+                // I guess it was a mistake: this.removeNodeFromSelection(this.singleObject);
+                this.removeEdgeFromSelection(this.singleObject);
                 return;
             }
 

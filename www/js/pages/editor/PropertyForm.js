@@ -1,7 +1,7 @@
 Ext.define("Inubit.WebModeler.PropertyForm", {
     extend: 'Ext.form.Panel',
     displayProperties: function( object ) {
-        //this.removeAll( true );
+        this.removeAll( true );
         
         if ( object.properties ) {
             var gray = false;
