@@ -125,6 +125,11 @@ public class DatabaseUsersConfig implements UsersConfig {
         if ( su != null ) su.setRealName(name);
     }
 
+    public void setPwd(String userName, String password, boolean deferWrite) {
+        SingleUser su = this.getUser(userName);
+        if ( su != null ) su.setPwd(password);
+    }
+
     public void setAdmin(String userName, boolean isAdmin) {
         SingleUser su = this.getUser(userName);
         if ( su != null ) su.setIsAdmin(isAdmin);

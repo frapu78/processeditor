@@ -320,9 +320,13 @@ public class UserRequestHandler extends AbstractRequestHandler{
                 Document doc = RequestUtils.getXML( req );
                 Map<String, String> props = XMLHelper.parseProperties(doc.getDocumentElement());
 
-                ProcessEditorServerHelper.getUserManager().setRealName(u.getName(), props.get("realname"), true);
-                ProcessEditorServerHelper.getUserManager().setMail(u.getName(), props.get("email"), false);
+                if(requestUri.matches("/users/users/[^/]+/password+/?")){
+                    ProcessEditorServerHelper.getUserManager().setPwd(u.getName(), props.get("password"), false);
+                } else {
+                    ProcessEditorServerHelper.getUserManager().setRealName(u.getName(), props.get("realname"), true);
+                    ProcessEditorServerHelper.getUserManager().setMail(u.getName(), props.get("email"), false);
 //                manager.setAdmin(userName, Boolean.valueOf(props.get("isadmin")));
+                }
             } else if (requestUri.matches("/users/groups/.+")) {
                 //set members and subgroups of a certain group
                 String groupName = requestUri.split("/")[3];

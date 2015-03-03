@@ -66,6 +66,15 @@ public class UserConfig {
 
         if (realnameNode != null)
             realnameNode.setTextContent(realName);
+
+    }
+
+    void setPwd( String password ) {
+        Node pwdNode = this.getChildNode("property");
+        this.user.setPwd(password);
+
+        if (pwdNode != null)
+            pwdNode.getAttributes().getNamedItem("value").setTextContent(password);
     }
 
     void addIS( ISConfig ic ) {

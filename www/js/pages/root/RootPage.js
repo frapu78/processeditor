@@ -17,6 +17,13 @@ RootPage = function( portletMode ) {
     this.models = 0;
     this.user = null;
 
+    // May work later when status codes are set and handled properly
+    Ext.Ajax.on('requestexception', function (conn, response, options) {
+        if (response.status === 403) {
+            window.location = 'login';
+        }
+    });
+
     var sizeBox =
         new Ext.form.field.ComboBox({
             store: new Ext.data.ArrayStore({

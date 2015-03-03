@@ -14,7 +14,7 @@ import com.inubit.research.server.user.SingleUser;
 import java.util.Set;
 
 /**
- * Interface for configuration classes containig all registered groups and users.
+ * Interface for configuration classes containing all registered groups and users.
  * @author fel
  */
 public interface UsersConfig {
@@ -35,6 +35,8 @@ public interface UsersConfig {
     public void setPictureId( String userName, String id, boolean deferWrite );
 
     public void setRealName( String userName, String name, boolean deferWrite ) ;
+
+    public void setPwd(String userName, String password, boolean deferWrite);
 
     public void setAdmin( String name, boolean isAdmin );
 

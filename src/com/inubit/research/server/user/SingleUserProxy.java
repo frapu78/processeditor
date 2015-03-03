@@ -130,6 +130,13 @@ public class SingleUserProxy extends SingleUser {
     }
 
     @Override
+    public void setPwd(String password) {
+        if (this.updateProperty( DatabaseSchema.Attribute.USER_PWD, password)) {
+            this.lastUpdate.put( DatabaseSchema.Attribute.USER_PWD, cal.getTime() );
+        }
+    }
+
+    @Override
     public boolean isAllowedToSaveToFileSystem() {
         return false;
     }

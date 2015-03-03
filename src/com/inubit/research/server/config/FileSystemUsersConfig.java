@@ -132,6 +132,14 @@ public class FileSystemUsersConfig implements UsersConfig {
             this.writeConfig();
     }
 
+    public void setPwd(String userName, String password, boolean deferWrite) {
+        password = ProcessEditorServerUtils.getMD5Hash(password);
+        this.users.get(userName).setPwd(password);
+
+        if (!deferWrite )
+            this.writeConfig();
+    }
+
     public void setAdmin( String name, boolean isAdmin ) {
         this.users.get(name).setAdmin(isAdmin);
         this.writeConfig();

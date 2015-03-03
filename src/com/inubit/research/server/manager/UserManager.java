@@ -63,6 +63,8 @@ public interface UserManager {
 
     public void setRealName( String userName, String name, boolean deferWrite );
 
+    public void setPwd(String userName, String password, boolean deferWrite);
+
     boolean addISConnection( ISLocation ism , SingleUser user );
 
     Set<ISLocation> getAllISConnections();

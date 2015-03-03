@@ -4,52 +4,52 @@ function UserDetailsPanel(user) {
     this.panel = null;
 
     this.nameField = new Ext.form.field.Display({
-                       fieldLabel : 'Name',
-                       style: {
-                           paddingTop: '3px',
-                           paddingBottom: '3px'
-                       }
-                   });
-                   
+        fieldLabel : 'Name',
+        style: {
+            paddingTop: '3px',
+            paddingBottom: '3px'
+        }
+    });
+
     this.emailField = new Ext.form.TextField(
-                        {
-                            fieldLabel : 'E-mail',
-                            style: {
-                               paddingTop: '3px',
-                               paddingBottom: '3px',
-                               paddingLeft: '3px'
-                            }
-                   });
+        {
+            fieldLabel : 'E-mail',
+            style: {
+                paddingTop: '3px',
+                paddingBottom: '3px',
+                paddingLeft: '3px'
+            }
+        });
     this.fullNameField = new Ext.form.TextField(
-                        {
-                            fieldLabel : 'Full name',
-                            style: {
-                               paddingTop: '3px',
-                               paddingBottom: '3px',
-                               paddingLeft: '3px'
-                            }
-                   });
+        {
+            fieldLabel : 'Full name',
+            style: {
+                paddingTop: '3px',
+                paddingBottom: '3px',
+                paddingLeft: '3px'
+            }
+        });
 
     this.fileModelBox = new Ext.form.Checkbox({
         boxLabel: "Is allowed to save models to the server's  file system"
     });
 
     var store = new Ext.data.Store({
-            proxy:  {
-                type: 'ajax',
-                url: Util.getContext() + "/models/locations?user=" + user,
-                reader: {
-                    type: 'xml',
-                    record: 'location',
-                    fields: [
-                        "id",
-                        "name"
-                    ]
-                }
-            },
-            autoDestroy: true
+        proxy:  {
+            type: 'ajax',
+            url: Util.getContext() + "/models/locations?user=" + user,
+            reader: {
+                type: 'xml',
+                record: 'location',
+                fields: [
+                    "id",
+                    "name"
+                ]
+            }
+        },
+        autoDestroy: true
 //            autoLoad: true
-        });
+    });
 
     this.homeLocationField = new Ext.form.ComboBox({
         store: store,
@@ -62,7 +62,7 @@ function UserDetailsPanel(user) {
             paddingLeft: '3px'
         }
     });
-    
+
 
     this.getPanel = function() {
         return this.panel;
@@ -89,16 +89,16 @@ function UserDetailsPanel(user) {
                 }
             })],
             bbar: {
-                   items: [new Ext.Button({
+                items: [new Ext.Button({
                     text: 'Change image',
                     handler: this.showImageUpload,
                     scope: this
                 })]
             },
             style: {
-                    paddingTop: '5px',
-                    paddingBottom: '5px',
-                    verticalAlign: 'bottom'
+                paddingTop: '5px',
+                paddingBottom: '5px',
+                verticalAlign: 'bottom'
             },
             width: 150,
             height: 230
@@ -107,13 +107,13 @@ function UserDetailsPanel(user) {
         this.nameField.setValue( this.user.name );
 
         var items = [
-                   this.nameField,
-                   this.imgPanel,
-                   this.fullNameField,
-                   this.emailField,
-                   this.fileModelBox,
-                   this.homeLocationField
-            ];
+            this.nameField,
+            this.imgPanel,
+            this.fullNameField,
+            this.emailField,
+            this.fileModelBox,
+            this.homeLocationField
+        ];
 
         if (this.user.mail) {
             this.emailField.setValue(this.user.mail);
@@ -137,9 +137,10 @@ function UserDetailsPanel(user) {
             bbar: {
                 items: [
                     this.createDeleteButton(),
-                    this.createSubmitButton()
+                    this.createSubmitButton(),
+                    this.createChangePasswordButton()
                 ]
-            }           
+            }
         })
 
 //        this.panel.on( "afterrender",  function() { this.panel.getBody().doLayout(); }, this)
@@ -155,67 +156,67 @@ function UserDetailsPanel(user) {
 
     this.showImageUpload = function() {
         var formPanel = new Ext.form.FormPanel( {
-                 title: 'Change user image',
-                      labelWidth: 100,
-                      fileUpload: true,
-                      reader: null,
-                      method: 'POST',
-                      items:
-                      {
-                          xtype: 'filefield',
-                          name: 'pic',
-                          id: 'image',
-                          fieldLabel: 'Picture',
-                          labelWidth: 50,
-                          msgTarget: 'side',
-                          allowBlank: true,
-                          anchor: '100%',
-                          buttonText: 'Select Picture...'
-                      }
+            title: 'Change user image',
+            labelWidth: 100,
+            fileUpload: true,
+            reader: null,
+            method: 'POST',
+            items:
+            {
+                xtype: 'filefield',
+                name: 'pic',
+                id: 'image',
+                fieldLabel: 'Picture',
+                labelWidth: 50,
+                msgTarget: 'side',
+                allowBlank: true,
+                anchor: '100%',
+                buttonText: 'Select Picture...'
+            }
         });
 
         var me = this;
-        
+
         var win = new Ext.Window({
-              autoHeight: true,
-              autoWidth: true,
-              plain: true,
-              title: 'Select new image file...',
-              closable: true,
-              items: formPanel,
-              buttons: [
-                    new Ext.Button({text: 'Cancel', handler: function() {win.close()}}),
-                    new Ext.Button({text: 'Upload', handler: function() {
-                            formPanel.getForm().submit({
-                                method: 'POST',
-                                url: this.uri + "/img",
-                                waitMsg: 'Uploading image...',
-                                success: function(form, action) {
-                                    this.imgPanel.items.get(0).getEl().dom.setAttribute("src", this.uri + "/img?time=" + new Date())
-                                    this.panel.doLayout();
-                                    win.close();
-                                },
-                                failure: function(form, action) {
-                                    alert("Error occured");
-                                    win.close();
-                                },
-                                scope: this})
-                            }, scope: this
-                    })
-              ]
+            autoHeight: true,
+            autoWidth: true,
+            plain: true,
+            title: 'Select new image file...',
+            closable: true,
+            items: formPanel,
+            buttons: [
+                new Ext.Button({text: 'Cancel', handler: function() {win.close()}}),
+                new Ext.Button({text: 'Upload', handler: function() {
+                    formPanel.getForm().submit({
+                        method: 'POST',
+                        url: this.uri + "/img",
+                        waitMsg: 'Uploading image...',
+                        success: function(form, action) {
+                            this.imgPanel.items.get(0).getEl().dom.setAttribute("src", this.uri + "/img?time=" + new Date())
+                            this.panel.doLayout();
+                            win.close();
+                        },
+                        failure: function(form, action) {
+                            alert("Error occured");
+                            win.close();
+                        },
+                        scope: this})
+                }, scope: this
+                })
+            ]
         })
 
         win.show( this.imgPanel );
     }
 
     this.createDeleteButton = function() {
-         var button =  new Ext.Button({text : "Delete this user", icon: Util.ICON_DELETE});
+        var button =  new Ext.Button({text : "Delete this user", icon: Util.ICON_DELETE});
 
-         button.on("click", function() {
+        button.on("click", function() {
             alert("currenty not implemented");
-         });
+        });
 
-         return button;
+        return button;
     }
 
     this.createSubmitButton = function() {
@@ -232,6 +233,84 @@ function UserDetailsPanel(user) {
         }, this);
 
         return button;
+    }
+
+    this.createChangePasswordButton = function() {
+        var button =  new Ext.Button({
+            text : "Change password",
+            icon: Util.ICON_PENCIL,
+            handler: this.showChangePasswordDialog
+        });
+
+        return button;
+    }
+
+    this.showChangePasswordDialog = function() {
+        var formPanel = new Ext.form.FormPanel( {
+            labelWidth: 100,
+            reader: null,
+            method: 'POST',
+            items:
+                [
+                    new Ext.form.TextField(
+                        {
+                            name: 'password',
+                            inputType: 'password',
+                            fieldLabel : 'Password',
+                            style: {
+                                paddingTop: '3px',
+                                paddingBottom: '3px',
+                                paddingLeft: '3px'
+                            }
+                        }),
+                    new Ext.form.TextField(
+                        {
+                            name: 'repeated_password',
+                            inputType: 'password',
+                            fieldLabel : 'Repeat password',
+                            style: {
+                                paddingTop: '3px',
+                                paddingBottom: '3px',
+                                paddingLeft: '3px'
+                            }
+                        })
+                ]
+        });
+
+        var win = new Ext.Window({
+            autoHeight: true,
+            autoWidth: true,
+            plain: true,
+            title: 'Change password',
+            closable: true,
+            items: formPanel,
+            buttons: [
+                new Ext.Button({text: 'Cancel', handler: function() {win.close()}}),
+                new Ext.Button({text: 'Change', handler: function() {
+                    var password = formPanel.getForm().findField('password').getValue();
+                    var repeatedPassword = formPanel.getForm().findField('repeated_password').getValue();
+
+                    if(password == repeatedPassword) {
+                        var req = new XMLHttpRequest();
+                        // TODO use this.uri
+                        req.open("PUT", 'users/users/' + user + '/password/', true);
+
+                        var xml = "<update>";
+                        xml += "<property name='password' value='" + password + "'/>";
+                        xml += "</update>";
+
+                        req.send(xml);
+
+                        win.close();
+                    } else{
+                        Ext.Msg.alert("Password invalid.");
+                    }
+                }, scope: this
+                })
+            ]
+        })
+
+        win.show( this.imgPanel );
     }
 
     this.createUpdateXML = function() {
