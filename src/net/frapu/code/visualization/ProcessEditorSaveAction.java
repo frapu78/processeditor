@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
+
 import net.frapu.code.converter.ConverterHelper;
 import net.frapu.code.converter.Exporter;
 import net.frapu.code.converter.ProcessEditorExporter;
@@ -20,7 +21,6 @@ import net.frapu.code.converter.XPDLExportDialog;
 import net.frapu.code.converter.XPDLExporter;
 
 /**
- *
  * @author fpu
  */
 public class ProcessEditorSaveAction implements ActionListener {
@@ -44,33 +44,30 @@ public class ProcessEditorSaveAction implements ActionListener {
             fc.setCurrentDirectory(currentDirectory);
         }
 
+        // Only accept custom filters for save!
+        fc.setAcceptAllFileFilterUsed(false);
+
         for (FileFilter ff : ConverterHelper.getExporterFileFilters(pei.getSelectedModel().getClass())) {
             fc.addChoosableFileFilter(ff);
         }
 
-       
-       
-
         if (fc.showSaveDialog(null) != javax.swing.JFileChooser.APPROVE_OPTION) {
             return;
         }
-        
-        FileFilter selectedFF;        
-       //if using AcceptAllFileFilter we have to select a default file filter ourselves 
-       if (fc.isAcceptAllFileFilterUsed()) {
-           //we just select the first one after the selectAllFilter
-           if (fc.getChoosableFileFilters().length<2) {
-               throw new UnsupportedOperationException("No FileFilter for model found");
-           }
-           selectedFF = fc.getChoosableFileFilters()[1];       
-       } else {
-           // Get selected file filter
-           selectedFF = fc.getFileFilter();
-       }
-           
-        
 
-        
+        FileFilter selectedFF;
+        //if using AcceptAllFileFilter we have to select a default file filter ourselves
+        if (fc.getFileFilter()==null) {
+            //we just select the first one after the selectAllFilter
+            if (fc.getChoosableFileFilters().length < 2) {
+                throw new UnsupportedOperationException("No FileFilter for model found");
+            }
+            selectedFF = fc.getChoosableFileFilters()[1];
+        } else {
+            // Get selected file filter
+            selectedFF = fc.getFileFilter();
+        }
+
         java.io.File selFile = fc.getSelectedFile();
         // Check if extension contained
         if (!selFile.getName().contains(".")) {
@@ -99,8 +96,7 @@ public class ProcessEditorSaveAction implements ActionListener {
             if (JOptionPane.showConfirmDialog(null, "File exists, overwrite?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION) {
                 return;
             }
-        }        
-
+        }
 
         try {
             // Iterate over until matching file filter is found
@@ -110,10 +106,10 @@ public class ProcessEditorSaveAction implements ActionListener {
                     // Save file
                     Exporter exporter = ConverterHelper.getExportersFor(pei.getSelectedModel().getClass()).get(pos);
                     if (exporter instanceof XPDLExporter) {
-                        XPDLExportDialog dialog = new XPDLExportDialog(null,true);
+                        XPDLExportDialog dialog = new XPDLExportDialog(null, true);
                         SwingUtils.center(dialog);
-                        dialog.setVisible(true);                    
-                        XPDLExporter ex= (XPDLExporter)exporter;
+                        dialog.setVisible(true);
+                        XPDLExporter ex = (XPDLExporter) exporter;
                         ex.setDto(dialog.con);
                     }
                     exporter.serialize(selFile, pei.getSelectedModel());

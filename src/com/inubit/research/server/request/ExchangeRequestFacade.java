@@ -12,6 +12,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpsExchange;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -93,6 +94,7 @@ public class ExchangeRequestFacade extends RequestFacade {
     public String getLocalAddress() {
         if (localAddress == null) {
             localAddress = ex.getLocalAddress().getHostName() + ":" + ex.getLocalAddress().getPort();
+
         }
         return localAddress;
     }

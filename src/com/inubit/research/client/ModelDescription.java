@@ -103,6 +103,15 @@ public class ModelDescription implements ModelDirectoryEntry {
             Element elem = (Element) nodes.item(i);
             String version = elem.getAttribute("id");
             String versionUri = elem.getElementsByTagName("uri").item(0).getTextContent();
+            String returnedHost = URI.create(versionUri).getHost();
+            // Check if modelURI has the connected server (and not some internal name!)
+            String requestedHost = uri.getHost();
+            if (!returnedHost.equals(requestedHost)) {
+                // Put in requestedHost
+                URI ru = URI.create(versionUri);
+                versionUri = uri.getScheme()+"://"+requestedHost+":"+uri.getPort()+ru.getPath();
+            }
+
             String comment = "-";
             //getting preceeding/succeeding versions
             List<String> predecessors;

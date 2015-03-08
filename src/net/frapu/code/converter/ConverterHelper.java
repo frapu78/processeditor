@@ -37,6 +37,7 @@ public class ConverterHelper {
         // Add all default Exporters (for all model types)
         result.add(new ProcessEditorExporter());
         result.add(new PNGExporter());
+        result.add(new PDFExporter());
         result.add(new XPDLExporter());
         result.add(new ISBPDExporter());        
         result.add(new LoLAExporter());
