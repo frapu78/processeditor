@@ -76,7 +76,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     private static final long serialVersionUID = 3488875420298876738L;
     public static String TITLE = "Workbench";
-    public static String VERSION = "0.2015.03.04-frapu-fork";
+    public static String VERSION = "0.2015.03.08-frapu-fork";
     //global custom menu items, which will be added to all ProcessEditor instances
     protected LinkedList<WorkbenchEditorListener> editorListeners = new LinkedList<>();
     // The ProcessEditorTrackers
