@@ -38,6 +38,7 @@ public class ConverterHelper {
         result.add(new ProcessEditorExporter());
         result.add(new PNGExporter());
         result.add(new PDFExporter());
+        result.add(new SVGExporter());
         result.add(new XPDLExporter());
         result.add(new ISBPDExporter());        
         result.add(new LoLAExporter());

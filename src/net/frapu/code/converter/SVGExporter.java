@@ -2,7 +2,7 @@
  *
  * Process Editor - Converter Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2015 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -19,23 +19,16 @@ import de.erichseifert.vectorgraphics2d.VectorGraphics2D;
 import net.frapu.code.visualization.ProcessEditor;
 import net.frapu.code.visualization.ProcessModel;
 
-import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
+import de.erichseifert.vectorgraphics2d.SVGGraphics2D;
 
-/**
-import com.lowagie.text.Document;
-import com.lowagie.text.Rectangle;
-import com.lowagie.text.pdf.PdfContentByte;
-import com.lowagie.text.pdf.PdfTemplate;
-import com.lowagie.text.pdf.PdfWriter;
-*/
 
 /**
  *
- * Exports a model to PDF format.
+ * Exports a model to SVG format.
  *
  * @author fpu
  */
-public class PDFExporter implements Exporter {
+public class SVGExporter implements Exporter {
 
     @Override
     public void serialize(File f, ProcessModel m) throws Exception {
@@ -49,7 +42,7 @@ public class PDFExporter implements Exporter {
                 editor.getPreferredSize().height);
 
         /** SOURCE CODE FOR VECTORGRAPHICS2D FOLLOWS */
-        PDFGraphics2D pdfOutput = new PDFGraphics2D(
+        SVGGraphics2D pdfOutput = new SVGGraphics2D(
                 editor.getBounds().x,
                 editor.getBounds().y,
                 editor.getBounds().width,
@@ -64,48 +57,23 @@ public class PDFExporter implements Exporter {
         FileOutputStream fo = new FileOutputStream(f);
         fo.write(output);
         fo.close();
-
-        /** SOURCE CODE FOR ITEXT FOLLOWS
-        Document document = new Document(new Rectangle(
-                editor.getBounds().x,
-                editor.getBounds().y,
-                editor.getBounds().width,
-                editor.getBounds().height
-                ));
-        PdfWriter writer;
-        writer = PdfWriter.getInstance(document, new FileOutputStream(f));
-
-        document.open();
-        PdfContentByte cb = writer.getDirectContent();
-        PdfTemplate tp = cb.createTemplate(editor.getSize().width, editor.getSize().height);
-
-        g2 = tp.createGraphicsShapes(editor.getSize().width, editor.getSize().height);
-
-        editor.paintComponent(g2);
-        g2.dispose();
-
-        cb.addTemplate(tp, 0, 0);
-
-        document.close();
-       */
-
     }
 
     @Override
     public Set<Class<? extends ProcessModel>> getSupportedModels() {
-    	Set<Class<? extends ProcessModel>> result = new HashSet<Class<? extends ProcessModel>>();
+        Set<Class<? extends ProcessModel>> result = new HashSet<Class<? extends ProcessModel>>();
         result.add(ProcessModel.class);
         return result;
     }
 
     @Override
     public String getDisplayName() {
-        return "Portable Document Format";
+        return "Scalable Vector Graphics";
     }
 
     @Override
     public String[] getFileTypes() {
-        String[] types = {"pdf"};
+        String[] types = {"svg"};
         return types;
     }
 }
