@@ -4,8 +4,8 @@
 # chkconfig: 345 20 80
 # description: WebModeler Server
 # processname: wm-server
-# pidfile: /home/wallet/wm/wm.pid
-# logfile: /home/wallet/wm/wm.log
+# pidfile: /opt/processeditor/wm.pid
+# logfile: /opt/processeditor/wm.log
 #
 
 . /etc/rc.d/init.d/functions
