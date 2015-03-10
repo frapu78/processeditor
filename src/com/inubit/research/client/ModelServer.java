@@ -136,6 +136,14 @@ public class ModelServer {
             Element model = (Element) nodes.item(i);
             String modelName = model.getElementsByTagName("name").item(0).getTextContent();
             String modelUri = model.getElementsByTagName("uri").item(0).getTextContent();
+            String returnedHost = URI.create(modelUri).getHost();
+            // Check if modelURI has the connected server (and not some internal name!)
+            String requestedHost = uri.getHost();
+            if (!returnedHost.equals(requestedHost)) {
+                // Put in requestedHost
+                URI ru = URI.create(modelUri);
+                modelUri = uri.getScheme()+"://"+requestedHost+":"+uri.getPort()+ru.getPath();
+            }
             String folderAlias = model.getElementsByTagName("folderalias").item(0).getTextContent();
 
             // Create ModelDescription

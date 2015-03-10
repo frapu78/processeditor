@@ -1,8 +1,11 @@
 Ext.define("Inubit.WebModeler.LoginDialog", {
 	extend: 'Ext.panel.Panel',
 	redirectPath: '',
-	layout: 'anchor',
-	title: 'Login to Modeler',
+	layout: {
+	    type: 'form'
+	},
+	bodyPadding: 5,
+	title: 'Login to WebModeler',
 	id: 'login-dialog',
 	
 	
@@ -29,6 +32,8 @@ Ext.define("Inubit.WebModeler.LoginDialog", {
 		});
 		
 		this.rememberCheck = new Ext.form.field.Checkbox({
+		    fieldLabel: '',
+		    hideEmptyLabel: false,
 			checked: true,
 			boxLabel: 'Remember login'
 		});
@@ -37,8 +42,8 @@ Ext.define("Inubit.WebModeler.LoginDialog", {
           this.nameField,
           this.pwdField,
           this.rememberCheck
-        ]
-		
+        ];
+
 		this.bbar = {items: [ '->',
             { 
             	text: 'Login',

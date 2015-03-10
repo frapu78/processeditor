@@ -1,3 +1,3 @@
-!#/bin/bash
-nohup java -jar processeditor-wm.jar -cp lib -Xmx 1024m &
+#/bin/bash
+nohup java -Xmx1024m -cp 'processeditor.jar:lib/*' com.inubit.research.server.ProcessEditorServer &
 
