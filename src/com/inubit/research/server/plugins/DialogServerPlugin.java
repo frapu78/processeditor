@@ -41,7 +41,7 @@ public abstract class DialogServerPlugin extends ServerPlugin {
     @Override
     public void processRequest(String requestUri, RequestFacade req, ResponseFacade resp, LoginableUser u) throws IOException {
         //requestUri = /plugins/<id>(PATH) --> omit /plugins/<id>
-        Pattern p = Pattern.compile("(.?" + req.getContext() + "/plugins/\\d+)(.*)"  );
+        Pattern p = Pattern.compile( "(.?/plugins/\\d+)(.*)"  );
         Matcher m = p.matcher(requestUri);
         String path = requestUri;
         if ( m.find() ) 
