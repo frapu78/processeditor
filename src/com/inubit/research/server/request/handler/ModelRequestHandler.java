@@ -17,8 +17,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.frapu.code.converter.XPDLExporter;
-import net.frapu.code.converter.XSDExporter;
+import net.frapu.code.converter.*;
 import net.frapu.code.visualization.ProcessEdge;
 import net.frapu.code.visualization.ProcessModel;
 import net.frapu.code.visualization.ProcessNode;
@@ -49,8 +48,7 @@ import com.inubit.research.server.user.LoginableUser;
 import com.inubit.research.server.user.SingleUser;
 import java.util.Map;
 import java.util.Properties;
-import net.frapu.code.converter.Exporter;
-import net.frapu.code.converter.XSDCreator;
+
 import net.frapu.code.visualization.domainModel.DomainModel;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -326,9 +324,15 @@ public abstract class ModelRequestHandler extends AbstractRequestHandler {
     }
 
      protected void createModelPDF(ProcessModel model, ResponseFacade resp) throws IOException {
+         try {
+             File f = new File(ProcessEditorServerHelper.TMP_DIR + File.separator + model.getId() + ".pdf");
+             PDFExporter ex = new PDFExporter();
 
-             ResponseUtils.respondWithStatus(500, "PDF EXPORT NOT SUPPORTED!", resp, true);
-
+             ex.serialize(f, model);
+             ResponseUtils.respondWithFile(HttpConstants.CONTENT_TYPE_APPLICATION_PDF, f, resp);
+         } catch (Exception e) {
+             ResponseUtils.respondWithStatus(500, e.getMessage(), resp, true);
+         }
      }
 
      protected void createModelXPDL( ProcessModel model, ResponseFacade resp ) throws IOException {

@@ -358,9 +358,13 @@ public class DomainClass extends ProcessNode {
                 (int) (getBackground().getBlue() * 0.8));
         float[] dist2 = {0.0f, 0.35f, 1.0f};
         Color[] colors2 = {getBackground(), dimmedColor, dimmedColor};
+        /** REMOVED SINCE NOT SUPPORTED BY CURRENT PDF/SVG EXPORT
         RadialGradientPaint rp2 =
                 new RadialGradientPaint(center2, radius2, dist2, colors2);
-        g2.setPaint(rp2);
+         g2.setPaint(rp2);
+        */
+        g2.setColor(dimmedColor);
+
         Shape fillshape1 = new RoundRectangle2D.Double(
                 getPos().x - (getSize().width / 2) + OFFSET,
                 getPos().y - (getSize().height / 2) + OFFSET,

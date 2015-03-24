@@ -27,6 +27,8 @@ public class WorkbenchAboutDialog extends javax.swing.JDialog {
         setTitle("About "+Workbench.TITLE);
         versionLabel.setText("Version " + Workbench.VERSION);        
         jTextArea1.setCaretPosition(0);
+        jTextArea1.setText("(C) 2009-2015 Contributors: Carsten Braune, Eric Doerheit, Felix Elliger, Fabian Friedrich, Uwe Hartmann, Thomas Milde, Jan Oehlert, Frank Puhlmann, Johannes Schmidt\n\nThis software contains the following external components:\n\n1. ProcessEditor (C) 2008, 2009 Frank Puhlmann (http://frapu.de)\n2. JSONObject (C) 2002 JSON.org\n\nSources: https://github.com/frapu78/processeditor\n\nLicensed under the Apache 2 Open Source License (http://www.apache.org/licenses/LICENSE-2.0.html)");
+        jTextArea1.setCaretPosition(0);
     }
 
     /** This method is called from within the constructor to

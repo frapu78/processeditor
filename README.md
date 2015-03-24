@@ -13,6 +13,7 @@ Please download separately and copy to lib folder
 * log4j (https://logging.apache.org/log4j/1.2/download.html)
 * javax.mail (http://www.oracle.com/technetwork/java/javamail/index.html)
 * org.apache.commons.collections (http://commons.apache.org/proper/commons-collections/download_collections.cgi)
+* VectorGraphics2D (http://trac.erichseifert.de/vectorgraphics2d/)
 
 WebModeler requires ExtJS: Please download separately and copy ExtJs to www/js/ext (unzipped)
 * ExtJS 4 (for Web Modeler, http://www.sencha.com/products/extjs/download/ext-js-4.2.1/2281)
