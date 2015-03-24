@@ -17,6 +17,7 @@ import com.inubit.research.server.persistence.FileSystemConnector;
 import com.inubit.research.server.persistence.PersistenceConnector;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 import net.frapu.code.visualization.Configuration;
@@ -129,5 +130,9 @@ public class ProcessEditorServerHelper {
 
     public static Set<File> getAdditionalResourceDirectories() {
         return additionalResourceDirectories;
+    }
+
+    public static URL getStaticResource(String path){
+        return ProcessEditorServerHelper.class.getResource(path);
     }
 }
