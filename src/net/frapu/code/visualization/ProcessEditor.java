@@ -1387,8 +1387,6 @@ public class ProcessEditor extends JPanel
         return layoutEdges;
     }
 
-
-
     public void setLayoutEdges(boolean layoutEdges) {
         this.layoutEdges = layoutEdges;
         if (layoutEdges) {

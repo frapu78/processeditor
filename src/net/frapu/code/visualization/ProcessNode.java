@@ -259,8 +259,8 @@ public abstract class ProcessNode extends ProcessObject implements Dragable {
     }
     /**
      * Do not use getOutlineShape().contains() to check whether a Point is contained.
-     * Use this method insead. The reason is that points that are located exactly on
-     * the outer left or lower line are not considred to be contatined, yet this is import
+     * Use this method instead. The reason is that points that are located exactly on
+     * the outer left or lower line are not considered to be contained, yet this is import
      * for e.g. connection points. This methods also returns true if the point lies on a delimeter line.
      * @param p as absolute value
      * @return

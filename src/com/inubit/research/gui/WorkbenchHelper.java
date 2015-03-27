@@ -35,6 +35,7 @@ import net.frapu.code.visualization.storyboard.StoryboardEditor;
 import net.frapu.code.visualization.storyboard.StoryboardModel;
 import net.frapu.code.visualization.uml.ClassModel;
 import net.frapu.code.visualization.twf.TWFModel;
+import net.frapu.code.visualization.usecase.UseCaseModel;
 import net.frapu.code.visualization.xforms.XFormsModel;
 
 /**
@@ -68,6 +69,7 @@ public class WorkbenchHelper {
         modelList.add(ReportingModel.class);
         modelList.add(StoryboardModel.class);
         modelList.add(TWFModel.class);
+        modelList.add(UseCaseModel.class);
         modelList.add(XFormsModel.class);
 
         editorMap.put(BPMNModel.class, BPMNEditor.class);
