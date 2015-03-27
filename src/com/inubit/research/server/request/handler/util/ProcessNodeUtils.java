@@ -174,6 +174,9 @@ public class ProcessNodeUtils extends ProcessObjectUtils {
         int x = Integer.parseInt(properties.get("x"));
         int y = Integer.parseInt(properties.get("y"));
 
+        // Check if we have a routing point layouter listener
+        boolean foundLayouter = model.getListeners().contains(model.getUtils().getRoutingPointLayouter());
+
         if ( this.node.isCluster() ) {
             model.removeListener( model.getUtils().getRoutingPointLayouter() );
         }
@@ -182,7 +185,7 @@ public class ProcessNodeUtils extends ProcessObjectUtils {
 
         if ( this.node.isCluster() ) {
             RoutingPointLayouter rpl = model.getUtils().getRoutingPointLayouter();
-            model.addListener( rpl );
+            if (foundLayouter) model.addListener( rpl );
             for ( ProcessEdge e : model.getEdges() )
                 rpl.optimizeRoutingPoints(e, this.node);
         }

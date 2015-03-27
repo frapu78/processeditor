@@ -1092,4 +1092,12 @@ public abstract class ProcessUtils {
         return rpLayouter;
     }
 
+    /**
+     * Returns whether this model prefers layouted edges by default or not.
+     * @return
+     */
+    public boolean getPreferLayoutEdges() {
+        return true;
+    }
+
 }

@@ -845,8 +845,11 @@ public class TemporaryModelRequestHandler extends ModelRequestHandler {
     private Document moveMultiSelection( ProcessModel model, Map<ProcessNode, Point> nodes, Set<String> ignoreEdges, String prefix ) {
         Document doc = XMLHelper.newDocument();
         Element pEl = XMLHelper.addDocumentElement(doc, "update-edges");
-        
+
+        // Check if we have a routing point layouter listener
+        boolean foundLayouter = model.getListeners().contains(model.getUtils().getRoutingPointLayouter());
         model.removeListener( model.getUtils().getRoutingPointLayouter() );
+
         Set<ProcessEdge> edges = new HashSet<ProcessEdge>();
         Set<ProcessEdge> movingEdges = new HashSet<ProcessEdge>();
 
@@ -870,7 +873,10 @@ public class TemporaryModelRequestHandler extends ModelRequestHandler {
         }
 
         RoutingPointLayouter rpl = model.getUtils().getRoutingPointLayouter();
-        model.addListener( rpl );
+        // Only add initialy contained
+        if (foundLayouter) {
+            model.addListener(rpl);
+        }
 
         for ( ProcessNode node : nodes.keySet() ) {
             Iterator<ProcessEdge> it = edges.iterator();

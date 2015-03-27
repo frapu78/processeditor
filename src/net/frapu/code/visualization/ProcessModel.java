@@ -409,11 +409,18 @@ public abstract class ProcessModel implements ProcessObjectListener, Cloneable {
     }
 
     /**
-     * Removes a istener from this ProcessModel.
+     * Removes a listener from this ProcessModel.
      * @param listener
      */
     public void removeListener(ProcessModelListener listener) {
         listeners.remove(listener);
+    }
+
+    /**
+     * Returns the list of current listeners
+     */
+    public List<ProcessModelListener> getListeners() {
+        return new LinkedList<ProcessModelListener>(listeners);
     }
 
     /**

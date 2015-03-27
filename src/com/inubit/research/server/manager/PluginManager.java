@@ -16,18 +16,9 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+import com.inubit.research.server.plugins.*;
 import net.frapu.code.visualization.ProcessModel;
 import net.frapu.code.visualization.ProcessObject;
-
-import com.inubit.research.server.plugins.BehavioralInterfacePlugin;
-import com.inubit.research.server.plugins.DomainAttributeDialogPlugin;
-import com.inubit.research.server.plugins.LayoutPlugin;
-import com.inubit.research.server.plugins.ReferenceChooserDialogPlugin;
-import com.inubit.research.server.plugins.RootPageLinkPlugin;
-import com.inubit.research.server.plugins.ServerPlugin;
-import com.inubit.research.server.plugins.UMLAttributeDialogPlugin;
-import com.inubit.research.server.plugins.ValidationPlugin;
-import com.inubit.research.server.plugins.VerticalAlignmentPlugin;
 
 /**
  * Registry for plugins.
@@ -38,6 +29,7 @@ public class PluginManager {
     private static List<RootPageLinkPlugin> rootPagePlugins = new LinkedList<RootPageLinkPlugin>();
 
     static {
+        addPlugin(new EdgeLayoutingPlugin());
         addPlugin(new LayoutPlugin());
         addPlugin(new VerticalAlignmentPlugin());
         addPlugin(new BehavioralInterfacePlugin());

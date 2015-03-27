@@ -41,7 +41,10 @@ public class TemporaryModelManager {
 
         model.setProcessModelURI(TMP_URI_PREFIX + id);
 
-        model.addListener( model.getUtils().getRoutingPointLayouter() );
+        // Only add RoutingPointLayouter initially if preferred!
+        if (model.getUtils().getPreferLayoutEdges()) {
+            model.addListener(model.getUtils().getRoutingPointLayouter());
+        }
         this.models.put(id, model);
 
         return id;

@@ -11,7 +11,6 @@ package net.frapu.code.visualization;
 
 import com.inubit.research.layouter.LayoutHelper;
 import com.inubit.research.layouter.adapter.ProcessEdgeAdapter;
-import com.inubit.research.layouter.preprocessor.LoopPreProcessor;
 import com.inubit.research.testUtils.TestUtils;
 import java.awt.Point;
 import java.awt.Rectangle;

@@ -58,5 +58,8 @@ public class UseCaseUtils extends ProcessUtils {
         return result;
     }
 
-
+    @Override
+    public boolean getPreferLayoutEdges() {
+        return false;
+    }
 }

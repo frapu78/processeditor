@@ -12,7 +12,6 @@ package net.frapu.code.visualization.usecase;
 import net.frapu.code.visualization.ProcessEdge;
 import net.frapu.code.visualization.ProcessModel;
 import net.frapu.code.visualization.ProcessNode;
-import net.frapu.code.visualization.epk.*;
 
 import java.util.LinkedList;
 import java.util.List;
