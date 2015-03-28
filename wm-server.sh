@@ -18,7 +18,7 @@ DAEMON="/usr/bin/java"
 ROOT_DIR="/opt/processeditor"
 
 SERVER="com.inubit.research.server.ProcessEditorServer"
-OPTIONS="-Xmx1024m -cp processeditor.jar:/lib/*"
+OPTIONS="-Xmx1024m -cp processeditor.jar:lib/*"
 LOG_FILE="log.txt"
 
 LOCK_FILE="/var/lock/subsys/wm-server"
