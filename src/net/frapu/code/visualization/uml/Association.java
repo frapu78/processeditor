@@ -95,7 +95,7 @@ public class Association extends ProcessEdge {
     public Stroke getLineStroke() {
         // Check if target is EdgeDocker
         if (getTarget() instanceof EdgeDocker) return UMLUtils.dashedStroke;
-        return UMLUtils.thinStroke;
+        return UMLUtils.defaultStroke;
     }
 
     @Override

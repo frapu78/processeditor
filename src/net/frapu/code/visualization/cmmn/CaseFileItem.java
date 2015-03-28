@@ -1,11 +1,7 @@
 /**
- *
  * Process Editor - CMMN Package
  *
- * (C) 2008,2009 Frank Puhlmann
- *
- * http://frapu.net
- *
+ * (C) 2014 the authors
  */
 package net.frapu.code.visualization.cmmn;
 

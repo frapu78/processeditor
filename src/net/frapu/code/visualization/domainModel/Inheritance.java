@@ -3,6 +3,7 @@
  * Process Editor - Domain Package
  *
  * (C) 2010 Frank Puhlmann
+ * (C) 2014 the authors
  *
  * http://frapu.net
  *
@@ -44,7 +45,7 @@ public class Inheritance extends ProcessEdge {
 
     @Override
     public Stroke getLineStroke() {
-        return DomainUtils.thinStroke;
+        return DomainUtils.defaultStroke;
     }
 
     @Override

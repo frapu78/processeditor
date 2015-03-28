@@ -1067,7 +1067,7 @@ public class ProcessEditor extends JPanel
         setVirginEditor(true);
         this.model.addListener(this);
         // Set prefered state for Layouting Edges
-        layouterEnabled = model.getUtils().getPreferLayoutEdges();
+        layouterEnabled = model.getUtils().isPreferLayoutEdges();
         setLayoutEdges(layouterEnabled);
         initializePopup();
         //clearing all ProcessHelpers

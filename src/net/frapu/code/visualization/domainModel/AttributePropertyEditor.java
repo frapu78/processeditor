@@ -3,8 +3,9 @@
  * Process Editor - Domain Model Package
  *
  * (C) 2011 inubit AG
+ * (C) 2014 the authors
  *
- * http://inubit AG
+ * http://frapu.net
  *
  */
 package net.frapu.code.visualization.domainModel;

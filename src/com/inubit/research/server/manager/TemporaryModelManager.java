@@ -11,12 +11,8 @@ package com.inubit.research.server.manager;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import net.frapu.code.visualization.DefaultRoutingPointLayouter;
-import net.frapu.code.visualization.ProcessEdge;
+
 import net.frapu.code.visualization.ProcessModel;
-import net.frapu.code.visualization.ProcessModelListener;
-import net.frapu.code.visualization.ProcessNode;
-import net.frapu.code.visualization.ProcessObject;
 
 /**
  * @author fel
@@ -42,7 +38,7 @@ public class TemporaryModelManager {
         model.setProcessModelURI(TMP_URI_PREFIX + id);
 
         // Only add RoutingPointLayouter initially if preferred!
-        if (model.getUtils().getPreferLayoutEdges()) {
+        if (model.getUtils().isPreferLayoutEdges()) {
             model.addListener(model.getUtils().getRoutingPointLayouter());
         }
         this.models.put(id, model);

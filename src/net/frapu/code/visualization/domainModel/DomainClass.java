@@ -3,6 +3,7 @@
  * Process Editor - Domain Package
  *
  * (C) 2010 inubit AG
+ * (C) 2014 the authors
  *
  * http://frapu.net
  *
@@ -119,8 +120,13 @@ public class DomainClass extends ProcessNode {
 
     @Override
     protected Shape getOutlineShape() {
+        /*
         Shape outline = new RoundRectangle2D.Double(getPos().x - (getSize().width / 2),
                 getPos().y - (getSize().height / 2), getSize().width, getSize().height, ROUNDED_EDGE_VALUE, ROUNDED_EDGE_VALUE);
+         */
+        Shape outline = new Rectangle2D.Double(getPos().x - (getSize().width / 2),
+                getPos().y - (getSize().height / 2), getSize().width, getSize().height);
+
         return outline;
     }
 
@@ -257,12 +263,11 @@ public class DomainClass extends ProcessNode {
             topsize += 20;
         }
         g2.setPaint(getBackground());
-        Shape fillshape1 = new RoundRectangle2D.Double(
+        Shape fillshape1 = new Rectangle2D.Double(
                 getPos().x - (getSize().width / 2),
                 getPos().y - (getSize().height / 2),
                 getSize().width,
-                topsize + ROUNDED_EDGE_VALUE,
-                ROUNDED_EDGE_VALUE, ROUNDED_EDGE_VALUE);
+                topsize);
         g2.fill(fillshape1);
 
         // #3: Fill middle in white
@@ -419,8 +424,8 @@ public class DomainClass extends ProcessNode {
 
     @Override
     protected void paintInternal(Graphics g) {
-        paintInternalNew(g);
-        //paintInternalOld(g);
+        //paintInternalNew(g);
+        paintInternalOld(g);
     }
 
     @Override
@@ -483,8 +488,7 @@ public class DomainClass extends ProcessNode {
     }
 
     /**
-     * Returns a list of all parent classes, incl. the recent one.
-     * @param model
+     * Returns a list of all parent classes, incl. the recent one
      * @return
      */
     public List<DomainClass> getParents() {
@@ -493,7 +497,6 @@ public class DomainClass extends ProcessNode {
 
     /**
      * Returns a list of all child classes, incl. the recent one.
-     * @param model
      * @return
      */
     public List<DomainClass> getChildren() {

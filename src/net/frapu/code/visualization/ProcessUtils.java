@@ -1096,7 +1096,7 @@ public abstract class ProcessUtils {
      * Returns whether this model prefers layouted edges by default or not.
      * @return
      */
-    public boolean getPreferLayoutEdges() {
+    public boolean isPreferLayoutEdges() {
         return true;
     }
 

@@ -1,3 +1,8 @@
+/**
+ * Process Editor - CMMN Package
+ *
+ * (C) 2014 the authors
+ */
 package net.frapu.code.visualization.cmmn;
 
 import net.frapu.code.visualization.Cluster;

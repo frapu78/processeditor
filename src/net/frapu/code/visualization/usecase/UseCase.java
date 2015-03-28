@@ -2,7 +2,7 @@
  *
  * Process Editor - Use Case Package
  *
- * (C) 2015 Frank Puhlmann
+ * (C) 2015 the authors
  *
  * http://frapu.de
  *

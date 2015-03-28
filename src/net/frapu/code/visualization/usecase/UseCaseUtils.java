@@ -2,7 +2,7 @@
  *
  * Process Editor - Use Case Package
  *
- * (C) 2015 Frank Puhlmann
+ * (C) 2015 the authors
  *
  * http://frapu.de
  *
@@ -59,7 +59,7 @@ public class UseCaseUtils extends ProcessUtils {
     }
 
     @Override
-    public boolean getPreferLayoutEdges() {
+    public boolean isPreferLayoutEdges() {
         return false;
     }
 }

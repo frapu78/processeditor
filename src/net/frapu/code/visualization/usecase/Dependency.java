@@ -1,8 +1,8 @@
 /**
  * Process Editor - Use Case Package
- * <p/>
- * (C) 2015 Frank Puhlmann
- * <p/>
+ *
+ * (C) 2015 the authors
+ *
  * http://frapu.de
  */
 package net.frapu.code.visualization.usecase;

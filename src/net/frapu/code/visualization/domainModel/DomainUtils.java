@@ -3,6 +3,7 @@
  * Process Editor - Domain Package
  *
  * (C) 2010 inubit AG
+ * (C) 2014 the authors
  *
  * http://frapu.net
  *

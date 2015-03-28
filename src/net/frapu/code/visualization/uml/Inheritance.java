@@ -44,7 +44,7 @@ public class Inheritance extends ProcessEdge {
 
     @Override
     public Stroke getLineStroke() {
-        return UMLUtils.thinStroke;
+        return UMLUtils.defaultStroke;
     }
 
     @Override

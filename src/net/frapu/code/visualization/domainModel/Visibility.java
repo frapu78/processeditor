@@ -2,8 +2,9 @@
  * Process Editor
  *
  * (C) 2010 inubit AG
+ * (C) 2014 the authors
  *
- * http://inubit.com
+ * http://frapu.net
  *
  */
 package net.frapu.code.visualization.domainModel;

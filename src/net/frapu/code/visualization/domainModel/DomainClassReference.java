@@ -1,8 +1,9 @@
 /**
  *
- * Process Editor - UML Package
+ * Process Editor - Domain Package
  *
  * (C) 2008,2009 Frank Puhlmann
+ * (C) 2014 the authors
  *
  * http://frapu.net
  *
