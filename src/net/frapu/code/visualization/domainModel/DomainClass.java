@@ -44,6 +44,9 @@ public class DomainClass extends ProcessNode {
     public final static int FONTSIZE = 11;
     public final static String ELEMENT_DELIMITER = ";";
     public static final String STEREOTPYE_ROOT_INSTANCE = "root_instance";
+    public static final String STEREOTPYE_PROCESS_BO = "process_bo";
+    public static final String STEREOTPYE_THING_BO = "thing_bo";
+    public static final String STEREOTPYE_EVENT = "event";
     private static int ROUNDED_EDGE_VALUE = 5;
     private final static Color ROOT_COLOR = new Color(243, 134, 3);
     private final static Color DEFAULT_COLOR = new Color(174, 206, 61);
@@ -75,7 +78,8 @@ public class DomainClass extends ProcessNode {
 
         setProperty(PROP_KEY, "");
 
-        String[] atype = {"", STEREOTPYE_ROOT_INSTANCE};
+        String[] atype = {"", STEREOTPYE_ROOT_INSTANCE, STEREOTPYE_PROCESS_BO, STEREOTPYE_THING_BO,
+            STEREOTPYE_EVENT};
         setPropertyEditor(PROP_STEREOTYPE, new ListSelectionPropertyEditor(atype));
 
     }
