@@ -38,5 +38,6 @@ Manual Startup
 * Server: java -cp 'processeditor.jar:lib/*' -Xmx1024m com.inubit.research.server.ProcesseditorServer
 
 Automatic Startup (Server, Linux)
+=================================
 * SystemV (/etc/init.d): Set a symlink to wm-server.sh and configure the user and path in the file. Use 'chkconfig wm-server.sh on' to enable the service.
 * systemd (/etc/systemd/system): Copy the wm-server.service file and configure the user and path. Use 'systemctl enable wm-server' to enable the service.
