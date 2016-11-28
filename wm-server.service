@@ -1,0 +1,14 @@
+[Unit]
+Description=Processeditor Server
+After=network.target
+
+[Service]
+User=wallet
+ExecStart=/bin/bash -c "cd /opt/processeditor && /usr/bin/java -Xmx1024m -cp 'processeditor.jar:lib/*' com.inubit.research.server.ProcessEditorServer"
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
