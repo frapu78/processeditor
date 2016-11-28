@@ -26,6 +26,12 @@ Manual Building (Idea, Netbeans, etc.)
 * Select "com.inubit.research.gui.Workbench" as main class for Workbench
 * Select "com.inubit.research.server.ProcessEditorServer" as main class for Server
 
+
+Manual Startup
+==============
+* Workbench: java -cp 'processeditor.jar:lib/*' -Xmx1024m com.inubit.research.gui.Workbench
+* Server: java -cp 'processeditor.jar:lib/*' -Xmx1024m com.inubit.research.server.ProcesseditorServer
+
 Ant Building
 ============
 Use the build.xml with the following targets
