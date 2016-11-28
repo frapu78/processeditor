@@ -26,14 +26,17 @@ Manual Building (Idea, Netbeans, etc.)
 * Select "com.inubit.research.gui.Workbench" as main class for Workbench
 * Select "com.inubit.research.server.ProcessEditorServer" as main class for Server
 
+Ant Building
+============
+Use the build.xml with the following targets
+* "clean-build-workbench": Builds a jar with a manifest file for the Workbench
+* "clean-build-server": Builds a jar with a manifest file for the Server (incl. the "www" resources)
 
 Manual Startup
 ==============
 * Workbench: java -cp 'processeditor.jar:lib/*' -Xmx1024m com.inubit.research.gui.Workbench
 * Server: java -cp 'processeditor.jar:lib/*' -Xmx1024m com.inubit.research.server.ProcesseditorServer
 
-Ant Building
-============
-Use the build.xml with the following targets
-* "clean-build-workbench": Builds a jar with a manifest file for the Workbench
-* "clean-build-server": Builds a jar with a manifest file for the Server (incl. the "www" resources)
+Automatic Startup (Server, Linux)
+* SystemV (/etc/init.d): Set a symlink to wm-server.sh and configure the user and path in the file. Use 'chkconfig wm-server.sh on' to enable the service.
+* systemd (/etc/systemd/system): Copy the wm-server.service file and configure the user and path. Use 'systemctl enable wm-server' to enable the service.

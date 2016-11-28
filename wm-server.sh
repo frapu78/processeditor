@@ -8,6 +8,9 @@
 # logfile: /opt/processeditor/wm.log
 #
 
+#
+# This is the SystemV init script
+#
 . /etc/rc.d/init.d/functions
 
 # SET YOUR USER HERE
