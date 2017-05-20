@@ -9,6 +9,7 @@
 package com.inubit.research.gui.plugins;
 
 import com.inubit.research.gui.plugins.choreography.interfaceGenerator.BehavioralInterfaceGeneratingPlugin;
+import com.inubit.research.gui.plugins.natural.NaturalLanguageInputPlugin;
 import com.inubit.research.gui.plugins.validationPlugin.ValidationPlugin;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class PluginHelper {
         result.add(NodeViewPlugin.class);
         result.add(PropertiesPlugin.class);
         result.add(ModelOperationsPlugin.class);
-        //result.add(NaturalLanguageInputPlugin.class);
+        result.add(NaturalLanguageInputPlugin.class);
         //result.add(ProcessModelMergerPlugin.class);
         result.add(BehavioralInterfaceGeneratingPlugin.class);
         result.add(RPSTPlugin.class);

@@ -4,6 +4,7 @@
  *
  * (C) 2008, 2009 Frank Puhlmann
  * (C) 2010 inubit AG
+ * (C) 2017 the authors
  *
  * http://frapu.net
  *

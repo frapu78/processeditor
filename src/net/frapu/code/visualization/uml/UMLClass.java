@@ -94,33 +94,35 @@ public class UMLClass extends ProcessNode {
     @Override
     public void setProperty(String key, String value) {
         super.setProperty(key, value);
-        if ( PROP_ATTRIBUTES.equals( key ) ) {
+        if (PROP_ATTRIBUTES.equals(key)) {
             this.attributes = new LinkedList<UMLAttribute>();
             String[] atts = value.split(UMLClass.ELEMENT_DELIMITER);
 
-            for ( String attribute : atts ) {
-                if(!attribute.isEmpty()) {
-				int open = attribute.indexOf('[');
-				int sep = attribute.indexOf(':');
+            for (String attribute : atts) {
+                if (!attribute.isEmpty()) {
+                    int open = attribute.indexOf('[');
+                    int sep = attribute.indexOf(':');
 
-                                if ( sep < 0 )
-                                    sep = attribute.length() - 1;
+                    if (sep < 0) {
+                        sep = attribute.length() - 1;
+                    }
 
-				String attName = (String) ((open<0) ? attribute.substring(1,sep) : attribute.subSequence(1, open));
-                                String attType = sep < attribute.length() ? attribute.substring( sep + 1) : "";
+                    String attName = (String) ((open < 0) ? attribute.substring(1, sep) : attribute.subSequence(1, open));
+                    String attType = sep < attribute.length() ? attribute.substring(sep + 1) : "";
 
-                                UMLAttribute a = new UMLAttribute(attName, attType);
+                    UMLAttribute a = new UMLAttribute(attName, attType);
 
-				String multi = (String) ((open>0) ? attribute.substring(open+1, attribute.indexOf(']')) : "1");
-                                a.setProperty( UMLAttribute.PROP_MULTIPLICITY, multi );
+                    String multi = (String) ((open > 0) ? attribute.substring(open + 1, attribute.indexOf(']')) : "1");
+                    a.setProperty(UMLAttribute.PROP_MULTIPLICITY, multi);
 
-                                Visibility v = Visibility.forUMLString( String.valueOf(attribute.charAt(0)));
+                    Visibility v = Visibility.forUMLString(String.valueOf(attribute.charAt(0)));
 
-                                if ( v != null )
-                                    a.setProperty( UMLAttribute.PROP_VISIBILITY, v.toString() );
+                    if (v != null) {
+                        a.setProperty(UMLAttribute.PROP_VISIBILITY, v.toString());
+                    }
 
-				this.attributes.add( a );
-			}
+                    this.attributes.add(a);
+                }
             }
         }
     }

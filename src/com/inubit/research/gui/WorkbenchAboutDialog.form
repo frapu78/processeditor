@@ -33,7 +33,7 @@
                   <Component id="okButton" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="titleLabel" pref="333" max="32767" attributes="0"/>
+                          <Component id="titleLabel" pref="205" max="32767" attributes="0"/>
                           <Component id="versionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -60,7 +60,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="200" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="194" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="okButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -72,7 +72,7 @@
     <Component class="javax.swing.JLabel" name="logoLabel">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/_logo/logo_128.png"/>
+          <Image iconType="3" name="/_logo/logo128.png"/>
         </Property>
       </Properties>
     </Component>
@@ -127,7 +127,7 @@
             </Property>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="(C) 2009-2014 Contributors&#xa;&#xa;Contributors: &#xa;Carsten Braune, Felix Elliger, Fabian Friedrich, Uwe Hartmann, Thomas Milde, Jan Oehlert, Frank Puhlmann, Johannes Schmidt&#xa;&#xa;This software contains the following external components:&#xa;&#xa;1. ProcessEditor (C) 2008, 2009 Frank Puhlmann (http://frapu.de)&#xa;2. JSONObject (C) 2002 JSON.org&#xa;&#xa;Sources: https://github.com/frapu78/processeditor"/>
+            <Property name="text" type="java.lang.String" value="(C) 2009-2017 The Contributors&#xa;&#xa;Contributors: &#xa;Carsten Braune, Felix Elliger, Fabian Friedrich, Uwe Hartmann, Thomas Milde, Jan Oehlert, Frank Puhlmann, Johannes Schmidt&#xa;&#xa;This software contains the following external components:&#xa;&#xa;1. ProcessEditor (C) 2008, 2009 Frank Puhlmann (http://frapu.de)&#xa;2. JSONObject (C) 2002 JSON.org&#xa;&#xa;Sources: https://github.com/frapu78/processeditor"/>
             <Property name="wrapStyleWord" type="boolean" value="true"/>
           </Properties>
         </Component>

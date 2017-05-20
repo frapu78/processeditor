@@ -64,9 +64,15 @@ import com.inubit.research.server.ProcessEditorServer;
 import com.inubit.research.server.ProcessEditorServerHelper;
 import com.inubit.research.server.merger.ClientFascade;
 import com.inubit.research.server.merger.gui.VersionExplorer;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import javax.swing.JDialog;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
 import net.frapu.code.visualization.ProcessEditorExternalizeableActionHandler;
+import net.frapu.code.visualization.PropertiesPanel;
 
 /**
  *
@@ -76,7 +82,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     private static final long serialVersionUID = 3488875420298876738L;
     public static String TITLE = "Workbench";
-    public static String VERSION = "0.2015.03.08-frapu-fork";
+    public static String VERSION = "0.2017.05.20-frapu-fork";
     //global custom menu items, which will be added to all ProcessEditor instances
     protected LinkedList<WorkbenchEditorListener> editorListeners = new LinkedList<>();
     // The ProcessEditorTrackers
@@ -85,6 +91,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
     private ProcessEditor currentEditor = null;
     public final static String CONF_ANIMATION_ENABLED = "animation_enabled";
     public final static String CONF_SHOW_TOOLBAR = "show_toolbar";
+    public final static String CONF_SHOW_PROPERTIES = "show_properties";
     private Configuration conf = Configuration.getInstance();
     private static SplashScreen splashScreen = new SplashScreen(null, false);
     private int pluginCount = 0;
@@ -248,6 +255,8 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         // Check toolbar menu
         showToolbarMenuItem.setSelected(conf.getProperty(CONF_SHOW_TOOLBAR, "1").equals("1"));
         showToolbarMenuItemActionPerformed(null);
+        // Configure Properties panel
+        configurePropertiesPanel();
 
         // Resize all components to current size
         setSize(800, 600);
@@ -305,14 +314,14 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
     public void resizeComponents() {
 
         // Set new size of tool bar and editor
-        toolBar.setSize(600, 50);
+        toolBar.setSize(layeredPane.getWidth(), 50);
         if (toolBar.isVisible()) {
             skinLabel.setVisible(true);
             /* Disable logo by now
             logoLabel.setVisible(true);
             int pos = layeredPane.getWidth() - logoLabel.getWidth();
-            if (pos < 600) {
-                pos = 600;
+            if (pos < 650) {
+                pos = 650;
             }
             logoLabel.setLocation(pos, 0);            
             */
@@ -353,9 +362,12 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         zoomOutToolbarIcon = new javax.swing.JButton();
         jSeparator13 = new javax.swing.JToolBar.Separator();
         jButton1 = new javax.swing.JButton();
+        jSeparator14 = new javax.swing.JToolBar.Separator();
+        togglePropsToolbarIcon = new javax.swing.JButton();
         skinLabel = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         modelPane = new javax.swing.JTabbedPane();
+        propertiesPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         newModelMenu = new javax.swing.JMenu();
@@ -571,10 +583,25 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
             }
         });
         toolBar.add(jButton1);
+        toolBar.add(jSeparator14);
+
+        togglePropsToolbarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/toolbar/properties.png"))); // NOI18N
+        togglePropsToolbarIcon.setText("Show Props");
+        togglePropsToolbarIcon.setActionCommand("togglePropertiesBox");
+        togglePropsToolbarIcon.setFocusable(false);
+        togglePropsToolbarIcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        togglePropsToolbarIcon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        togglePropsToolbarIcon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                togglePropsToolbarIconActionPerformed(evt);
+            }
+        });
+        toolBar.add(togglePropsToolbarIcon);
 
         layeredPane.add(toolBar);
-        toolBar.setBounds(0, 0, 600, 48);
+        toolBar.setBounds(0, 0, 780, 48);
 
+        skinLabel.setForeground(new java.awt.Color(255, 102, 204));
         skinLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         skinLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/toolbar_skin.png"))); // NOI18N
         layeredPane.add(skinLabel);
@@ -595,6 +622,13 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         mainPanel.add(modelPane, gridBagConstraints);
+
+        propertiesPanel.setBackground(new java.awt.Color(153, 255, 0));
+        propertiesPanel.setMinimumSize(new java.awt.Dimension(200, 10));
+        propertiesPanel.setSize(new java.awt.Dimension(100, 0));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        mainPanel.add(propertiesPanel, gridBagConstraints);
 
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
@@ -1175,6 +1209,22 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         }
 }//GEN-LAST:event_ShowVersionsMenuItemActionPerformed
 
+    private void togglePropsToolbarIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togglePropsToolbarIconActionPerformed
+           // Here we toggle the info panel on/off
+        if (conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1")) {
+            // Hide properties panel
+            conf.setProperty(CONF_SHOW_PROPERTIES, "0");
+            propertiesPanel.setVisible(false);
+            togglePropsToolbarIcon.setText("Show Props");
+        } else {
+            // Show properties panel
+            conf.setProperty(CONF_SHOW_PROPERTIES, "1");
+            propertiesPanel.setVisible(true);
+            configurePropertiesPanel();
+            togglePropsToolbarIcon.setText("Hide Props");
+        }
+    }//GEN-LAST:event_togglePropsToolbarIconActionPerformed
+
     /**
      * @param evt
      */
@@ -1370,6 +1420,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JToolBar.Separator jSeparator12;
     private javax.swing.JToolBar.Separator jSeparator13;
+    private javax.swing.JToolBar.Separator jSeparator14;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -1389,6 +1440,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     private javax.swing.JButton openToolbarIcon;
     private javax.swing.JMenuItem pasteMenu;
     private javax.swing.JMenu pluginMenu;
+    private javax.swing.JPanel propertiesPanel;
     private javax.swing.JMenuItem publishToServerMenuItem;
     private javax.swing.JButton publishToolbarIcon;
     private javax.swing.JMenuItem quitMenuItem;
@@ -1398,6 +1450,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     private javax.swing.JMenuItem selectAllMenuItem;
     private javax.swing.JCheckBoxMenuItem showToolbarMenuItem;
     private javax.swing.JLabel skinLabel;
+    private javax.swing.JButton togglePropsToolbarIcon;
     private javax.swing.JToolBar toolBar;
     private javax.swing.JMenuItem undoMenuItem;
     private javax.swing.JButton undoToolbarIcon;
@@ -1603,7 +1656,49 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             }
         }
     }
+    
+    /**
+     * Configures the visibility and dimensions of the properties panel
+     */
+    public void configurePropertiesPanel() {
+        // Configure the size of the properties panel first
+        Dimension size = new Dimension(250, propertiesPanel.getSize().width);
+        propertiesPanel.setSize(size);
+        propertiesPanel.setMaximumSize(size);
+        propertiesPanel.setMinimumSize(size);
+         // Set hide label @todo: Refactor double location with togglePropsToolbarActionPerformed!
+         togglePropsToolbarIcon.setText("Hide Props");
+    }
+    
+    /**
+     * This methods updates the properties panel
+     */
+    public void updatePropertiesPanel(ProcessObject obj) {
+        // Check if properties panel is visible
+        if (conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1")) {
+            // Clear existing content
+            propertiesPanel.removeAll();
+            propertiesPanel.validate();
 
+            // Add new ScrollPane with PropertiesPanel
+            WorkbenchPropertiesPanel currentPropPanel = new WorkbenchPropertiesPanel(obj, true);
+            JScrollPane scrollPane = new JScrollPane(currentPropPanel);
+            currentPropPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+            scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+            propertiesPanel.setLayout(new GridBagLayout());
+            GridBagConstraints c = new GridBagConstraints();
+            c.gridx = 0;
+            c.gridy = 0;
+            c.weightx = 100;
+            c.weighty = 100;
+            c.anchor = GridBagConstraints.NORTH;
+            c.fill = GridBagConstraints.BOTH;
+            propertiesPanel.add(scrollPane, c);
+            propertiesPanel.validate();
+        }
+    }
+    
     /**
      * returns a reference to the Panel that holds all processEditors in the center
      * and the toolbar in the north, so subclasses
@@ -1663,7 +1758,8 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     //
     @Override
     public void processObjectClicked(ProcessObject o) {
-        // Ignore
+        // Update properties panel
+        updatePropertiesPanel(o);
     }
 
     @Override
