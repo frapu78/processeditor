@@ -2,7 +2,7 @@
  *
  * Process Editor - Core Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -10,10 +10,13 @@
 package net.frapu.code.visualization.editors;
 
 import java.awt.Component;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import net.frapu.code.visualization.ProcessObject;
 
 /**
  *
@@ -37,6 +40,37 @@ public class MultiLinePropertyEditor extends PropertyEditor {
         defaultEditor.setRows(3);
         defaultEditor.setFont(new JLabel("bla").getFont());
         defaultEditor.setSize(100, defaultEditor.getSize().height);
+        defaultEditor.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // Update every stroke
+                ProcessObject po = getProcessObject();
+                if (po != null) {
+                    po.setProperty(getPropertyKey(), getValue()+e.getKeyChar());
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Ignore
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                 // Ignore
+            }
+        });
+        /*
+        defaultEditor.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProcessObject po = getProcessObject();
+                if (po != null) {
+                    po.setProperty(getPropertyKey(), getValue());
+                }
+            }
+        });        */
         scrollPane = new JScrollPane(defaultEditor);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     }

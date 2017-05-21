@@ -81,7 +81,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/_logo/logo_256.png"/>
+              <Image iconType="3" name="/_logo/logo256.png"/>
             </Property>
           </Properties>
         </Component>

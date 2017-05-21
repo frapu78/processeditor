@@ -19,6 +19,7 @@ import java.util.Map;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import net.frapu.code.visualization.ProcessEditor;
 import net.frapu.code.visualization.ProcessObject;
 import net.frapu.code.visualization.ProcessObjectListener;
 import net.frapu.code.visualization.PropertyConfig;
@@ -35,15 +36,17 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
 
     private static final long serialVersionUID = -2953810066205643479L;
     protected ProcessObject po;
-    // Map for storing keys and JTextFields
+    protected ProcessEditor editor;
+    // Map for storing keys and PropertyEditors
     final Map<String, PropertyEditor> data = new HashMap<String, PropertyEditor>();
     // Flag if fields could be edited
     boolean editable;
 
     /** Creates new form PropertyPanel */
-    public WorkbenchPropertiesPanel(ProcessObject po, boolean editable) {
+    public WorkbenchPropertiesPanel(ProcessObject po, ProcessEditor editor) {
         this.po = po;
-        this.editable = editable;
+        this.editable = true;
+        this.editor = editor;
         initCustomComponents();
     }
 
@@ -144,6 +147,8 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
         for (PropertyEditor e: getData().values()) {
             e.update();
         }
+        // Update editor view
+        editor.updateUI();
     }
     // End of variables declaration                   
 }

@@ -3,7 +3,7 @@
  * Process Editor - inubit Workbench Package
  *
  * (C) 2009, 2010 inubit AG
- * (C) 2014 the authors
+ * (C) 2014-2017 the authors
  * 
  */
 package com.inubit.research.gui;
@@ -1681,7 +1681,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             propertiesPanel.validate();
 
             // Add new ScrollPane with PropertiesPanel
-            WorkbenchPropertiesPanel currentPropPanel = new WorkbenchPropertiesPanel(obj, true);
+            WorkbenchPropertiesPanel currentPropPanel = new WorkbenchPropertiesPanel(obj, this.getSelectedProcessEditor());
             JScrollPane scrollPane = new JScrollPane(currentPropPanel);
             currentPropPanel.setAlignmentY(Component.TOP_ALIGNMENT);
             scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

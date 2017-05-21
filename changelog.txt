@@ -1,0 +1,8 @@
+Changelog for ProcessEditor-frapu-fork
+
+Todo:
+* Check parallel use of properties panel / properties context menu from ProcessEditor!
+
+0.1-20170521:
+* Worked on #39 (Workbench: Implement Switchable Properties Panel)
+
