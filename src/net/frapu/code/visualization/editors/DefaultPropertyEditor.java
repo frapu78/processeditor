@@ -10,7 +10,6 @@
 package net.frapu.code.visualization.editors;
 
 import net.frapu.code.visualization.*;
-import net.frapu.code.visualization.editors.PropertyEditor;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

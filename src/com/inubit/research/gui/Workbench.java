@@ -4,7 +4,7 @@
  *
  * (C) 2009, 2010 inubit AG
  * (C) 2014-2017 the authors
- * 
+ *
  */
 package com.inubit.research.gui;
 
@@ -64,15 +64,13 @@ import com.inubit.research.server.ProcessEditorServer;
 import com.inubit.research.server.ProcessEditorServerHelper;
 import com.inubit.research.server.merger.ClientFascade;
 import com.inubit.research.server.merger.gui.VersionExplorer;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import javax.swing.JDialog;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
 import net.frapu.code.visualization.ProcessEditorExternalizeableActionHandler;
-import net.frapu.code.visualization.PropertiesPanel;
+import net.frapu.code.visualization.ProcessModelMetaNode;
 
 /**
  *
@@ -82,33 +80,35 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     private static final long serialVersionUID = 3488875420298876738L;
     public static String TITLE = "Workbench";
-    public static String VERSION = "0.2017.05.20-frapu-fork";
+    public static String VERSION = "0.2017.05.31-frapu-fork";
     //global custom menu items, which will be added to all ProcessEditor instances
     protected LinkedList<WorkbenchEditorListener> editorListeners = new LinkedList<>();
     // The ProcessEditorTrackers
-    Map<ProcessEditor, ProcessEditorActionTracker> actionTrackers =
-            new HashMap<>();
+    Map<ProcessEditor, ProcessEditorActionTracker> actionTrackers
+            = new HashMap<>();
     private ProcessEditor currentEditor = null;
     public final static String CONF_ANIMATION_ENABLED = "animation_enabled";
     public final static String CONF_SHOW_TOOLBAR = "show_toolbar";
     public final static String CONF_SHOW_PROPERTIES = "show_properties";
+    public final static String LABEL_SHOW_PROPS = "Show Props";
+    public final static String LABEL_HIDE_PROPS = "Hide Props";
     private Configuration conf = Configuration.getInstance();
     private static SplashScreen splashScreen = new SplashScreen(null, false);
     private int pluginCount = 0;
     static int[] FUNC_KEYS = {
-                java.awt.event.KeyEvent.VK_F1,
-                java.awt.event.KeyEvent.VK_F2,
-                java.awt.event.KeyEvent.VK_F3,
-                java.awt.event.KeyEvent.VK_F4,
-                java.awt.event.KeyEvent.VK_F5,
-                java.awt.event.KeyEvent.VK_F6,
-                java.awt.event.KeyEvent.VK_F7,
-                java.awt.event.KeyEvent.VK_F8,
-                java.awt.event.KeyEvent.VK_F9,
-                java.awt.event.KeyEvent.VK_F10,
-                java.awt.event.KeyEvent.VK_F11,
-                java.awt.event.KeyEvent.VK_F12
-            };
+        java.awt.event.KeyEvent.VK_F1,
+        java.awt.event.KeyEvent.VK_F2,
+        java.awt.event.KeyEvent.VK_F3,
+        java.awt.event.KeyEvent.VK_F4,
+        java.awt.event.KeyEvent.VK_F5,
+        java.awt.event.KeyEvent.VK_F6,
+        java.awt.event.KeyEvent.VK_F7,
+        java.awt.event.KeyEvent.VK_F8,
+        java.awt.event.KeyEvent.VK_F9,
+        java.awt.event.KeyEvent.VK_F10,
+        java.awt.event.KeyEvent.VK_F11,
+        java.awt.event.KeyEvent.VK_F12
+    };
 
     public Workbench() {
         this(true, null);
@@ -118,10 +118,12 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         this(createDefaultModel, null);
     }
 
-    /** Creates new form WorkbenchFrame */
+    /**
+     * Creates new form WorkbenchFrame
+     */
     public Workbench(boolean createDefaultModel, List<WorkbenchPlugin> toLoad) {
 
-        System.out.println("Starting "+TITLE+" " + VERSION);
+        System.out.println("Starting " + TITLE + " " + VERSION);
         try {
             if (conf.getProperty(Configuration.PROP_USE_SYSTEM_LOOK_AND_FEEL, "0").equals("1")) {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -161,6 +163,8 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         splashScreen.setVisible(false);
         splashScreen.dispose();
 
+        // Configure Properties panel
+        configurePropertiesPanel();
     }
 
     private void initCustomComponents() {
@@ -231,6 +235,8 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
                 currentEditor.addListener(outer);
                 // Change title
                 updateTitle();
+                // Update Properties panel
+                updatePropertiesPanel(getSelectedProcessEditor().getLastSelectedNode());
                 // Inform listeners
                 for (WorkbenchEditorListener l : editorListeners) {
                     l.selectedProcessEditorChanged(getSelectedProcessEditor());
@@ -255,8 +261,6 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         // Check toolbar menu
         showToolbarMenuItem.setSelected(conf.getProperty(CONF_SHOW_TOOLBAR, "1").equals("1"));
         showToolbarMenuItemActionPerformed(null);
-        // Configure Properties panel
-        configurePropertiesPanel();
 
         // Resize all components to current size
         setSize(800, 600);
@@ -324,7 +328,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
                 pos = 650;
             }
             logoLabel.setLocation(pos, 0);            
-            */
+             */
         } else {
             // logoLabel.setVisible(false);
             skinLabel.setVisible(false);
@@ -335,10 +339,10 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         processModelOpened(new BPMNModel());
     }
 
-    /** This method is called from within the constructor to
-     * initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is
-     * always regenerated by the Form Editor.
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -407,6 +411,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         showToolbarMenuItem = new javax.swing.JCheckBoxMenuItem();
+        showPropertiesMenuItem = new javax.swing.JCheckBoxMenuItem();
         jSeparator10 = new javax.swing.JSeparator();
         animationEnabledMenuItem = new javax.swing.JCheckBoxMenuItem();
         pluginMenu = new javax.swing.JMenu();
@@ -869,6 +874,15 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
             }
         });
         viewMenu.add(showToolbarMenuItem);
+
+        showPropertiesMenuItem.setSelected(true);
+        showPropertiesMenuItem.setText("Show Properties");
+        showPropertiesMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPropertiesMenuItemActionPerformed(evt);
+            }
+        });
+        viewMenu.add(showPropertiesMenuItem);
         viewMenu.add(jSeparator10);
 
         animationEnabledMenuItem.setSelected(true);
@@ -903,14 +917,14 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * 
+     *
      * @param evt
      */
     private void quitApplication(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitApplication
         System.exit(0);
     }//GEN-LAST:event_quitApplication
     /**
-     * 
+     *
      * @param evt
      */
     private void showAboutDialog(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAboutDialog
@@ -937,6 +951,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     /**
      * Copy selection to clipboard.
+     *
      * @param evt
      */
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
@@ -947,6 +962,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     /**
      * Inserts the selection from the clipboard.
+     *
      * @param evt
      */
     private void pasteMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuActionPerformed
@@ -1168,8 +1184,8 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-	 * @param evt  
-	 */
+     * @param evt
+     */
     private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
         if (getSelectedProcessEditor() != null) {
             getSelectedProcessEditor().setLayoutEdges(jCheckBoxMenuItem1.isSelected());
@@ -1178,8 +1194,8 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     /**
-	 * @param evt  
-	 */
+     * @param evt
+     */
     private void editMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMenuMouseClicked
         if (getSelectedProcessEditor() != null) {
             jCheckBoxMenuItem1.setSelected(getSelectedProcessEditor().isLayoutEdges());
@@ -1187,49 +1203,58 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
     }//GEN-LAST:event_editMenuMouseClicked
 
 private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowVersionsMenuItemActionPerformed
-        try {
-            ClientFascade repository = new ClientFascade(getSelectedModel());
-            VersionExplorer versionExplorer = new VersionExplorer(repository);
-            versionExplorer.setVisible(true);
-        } catch (XMLHttpRequestException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error finding the model on the server. Probably there are no Versions of the current model on the server",
-            "Error",
-            JOptionPane.ERROR_MESSAGE);
-        } catch (MalformedURLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error finding the model on the server. Probably there are no Versions of the current model on the server",
-            "Error",
-            JOptionPane.ERROR_MESSAGE);
-        } catch (InvalidUserCredentialsException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error finding the model on the server. Probably there are no Versions of the current model on the server",
-            "Error",
-            JOptionPane.ERROR_MESSAGE);
-        }
+    try {
+        ClientFascade repository = new ClientFascade(getSelectedModel());
+        VersionExplorer versionExplorer = new VersionExplorer(repository);
+        versionExplorer.setVisible(true);
+    } catch (XMLHttpRequestException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error finding the model on the server. Probably there are no Versions of the current model on the server",
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+    } catch (MalformedURLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error finding the model on the server. Probably there are no Versions of the current model on the server",
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+    } catch (InvalidUserCredentialsException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error finding the model on the server. Probably there are no Versions of the current model on the server",
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+    }
 }//GEN-LAST:event_ShowVersionsMenuItemActionPerformed
 
     private void togglePropsToolbarIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togglePropsToolbarIconActionPerformed
-           // Here we toggle the info panel on/off
+        
+        // Here we toggle the info panel on/off
         if (conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1")) {
             // Hide properties panel
             conf.setProperty(CONF_SHOW_PROPERTIES, "0");
             propertiesPanel.setVisible(false);
-            togglePropsToolbarIcon.setText("Show Props");
+            togglePropsToolbarIcon.setText(LABEL_SHOW_PROPS);
         } else {
             // Show properties panel
             conf.setProperty(CONF_SHOW_PROPERTIES, "1");
             propertiesPanel.setVisible(true);
             configurePropertiesPanel();
-            togglePropsToolbarIcon.setText("Hide Props");
+            togglePropsToolbarIcon.setText(LABEL_HIDE_PROPS);
         }
+        // Check properties menu
+        showPropertiesMenuItem.setSelected(conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1"));        
     }//GEN-LAST:event_togglePropsToolbarIconActionPerformed
+
+    private void showPropertiesMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPropertiesMenuItemActionPerformed
+        // Here we toggle the properties panel on/off
+        togglePropsToolbarIconActionPerformed(evt);
+    }//GEN-LAST:event_showPropertiesMenuItemActionPerformed
 
     /**
      * @param evt
      */
     /**
      * Adds a listener.
+     *
      * @param item
      */
     public void addWorkbenchEditorListener(WorkbenchEditorListener listener) {
@@ -1238,6 +1263,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
 
     /**
      * Removes a listener.
+     *
      * @param listener
      */
     public void removeWorkbenchEditorListener(WorkbenchEditorListener listener) {
@@ -1247,12 +1273,12 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     // Adds a (custom) plugin.
     public void addPlugin(WorkbenchPlugin plugin) {
         Component comp = plugin.getMenuEntry();
-        System.out.println("Adding plugin... "+plugin);
-        if ((comp instanceof JMenuItem) & (!(comp instanceof JMenu)))  {
+        System.out.println("Adding plugin... " + plugin);
+        if ((comp instanceof JMenuItem) & (!(comp instanceof JMenu))) {
             // Add shortcut to all top level entries
-            JMenuItem menu = (JMenuItem)comp;
-            if (pluginCount<FUNC_KEYS.length) {
-                menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(FUNC_KEYS[pluginCount],java.awt.event.InputEvent.CTRL_MASK));
+            JMenuItem menu = (JMenuItem) comp;
+            if (pluginCount < FUNC_KEYS.length) {
+                menu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(FUNC_KEYS[pluginCount], java.awt.event.InputEvent.CTRL_MASK));
             }
         }
         pluginCount++;
@@ -1261,6 +1287,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
 
     /**
      * Adds a ProcessModel in a separate tab pane.
+     *
      * @param m
      */
     public void addModel(String name, ProcessModel m) {
@@ -1278,10 +1305,13 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         modelPane.addTab(name, new JScrollPane(editor));
         modelPane.setTabComponentAt(modelPane.getTabCount() - 1, new WorkbenchTabPanel(this, editor, name));
         modelPane.setSelectedIndex(modelPane.getTabCount() - 1);
-    }
+        
+        updatePropertiesPanel(null);
+   }
 
     /**
      * Removes a tab containing a certain ProcessEditor.
+     *
      * @param e
      */
     public void removeTab(ProcessEditor e) {
@@ -1319,6 +1349,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
 
     /**
      * Removes a tab containing a certain ProcessModel.
+     *
      * @param m
      */
     public void removeModel(ProcessModel m) {
@@ -1357,6 +1388,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     /**
      * Scrolls the JScrollPane to the given point. The scale of the current
      * editor is considered internally.
+     *
      * @param p
      */
     public void setViewportToPoint(Point p) {
@@ -1368,11 +1400,11 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         pane.invalidate();
         pane.repaint();
     }
-    
+
     public static void setWorkbenchTitle(String title) {
         TITLE = title;
     }
-    
+
     public static void setWorkbenchVersion(String version) {
         VERSION = version;
     }
@@ -1388,7 +1420,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         f.setVisible(true);
 
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton PasteToolbarIcon;
     private javax.swing.JMenuItem ShowVersionsMenuItem;
@@ -1448,6 +1480,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JButton saveToolbarIcon;
     private javax.swing.JMenuItem selectAllMenuItem;
+    private javax.swing.JCheckBoxMenuItem showPropertiesMenuItem;
     private javax.swing.JCheckBoxMenuItem showToolbarMenuItem;
     private javax.swing.JLabel skinLabel;
     private javax.swing.JButton togglePropsToolbarIcon;
@@ -1475,12 +1508,12 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             name = uri;
         }
         if (!name.startsWith("http")) {
-            name = name.substring(name.lastIndexOf(File.separator) + 1);            
+            name = name.substring(name.lastIndexOf(File.separator) + 1);
         }
         addModel(name, model);
         // Check if credentials are attached
-        if (model.getProperty(ProcessModel.PROP_EDITOR)!=null) {
-            uri = model.getProperty(ProcessModel.PROP_EDITOR)+"@"+uri;
+        if (model.getProperty(ProcessModel.PROP_EDITOR) != null) {
+            uri = model.getProperty(ProcessModel.PROP_EDITOR) + "@" + uri;
         }
         //updates Version Menu Item
         ShowVersionsMenuItem.setEnabled(model.isOnlineModel());
@@ -1513,8 +1546,8 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         updateTitle();
         modelPane.repaint();
         // Check if credentials are attached
-        if (model.getProperty(ProcessModel.PROP_EDITOR)!=null) {
-            uri = model.getProperty(ProcessModel.PROP_EDITOR)+"@"+uri;
+        if (model.getProperty(ProcessModel.PROP_EDITOR) != null) {
+            uri = model.getProperty(ProcessModel.PROP_EDITOR) + "@" + uri;
         }
         addRecentModel(uri);
     }
@@ -1581,10 +1614,10 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             String entry = entries.nextToken();
             String compl_entry = entry;
             // Check if user is given
-            String user="";
-            if (entry.indexOf("@")>0) {
+            String user = "";
+            if (entry.indexOf("@") > 0) {
                 user = entry.substring(0, entry.indexOf("@"));
-                entry = entry.substring(entry.indexOf("@")+1);
+                entry = entry.substring(entry.indexOf("@") + 1);
             }
 
             // Replace %20 by " "
@@ -1607,7 +1640,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
                     public void actionPerformed(ActionEvent e) {
                         // Check if starts with "http"
                         if (entry2.startsWith("http")) {
-                            String serverUri = (URI.create(entry2).getScheme()+"://"+URI.create(entry2).getAuthority());
+                            String serverUri = (URI.create(entry2).getScheme() + "://" + URI.create(entry2).getAuthority());
                             try {
                                 Configuration conf = Configuration.getInstance();
                                 UserCredentials credentials = new UserCredentials(
@@ -1656,7 +1689,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             }
         }
     }
-    
+
     /**
      * Configures the visibility and dimensions of the properties panel
      */
@@ -1666,14 +1699,33 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         propertiesPanel.setSize(size);
         propertiesPanel.setMaximumSize(size);
         propertiesPanel.setMinimumSize(size);
-         // Set hide label @todo: Refactor double location with togglePropsToolbarActionPerformed!
-         togglePropsToolbarIcon.setText("Hide Props");
+        // Initialize content
+        updatePropertiesPanel(getSelectedProcessEditor() == null
+                ? null : getSelectedProcessEditor().getLastSelectedNode());
+        // Update menus and icons
+        showPropertiesMenuItem.setSelected(conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1"));        
+        if (conf.getProperty(CONF_SHOW_PROPERTIES, "0").equals("0")) {
+            // Hide properties panel
+            propertiesPanel.setVisible(false);
+            togglePropsToolbarIcon.setText(LABEL_SHOW_PROPS);            
+        } else {
+            propertiesPanel.setVisible(true);
+            togglePropsToolbarIcon.setText(LABEL_HIDE_PROPS);
+        }
     }
-    
+
     /**
      * This methods updates the properties panel
+     *
+     * @param obj The ProcessObject that should be shown. Null for the
+     * ProcessModel properties.
      */
     public void updatePropertiesPanel(ProcessObject obj) {
+        if (obj == null) {
+            // Create ProcessModelMetaNode to wrap properties of the model
+            obj = new ProcessModelMetaNode(getSelectedModel());
+        }
+
         // Check if properties panel is visible
         if (conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1")) {
             // Clear existing content
@@ -1698,11 +1750,12 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             propertiesPanel.validate();
         }
     }
-    
+
     /**
-     * returns a reference to the Panel that holds all processEditors in the center
-     * and the toolbar in the north, so subclasses
-     * can make use of the eastern, western or southern space
+     * returns a reference to the Panel that holds all processEditors in the
+     * center and the toolbar in the north, so subclasses can make use of the
+     * eastern, western or southern space
+     *
      * @return
      */
     public JPanel getMainPanel() {
@@ -1732,12 +1785,16 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
      * @param i
      */
     public ProcessEditor getProcessEditor(int i) {
+        if (i < 0) {
+            return null;
+        }
         return ((ProcessEditor) ((JScrollPane) modelPane.getComponentAt(i)).getViewport().getComponent(0));
     }
 
     /**
-     * returns the number of open tabs.
-     * each ProcessEditor can be accessed through getProcessEditor(int)
+     * returns the number of open tabs. each ProcessEditor can be accessed
+     * through getProcessEditor(int)
+     *
      * @return
      */
     public int getNumOfProcessEditors() {
@@ -1776,6 +1833,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         String uri = model.getProcessModelURI();
         modelPane.setTitleAt(getActiveTab(), uri.substring(uri.lastIndexOf(File.separator) + 1));
         updateScrollPaneViewport();
+        updatePropertiesPanel(null);
     }
 
     @Override

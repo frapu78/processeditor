@@ -55,7 +55,7 @@ public abstract class PropertyEditor {
      * Subclasses.
      */
     public void update() {
-        // Do nothing per default
+        // Do nothing by default
     }
 
 

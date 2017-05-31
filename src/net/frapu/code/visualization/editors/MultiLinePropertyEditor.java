@@ -46,8 +46,14 @@ public class MultiLinePropertyEditor extends PropertyEditor {
                 // Update every stroke
                 ProcessObject po = getProcessObject();
                 if (po != null) {
-                    po.setProperty(getPropertyKey(), getValue()+e.getKeyChar());
+                    int caretPos = defaultEditor.getCaretPosition();
+                    String newValue = getValue().substring(0, caretPos) + 
+                            e.getKeyChar() +
+                            getValue().substring(caretPos);                   
+                    po.setProperty(getPropertyKey(), newValue);
                 }
+                // Consume event here, since the property is already updated!
+                //e.consume();
             }
 
             @Override
@@ -124,4 +130,18 @@ public class MultiLinePropertyEditor extends PropertyEditor {
     public void free() {
         defaultEditor = null;
     }
+
+    @Override
+    public void update() {
+        super.update(); //To change body of generated methods, choose Tools | Templates.
+        
+        if (!defaultEditor.hasFocus()) {
+            // Get updated values from Process Object
+            String updatedValue = getProcessObject().getProperty(getPropertyKey());
+            setValue(updatedValue);
+            }
+    }
+    
+    
+    
 }

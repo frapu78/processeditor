@@ -675,14 +675,13 @@ public class ProcessEditorMouseListener implements
         }
 
         // Notify listeners about background selection
-        /*if (po==null) {
+        if (po==null) {
         editor.startProcessEditorListenerUpdate();
         for (ProcessEditorListener l : editor.getListeners()) {
-
+            l.processObjectClicked(po);
         }
         editor.endProcessEditorListenerUpdate();
-        }*/
-
+        }
 
         if (po != null) {
             if (po instanceof ProcessNode) {
