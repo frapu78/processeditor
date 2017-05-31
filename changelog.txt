@@ -2,6 +2,17 @@ Changelog for ProcessEditor-frapu-fork
 
 Todo:
 * Check parallel use of properties panel / properties context menu from ProcessEditor!
+* Handle background selection!
+* Handle multiple node selection!
+* Create Tab-Panel for properties
+* Disable protected properties
+* Enhance UI look & feel for properties panel
+
+0.1-20170531:
+* Worked on #39 (Fixed update problem ProcessObject, handle background selection)
+
+0.1-20170528:
+* Worked on #39 (Double update problem ProcessObject)
 
 0.1-20170521:
 * Worked on #39 (Workbench: Implement Switchable Properties Panel)
