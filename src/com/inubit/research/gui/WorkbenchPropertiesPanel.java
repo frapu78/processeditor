@@ -8,6 +8,7 @@
 package com.inubit.research.gui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -19,6 +20,7 @@ import java.util.Map;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import net.frapu.code.visualization.ProcessEditor;
 import net.frapu.code.visualization.ProcessObject;
 import net.frapu.code.visualization.ProcessObjectListener;
@@ -41,6 +43,8 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
     final Map<String, PropertyEditor> data = new HashMap<String, PropertyEditor>();
     // Flag if fields could be edited
     boolean editable;
+    
+    public static final int PROPS_FONT_SIZE = 11;
 
     /** Creates new form PropertyPanel */
     public WorkbenchPropertiesPanel(ProcessObject po, ProcessEditor editor) {
@@ -67,6 +71,8 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
         // Sort properties
         List<String> sProps = new LinkedList<String>();
         for (String key : po.getPropertyKeys()) {
+            // Get Type {base, extended, read-only} 
+            String propertyType = PropertyConfig.getPropertyType(po, key);
             // Find position to insert
             int pos = 0;
             for (pos = 0; pos < sProps.size(); pos++) {
@@ -81,24 +87,26 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
         // Add editor for all properties
         int y = 0;
         for (String key : sProps) {
-            // Create grid bag constraints
-            c.gridx = 0;
-            c.gridy = y++;
-            c.anchor = GridBagConstraints.NORTHEAST;
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.insets = new Insets(2, 2, 0, 2);
+            // Get editor
+            PropertyEditor editor = po.getPropertyEditor(key);
 
-            String value = po.getProperty(key);
-            // Add key
-            JLabel label = new JLabel( PropertyConfig.getPropertyLabel(po, key, Locale.ENGLISH) + ": ");
-            label.setHorizontalTextPosition(JLabel.LEFT);
-            label.setBackground(Color.WHITE);
-            this.add(label, c);
+            if (!editor.containsLabel()){
+                // Create grid bag constraints
+                c.gridx = 0;
+                c.gridy = y++;
+                c.anchor = GridBagConstraints.NORTHEAST;
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.insets = new Insets(2, 2, 0, 2);
+                // Add key
+                JLabel label = new JLabel( PropertyConfig.getPropertyLabel(po, key, Locale.ENGLISH) + ": ");
+                label.setHorizontalTextPosition(JLabel.LEFT);
+                label.setBackground(Color.WHITE);
+                //label.setFont(new Font(label.getFont().getFontName(), Font.PLAIN, PROPS_FONT_SIZE));
+                this.add(label, c);
+            }
 
             // Add PropertyEditor
-            PropertyEditor editor = po.getPropertyEditor(key);
-            if (/* key.startsWith("#") || */ !editable) {
-                label.setEnabled(false);
+            if (key.startsWith("#") || !editable) {
                 editor.setReadOnly(true);
             } else {
                 editor.setReadOnly(false);
@@ -109,12 +117,23 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
             c.anchor = GridBagConstraints.EAST;
             c.fill = GridBagConstraints.HORIZONTAL;
             // Add value
+            String value = po.getProperty(key);            
             editor.setValue(value);
             // Set ProcessObject
             editor.setProcessObject(po, key);
+            // Set Font
+            //editor.getComponent().setFont(new Font(editor.getComponent().getFont().getFontName(), Font.PLAIN, PROPS_FONT_SIZE));
 
             // Add to panel
             this.add(editor.getComponent(), c);
+            
+            c.gridx = 0;
+            c.gridy = y++;
+            c.anchor = GridBagConstraints.EAST;
+            c.fill = GridBagConstraints.HORIZONTAL;
+
+            // Add to panel
+            this.add(new JSeparator(), c);            
 
             // Add to data
             data.put(key, editor);
@@ -123,6 +142,8 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
         c.gridx = 0;
         c.gridy = y++;
         c.gridwidth = 1;
+        c.weightx = 1.0;
+        c.weighty = 1.0;
         c.fill = GridBagConstraints.BOTH;
         JPanel fillerPanel = new JPanel();
         this.add(fillerPanel, c);

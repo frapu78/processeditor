@@ -13,6 +13,7 @@ import net.frapu.code.visualization.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Locale;
 import javax.swing.JCheckBox;
 
 /**
@@ -44,6 +45,7 @@ public class BooleanPropertyEditor extends PropertyEditor {
     @Override
     public Component getComponent() {
         if (defaultEditor==null) init();
+        defaultEditor.setText(PropertyConfig.getPropertyLabel(getProcessObject(), getPropertyKey(), Locale.ENGLISH));        
         return defaultEditor;
     }
 
@@ -57,6 +59,11 @@ public class BooleanPropertyEditor extends PropertyEditor {
     public String getValue() {
         if (defaultEditor==null) init();
         return defaultEditor.isSelected()?"1":"0";
+    }
+    
+    @Override
+    public boolean containsLabel() {
+        return true;
     }
 
     @Override

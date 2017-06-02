@@ -69,6 +69,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
+import javax.swing.UIManager.LookAndFeelInfo;
 import net.frapu.code.visualization.ProcessEditorExternalizeableActionHandler;
 import net.frapu.code.visualization.ProcessModelMetaNode;
 
@@ -80,7 +81,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     private static final long serialVersionUID = 3488875420298876738L;
     public static String TITLE = "Workbench";
-    public static String VERSION = "0.2017.05.31-frapu-fork";
+    public static String VERSION = "0.2017.06.02-frapu-fork";
     //global custom menu items, which will be added to all ProcessEditor instances
     protected LinkedList<WorkbenchEditorListener> editorListeners = new LinkedList<>();
     // The ProcessEditorTrackers
@@ -236,7 +237,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
                 // Change title
                 updateTitle();
                 // Update Properties panel
-                updatePropertiesPanel(getSelectedProcessEditor().getLastSelectedNode());
+                updatePropertiesTab(getSelectedProcessEditor().getLastSelectedNode());
                 // Inform listeners
                 for (WorkbenchEditorListener l : editorListeners) {
                     l.selectedProcessEditorChanged(getSelectedProcessEditor());
@@ -371,6 +372,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         skinLabel = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         modelPane = new javax.swing.JTabbedPane();
+        propertiesTab = new javax.swing.JTabbedPane();
         propertiesPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -628,12 +630,18 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
         gridBagConstraints.weighty = 1.0;
         mainPanel.add(modelPane, gridBagConstraints);
 
-        propertiesPanel.setBackground(new java.awt.Color(153, 255, 0));
+        propertiesTab.setBackground(new java.awt.Color(255, 255, 255));
+
         propertiesPanel.setMinimumSize(new java.awt.Dimension(200, 10));
-        propertiesPanel.setSize(new java.awt.Dimension(100, 0));
+        propertiesTab.addTab("Properties", propertiesPanel);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        mainPanel.add(propertiesPanel, gridBagConstraints);
+        gridBagConstraints.weightx = 0.01;
+        gridBagConstraints.weighty = 1.0;
+        mainPanel.add(propertiesTab, gridBagConstraints);
 
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
@@ -1231,12 +1239,12 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         if (conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1")) {
             // Hide properties panel
             conf.setProperty(CONF_SHOW_PROPERTIES, "0");
-            propertiesPanel.setVisible(false);
+            propertiesTab.setVisible(false);
             togglePropsToolbarIcon.setText(LABEL_SHOW_PROPS);
         } else {
             // Show properties panel
             conf.setProperty(CONF_SHOW_PROPERTIES, "1");
-            propertiesPanel.setVisible(true);
+            propertiesTab.setVisible(true);
             configurePropertiesPanel();
             togglePropsToolbarIcon.setText(LABEL_HIDE_PROPS);
         }
@@ -1306,7 +1314,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         modelPane.setTabComponentAt(modelPane.getTabCount() - 1, new WorkbenchTabPanel(this, editor, name));
         modelPane.setSelectedIndex(modelPane.getTabCount() - 1);
         
-        updatePropertiesPanel(null);
+        updatePropertiesTab(null);
    }
 
     /**
@@ -1473,6 +1481,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     private javax.swing.JMenuItem pasteMenu;
     private javax.swing.JMenu pluginMenu;
     private javax.swing.JPanel propertiesPanel;
+    private javax.swing.JTabbedPane propertiesTab;
     private javax.swing.JMenuItem publishToServerMenuItem;
     private javax.swing.JButton publishToolbarIcon;
     private javax.swing.JMenuItem quitMenuItem;
@@ -1696,20 +1705,20 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     public void configurePropertiesPanel() {
         // Configure the size of the properties panel first
         Dimension size = new Dimension(250, propertiesPanel.getSize().width);
-        propertiesPanel.setSize(size);
-        propertiesPanel.setMaximumSize(size);
-        propertiesPanel.setMinimumSize(size);
+        propertiesTab.setSize(size);
+        propertiesTab.setMaximumSize(size);
+        propertiesTab.setMinimumSize(size);
         // Initialize content
-        updatePropertiesPanel(getSelectedProcessEditor() == null
+        updatePropertiesTab(getSelectedProcessEditor() == null
                 ? null : getSelectedProcessEditor().getLastSelectedNode());
         // Update menus and icons
         showPropertiesMenuItem.setSelected(conf.getProperty(CONF_SHOW_PROPERTIES, "1").equals("1"));        
         if (conf.getProperty(CONF_SHOW_PROPERTIES, "0").equals("0")) {
             // Hide properties panel
-            propertiesPanel.setVisible(false);
+            propertiesTab.setVisible(false);
             togglePropsToolbarIcon.setText(LABEL_SHOW_PROPS);            
         } else {
-            propertiesPanel.setVisible(true);
+            propertiesTab.setVisible(true);
             togglePropsToolbarIcon.setText(LABEL_HIDE_PROPS);
         }
     }
@@ -1720,7 +1729,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
      * @param obj The ProcessObject that should be shown. Null for the
      * ProcessModel properties.
      */
-    public void updatePropertiesPanel(ProcessObject obj) {
+    public void updatePropertiesTab(ProcessObject obj) {
         if (obj == null) {
             // Create ProcessModelMetaNode to wrap properties of the model
             obj = new ProcessModelMetaNode(getSelectedModel());
@@ -1742,8 +1751,8 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
             GridBagConstraints c = new GridBagConstraints();
             c.gridx = 0;
             c.gridy = 0;
-            c.weightx = 100;
-            c.weighty = 100;
+            c.weightx = 1;
+            c.weighty = 1;
             c.anchor = GridBagConstraints.NORTH;
             c.fill = GridBagConstraints.BOTH;
             propertiesPanel.add(scrollPane, c);
@@ -1816,7 +1825,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
     @Override
     public void processObjectClicked(ProcessObject o) {
         // Update properties panel
-        updatePropertiesPanel(o);
+        updatePropertiesTab(o);
     }
 
     @Override
@@ -1833,7 +1842,7 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
         String uri = model.getProcessModelURI();
         modelPane.setTitleAt(getActiveTab(), uri.substring(uri.lastIndexOf(File.separator) + 1));
         updateScrollPaneViewport();
-        updatePropertiesPanel(null);
+        updatePropertiesTab(null);
     }
 
     @Override

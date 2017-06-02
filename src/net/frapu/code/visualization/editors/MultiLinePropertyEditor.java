@@ -133,7 +133,7 @@ public class MultiLinePropertyEditor extends PropertyEditor {
 
     @Override
     public void update() {
-        super.update(); //To change body of generated methods, choose Tools | Templates.
+        super.update(); 
         
         if (!defaultEditor.hasFocus()) {
             // Get updated values from Process Object
@@ -141,7 +141,5 @@ public class MultiLinePropertyEditor extends PropertyEditor {
             setValue(updatedValue);
             }
     }
-    
-    
-    
+   
 }

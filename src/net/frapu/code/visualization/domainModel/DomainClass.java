@@ -3,7 +3,7 @@
  * Process Editor - Domain Package
  *
  * (C) 2010 inubit AG
- * (C) 2014 the authors
+ * (C) 2014-2017 the authors
  *
  * http://frapu.net
  *
@@ -39,7 +39,7 @@ import net.frapu.code.visualization.editors.ListSelectionPropertyEditor;
 public class DomainClass extends ProcessNode {
 
     public final static String PROP_ABSTRACT = "abstract";
-    public final static String PROP_ATTRIBUTES = "#attributes";
+    public final static String PROP_ATTRIBUTES = "attributes";
     public final static String PROP_KEY = "key";
     public final static int FONTSIZE = 11;
     public final static String ELEMENT_DELIMITER = ";";

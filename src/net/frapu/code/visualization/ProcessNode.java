@@ -2,7 +2,7 @@
  *
  * Process Editor - Core Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -101,6 +101,11 @@ public abstract class ProcessNode extends ProcessObject implements Dragable {
         ProcessNode pn = (ProcessNode) o;
         // Add properties to node
         for (String key : props.keySet()) {
+            String newKey = key;
+            // Convert old "#attributes" to "attributes"
+            if (key.equals("#attributes")) {
+                newKey = "attributes";
+            }            
             pn.setProperty(key, props.get(key));
         }
         return pn;

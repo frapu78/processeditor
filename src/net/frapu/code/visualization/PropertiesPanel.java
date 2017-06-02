@@ -2,13 +2,14 @@
  *
  * Process Editor - Core Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
  */
 package net.frapu.code.visualization;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -76,23 +77,25 @@ public class PropertiesPanel extends javax.swing.JPanel implements ProcessObject
         // Add editor for all properties
         int y = 0;
         for (String key : sProps) {
-            // Create grid bag constraints
-            c.gridx = 0;
-            c.gridy = y;
-            c.anchor = GridBagConstraints.NORTHEAST;
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.insets = new Insets(2, 2, 0, 2);
+                        // Get editor
+            PropertyEditor editor = po.getPropertyEditor(key);
 
-            String value = po.getProperty(key);
-            // Add key
-            JLabel label = new JLabel( PropertyConfig.getPropertyLabel(po, key, Locale.ENGLISH) + ": ");
-            label.setHorizontalTextPosition(JLabel.RIGHT);
-            this.add(label, c);
+            if (!editor.containsLabel()){
+                 // Create grid bag constraints
+                c.gridx = 0;
+                c.gridy = y;
+                c.anchor = GridBagConstraints.NORTHEAST;
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.insets = new Insets(2, 2, 0, 2);
+
+                // Add key
+                JLabel label = new JLabel( PropertyConfig.getPropertyLabel(po, key, Locale.ENGLISH) + ": ");
+                label.setHorizontalTextPosition(JLabel.RIGHT);
+                this.add(label, c);
+            }
 
             // Add PropertyEditor
-            PropertyEditor editor = po.getPropertyEditor(key);
-            if (/* key.startsWith("#") || */ !editable) {
-                label.setEnabled(false);
+            if (key.startsWith("#") || !editable) {
                 editor.setReadOnly(true);
             } else {
                 editor.setReadOnly(false);
@@ -103,6 +106,7 @@ public class PropertiesPanel extends javax.swing.JPanel implements ProcessObject
             c.anchor = GridBagConstraints.EAST;
             c.fill = GridBagConstraints.HORIZONTAL;
             // Add value
+            String value = po.getProperty(key);
             editor.setValue(value);
             // Set ProcessObject
             editor.setProcessObject(po, key);

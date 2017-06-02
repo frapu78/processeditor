@@ -2,7 +2,7 @@
  *
  * Process Editor - Editor Package
  *
- * (C) 2008-2010 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -32,6 +32,10 @@ public abstract class PropertyEditor {
     public abstract boolean isReadOnly();
 
     public abstract void setReadOnly(boolean b);
+    
+    public boolean containsLabel() {
+        return false;
+    }
 
     public ProcessObject getProcessObject() {
         return po;

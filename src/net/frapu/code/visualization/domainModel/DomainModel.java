@@ -2,7 +2,7 @@
  *
  * Process Editor - Domain Package
  *
- * (C) 2014 the authors
+ * (C) 2014-2017 the authors
  *
  * http://frapu.net
  *

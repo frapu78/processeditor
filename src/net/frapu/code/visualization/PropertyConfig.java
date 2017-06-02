@@ -87,6 +87,8 @@ public class PropertyConfig {
     public static String getPropertyLabel( Object o, String propertyName, String lang ) {
         if ( configDoc == null )
             return propertyName;
+        
+        if (o==null) return null;
 
         String query = buildQuery(o.getClass(), propertyName, lang);
 

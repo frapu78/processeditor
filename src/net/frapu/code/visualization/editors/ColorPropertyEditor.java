@@ -2,7 +2,7 @@
  *
  * Process Editor - Core Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -105,6 +105,7 @@ public class ColorPropertyEditor extends PropertyEditor {
         colorTextField.setText(currentColor.getRed() + "," +
                 currentColor.getGreen() + "," +
                 currentColor.getBlue());
+        colorPickerButton.setBackground(currentColor);
     }
 
     @Override
@@ -152,4 +153,23 @@ public class ColorPropertyEditor extends PropertyEditor {
     public void free() {
         defaultEditor = null;
     }
+    
+    @Override
+    public void update() {
+        super.update(); 
+        
+        // Set background color
+        int r = 255, g = 255, b = 255;
+        try {
+            StringTokenizer st = new StringTokenizer(colorTextField.getText(), ",");
+            r = Integer.parseInt(st.nextToken());
+            g = Integer.parseInt(st.nextToken());
+            b = Integer.parseInt(st.nextToken());
+        } catch (Exception e) {
+            
+        }
+
+        colorPickerButton.setBackground(new Color(r, g, b));
+    }
+   
 }

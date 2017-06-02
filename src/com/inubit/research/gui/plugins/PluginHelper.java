@@ -24,7 +24,6 @@ public class PluginHelper {
     static {
         result.add(WorkbenchBirdview.class);
         result.add(NodeViewPlugin.class);
-        result.add(PropertiesPlugin.class);
         result.add(ModelOperationsPlugin.class);
         result.add(NaturalLanguageInputPlugin.class);
         //result.add(ProcessModelMergerPlugin.class);

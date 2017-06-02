@@ -2,7 +2,7 @@
  *
  * Process Editor - UML Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -32,7 +32,7 @@ import net.frapu.code.visualization.ProcessUtils;
 public class UMLClass extends ProcessNode {
 
     public final static String PROP_ABSTRACT = "abstract";
-    public final static String PROP_ATTRIBUTES = "#attributes";
+    public final static String PROP_ATTRIBUTES = "attributes";
     public final static String PROP_CONSTRAINTS = "constraints";
     public final static String PROP_METHODS = "methods";
     public final static int FONTSIZE = 11;
