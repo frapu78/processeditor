@@ -3,9 +3,7 @@
 <!--
     Document   : properties.xml
     Created on : 8. September 2010, 14:44
-    Author     : fel
-    Description:
-        Purpose of the document follows.
+    Author     : fel, fpu
 -->
 
 <property-labels>
@@ -211,7 +209,19 @@
         <property name="SemanticAnnotations" type="extended">
             <label language="de">Semantische Tags</label>
             <label language="en">Semantic Tags</label>
-        </property>
+        </property>        
+    </class>
+    
+    <!-- ProcessObject -->
+    <class name="net.frapu.code.visualization.ProcessObject">
+        <property name="#type" type="read-only">
+            <label language="en">Type</label>
+            <label language="de">Typ</label>
+        </property> 
+        <property name="#id" type="read-only">
+            <label language="en">Id</label>
+            <label language="de">Id</label>
+        </property>           
     </class>
 
     <!--UML nodes-->
@@ -253,6 +263,71 @@
             <label language="en">Methods</label>
         </property>
     </class>
+    
+    <!-- DomainModel -->
+    <class name="net.frapu.code.visualization.DomainClass">
+         <property name="abstract" type="base">
+            <label language="en">Abstract Class</label>
+            <label language="de">Abstrakte Klasse</label>
+        </property>  
+        <property name="attributes" type="base">
+            <label language="en">Attributes</label>
+            <label language="de">Attribute</label>
+        </property>  
+        <property name="key" type="extended">
+            <label language="en">Key</label>
+            <label language="de">Schlüssel</label>
+        </property>               
+    </class>
+    
+    <!-- ProcessModelMetaNode -->
+    <class name="net.frapu.code.visualization.ProcessModelMetaNode">
+        <property name="author" type="base">
+            <label language="en">Author</label>
+            <label language="de">Autor</label>
+        </property>
+        <property name="comment" type="base">
+            <label language="en">Comment</label>
+            <label language="de">Kommentar</label>
+        </property>  
+        <property name="name" type="base">
+            <label language="en">Name</label>
+            <label language="de">Name</label>
+        </property>   
+        <property name="#uri" type="read-only">
+            <label language="en">Model Location (URI)</label>
+            <label language="de">Modelablage (URI)</label>
+        </property> 
+       <property name="#creationDate" type="read-only">
+            <label language="en">Creation Date</label>
+            <label language="de">Erstelldatum</label>
+        </property>                                   
+    </class>
+    
+    <!-- BPMN -->
+    <class name="net.frapu.code.visualization.bpmn.Task">
+        <property name="loop_type" type="extended">
+            <label language="en">Loop Type</label>
+            <label language="de">Schleifentyp</label>
+        </property>       
+       <property name="implementation" type="implementation">
+            <label language="en">Implementation</label>
+            <label language="de">Implementation</label>
+        </property> 
+       <property name="compensation" type="extended">
+            <label language="en">Compensation</label>
+            <label language="de">Kompensation</label>
+        </property>                             
+    </class>
+    
+    <class name="net.frapu.code.visualization.bpmn.Event">
+        <property name="non_interupting" type="extended">
+            <label language="en">Non-interrupting</label>
+            <label language="de">Nicht-unterbrechend</label>
+        </property>                                   
+    </class>    
+    
+    <!-- DEFAULT -->>
     
     <default>
         <property name="xpath" type="extended">

@@ -1,12 +1,16 @@
 Changelog for ProcessEditor-frapu-fork
 
 Todo:
-* Check parallel use of properties panel / properties context menu from ProcessEditor!
-* Handle background selection!
 * Handle multiple node selection!
-* Create Tab-Panel for properties
-* Disable protected properties
 * Enhance UI look & feel for properties panel
+* Check for somehow broken models after using the WorkbenchPropertiesPanel
+
+0.1-20170602:
+* Worked on #39 (Create Tab-Panel for properties, Disable protected properties,
+  Enhance UI look & feel for properties panel)
+* Introduced bracking-changes by renaming "#attributes" to "attributes" in 
+  UMLClass and DomainClass (should be fixed/auto-converted by model loader)
+* Removed PropertiesPlugin from Workbench
 
 0.1-20170531:
 * Worked on #39 (Fixed update problem ProcessObject, handle background selection)
