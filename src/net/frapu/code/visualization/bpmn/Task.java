@@ -2,7 +2,7 @@
  *
  * Process Editor - BPMN Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *
@@ -19,7 +19,6 @@ import java.util.HashSet;
 import java.util.Set;
 import net.frapu.code.visualization.editors.BooleanPropertyEditor;
 import net.frapu.code.visualization.editors.ColorPropertyEditor;
-import net.frapu.code.visualization.editors.DefaultPropertyEditor;
 import net.frapu.code.visualization.editors.ListSelectionPropertyEditor;
 
 /**

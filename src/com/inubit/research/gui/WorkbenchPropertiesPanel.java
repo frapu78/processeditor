@@ -163,7 +163,7 @@ public class WorkbenchPropertiesPanel extends javax.swing.JPanel implements Proc
     }
 
     @Override
-    public void propertyChanged(ProcessObject o, String key, String oldValue, String newValue) {  
+    public void propertyChanged(ProcessObject o, String key, String oldValue, String newValue) {              
         // Update all editors
         for (PropertyEditor e: getData().values()) {
             e.update();

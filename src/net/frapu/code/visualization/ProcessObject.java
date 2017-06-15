@@ -52,8 +52,6 @@ public abstract class ProcessObject extends SerializableProcessObject {
         super.setProperty(PROP_CLASS_TYPE, this.getClass().getName());
     }
 
-
-
     /**
      * Tests if two ProcessObjects are equal based on their id. If the
      * argument obj is not an instance of ProcessObject, the super
@@ -81,8 +79,6 @@ public abstract class ProcessObject extends SerializableProcessObject {
         copy.propertyEditors = new HashMap<String, PropertyEditor>(propertyEditors);
         return copy;
     }
-
-
 
     /**
      * Returns the PropertyEditor for a given property.

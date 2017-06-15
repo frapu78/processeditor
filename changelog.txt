@@ -1,10 +1,38 @@
 Changelog for ProcessEditor-frapu-fork
 
 Todo:
+* Update certificate for frapu-dev.de(!)
+* Create update listener for DefaultPropertyEditor according to MultiLineProperty
+  Editor, so that <ENTER> is optional!
 * Handle multiple node selection!
 * Enhance UI look & feel for properties panel
 * Check for somehow broken models after using the WorkbenchPropertiesPanel
+* Fix bug after using the context properties menu (e.g. changing the label in the 
+  context menu's props makes the fixed props panel responseless.
 
+
+
+0.1-20170615:
+* Worked on #39 (Fix bug after using the context properties menu (e.g. changing 
+  the label in the context menu's props makes the fixed props panel responseless.)
+  PROBLEM: ProcessObject.getPropertyEditor() always returns the same instance
+           of the editor. If the same instance of a component is used in
+           multiple views, this might lead to the observed problems.
+
+           This cannot be easily fixed, since all ProcessModels work like this. 
+
+           Solution (1): A better way would be, if ProcessModels just
+           reference the static type of the editor and optional parameters,
+           so that getPropertyEditor(reuse-identifier) might create a new
+           instance for every fresh reuse-identifier...
+
+           Solution (2): Introduce an abstract clone() method in 
+           PropertyEditor - creates a lot of garbage.
+
+           Solution (3): Introduce an abstract getPropertyEditor(reuse-id)
+           that uses solution (2) internally but maps it to a HashMap. The
+           always created PropertyEditor is used as a template for copy.
+           
 0.1-20170602:
 * Worked on #39 (Create Tab-Panel for properties, Disable protected properties,
   Enhance UI look & feel for properties panel)

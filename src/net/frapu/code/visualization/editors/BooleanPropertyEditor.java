@@ -2,7 +2,7 @@
  *
  * Process Editor - Core Package
  *
- * (C) 2008,2009 Frank Puhlmann
+ * (C) 2008-2017 Frank Puhlmann
  *
  * http://frapu.net
  *

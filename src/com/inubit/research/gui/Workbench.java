@@ -81,7 +81,7 @@ public class Workbench extends javax.swing.JFrame implements ProcessEditorInterf
 
     private static final long serialVersionUID = 3488875420298876738L;
     public static String TITLE = "Workbench";
-    public static String VERSION = "0.2017.06.02-frapu-fork";
+    public static String VERSION = "0.2017.06.15-frapu-fork";
     //global custom menu items, which will be added to all ProcessEditor instances
     protected LinkedList<WorkbenchEditorListener> editorListeners = new LinkedList<>();
     // The ProcessEditorTrackers
@@ -1421,6 +1421,8 @@ private void ShowVersionsMenuItemActionPerformed(java.awt.event.ActionEvent evt)
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        System.setProperty("apple.laf.useScreenMenuBar", "true");
 
         JFrame f = new Workbench();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
