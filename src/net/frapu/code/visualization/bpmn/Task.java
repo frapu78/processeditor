@@ -37,6 +37,12 @@ public class Task extends Activity {
         initializeProperties();
     }
 
+    /**
+     * Creates a new BPMN Task at the given location.
+     * @param x Location x-axis
+     * @param y Location y-axis
+     * @param label The initial label of the Task.
+     */
     public Task(int x, int y, String label) {
         super();
         int w = 100;

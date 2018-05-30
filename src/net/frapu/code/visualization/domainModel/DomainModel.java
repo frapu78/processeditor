@@ -49,6 +49,7 @@ public class DomainModel extends ProcessModel {
         List<Class<? extends ProcessNode>> result = new LinkedList<Class<? extends ProcessNode>>();
         result.add(DomainClass.class);
         result.add(DomainClassReference.class);
+        result.add(EnumerationClass.class);
         result.add(Comment.class);
         result.add(ColoredFrame.class);
         return result;

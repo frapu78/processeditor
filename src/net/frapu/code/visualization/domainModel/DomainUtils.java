@@ -72,25 +72,6 @@ public class DomainUtils extends ProcessUtils {
         return layouters;
     }
 
-    /**
-     * Fetches a Schema from an Uri, that either represents an XML Schema
-     * or a ClassDiagram.
-     * @param uriString
-     * @return
-     */
-//    public static ProcessModel fetchSchemaModel(String uriString) throws Exception {
-//            URI uri = new URI(uriString);
-//            ProcessModel model = null;
-//            try {
-//                // Try to import as XSD
-//                 model = new XSDImporter().parseSource(uri).get(0);
-//            } catch (Exception ex) {
-//                // Try to import as ProcessModel
-//                model = ProcessUtils.parseProcessModelSerialization(uri);
-//                if (!(model instanceof ClassModel)) return null;
-//            }
-//            return model;
-//    }
     @Override
     public RoutingPointLayouter getRoutingPointLayouter() {
         return rpLayouter;
@@ -240,7 +221,7 @@ public class DomainUtils extends ProcessUtils {
         return result;
     }
     
-    public static List<String> getAttributeTypes() {
+    public static List<String> getAttributeTypes(DomainModel model) {
         List<String> result = new ArrayList<String>();
         result.add(Attribute.TYPE_BOOLEAN);
         result.add(Attribute.TYPE_DATE);
@@ -252,6 +233,11 @@ public class DomainUtils extends ProcessUtils {
         result.add(Attribute.TYPE_LONG);
         result.add(Attribute.TYPE_MLTEXT);
         result.add(Attribute.TYPE_TEXT);
+
+        // Find all EnumerationClasses that are defined in this model
+        for (ProcessNode n: model.getNodesByClass(EnumerationClass.class)) {
+            result.add(n.getName());
+        }
         
         return result;
     }

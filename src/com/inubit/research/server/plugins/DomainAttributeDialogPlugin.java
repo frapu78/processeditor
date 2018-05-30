@@ -17,6 +17,7 @@ import net.frapu.code.visualization.ProcessNode;
 import net.frapu.code.visualization.ProcessObject;
 import net.frapu.code.visualization.domainModel.Attribute;
 import net.frapu.code.visualization.domainModel.DomainClass;
+import net.frapu.code.visualization.domainModel.DomainModel;
 import net.frapu.code.visualization.domainModel.DomainUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,7 +77,7 @@ public class DomainAttributeDialogPlugin extends DialogServerPlugin implements O
         jo.put("attributes", a);
         
         JSONArray types = new JSONArray();
-        types.put(DomainUtils.getAttributeTypes());
+        types.put(DomainUtils.getAttributeTypes((DomainModel)mi.getProcessModel()));
         jo.put("types", types);
         data.put("data", jo);
         return data;

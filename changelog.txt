@@ -1,0 +1,5 @@
+Changelog for Processeditor
+===========================
+
+2018-05-30
+* Added EnumerationClass to DomainModel
