@@ -95,9 +95,6 @@ public class Attribute extends SerializableProcessObject {
 
     public String getDefault() {
         String defaultv = this.getProperty(PROP_DEFAULT_VALUE);
-        if (defaultv.startsWith("(")) {
-            defaultv = defaultv.substring(1, defaultv.length());
-        }
         return defaultv;
     }
 
@@ -133,6 +130,8 @@ public class Attribute extends SerializableProcessObject {
             sb.append(this.getProperty(PROP_DEFAULT_VALUE));
             sb.append(")");
         }
+
+        System.out.println("SB: "+sb.toString());
 
         return sb.toString();
     }

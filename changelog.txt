@@ -3,3 +3,4 @@ Changelog for Processeditor
 
 2018-05-30
 * Added EnumerationClass to DomainModel
+* Fixed bug in DomainClass that added a "(" to each default value

@@ -181,7 +181,7 @@ public class DomainClass extends ProcessNode {
                     if (defOpen > -1 && defOpen < attribute.length()) {
                         int close = attribute.indexOf(')', defOpen);
                         if (close > -1) {
-                            a.setProperty(Attribute.PROP_DEFAULT_VALUE, attribute.substring(defOpen, close));
+                            a.setProperty(Attribute.PROP_DEFAULT_VALUE, attribute.substring(defOpen + 1, close));
                         }
                     }
 
