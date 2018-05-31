@@ -16,7 +16,7 @@ Please download separately and copy to lib folder
 * VectorGraphics2D (http://trac.erichseifert.de/vectorgraphics2d/)
 
 WebModeler requires ExtJS: Please download separately and copy ExtJs to www/js/ext (unzipped)
-* ExtJS 4 (for Web Modeler, http://www.sencha.com/products/extjs/download/ext-js-4.2.1/2281)
+* ExtJS 4 (for Web Modeler, https://ext4all.com/post/how-to-download-extjs-4-gpl.html)
 
 Manual Building (Idea, Netbeans, etc.)
 ======================================
