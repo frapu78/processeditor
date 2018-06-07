@@ -131,8 +131,6 @@ public class Attribute extends SerializableProcessObject {
             sb.append(")");
         }
 
-        System.out.println("SB: "+sb.toString());
-
         return sb.toString();
     }
 
