@@ -12,6 +12,7 @@ package net.frapu.code.visualization.domainModel;
 import net.frapu.code.visualization.ProcessNode;
 import net.frapu.code.visualization.ProcessUtils;
 import net.frapu.code.visualization.editors.DefaultPropertyEditor;
+import net.frapu.code.visualization.editors.ListSelectionPropertyEditor;
 
 import java.awt.*;
 
@@ -27,6 +28,7 @@ public class EnumerationClass extends ProcessNode {
     public final static String PROP_TYPES = "typeValues";
     public final static int FONTSIZE = 11;
     public final static String ELEMENT_DELIMITER = ";";
+    public final static String STEREOTYPE_ENUMERATION = "enumeration";
 
     private static int ROUNDED_EDGE_VALUE = 5;
     private final static Color DEFAULT_COLOR = new Color(115, 184, 206);
@@ -47,8 +49,11 @@ public class EnumerationClass extends ProcessNode {
         setText("Type");
         setProperty(PROP_TYPES, "");
         setPropertyEditor(PROP_TYPES, new DefaultPropertyEditor());
-        setProperty(PROP_STEREOTYPE, "enumeration");
+        setProperty(PROP_STEREOTYPE, STEREOTYPE_ENUMERATION);
         setBackground(DEFAULT_COLOR);
+
+        String[] atype = {STEREOTYPE_ENUMERATION};
+        setPropertyEditor(PROP_STEREOTYPE, new ListSelectionPropertyEditor(atype));
     }
 
     @Override

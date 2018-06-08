@@ -1,6 +1,9 @@
 Changelog for Processeditor
 ===========================
 
+2018-06-08
+* Forced stereotype of EnumerationClass to only support <<enumeration>>
+
 2018-05-30
 * Added EnumerationClass to DomainModel
 * Fixed bug in DomainClass that added a "(" to each default value
