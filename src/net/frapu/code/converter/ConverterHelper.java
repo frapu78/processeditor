@@ -36,6 +36,7 @@ public class ConverterHelper {
 		List<Exporter> result = new LinkedList<Exporter>();
         // Add all default Exporters (for all model types)
         result.add(new ProcessEditorExporter());
+        result.add(new JSONExporter());
         result.add(new PNGExporter());
         result.add(new PDFExporter());
         result.add(new SVGExporter());

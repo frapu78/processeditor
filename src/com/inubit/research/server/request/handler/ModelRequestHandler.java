@@ -63,7 +63,7 @@ import org.w3c.dom.Element;
 public abstract class ModelRequestHandler extends AbstractRequestHandler {
     private static Set<String> types;
     static {
-        String[] _types = {"pdf", "png", "xpdl", "pm", "xsd", "edit", "view", "edit_version", "view_version", "edit_tmp"};
+        String[] _types = {"pdf", "json", "png", "xpdl", "pm", "xsd", "edit", "view", "edit_version", "view_version", "edit_tmp"};
         File dir = new File(ProcessEditorServerHelper.TMP_DIR);
         if (!dir.exists())
             dir.mkdirs();
@@ -236,7 +236,7 @@ public abstract class ModelRequestHandler extends AbstractRequestHandler {
     protected void retrieveCorrectRepresentation( ProcessModel model, AccessType access, String requestUri, RequestFacade req, ResponseFacade resp ) throws IOException {
         String type = null;
 
-        if (requestUri.matches(".+\\.(png|pdf|xpdl|xsd|pm)\\z")) {
+        if (requestUri.matches(".+\\.(png|json|pdf|xpdl|xsd|pm)\\z")) {
             type = this.getTypeFromRequestUri( requestUri, model );
         } else {
             type = this.getTypeFromRequestHeaders( req, access );
@@ -264,6 +264,9 @@ public abstract class ModelRequestHandler extends AbstractRequestHandler {
         if (types.contains(type)) {
             if (type.equals("png")) {
                 createModelPNGGraphics(model, resp);
+                return;
+            } else if (type.equals("json")) {
+                createModelJSON(model, resp);
                 return;
             } else if (type.equals("pdf")) {
                 createModelPDF(model, resp);
@@ -320,6 +323,18 @@ public abstract class ModelRequestHandler extends AbstractRequestHandler {
             return;
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    protected void createModelJSON(ProcessModel model, ResponseFacade resp) throws IOException {
+        try {
+            File f = new File(ProcessEditorServerHelper.TMP_DIR + File.separator + model.getId() + ".json");
+            JSONExporter ex = new JSONExporter();
+
+            ex.serialize(f, model);
+            ResponseUtils.respondWithFile(HttpConstants.CONTENT_TYPE_APPLICATION_JSON, f, resp);
+        } catch (Exception e) {
+            ResponseUtils.respondWithStatus(500, e.getMessage(), resp, true);
         }
     }
 
@@ -484,6 +499,8 @@ public abstract class ModelRequestHandler extends AbstractRequestHandler {
 
         if (primaryAccept.equals(HttpConstants.CONTENT_TYPE_APPLICATION_PROCESSMODEL))
             type = "pm";
+        else if (primaryAccept.equals(HttpConstants.CONTENT_TYPE_APPLICATION_JSON))
+            type = "json";
         else if (primaryAccept.equals(HttpConstants.CONTENT_TYPE_APPLICATION_XSD))
             type = "xsd";
         else if (primaryAccept.equals(HttpConstants.CONTENT_TYPE_APPLICATION_PDF)) 

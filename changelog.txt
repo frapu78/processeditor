@@ -1,6 +1,11 @@
 Changelog for Processeditor
 ===========================
 
+Todo: Work on #40 (Server: Implement EmumerationDialogEditor)
+
+2018-06-15
+* Fixed #41 Core: Implement JSON Exporter for ProcessModel
+
 2018-06-08
 * Forced stereotype of EnumerationClass to only support <<enumeration>>
 
