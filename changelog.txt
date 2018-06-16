@@ -3,6 +3,9 @@ Changelog for Processeditor
 
 Todo: Work on #40 (Server: Implement EmumerationDialogEditor)
 
+2018-06-16
+* Added constants for JSONExporter fields
+
 2018-06-15
 * Fixed #41 Core: Implement JSON Exporter for ProcessModel
 

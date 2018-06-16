@@ -31,6 +31,13 @@ import java.util.Set;
  */
 public class JSONExporter implements Exporter {
 
+    public final static String JSON_EXPORTER_ID = "id";
+    public final static String JSON_EXPORTER_TYPE = "type";
+    public final static String JSON_EXPORTER_NAME = "name";
+    public final static String JSON_EXPORTER_NODES = "nodes";
+    public final static String JSON_EXPORTER_EDGES = "edges";
+    public final static String JSON_EXPORTER_PROPERTIES = "properties";
+
     /**
      * Serializes the ProcessModel als JSON file.
      * @param f
@@ -42,13 +49,13 @@ public class JSONExporter implements Exporter {
         JSONObject result = new JSONObject();
 
         // Id, Name, Type
-        result.put("id", m.getId());
-        result.put("type", m.getClass().getName());
-        result.put("name", m.getProcessName());
+        result.put(JSON_EXPORTER_ID, m.getId());
+        result.put(JSON_EXPORTER_TYPE, m.getClass().getName());
+        result.put(JSON_EXPORTER_NAME, m.getProcessName());
 
         // Add ProcessNodes
         JSONArray nodeArray = new JSONArray();
-        result.put("nodes", nodeArray);
+        result.put(JSON_EXPORTER_NODES, nodeArray);
         for (ProcessNode n: m.getNodes()) {
             JSONObject node = new JSONObject();
             for (String key: n.getPropertyKeys()) {
@@ -59,7 +66,7 @@ public class JSONExporter implements Exporter {
 
         // Add ProcessEdges
         JSONArray edgeArray = new JSONArray();
-        result.put("edges", edgeArray);
+        result.put(JSON_EXPORTER_EDGES, edgeArray);
         for (ProcessEdge e: m.getEdges()) {
             JSONObject edge = new JSONObject();
             for (String key: e.getPropertyKeys()) {
@@ -70,7 +77,7 @@ public class JSONExporter implements Exporter {
 
         // Add Properties
         JSONObject propsObject = new JSONObject();
-        result.put("properties", propsObject);
+        result.put(JSON_EXPORTER_PROPERTIES, propsObject);
         for (String p: m.getPropertyKeys()) {
             propsObject.put(p, m.getProperty(p));
         }
