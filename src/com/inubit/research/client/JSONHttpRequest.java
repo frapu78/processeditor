@@ -29,7 +29,7 @@ import org.json.JSONObject;
 /**
  *
  * This class provides a synchronous HTTP call and returns the result
- * as a DOM object.
+ * as a JSON object.
  *
  * @author fpu
  */
@@ -106,61 +106,6 @@ public class JSONHttpRequest {
 
     }
 
-//    public JSONObject executePostRequest(Document doc) throws MalformedURLException, IOException, XMLHttpRequestException {
-//        conn = (HttpURLConnection) uri.toURL().openConnection();
-//        conn.setRequestMethod(HttpConstants.REQUEST_POST);
-//        conn.setRequestProperty(HttpConstants.HEADER_KEY_CONTENT_TYPE, HttpConstants.CONTENT_TYPE_APPLICATION_XML);
-//        // Set custom properties
-//        for (String key : headerProperties.keySet()) {
-//            conn.setRequestProperty(key, headerProperties.get(key));
-//        }
-//        // Set Accept property if not filled
-//        if (conn.getRequestProperty(HttpConstants.HEADER_KEY_ACCEPT) == null) {
-//            conn.setRequestProperty(HttpConstants.HEADER_KEY_ACCEPT,
-//                    HttpConstants.CONTENT_TYPE_TEXT_XML + ","
-//                    + HttpConstants.CONTENT_TYPE_APPLICATION_XML);
-//        }
-//        conn.setDoOutput(true);
-//        boolean received = false;
-//        Document xmlDoc = null;
-//        currentRetries = 0;
-//        while (!received & currentRetries < maxRetries) {
-//            try {
-//                currentRetries++;
-//                long start = System.currentTimeMillis(); // start timing
-//                OutputStreamWriter osw = null;
-//                //if (doc!=null) {
-//                osw = new OutputStreamWriter(conn.getOutputStream(), "UTF8");
-//                ProcessEditorServerUtils.writeXMLtoStream(osw, doc);
-//                osw.flush();
-//                //}
-//                // Save last status
-//                lastStatus = conn.getResponseCode();
-//                received = true;
-//                // Get the response
-//                DocumentBuilderFactory xmlFactory = DocumentBuilderFactory.newInstance();
-//                xmlFactory.setNamespaceAware(false);
-//                DocumentBuilder builder = xmlFactory.newDocumentBuilder();
-//                try {
-//                    xmlDoc = builder.parse(conn.getInputStream());
-//                } catch (SAXException sax) {
-//                    received = true;
-//                } finally {
-//                    /*if (doc!=null)*/ osw.close();
-//                }
-//                long stop = System.currentTimeMillis(); // stop timing
-//                executionTime = (stop - start);
-//            } catch (Exception ex) {
-//                if (conn.getResponseCode() < 200 || conn.getResponseCode() > 299) {
-//                    throw new XMLHttpRequestException("Server error: " + conn.getResponseMessage() + " (" + lastStatus + ")", lastStatus);
-//                } else {
-//                    throw new XMLHttpRequestException("Internal error: " + ex.getMessage(), conn.getResponseCode());
-//                }
-//            }
-//        }
-//        return xmlDoc;
-//    }
-//
     public JSONObject executePutRequest(JSONObject obj) throws 
             MalformedURLException, IOException, JSONException {
         //System.out.println("PUT "+uri);
@@ -186,26 +131,6 @@ public class JSONHttpRequest {
         return parseResponse();
     }
 
-//    public void executeDeleteRequest() throws MalformedURLException, IOException {
-//        conn = (HttpURLConnection) uri.toURL().openConnection();
-//        conn.setRequestMethod(HttpConstants.REQUEST_DELETE);
-//
-//        for (String key : headerProperties.keySet()) {
-//            conn.setRequestProperty(key, headerProperties.get(key));
-//        }
-//
-//        conn.connect();
-//
-//        lastStatus = conn.getResponseCode();
-//    }
-//
-//    /**
-//     * Return the number of retries the Request needed until it received an answer
-//     * @return
-//     */
-//    public int getCurrentRetries() {
-//        return currentRetries;
-//    }
     private JSONObject parseResponse() throws IOException, JSONException {
         long start = System.currentTimeMillis(); // start timing
         InputStream inputStream = conn.getInputStream();
