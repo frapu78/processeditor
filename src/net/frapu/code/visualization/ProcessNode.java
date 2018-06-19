@@ -81,8 +81,6 @@ public abstract class ProcessNode extends ProcessObject implements Dragable {
         setPropertyEditor(PROP_SHADOW, new BooleanPropertyEditor());
         setProperty(PROP_BACKGROUND, ""+Color.WHITE.getRGB());
         setPropertyEditor(PROP_BACKGROUND, new ColorPropertyEditor());
-        //Enable this if you add new Types to check whether their default connection points are really contained
-        checkDefaultConnectionPoints();
     }
 
     public static ProcessNode newInstanceFromSerialization(Node XMLnode) throws ClassNotFoundException, InstantiationException, IllegalAccessException, Exception {
@@ -310,17 +308,6 @@ public abstract class ProcessNode extends ProcessObject implements Dragable {
                 return true;
             }            
     }
-
-    public final void checkDefaultConnectionPoints() {
-        for (Point p : getDefaultConnectionPoints()) {
-            if (!connectionPointContained(p)) {               
-                /*throw new IllegalStateException*/System.err.println("The default connection point '" + p.toString() +
-                        "' of " + this.getClass().getSimpleName() + " is invalid because it is not contained in the process node.");
-            }
-        }
-    }
-    
-    
     
     /**
      * Adds a relative(!) connection point for the flow object.
