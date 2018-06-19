@@ -1,9 +1,10 @@
-/*
- * Process Editor
+/**
  *
- * (C) 2010 inubit AG
+ * Process Editor - Core Package
  *
- * http://inubit.com
+ * (C) 2010 the authors
+ *
+ * http://frapu.net
  *
  */
 package net.frapu.code.visualization;
