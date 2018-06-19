@@ -45,6 +45,7 @@ import net.frapu.code.visualization.ProcessUtils;
 public class FileSystemLocation implements Location, UserHomeable {
     private static final String MODEL_DIR = "/models";
     private static final String META_SUFFIX = ".meta";
+    private static final String XML_SUFFIX = ".xml";
 
     private File baseDir;
     private File modelDir;
@@ -119,7 +120,7 @@ public class FileSystemLocation implements Location, UserHomeable {
 
         for (String file : files) {
             //ignore meta files by now
-            if (file.endsWith(META_SUFFIX)) {
+            if (file.endsWith(META_SUFFIX) || file.endsWith(XML_SUFFIX)) {
                 continue;
             }
             
