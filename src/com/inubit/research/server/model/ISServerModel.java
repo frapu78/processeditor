@@ -18,6 +18,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.net.URI;
 import java.net.UnknownHostException;
+
+import com.inubit.research.testUtils.Base64Utils;
 import net.frapu.code.converter.ConverterHelper;
 import net.frapu.code.visualization.ProcessModel;
 import net.frapu.code.visualization.bpmn.BPMNModel;
@@ -89,7 +91,8 @@ public class ISServerModel implements ServerModel {
             FileInputStream _fis = new FileInputStream(temp);
             byte _fileContent[] = new byte[(int) temp.length()];
             _fis.read(_fileContent);
-            String _base64 = new sun.misc.BASE64Encoder().encode(_fileContent);
+            String _base64 = Base64Utils.encode(_fileContent).toString();
+
             Document doc = this.buildSaveXML(_base64, comment);
             //REST request
             XmlHttpRequest request = new XmlHttpRequest( this.serverURI );
