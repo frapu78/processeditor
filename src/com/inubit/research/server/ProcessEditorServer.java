@@ -19,11 +19,11 @@ import com.inubit.research.server.request.handler.TemporaryModelRequestHandler;
 import com.inubit.research.server.request.handler.UserRequestHandler;
 import com.inubit.research.server.request.handler.UtilsRequestHandler;
 import com.inubit.research.server.request.handler.AdminRequestHandler;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+
+import java.io.*;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.security.cert.Certificate;
 import java.util.Properties;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -45,10 +45,7 @@ import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLParameters;
-import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.*;
 
 /**
  * Provides a Back-End for the ProcessEditor Web Front-End.
@@ -64,7 +61,11 @@ public class ProcessEditorServer {
     public static final boolean DEFAULT_PORTLET_MODE = false;
     public static final int MAX_PORT = 65535;
     private static final String LOG_CONFIG = "/config/serverlogging.properties";
-    private static final String KEY_STORE = "/config/pes_keystore.jks";
+    private static final String SSL_CONFIG = "/config/ssl_config.properties";
+    private static final String SSL_CONFIG_KEY_STORE = "KEY_STORE";
+    private static final String SSL_CONFIG_KEY_STORE_ALIAS = "KEY_STORE_ALIAS";
+    private static final String SSL_CONFIG_KEY_PASSWORD = "KEY_PASSWORD";
+    private static final String SSL_CONFIG_KEY_STORE_PASSWORD = "KEY_STORE_PASSWORD";
     private static final AbstractHandler[] DEFAULT_HANDLER_SET = new AbstractHandler[]{
         new DynamicHandler(new RootRequestHandler(), "/"),
         new DynamicHandler(true, new AdminRequestHandler(), "/admin"),
@@ -169,6 +170,78 @@ public class ProcessEditorServer {
         }
         //secure = true;
         if (ProcessEditorServerHelper.isSecure()) {
+
+            // Read config from file
+            Properties sslConfig = new Properties();
+            try
+                {
+                sslConfig.load(ProcessEditorServer.class.getResourceAsStream(SSL_CONFIG));
+                }
+            catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Failed to parse SSL config (see www/config/ssl_config.properties.template");
+            }
+
+            String keyStore = sslConfig.getProperty(SSL_CONFIG_KEY_STORE);
+            String alias = sslConfig.getProperty(SSL_CONFIG_KEY_STORE_ALIAS);
+            String password = sslConfig.getProperty(SSL_CONFIG_KEY_PASSWORD);
+            String storePassword = sslConfig.getProperty(SSL_CONFIG_KEY_STORE_PASSWORD);
+
+            // load certificate
+            char[] storepass = storePassword.toCharArray();
+            char[] keypass = password.toCharArray();
+            InputStream fIn = ProcessEditorServer.class.getResourceAsStream(keyStore);
+            KeyStore keystore = KeyStore.getInstance("JKS");
+            keystore.load(fIn, storepass);
+            // display certificate
+            Certificate cert = keystore.getCertificate(alias);
+            System.out.println(cert);
+            // setup the key manager factory
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+            kmf.init(keystore, keypass);
+            // setup the trust manager factory
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+            tmf.init(keystore);
+
+            // create https server
+            this.server = HttpsServer.create(address, 255);
+            // create ssl context
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+            // setup the HTTPS context and parameters
+            sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+            ((HttpsServer) this.server).setHttpsConfigurator(new HttpsConfigurator(sslContext) {
+                public void configure(HttpsParameters params) {
+                    try {
+
+                        // get the remote address if needed
+                        InetSocketAddress remote = params.getClientAddress();
+
+                        SSLContext c = getSSLContext();
+
+                        // get the default parameters
+                        SSLParameters sslparams = c.getDefaultSSLParameters();
+
+                        params.setSSLParameters(sslparams);
+
+                        /*
+                        // initialise the SSL context
+                        SSLContext c = SSLContext.getDefault();
+                        SSLEngine engine = c.createSSLEngine();
+                        params.setNeedClientAuth(false);
+                        params.setCipherSuites(engine.getEnabledCipherSuites());
+                        params.setProtocols(engine.getEnabledProtocols());
+                        // get the default parameters
+                        SSLParameters defaultSSLParameters = c.getDefaultSSLParameters();
+                        params.setSSLParameters(defaultSSLParameters);
+                        */
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        System.out.println("Failed to create HTTPS server");
+                    }
+                }
+            });
+
+            /*
             KeyStore ks = KeyStore.getInstance("JKS");
             char[] pwd = "inubit".toCharArray();
             ks.load(ProcessEditorServer.class.getResourceAsStream(KEY_STORE), pwd);
@@ -200,6 +273,7 @@ public class ProcessEditorServer {
 
                 }
             });
+            */
         } else {
             this.server = HttpServer.create(address, 255);
         }

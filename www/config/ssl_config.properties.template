@@ -1,0 +1,14 @@
+#
+# This file contains the SSL configuration for the ProcessEditorServer in secure mode (-s).
+#
+# Create a a keystore with the following command:
+#
+# keytool -genkey -keyalg RSA -alias <alias> -keypass <keypass> -keystore <keystorename> -storepass <storepass> -validity 360 -keysize 2048
+#
+# Copy this file to ssl_config.properties
+#
+# KEY_STORE must be relative to "/config", e.g. in the recent folder "/config/store.keystore"
+KEY_STORE=<keystorename>
+KEY_STORE_ALIAS=<alias>
+KEY_PASSWORD=<keypass>
+KEY_STORE_PASSWORD=<storepass>
