@@ -7,15 +7,16 @@ ProcessEditor Core Packages
 * com.inubit.research: Complex Process Workbench (Swing and WebModeler)
 * com.frapu.net: Simple Java Canvas for creating ProcessModels incl. BPMN and Petri nets
 
-Java Libaries:
+Java & ExtJS Libaries:
 ==============
-Please download separately and copy to lib folder
+Please clone from https://github.com/frapu78/processeditor-deps
+
 * log4j (https://logging.apache.org/log4j/1.2/download.html)
 * javax.mail (http://www.oracle.com/technetwork/java/javamail/index.html)
 * org.apache.commons.collections (http://commons.apache.org/proper/commons-collections/download_collections.cgi)
 * VectorGraphics2D (http://trac.erichseifert.de/vectorgraphics2d/)
 
-WebModeler requires ExtJS: Please download separately and copy ExtJs to www/js/ext (unzipped)
+WebModeler requires ExtJS: Please copy ExtJs to www/js/ext (unzipped)
 * ExtJS 4 (for Web Modeler, https://ext4all.com/post/how-to-download-extjs-4-gpl.html)
 
 Manual Building (Idea, Netbeans, etc.)
