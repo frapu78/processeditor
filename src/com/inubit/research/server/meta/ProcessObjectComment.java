@@ -204,7 +204,7 @@ public class ProcessObjectComment implements Comparable<ProcessObjectComment> {
             return new ProcessObjectComment(id, elId, time, u, from, until, t);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         return null;

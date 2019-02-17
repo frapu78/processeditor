@@ -60,6 +60,7 @@ public class ProcessEditorServer {
     public static final int DEFAULT_PORT = ProcessEditorServerHelper.getPort();
     public static final boolean DEFAULT_PORTLET_MODE = false;
     public static final int MAX_PORT = 65535;
+    private static final String RELATIVE_WWW_FOLDER = "www";
     private static final String LOG_CONFIG = "/config/serverlogging.properties";
     private static final String SSL_CONFIG = "/config/ssl_config.properties";
     private static final String SSL_CONFIG_KEY_STORE = "KEY_STORE";
@@ -99,7 +100,13 @@ public class ProcessEditorServer {
         //configure log manager
         logManager = LogManager.getLogManager();
         try {
-            logManager.readConfiguration(ProcessEditorServer.class.getResourceAsStream(LOG_CONFIG));
+            // Try loading from filesystem first...
+            File f = new File(RELATIVE_WWW_FOLDER + LOG_CONFIG);
+            if (f.exists()) {
+                logManager.readConfiguration(new FileInputStream(RELATIVE_WWW_FOLDER + LOG_CONFIG));
+            } else {
+                logManager.readConfiguration(ProcessEditorServer.class.getResourceAsStream(LOG_CONFIG));
+            }
         } catch (Exception e) {
             System.out.println("Could not read logging configuration. File " + LOG_CONFIG + " not found.");
         }
@@ -175,7 +182,13 @@ public class ProcessEditorServer {
             Properties sslConfig = new Properties();
             try
                 {
-                sslConfig.load(ProcessEditorServer.class.getResourceAsStream(SSL_CONFIG));
+                // Try loading from filesystem first...
+                File f = new File(RELATIVE_WWW_FOLDER + LOG_CONFIG);
+                if (f.exists()) {
+                    sslConfig.load(new FileInputStream(RELATIVE_WWW_FOLDER + SSL_CONFIG));
+                } else {
+                    sslConfig.load(ProcessEditorServer.class.getResourceAsStream(SSL_CONFIG));
+                    }
                 }
             catch (IOException e) {
                 e.printStackTrace();

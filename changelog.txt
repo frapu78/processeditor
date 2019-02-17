@@ -5,6 +5,7 @@ Todo: Work on #40 (Server: Implement EmumerationDialogEditor)
 
 2019-02-17
 * Added support for SSL config via www/config/ssl_config.properties
+* Added file-system reading of "www/config/ssl_config.properties" first
 
 2018-06-16
 * Added constants for JSONExporter fields
