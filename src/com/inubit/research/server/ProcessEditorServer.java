@@ -203,7 +203,16 @@ public class ProcessEditorServer {
             // load certificate
             char[] storepass = storePassword.toCharArray();
             char[] keypass = password.toCharArray();
-            InputStream fIn = ProcessEditorServer.class.getResourceAsStream(keyStore);
+
+            // Try loading from filesystem first...
+            InputStream fIn;
+            File f = new File(RELATIVE_WWW_FOLDER + keyStore);
+            if (f.exists()) {
+                fIn = new FileInputStream(RELATIVE_WWW_FOLDER + keyStore);
+            } else {
+                fIn = ProcessEditorServer.class.getResourceAsStream(keyStore);
+            }
+
             KeyStore keystore = KeyStore.getInstance("JKS");
             keystore.load(fIn, storepass);
             // display certificate
@@ -253,40 +262,6 @@ public class ProcessEditorServer {
                     }
                 }
             });
-
-            /*
-            KeyStore ks = KeyStore.getInstance("JKS");
-            char[] pwd = "inubit".toCharArray();
-            ks.load(ProcessEditorServer.class.getResourceAsStream(KEY_STORE), pwd);
-
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-            kmf.init(ks, pwd);
-
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
-            tmf.init(ks);
-
-            SSLContext ssl = SSLContext.getInstance("TLS");
-            ssl.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
-            this.server = HttpsServer.create(address, 255);
-
-            ((HttpsServer) this.server).setHttpsConfigurator(new HttpsConfigurator(ssl) {
-
-                public void configure(HttpsParameters params) {
-                    // get the remote address if needed
-                    InetSocketAddress remote = params.getClientAddress();
-
-                    SSLContext c = getSSLContext();
-
-                    // get the default parameters
-                    SSLParameters sslparams = c.getDefaultSSLParameters();
-
-                    params.setSSLParameters(sslparams);
-                    // statement above could throw IAE if any params invalid.
-                    // eg. if app has a UI and parameters supplied by a user.
-
-                }
-            });
-            */
         } else {
             this.server = HttpServer.create(address, 255);
         }
