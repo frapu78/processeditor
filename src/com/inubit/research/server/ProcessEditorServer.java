@@ -234,28 +234,12 @@ public class ProcessEditorServer {
             ((HttpsServer) this.server).setHttpsConfigurator(new HttpsConfigurator(sslContext) {
                 public void configure(HttpsParameters params) {
                     try {
-
                         // get the remote address if needed
                         InetSocketAddress remote = params.getClientAddress();
-
                         SSLContext c = getSSLContext();
-
                         // get the default parameters
                         SSLParameters sslparams = c.getDefaultSSLParameters();
-
                         params.setSSLParameters(sslparams);
-
-                        /*
-                        // initialise the SSL context
-                        SSLContext c = SSLContext.getDefault();
-                        SSLEngine engine = c.createSSLEngine();
-                        params.setNeedClientAuth(false);
-                        params.setCipherSuites(engine.getEnabledCipherSuites());
-                        params.setProtocols(engine.getEnabledProtocols());
-                        // get the default parameters
-                        SSLParameters defaultSSLParameters = c.getDefaultSSLParameters();
-                        params.setSSLParameters(defaultSSLParameters);
-                        */
                     } catch (Exception ex) {
                         ex.printStackTrace();
                         System.out.println("Failed to create HTTPS server");
