@@ -10,7 +10,8 @@ Todo:
 * Fix bug after using the context properties menu (e.g. changing the label in the 
   context menu's props makes the fixed props panel responseless.
 
-
+0.1-20191224:
+* Fixed Base64 converter from master branch
 
 0.1-20170615:
 * Worked on #39 (Fix bug after using the context properties menu (e.g. changing 
