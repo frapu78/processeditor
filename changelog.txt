@@ -8,7 +8,7 @@ Todo:
 * Enhance UI look & feel for properties panel
 * Check for somehow broken models after using the WorkbenchPropertiesPanel
 * Fix bug after using the context properties menu (e.g. changing the label in the 
-  context menu's props makes the fixed props panel responseless.
+  context menu's props makes the fixed props panel response less.
 
 0.1-20191224:
 * Fixed Base64 converter from master branch
@@ -37,7 +37,7 @@ Todo:
 0.1-20170602:
 * Worked on #39 (Create Tab-Panel for properties, Disable protected properties,
   Enhance UI look & feel for properties panel)
-* Introduced bracking-changes by renaming "#attributes" to "attributes" in 
+* Introduced breaking-changes by renaming "#attributes" to "attributes" in
   UMLClass and DomainClass (should be fixed/auto-converted by model loader)
 * Removed PropertiesPlugin from Workbench
 
