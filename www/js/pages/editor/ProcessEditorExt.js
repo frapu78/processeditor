@@ -58,6 +58,9 @@ function ProcessEditor( portletMode ) {
     this.resizeCanvas = function () {
         var cWidth = parseInt(Ext.getCmp('center_region').getWidth());
         var cHeight = parseInt(Ext.getCmp('center_region').getHeight());
+
+        console.log("resizeCanvas: cWidth="+cWidth+", cHeight="+cHeight);
+
         this.canvas.resize(cWidth, cHeight);
         Ext.getCmp('center_region').doLayout();
         page.getLayout().getLayoutItems()[2].suspendEvents();
@@ -66,6 +69,7 @@ function ProcessEditor( portletMode ) {
     }
 
     this.resizeWindow = function(newWidth, newHeight) {
+
         var west = Ext.getCmp('west_region');
         var east = Ext.getCmp('east_region');
         
@@ -298,9 +302,9 @@ function ProcessEditor( portletMode ) {
         page = new Ext.Panel({
             renderTo: parentNode,
             width: width,
-            maxWidth: width,
+            //maxWidth: 100000,
             height: height,
-            maxHeight: height,
+            //maxHeight: 100000,
             layout: 'border',
             items: [
                 {region: 'center',
