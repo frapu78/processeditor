@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=YOURUSER
-ExecStart=/bin/bash -c "cd /opt/processeditor && /usr/bin/java -Xmx1024m -cp 'processeditor.jar:lib/*' com.inubit.research.server.ProcessEditorServer"
+ExecStart=/bin/bash -c "cd /opt/processeditor && /usr/bin/java -Dlog4j2.formatMsgNoLookups=true -Xmx1024m -cp 'processeditor.jar:lib/*' com.inubit.research.server.ProcessEditorServer"
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
