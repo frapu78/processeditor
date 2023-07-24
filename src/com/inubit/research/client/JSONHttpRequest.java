@@ -97,15 +97,33 @@ public class JSONHttpRequest {
     }
 
     /**
+     * Executes a DELETE request on the given URL (added for completeness)
+     */
+    public JSONObject executeDeleteRequest() throws IOException, JSONException {
+        conn = (HttpURLConnection) uri.toURL().openConnection();
+        conn.setFollowRedirects(false);
+        conn.setRequestMethod(HttpConstants.REQUEST_DELETE);
+        conn.setRequestProperty(HttpConstants.HEADER_KEY_CONTENT_TYPE, HttpConstants.CONTENT_TYPE_APPLICATION_JSON);
+        // Set custom properties
+        for (String key : headerProperties.keySet()) {
+            conn.setRequestProperty(key, headerProperties.get(key));
+        }
+        lastStatus = conn.getResponseCode();
+        return parseResponse();
+    }
+
+    /**
      * Executes a GET request on the given URL.
      */
     public JSONObject executeGetRequest() throws 
             IOException, ParserConfigurationException, JSONException {
         conn = getConnection();
         return parseResponse();
-
     }
 
+    /**
+     * Executes a PUT request on the given URL.
+     */
     public JSONObject executePutRequest(JSONObject obj) throws 
             MalformedURLException, IOException, JSONException {
         //System.out.println("PUT "+uri);

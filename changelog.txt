@@ -3,6 +3,9 @@ Changelog for Processeditor
 
 Todo: Work on #40 (Server: Implement EmumerationDialogEditor)
 
+2023-07-24
+* Added executeDeleteRequest() in JSONHttpRequest
+
 2020-08-07
 * Fixed resizing of editor page
 
