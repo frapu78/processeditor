@@ -122,14 +122,36 @@ public class JSONHttpRequest {
     }
 
     /**
-     * Executes a PUT request on the given URL.
+     * Exexcutes a PUT request on the given URL
+     * @param obj
      */
-    public JSONObject executePutRequest(JSONObject obj) throws 
+    public JSONObject executePutRequest(JSONObject obj) throws
+            MalformedURLException, IOException, JSONException {
+        return executePostPutRequest(obj, false);
+    }
+    /**
+     * Exexcutes a POST request on the given URL
+     * @param obj
+     */
+    public JSONObject executePostRequest(JSONObject obj) throws
+            MalformedURLException, IOException, JSONException {
+        return executePostPutRequest(obj, true);
+    }
+
+    /**
+     * Executes a PUT or POST request on the given URL.
+     * @param isPost If true, a POST is sent, otherwise a PUT
+     */
+    protected JSONObject executePostPutRequest(JSONObject obj, boolean isPost) throws
             MalformedURLException, IOException, JSONException {
         //System.out.println("PUT "+uri);
         conn = (HttpURLConnection) uri.toURL().openConnection();
         conn.setFollowRedirects(false);
-        conn.setRequestMethod(HttpConstants.REQUEST_PUT);
+        if (isPost) {
+            conn.setRequestMethod(HttpConstants.REQUEST_POST);
+        } else {
+            conn.setRequestMethod(HttpConstants.REQUEST_PUT);
+        }
         conn.setRequestProperty(HttpConstants.HEADER_KEY_CONTENT_TYPE, HttpConstants.CONTENT_TYPE_APPLICATION_JSON);
         // Set custom properties
         for (String key : headerProperties.keySet()) {
