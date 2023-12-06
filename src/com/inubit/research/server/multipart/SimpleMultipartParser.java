@@ -8,6 +8,10 @@
  */
 package com.inubit.research.server.multipart;
 
+import com.inubit.research.server.errors.MultipartBoundaryNotFoundException;
+import com.inubit.research.server.errors.MultipartInputSizeOverflowException;
+import com.inubit.research.server.errors.MultipartParseException;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -26,7 +30,11 @@ import java.util.regex.Pattern;
  */
 public class SimpleMultipartParser {
 
-    public MultiPartObject parseSource( InputStream is ) throws IOException {
+    public static int MAX_INPUT_SIZE = 1024*1024*16; // Default to 16MB max size for multipart
+
+    public MultiPartObject parseSource( InputStream is ) throws IOException,
+            MultipartInputSizeOverflowException, MultipartBoundaryNotFoundException,
+            MultipartParseException {
         StringBuilder b = new StringBuilder(1000);
         BufferedReader r = new BufferedReader(new InputStreamReader(is));
         String l;
@@ -34,17 +42,20 @@ public class SimpleMultipartParser {
         while ((l = r.readLine()) != null) {
             b.append(l);
             b.append("\n");
+            if (b.length()>MAX_INPUT_SIZE) {
+                throw new MultipartInputSizeOverflowException();
+            }
         }
-
         return this.parseSource(b.toString());
     }
 
-    public MultiPartObject parseSource(String multiPart) {
+    public MultiPartObject parseSource(String multiPart) throws MultipartBoundaryNotFoundException, MultipartParseException {
         BufferedReader br = new BufferedReader(new StringReader(multiPart));
         try {
             String boundary = br.readLine();
-            if (!boundary.startsWith("---"))
-                return null;
+            if (!boundary.startsWith("--")) {
+                throw new MultipartBoundaryNotFoundException();
+            }
 
             String[] parts = multiPart.split(boundary);
             MultiPartObject o = new MultiPartObject();
@@ -78,7 +89,7 @@ public class SimpleMultipartParser {
             e.printStackTrace();
         }
 
-        return null;
+        throw new MultipartParseException();
     }
 
    public byte[] parseItemContentAsByteArray( BufferedInputStream bis, String itemName ) {

@@ -10,6 +10,9 @@ package com.inubit.research.server.plugins;
 
 import com.inubit.research.server.HttpConstants;
 import com.inubit.research.server.ProcessEditorServerUtils;
+import com.inubit.research.server.errors.MultipartBoundaryNotFoundException;
+import com.inubit.research.server.errors.MultipartInputSizeOverflowException;
+import com.inubit.research.server.errors.MultipartParseException;
 import com.inubit.research.server.multipart.MultiPartObject;
 import com.inubit.research.server.multipart.SimpleMultipartParser;
 import com.inubit.research.server.request.RequestFacade;
@@ -45,8 +48,10 @@ public abstract class FormServerPlugin extends ServerPlugin {
             } else {
                 this.processPostRequest(req, resp, u);
             }
-        } catch ( JSONException ex ) {
+        } catch (JSONException | MultipartBoundaryNotFoundException | MultipartInputSizeOverflowException |
+                 MultipartParseException ex ) {
             ex.printStackTrace();
+            // Convert to IOException
             throw new IOException(ex);
         }
     }
@@ -77,7 +82,7 @@ public abstract class FormServerPlugin extends ServerPlugin {
         } 
     }
 
-    protected void processPostRequest( RequestFacade req, ResponseFacade resp , LoginableUser u ) throws IOException {
+    protected void processPostRequest( RequestFacade req, ResponseFacade resp , LoginableUser u ) throws IOException, MultipartBoundaryNotFoundException, MultipartInputSizeOverflowException, MultipartParseException {
         String modelInfo;
         MultiPartObject mpo = null;
         Map<String, String> params = null;

@@ -3,6 +3,10 @@ Changelog for Processeditor
 
 Todo: Work on #40 (Server: Implement EmumerationDialogEditor)
 
+2023-11-06
+* Fixed MultiPartParser to only check for two trailing "--" according to RFC1341, see https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html
+* Introduced matching Exceptions
+
 2023-11-07
 * Added executePostRequest() in JSONHttpRequest
 

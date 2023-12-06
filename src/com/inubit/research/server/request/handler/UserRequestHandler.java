@@ -11,6 +11,9 @@ package com.inubit.research.server.request.handler;
 import com.inubit.research.server.HttpConstants;
 import com.inubit.research.server.ProcessEditorServerHelper;
 import com.inubit.research.server.errors.AccessViolationException;
+import com.inubit.research.server.errors.MultipartBoundaryNotFoundException;
+import com.inubit.research.server.errors.MultipartInputSizeOverflowException;
+import com.inubit.research.server.errors.MultipartParseException;
 import com.inubit.research.server.manager.ModelManager;
 import com.inubit.research.server.multipart.MultiPartItem;
 import com.inubit.research.server.multipart.MultiPartObject;
@@ -269,7 +272,8 @@ public class UserRequestHandler extends AbstractRequestHandler{
             is.mark(Integer.MAX_VALUE);
 
             SimpleMultipartParser smp = new SimpleMultipartParser();
-            MultiPartObject mpo = smp.parseSource(is);
+            try {
+                MultiPartObject mpo = smp.parseSource(is);
 
             String userName = requestUri.split("/")[3];
             SingleUser u = ProcessEditorServerHelper.getUserManager().getUserForName(userName);
@@ -289,6 +293,12 @@ public class UserRequestHandler extends AbstractRequestHandler{
             resp.setContentType(HttpConstants.CONTENT_TYPE_TEXT_HTML);
             ResponseUtils.respondWithStatus(200, "{success:true}", resp, false);
             return;
+
+            } catch (IOException | MultipartInputSizeOverflowException | MultipartBoundaryNotFoundException |
+                     MultipartParseException ex) {
+                // Re-Throw as IOException
+                throw new IOException(ex);
+            }
         }
 
         ResponseUtils.respondWithStatus(statusCode, response, contentType, resp, false);
