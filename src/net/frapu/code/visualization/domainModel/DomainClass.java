@@ -140,7 +140,7 @@ public class DomainClass extends ProcessNode {
 
         if (PROP_ATTRIBUTES.equals(key)) {
             this.attributes = new LinkedHashMap<String, Attribute>();
-            Set<Attribute> noId = new HashSet<Attribute>();
+            List<Attribute> noId = new LinkedList<Attribute>();
             String[] atts = value.split(DomainClass.ELEMENT_DELIMITER);
 
             for (String attribute : atts) {
