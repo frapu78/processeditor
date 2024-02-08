@@ -1,6 +1,9 @@
 Changelog for Processeditor
 ===========================
 
+2024-02-08
+* Added PROP_INDEX to DomainClass (used to mark if an attribute should be indexed in the database)
+
 2024-01-03
 * Fixed setProperty for Attributes in DomainClass to keep order on updates
 

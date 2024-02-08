@@ -41,6 +41,7 @@ public class DomainClass extends ProcessNode {
     public final static String PROP_ABSTRACT = "abstract";
     public final static String PROP_ATTRIBUTES = "#attributes";
     public final static String PROP_KEY = "key";
+    public final static String PROP_INDEX = "index";
     public final static int FONTSIZE = 11;
     public final static String ELEMENT_DELIMITER = ";";
     public static final String STEREOTPYE_ROOT_INSTANCE = "root_instance";
@@ -54,8 +55,6 @@ public class DomainClass extends ProcessNode {
     private Map<String, DomainClass> parents;
     private Map<String, DomainClass> aggregatedClasses;
     private LinkedHashMap<String, DomainClass> assoziatedClasses;
-    
-    
 
     public DomainClass() {   
         super();
@@ -75,13 +74,12 @@ public class DomainClass extends ProcessNode {
         setPropertyEditor(PROP_ABSTRACT, new BooleanPropertyEditor());
         setProperty(PROP_ATTRIBUTES, "");
         setBackground(DEFAULT_COLOR);
-
         setProperty(PROP_KEY, "");
+        setProperty(PROP_INDEX, "");
 
         String[] atype = {"", STEREOTPYE_ROOT_INSTANCE, STEREOTPYE_PROCESS_BO, STEREOTPYE_THING_BO,
             STEREOTPYE_EVENT};
         setPropertyEditor(PROP_STEREOTYPE, new ListSelectionPropertyEditor(atype));
-
     }
 
     public Map<String, Attribute> getAttributesByIDs() {
