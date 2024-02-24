@@ -37,6 +37,7 @@ public class Attribute extends SerializableProcessObject {
     public static final String TYPE_FLOAT = "float";
     public static final String TYPE_INT = "int";
     public static final String TYPE_LONG = "long";
+    public static final String TYPE_PASSWORD = "password";
     public static final String TYPE_MLTEXT = "mltext";
     public static final String TYPE_TEXT = "text";
 

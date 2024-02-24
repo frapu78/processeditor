@@ -231,6 +231,7 @@ public class DomainUtils extends ProcessUtils {
         result.add(Attribute.TYPE_FLOAT);
         result.add(Attribute.TYPE_INT);
         result.add(Attribute.TYPE_LONG);
+        result.add(Attribute.TYPE_PASSWORD);
         result.add(Attribute.TYPE_MLTEXT);
         result.add(Attribute.TYPE_TEXT);
 
