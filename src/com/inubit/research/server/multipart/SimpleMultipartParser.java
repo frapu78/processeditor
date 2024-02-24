@@ -50,10 +50,16 @@ public class SimpleMultipartParser {
     }
 
     public MultiPartObject parseSource(String multiPart) throws MultipartBoundaryNotFoundException, MultipartParseException {
+        // Check if content is empty
+        if (multiPart.trim().length()==0) {
+            // Return empty object as response
+            return new MultiPartObject();
+        }
         BufferedReader br = new BufferedReader(new StringReader(multiPart));
         try {
             String boundary = br.readLine();
             if (!boundary.startsWith("--")) {
+                // Boundary not found
                 throw new MultipartBoundaryNotFoundException();
             }
 
@@ -86,10 +92,9 @@ public class SimpleMultipartParser {
             return o;
 
         } catch (IOException e) {
-            e.printStackTrace();
+            // Input is empty or could not be read, throw error
+            throw new MultipartParseException();
         }
-
-        throw new MultipartParseException();
     }
 
    public byte[] parseItemContentAsByteArray( BufferedInputStream bis, String itemName ) {
