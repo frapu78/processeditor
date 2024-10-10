@@ -45,7 +45,7 @@ public class HttpConstants {
     public final static String CONTENT_TYPE_IMAGE_JPEG = "image/jpeg";
     public final static String CONTENT_TYPE_MULTIPART = "multipart/form-data";
 
-    public final static String CONTENT_CODING_GZIP = "x-gzip";
+    public final static String CONTENT_CODING_GZIP = "gzip";
 
     public final static String REQUEST_POST = "POST";
     public final static String REQUEST_PUT = "PUT";
