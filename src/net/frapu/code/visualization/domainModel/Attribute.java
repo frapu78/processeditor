@@ -40,6 +40,7 @@ public class Attribute extends SerializableProcessObject {
     public static final String TYPE_PASSWORD = "password";
     public static final String TYPE_MLTEXT = "mltext";
     public static final String TYPE_TEXT = "text";
+    public static final String TYPE_JSON = "json";
 
     public Attribute(String name, String type) {
         super.setProperty(PROP_NAME, name);

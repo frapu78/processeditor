@@ -223,6 +223,7 @@ public class DomainUtils extends ProcessUtils {
     
     public static List<String> getAttributeTypes(DomainModel model) {
         List<String> result = new ArrayList<String>();
+        result.add(Attribute.TYPE_JSON);
         result.add(Attribute.TYPE_BOOLEAN);
         result.add(Attribute.TYPE_DATE);
         result.add(Attribute.TYPE_DATETIME);

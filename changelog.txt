@@ -1,6 +1,12 @@
 Changelog for Processeditor
 ===========================
 
+2025-01-09
+* Added support for JSON to DomainClass
+
+2024-10-10
+* Updated CONTENT_CODING_GZIP in HttpConstants.java to "gzip" for modern browser support like Safari 18
+
 2024-02-24
 * Fixed MultiPartParser to return empty MultiPartObject for empty input string
 

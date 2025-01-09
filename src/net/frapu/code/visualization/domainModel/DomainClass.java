@@ -103,8 +103,12 @@ public class DomainClass extends ProcessNode {
     }
 
     public void addAttribute(String name) {
+        addAttribute(name, "text", 0, 1);
+    }
+
+    public void addAttribute(String name, String type, int minCard, int maxCard) {
         String oldAttributes = getProperty(DomainClass.PROP_ATTRIBUTES);
-        String newAttribute = "{" + getUnusedAttributeId() + "}+" + name + "[0..1]:text";
+        String newAttribute = "{" + getUnusedAttributeId() + "}+" + name + "["+minCard+".."+maxCard+"]:"+type;
         setProperty(DomainClass.PROP_ATTRIBUTES,
                 oldAttributes + (oldAttributes.isEmpty() ? "" : ELEMENT_DELIMITER) + newAttribute);
     }
