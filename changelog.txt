@@ -3,6 +3,9 @@ Changelog for Processeditor
 2026-08-05
 * Fixed bounding box calculation for BPMN DataObject
 
+2026-08-05
+* Fixed calculation of bounding box for BPMN DataObject
+
 2025-01-09
 * Added support for JSON to DomainClass
 
