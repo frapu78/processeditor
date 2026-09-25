@@ -33,7 +33,6 @@ import net.frapu.code.visualization.editors.ReferenceChooserRestriction;
  */
 public class DataObject extends Artifact implements Linkable {
 
-
     public static final int DEFAULT_WIDTH = 40;
     public static final int DEFAULT_HEIGHT = 60;
     private static final int LOOP_SPACE_TO_BORDER = 3;
@@ -132,12 +131,14 @@ public class DataObject extends Artifact implements Linkable {
         Rectangle textBounds = new Rectangle(gfxBounds);
         if (getText() != null) {
            String text = getText();
-           if (!getState().isEmpty()) text += "\\n["+getState()+"]";
+           if (!getState().isEmpty()) text += "\n["+getState()+"]";
            textBounds = BPMNUtils.drawText(g2, getPos().x, getPos().y + (getSize().height / 2),
                    getSize().width + 100, text, BPMNUtils.Orientation.TOP);
         }
         // Merge bounds
         gfxBounds.add(textBounds);
+        // Dispose g2
+        g2.dispose();
         return gfxBounds;
     }
 
